@@ -1,0 +1,12 @@
+name: association_rules
+title: association_rules
+username:
+account: danielyang
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2673641
+bundleId: 3520681
+url: https://danielyang.shinyapps.io/association_rules/
+when: 1597542682.88059
+asMultiple: FALSE
+asStatic: FALSE

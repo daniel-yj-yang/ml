@@ -1,0 +1,35 @@
+Estimates: beta0/intercept=[-4.07771335], beta1/coeff=[[ 1.5046454]]
+Optimization terminated successfully.
+         Current function value: 0.401494
+         Iterations 7
+                           Logit Regression Results
+==============================================================================
+Dep. Variable:                   Pass   No. Observations:                   20
+Model:                          Logit   Df Residuals:                       18
+Method:                           MLE   Df Model:                            1
+Date:                Sat, 14 Apr 2018   Pseudo R-squ.:                  0.4208
+Time:                        12:43:52   Log-Likelihood:                -8.0299
+converged:                       True   LL-Null:                       -13.863
+                                        LLR p-value:                 0.0006365
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -4.0777      1.761     -2.316      0.021      -7.529      -0.626
+Hours          1.5046      0.629      2.393      0.017       0.272       2.737
+==============================================================================
+                         Results: Logit
+=================================================================
+Model:              Logit            Pseudo R-squared: 0.421
+Dependent Variable: Pass             AIC:              20.0598
+Date:               2018-04-14 12:43 BIC:              22.0512
+No. Observations:   20               Log-Likelihood:   -8.0299
+Df Model:           1                LL-Null:          -13.863
+Df Residuals:       18               LLR p-value:      0.00063648
+Converged:          1.0000           Scale:            1.0000
+No. Iterations:     7.0000
+-------------------------------------------------------------------
+           Coef.    Std.Err.      z      P>|z|     [0.025    0.975]
+-------------------------------------------------------------------
+const     -4.0777     1.7610   -2.3156   0.0206   -7.5292   -0.6262
+Hours      1.5046     0.6287    2.3932   0.0167    0.2724    2.7369
+=================================================================

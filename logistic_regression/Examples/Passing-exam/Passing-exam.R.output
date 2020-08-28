@@ -1,0 +1,22 @@
+Call:
+glm(formula = Pass ~ Hours, family = binomial(link = "logit"),
+    data = mydata)
+
+Deviance Residuals:
+     Min        1Q    Median        3Q       Max
+-1.70557  -0.57357  -0.04654   0.45470   1.82008
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)  -4.0777     1.7610  -2.316   0.0206 *
+Hours         1.5046     0.6287   2.393   0.0167 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 27.726  on 19  degrees of freedom
+Residual deviance: 16.060  on 18  degrees of freedom
+AIC: 20.06
+
+Number of Fisher Scoring iterations: 5
