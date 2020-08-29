@@ -1,5 +1,5 @@
 # Machine Learning
-<b>Computer algorithms that learn the (hidden) regularity of the world and improve automatically through experience</b>
+<b>Learning the (hidden) regularity of the world via computer algorithms that improve automatically through experience</b>
 
 <hr>
 
