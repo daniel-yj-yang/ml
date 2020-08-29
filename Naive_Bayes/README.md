@@ -31,4 +31,4 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 ### 2. Naive
 
-It assumes that every pair of features being classified is independent of each other
+It assumes that every pair of features being classified is independent of each other.
