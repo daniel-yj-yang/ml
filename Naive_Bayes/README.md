@@ -6,7 +6,7 @@
 
 <hr>
 
-## Concept
+## Concepts
 
 ### 1. <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes' theorem</a>
 
