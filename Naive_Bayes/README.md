@@ -39,8 +39,8 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 ## Naive Bayes Algorithms
 
-Algorithm | ---
---- | ---
-Gaussian Naive Bayes | ---
-Multinomial Naive Bayes | ---
-Bernoulli Naive Bayes | ---
+Algorithm | --- | Application
+--- | --- | ---
+Gaussian Naive Bayes | --- |
+Multinomial Naive Bayes | --- | Document classification
+Bernoulli Naive Bayes | --- | 
