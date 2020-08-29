@@ -16,7 +16,9 @@
 
 #### Example of Bayes' theorem
 
-<p align="center">p(H | E) = p(E | H) * p(H) / p(E)</p>
+```
+p(H | E) = p(E | H) * p(H) / p(E)
+```
 
 Probability | Example | Interpretation
 --- | --- | ---
