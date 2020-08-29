@@ -19,7 +19,7 @@ Algorithm / model | Type | Use case | Online demo / example
 <a href="Bayesian_networks">Bayesian/Probabilities Networks</a> | Supervised | To predict the chain of events linking to greater likelihood of consumer purchasing | <a href="Bayesian_networks">Example: R</a>
 <a href="kNN">k-Nearest Neighbors</a> | Supervised | To predict what product a new customer may like, given the customer's characteristics | <a href="kNN">Example: R</a>
 <a href="SVM">Support Vector Machine</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="SVM">Example: R</a>
-<a href="Naive_Bayes">Naive Bayes</a> | Supervised | --- | ---
+<a href="Naive_Bayes">Naive Bayes</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="Naive_Bayes">Example: Illustration</a>
 <a href="linear_regression">Linear Regression</a> | Supervised | To explain sales via advertising budget | <a href="./linear_regression/multiple_regression.md">Example: R</a>
 <a href="logistic_regression">Logistic Regression</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="https://danielyang.shinyapps.io/Logistic_Regression/">Demo: Running logistic regression with retail data</a> (\*<b>interactive</b>\*)
 <a href="decision_trees">Decision Trees</a> | Supervised | To predict consumer's decision of purchasing | <a href="https://github.com/daniel-yj-yang/ML-retail-analytics/blob/master/decision_trees/DT_Purchasing.ipynb">Example: Decision trees of consumer purchasing</a>
