@@ -33,4 +33,4 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 Assumptions:
 - Every pair of feature variables is independent of each other.
-- The contribution each feature makes to the target variable is (a) independent and (b) equal.
+- The contribution each feature makes to the target variable is equal.
