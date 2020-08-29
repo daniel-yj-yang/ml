@@ -10,7 +10,7 @@
 
 ### 1. <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes' theorem</a>
 
-<p align="center"><img src="./images/Bayes_theorem.png" width="700px">/p>
+<p align="center"><img src="./images/Bayes_theorem.png" width="700px"></p>
 
 <hr>
 
