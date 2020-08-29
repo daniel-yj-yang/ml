@@ -39,7 +39,7 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 ## Family of Naive Bayes Algorithms
 
-Algorithm | Assumption regarding the distribution of P(x<sub>i</sub> | y) | Application
+Algorithm | Assumption regarding the distribution of P(x<sub>i</sub>\|y) | Application
 --- | --- | ---
 Gaussian Naive Bayes | --- |
 Multinomial Naive Bayes | --- | Document classification
