@@ -18,6 +18,7 @@
 
 ```
 p(H | E) = p(E | H) * p(H) / p(E)
+Usually, Event occurs before Hypothesis
 ```
 
 Probability | Example | Interpretation
