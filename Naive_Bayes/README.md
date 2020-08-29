@@ -3,6 +3,7 @@
   
 <p align="center"><img src="./images/Bayes_theorem.png" width="800px"></p>
 
+<hr>
 
 Probability | Example | Interpretation
 --- | --- | ---
