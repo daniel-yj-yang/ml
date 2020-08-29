@@ -37,3 +37,10 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 <hr>
 
+## Naive Bayes Algorithms
+
+Algorithm | ---
+--- | ---
+Gaussian Naive Bayes | ---
+Multinomial Naive Bayes | ---
+Bernoulli Naive Bayes | ---
