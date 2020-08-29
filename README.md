@@ -1,5 +1,5 @@
 # Machine Learning
-Computer algorithms that improve automatically through experience
+<b>Learning the (hidden) regularity of the world via computer algorithms that <a href="gradient_descent">improve automatically through experience</a></b>
 
 <hr>
 

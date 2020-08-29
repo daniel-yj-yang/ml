@@ -124,5 +124,5 @@ Cons | Logistic regression
 
 ## Regularized logistic regression
 
-https://machinelearningmedium.com/2017/09/15/regularized-logistic-regression/
+- https://machinelearningmedium.com/2017/09/15/regularized-logistic-regression/
  
