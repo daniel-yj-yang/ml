@@ -32,5 +32,5 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 ### 2. Naive
 
 Assumptions:
-- Every pair of feature variables is independent of each other.
+- Every pair of feature variables is independent of each other (Note. this assumption is generally incorrect, but NB still often works well in practice)
 - The contribution each feature makes to the target variable is equal.
