@@ -39,9 +39,7 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 ## Family of Naive Bayes Algorithms
 
-Their difference is the assumptions made regarding the distribution of P(x<sub>i</sub> | y).
-
-Algorithm | --- | Application
+Algorithm | Assumption regarding the distribution of P(x<sub>i</sub> | y) | Application
 --- | --- | ---
 Gaussian Naive Bayes | --- |
 Multinomial Naive Bayes | --- | Document classification
