@@ -1,5 +1,5 @@
 
-Bayes' theorem:
+<a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes' theorem<a/>:
 ```
 P(Hypothesis | Event) = ( P(Event | Hypothesis is true) * P(Hypothesis) ) / P(Event)
 
