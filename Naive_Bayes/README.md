@@ -37,7 +37,7 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 <hr>
 
-## Naive Bayes Algorithms
+## Family of Naive Bayes Algorithms
 
 Algorithm | --- | Application
 --- | --- | ---
