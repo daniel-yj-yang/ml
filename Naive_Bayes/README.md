@@ -65,5 +65,5 @@ Algorithm | Assumption regarding the distribution of P(x<sub>i</sub>\|y) | Appli
 ## Pros and Cons
 Comparison | Details
 --- | ---
-Pros | - Requiring only a small amount of training data to estimate the needed parameters.<br/>- Extremely fast, as each p(x<sub>i</sub>\|y) can be independently estimated using a 1D distribution.
-Cons | - Missing certain combination of values in your training data will lead to poor performance (e.g., y="spam", x=containing('$$$'), but there is no such occurrence in the training set).<br/>- Naive Bayes does not work when the relationship between words is important and must be accounted for (e.g., sentiment analysis)
+Pros | - Requiring only a small amount of training data to estimate the needed parameters;<br/>- Extremely fast, as each p(x<sub>i</sub>\|y) can be independently estimated using a 1D distribution.
+Cons | - Missing certain combination of values in your training data will lead to poor performance (e.g., y="spam", x=containing('$$$'), but there is no such occurrence in the training set);<br/>- Naive Bayes does not work when the relationship between words is important and must be accounted for (e.g., sentiment analysis).
