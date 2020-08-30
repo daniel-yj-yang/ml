@@ -72,7 +72,7 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 ### 1. Build a spam filter using Multinomial Naive Bayes classifier
 
-<table align="center" style="border:none;">
+<table align="center" style="border: 0">
   <tr>
     <td>
       <p align="center"><img src="./images/spam_filter_cf_matrix.png" width="400px"></p>
