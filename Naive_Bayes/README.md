@@ -48,7 +48,7 @@ Because every feature is assumed to be independent of each other, p(X) = p(x<sub
 p(y|X) &Proportional; p(X|y) * p(y) = p(y) * p(x<sub>1</sub>|y) * p(x<sub>2</sub>|y) * ... * p(x<sub>n</sub>|y) = p(y) * <b>product(i=1 to n)p(x<sub>i</sub>|y)</b>
 
 Then, based on the maximum value of p(y|X) across all values of y, we will classify the outcome to that specific y<sub>j</sub>.<br/>
-Note: summation of all conditional probabilities, p(y<sub>j</sub>|X) = 1, j = 1 ... m (e.g., if outcome is spam or no spam, m = 2)
+Note: the summation of all conditional probabilities, <b>p(y<sub>j</sub>|X) = 1</b>, j = 1 ... m (e.g., if outcome is spam or no spam, m = 2)
 
 <hr>
 
