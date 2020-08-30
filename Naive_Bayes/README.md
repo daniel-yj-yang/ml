@@ -10,8 +10,8 @@
 
 ### 1. Naive Assumptions
 
-- Every pair of feature variables is independent of each other (Note. this assumption is generally incorrect, but NB still often works well in practice)
-- The contribution each feature makes to the target variable is equal.
+- Every pair of feature variables is <b>independent</b> of each other (Note. this assumption is generally incorrect, but NB still often works well in practice)
+- The contribution each feature makes to the target variable is <b>equal</b>.
 
 <hr>
 
