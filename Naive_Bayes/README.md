@@ -90,7 +90,7 @@ Notes:
 - Accuracy = (TP+TN)/Total
 - Precision = TP/(TP+FP) (To minimize Type I error)
 - Recall = TP/(TP+FN) (To minimize Type II error)
-- F1 score = the harmonic mean of precision and recall = a measure of accuracy
+- F1 score = the harmonic mean of precision and recall = 2/((1/precision)+(1/recall)) = a measure of accuracy
 
 <hr>
 
