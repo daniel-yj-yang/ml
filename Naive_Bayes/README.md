@@ -88,6 +88,8 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 Note:
 - Accuracy = (TP+TN)/Total
 - Precision = TP/(TP+FP) (To minimize Type I error)
+- Recall = TP/(TP+FN) (To minimize Type II error)
+- F1 score = the harmonic mean of precision and recall = a measure of accuracy
 
 <hr>
 
