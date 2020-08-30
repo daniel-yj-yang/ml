@@ -74,7 +74,7 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 <p align="center"><img src="./images/spam_filter_cf_matrix.png" width="400px"></p>
 
-<table align="center" border="0px;">
+<table align="center">
   <tr>
     <td>
       <p align="center"><img src="./images/spam_filter_ROC_curve.png" width="400px"></p>
