@@ -68,4 +68,8 @@ Cons | - Missing certain combination of values in your training data will lead t
 
 ## Examples
 
+### 1. Build a spam filter using Multinomial Naive Bayes classifier
 
+<hr>
+
+### 2. Using Gaussian Naive Bayes to classify iris 
