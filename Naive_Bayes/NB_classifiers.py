@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 plt.rcParams.update({'font.size': 20})
+plt.rcParams.update({'figure.figsize': (8, 6)})
 
 def make_confusion_matrix(cf,
                           group_names=None,
@@ -238,6 +239,22 @@ plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
 plt.title('ROC Curve')
 plt.show()
+
+# https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py
+
+from sklearn.metrics import average_precision_score
+average_precision = average_precision_score(y_test, y_score[:,1])
+
+print('Average precision-recall score: {0:0.2f}'.format(
+      average_precision))
+
+from sklearn.metrics import plot_precision_recall_curve
+
+disp = plot_precision_recall_curve(model, X_test, y_test)
+#disp.figsize = (10,10)
+disp.ax_.set_title('Precision-Recall Curve')
+#disp.plot()
+
 
 
 ######################################################################################################
