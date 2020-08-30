@@ -5,3 +5,5 @@
 <hr>
 
 ## <a href="./gradient_descent">Gradient Descent</a>
+
+A first-order iterative optimization algorithm that finds a local minimum of a differentiable function.
