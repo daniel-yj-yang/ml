@@ -2,4 +2,4 @@
 
 <hr>
 
-<a href="./gradient_descent">Gradient Descent</a>
+## <a href="./gradient_descent">Gradient Descent</a>
