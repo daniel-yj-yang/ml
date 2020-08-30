@@ -85,7 +85,7 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
   </tr>
 </table>
 
-Note:
+Notes:
 - AUC = an aggregate measure of performance across all possible classification thresholds. Interpretation: the probability that the model ranks a random positive example more highly than a random negative example.
 - Accuracy = (TP+TN)/Total
 - Precision = TP/(TP+FP) (To minimize Type I error)
