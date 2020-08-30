@@ -7,3 +7,11 @@
 ## <a href="./gradient_descent">Gradient Descent</a>
 
 A **first-order** (namely, an algorithm that requires at least one first-derivative/gradient) iterative optimization algorithm that finds a local minimum of a differentiable function.
+
+Analogy | Gradient Descent
+--- | ---
+A person, who is stuck in the mountain and trying to get down | the algorithm, which is somewhere in the error surface and trying to find the global minimum
+Path taken down the mountain | The sequence of parameter settings that the algorithm will explore
+The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of the error surface at that point
+The instrument used to measure steepness | differentiation of the error function
+The amount of time they travel before taking another measurement | the learning rate of the algorithm
