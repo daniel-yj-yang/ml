@@ -2,7 +2,7 @@
 
 <hr>
 
-## Example
+## Examples
 
 <hr>
 
