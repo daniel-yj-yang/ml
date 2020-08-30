@@ -41,6 +41,6 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 Algorithm | Assumption regarding the distribution of P(x<sub>i</sub>\|y) | Application
 --- | --- | ---
-Gaussian Naive Bayes | --- |
+<a href="https://github.com/daniel-yj-yang/distribution">Gaussian</a> Naive Bayes | --- |
 <a href="https://github.com/daniel-yj-yang/distribution">Multinomial</a> Naive Bayes | --- | Document classification
-Bernoulli Naive Bayes | --- | 
+<a href="https://github.com/daniel-yj-yang/distribution">Bernoulli</a> Naive Bayes | --- | 
