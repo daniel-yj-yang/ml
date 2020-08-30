@@ -1,5 +1,5 @@
 # Machine Learning
-<b><a href="learning">Learning</a> the (hidden) regularity of the world via computer algorithms that <a href="gradient_descent">improve automatically through experience</a></b>.
+<b><a href="learning">Learning</a> the (hidden) regularity of the world via computer algorithms that <a href="model_improvement">improve automatically through experience</a></b>.
 
 <hr>
 
