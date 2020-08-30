@@ -87,10 +87,10 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 Notes:
 - AUC = an aggregate measure of performance across all possible classification thresholds. Interpretation: the probability that the model ranks a random positive example more highly than a random negative example.
-- Accuracy = (TP+TN)/Total (To maximize True decisions)
+- Accuracy = (TP+TN)/Total (To maximize correct decisions)
 - Precision = TP/(TP+FP) (To minimize Type I error)
 - Recall = TP/(TP+FN) (To minimize Type II error)
-- F1 score = the harmonic mean of precision and recall = 2/((1/precision)+(1/recall)) = a measure of accuracy
+- F1 score = the harmonic mean of precision and recall = 2/((1/precision)+(1/recall)) = a measure of accuracy (To minimize both Type I and II errors)
 
 <hr>
 
