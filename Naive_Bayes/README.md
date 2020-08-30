@@ -44,7 +44,9 @@ X = features (x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>n</sub>)
 
 The goal is to estimate p(y|X) = p(X|y) * p(y) / p(X)
 
-Because every feature is independent of each other, p(X) = p(x<sub>1</sub> ⋂ x<sub>2</sub> ⋂ ... ⋂ x<sub>n</sub>) = p(x<sub>1</sub>) * p(x<sub>2</sub>) * ... * p(x<sub>n</sub>)
+Because every feature is assumed to be independent of each other, p(X) = p(x<sub>1</sub> ⋂ x<sub>2</sub> ⋂ ... ⋂ x<sub>n</sub>) = p(x<sub>1</sub>) * p(x<sub>2</sub>) * ... * p(x<sub>n</sub>) = a constant
+
+p(y|X) &#x221D; p(X|y) * p(y)
 
 <hr>
 
