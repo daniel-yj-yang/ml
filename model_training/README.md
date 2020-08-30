@@ -6,4 +6,4 @@
 
 ## <a href="./gradient_descent">Gradient Descent</a>
 
-A first-order iterative optimization algorithm that finds a local minimum of a differentiable function.
+A **first-order** (namely, an algorithm that requires at least one first-derivative/gradient) iterative optimization algorithm that finds a local minimum of a differentiable function.
