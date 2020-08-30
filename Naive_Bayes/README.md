@@ -87,7 +87,8 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 Note:
 - Accuracy = (TP+TN)/Total
-- 
+- Precision = TP/(TP+FP) (To minimize Type I error)
+
 <hr>
 
 ### 2. Using Gaussian Naive Bayes to classify iris
