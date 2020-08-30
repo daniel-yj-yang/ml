@@ -6,6 +6,124 @@ Created on Sat Aug 29 15:32:23 2020
 @author: daniel
 """
 
+# https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
+
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.rcParams.update({'font.size': 20})
+
+def make_confusion_matrix(cf,
+                          group_names=None,
+                          categories='auto',
+                          count=True,
+                          percent=True,
+                          cbar=True,
+                          xyticks=True,
+                          xyplotlabels=True,
+                          sum_stats=True,
+                          figsize=None,
+                          cmap='Blues', # or 'binary'
+                          title=None):
+    '''
+    This function will make a pretty plot of an sklearn Confusion Matrix cm using a Seaborn heatmap visualization.
+
+    Arguments
+    ---------
+    cf:            confusion matrix to be passed in
+
+    group_names:   List of strings that represent the labels row by row to be shown in each square.
+
+    categories:    List of strings containing the categories to be displayed on the x,y axis. Default is 'auto'
+
+    count:         If True, show the raw number in the confusion matrix. Default is True.
+
+    normalize:     If True, show the proportions for each category. Default is True.
+
+    cbar:          If True, show the color bar. The cbar values are based off the values in the confusion matrix.
+                   Default is True.
+
+    xyticks:       If True, show x and y ticks. Default is True.
+
+    xyplotlabels:  If True, show 'True Label' and 'Predicted Label' on the figure. Default is True.
+
+    sum_stats:     If True, display summary statistics below the figure. Default is True.
+
+    figsize:       Tuple representing the figure size. Default will be the matplotlib rcParams value.
+
+    cmap:          Colormap of the values displayed from matplotlib.pyplot.cm. Default is 'Blues'
+                   See http://matplotlib.org/examples/color/colormaps_reference.html
+
+    title:         Title for the heatmap. Default is None.
+
+    '''
+
+
+    # CODE TO GENERATE TEXT INSIDE EACH SQUARE
+    blanks = ['' for i in range(cf.size)]
+
+    if group_names and len(group_names)==cf.size:
+        group_labels = ["{}\n".format(value) for value in group_names]
+    else:
+        group_labels = blanks
+
+    if count:
+        group_counts = ["{0:0.0f}\n".format(value) for value in cf.flatten()]
+    else:
+        group_counts = blanks
+
+    if percent:
+        group_percentages = ["{0:.2%}".format(value) for value in cf.flatten()/np.sum(cf)]
+    else:
+        group_percentages = blanks
+
+    box_labels = [f"{v1}{v2}{v3}".strip() for v1, v2, v3 in zip(group_labels,group_counts,group_percentages)]
+    box_labels = np.asarray(box_labels).reshape(cf.shape[0],cf.shape[1])
+
+
+    # CODE TO GENERATE SUMMARY STATISTICS & TEXT FOR SUMMARY STATS
+    if sum_stats:
+        #Accuracy is sum of diagonal divided by total observations
+        accuracy  = np.trace(cf) / float(np.sum(cf))
+
+        #if it is a binary confusion matrix, show some more stats
+        if len(cf)==2:
+            #Metrics for Binary Confusion Matrices
+            precision = cf[1,1] / sum(cf[:,1])
+            recall    = cf[1,1] / sum(cf[1,:])
+            f1_score  = 2*precision*recall / (precision + recall)
+            stats_text = "\n\nAccuracy={:0.3f}\nPrecision={:0.3f}\nRecall={:0.3f}\nF1 Score={:0.3f}".format(
+                accuracy,precision,recall,f1_score)
+        else:
+            stats_text = "\n\nAccuracy={:0.3f}".format(accuracy)
+    else:
+        stats_text = ""
+
+
+    # SET FIGURE PARAMETERS ACCORDING TO OTHER ARGUMENTS
+    if figsize==None:
+        #Get default figure size if not set
+        figsize = plt.rcParams.get('figure.figsize')
+
+    if xyticks==False:
+        #Do not show categories if xyticks is False
+        categories=False
+
+
+    # MAKE THE HEATMAP VISUALIZATION
+    plt.figure(figsize=figsize)
+    sns.heatmap(cf,annot=box_labels,fmt="",cmap=cmap,cbar=cbar,xticklabels=categories,yticklabels=categories)
+
+    if xyplotlabels:
+        plt.ylabel('True label')
+        plt.xlabel('Predicted label' + stats_text)
+    else:
+        plt.xlabel(stats_text)
+
+    if title:
+        plt.title(title)
+
 ######################################################################################################
 
 # 1. Multinomial Naive Bayes classifier
@@ -70,7 +188,7 @@ counts = transformer.transform(counts)
 
 from sklearn.model_selection import train_test_split
 
-X_train, X_test, y_train, y_test = train_test_split(counts, df['label'], test_size=0.1, random_state=73)
+X_train, X_test, y_train, y_test = train_test_split(counts, df['label'], test_size=0.3, random_state=74)
 
 from sklearn.naive_bayes import MultinomialNB
 
@@ -81,13 +199,37 @@ model = MultinomialNB().fit(X_train, y_train)
 
 import numpy as np
 
-predicted = model.predict(X_test)
+y_pred = model.predict(X_test)
+print(np.mean(y_pred == y_test))
 
-print(np.mean(predicted == y_test))
+# comparing actual response values (y_test) with predicted response values (y_pred)
+from sklearn import metrics
+print("Multinomial Naive Bayes model accuracy(in %):", metrics.accuracy_score(y_test, y_pred)*100)
 
+from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
+print(classification_report(y_test, y_pred, target_names=('ham','spam')))
+cf_matrix = confusion_matrix(y_test, y_pred)
 
-print(confusion_matrix(y_test, predicted))
+import seaborn as sns
+group_names = ['True Neg','False Pos','False Neg','True Pos']
+group_counts = ["{0:0.0f}".format(value) for value in
+                cf_matrix.flatten()]
+group_percentages = ["{0:.2%}".format(value) for value in
+                     cf_matrix.flatten()/np.sum(cf_matrix)]
+labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
+          zip(group_names,group_counts,group_percentages)]
+labels = np.asarray(labels).reshape(2,2)
+sns.heatmap(cf_matrix, annot=labels, fmt='', cmap='Blues')
+
+# https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
+labels = ['True Neg','False Pos','False Neg','True Pos']
+categories = ['Ham', 'Spam']
+make_confusion_matrix(cf_matrix,
+                      group_names=labels,
+                      categories=categories,
+                      figsize=(8,6),
+                      cbar=False)
 
 ######################################################################################################
 ######################################################################################################
@@ -107,7 +249,7 @@ y = iris.target
 
 # splitting X and y into training and testing sets
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=74)
 
 # training the model on training set
 from sklearn.naive_bayes import GaussianNB
@@ -116,7 +258,14 @@ gnb.fit(X_train, y_train)
 
 # making predictions on the testing set
 y_pred = gnb.predict(X_test)
+print(np.mean(y_pred == y_test))
 
 # comparing actual response values (y_test) with predicted response values (y_pred)
 from sklearn import metrics
 print("Gaussian Naive Bayes model accuracy(in %):", metrics.accuracy_score(y_test, y_pred)*100)
+
+from sklearn.metrics import confusion_matrix
+cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
+
+# https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
+make_confusion_matrix(cf_matrix_3x3, categories= iris.target_names, figsize=(8,6), cbar=False)
