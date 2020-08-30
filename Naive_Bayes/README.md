@@ -72,6 +72,10 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 ### 1. Build a spam filter using Multinomial Naive Bayes classifier
 
+<p align="center"><img src="./images/spam_filter_cf_matrix.png" width="600px"></p>
+
 <hr>
 
-### 2. Using Gaussian Naive Bayes to classify iris 
+### 2. Using Gaussian Naive Bayes to classify iris
+
+<p align="center"><img src="./images/iris_classifier_cf_matrix_3x3.png" width="600px"></p>
