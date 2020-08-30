@@ -64,4 +64,4 @@ Algorithm | Assumption regarding the distribution of P(x<sub>i</sub>\|y) | Appli
 
 ## Characteristics of Naive Bayes
 - Requiring only a small amount of training data to estimate the needed parameters.
-- Extremely fast, as p(x<sub>i</sub>|y) can be independently estimated using a 1D distribution.
+- Extremely fast, as each p(x<sub>i</sub>|y) can be independently estimated using a 1D distribution.
