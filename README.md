@@ -36,7 +36,7 @@ Decision Trees | 1. The data can be described by features.<br/>2. The class labe
 K-means clustering | 1. The clusters are spherical.<br/>2. The clusters are of similar size.
 Naive Bayes | 1. Every pair of feature variables is independent of each other.<br/>2. The contribution each feature makes to the target variable is equal.
 Logistic Regression | 1. DV is binary or ordinal.<br/>2. Observations are independent of each other.<br/>3. Little or no multicollinearity among the IV.<br/>4. Linearity of IV (the X) and log odds (the z).<br/>5. A large sample size. It needs at minimum of 10 cases with the least frequent DV for each IV.<br/>6. There is no influential values (extreme values or outliers) in the continuous IV.
-Linear Regression | 1. Linearity: The relationship between X and Y is linear.<br/>2. Independence: Residual -- Y is independent of the residuals.<br/>3. Homoscedasticity: Residual -- variance of the residuals is the same for all values of X.<br/>4. Normality: Residual -- residual is normally distributed.<br/>(2-4 are also known as <b>IID</b>: residuals are Independently, Identically Distributed as normal.)<br/>5. No or little multicollinearity among X's (for Multiple Linear Regression).
+Linear Regression | 1. Linearity: The relationship between X and Y is linear.<br/>2. Independence: Residual -- Y is independent of the residuals.<br/>3. Homoscedasticity: Residual -- variance of the residuals is the same for all values of X.<br/>4. Normality: Residual -- residual is normally distributed.<br/>(2-4 are also known as <b>IID</b>: residuals are Independently, Identically Distributed as normal).<br/>5. No or little multicollinearity among X's (for Multiple Linear Regression).
 
 <hr>
 
