@@ -223,8 +223,8 @@ make_confusion_matrix(cf_matrix,
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 
 fpr, tpr, thresholds = metrics.roc_curve(y_test, y_score[:,1], pos_label=1)
-# auc = metrics.roc_auc_score(y_test, y_score[:,1])
-auc = np.trapz(tpr,fpr) # alternatively
+auc = metrics.roc_auc_score(y_test, y_score[:,1])
+#auc = np.trapz(tpr,fpr) # alternatively
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 plt.figure(figsize=(8,6))
@@ -266,6 +266,7 @@ gnb = GaussianNB()
 gnb.fit(X_train, y_train)
 
 # making predictions on the testing set
+y_score = gnb.predict_proba(X_test)
 y_pred = gnb.predict(X_test)
 print(np.mean(y_pred == y_test))
 
@@ -278,3 +279,56 @@ cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
 
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 make_confusion_matrix(cf_matrix_3x3, categories= iris.target_names, figsize=(8,6), cbar=False)
+
+# https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
+# But this example is to binarize the y first...
+
+from itertools import cycle
+
+n_classes = 3
+
+# Compute ROC curve and ROC area for each class
+fpr = dict()
+tpr = dict()
+roc_auc = dict()
+for i in range(n_classes):
+    fpr[i], tpr[i], _ = metrics.roc_curve(y_test, y_score[:, i], pos_label=2)
+    roc_auc[i] = metrics.auc(fpr[i], tpr[i])
+
+# First aggregate all false positive rates
+all_fpr = np.unique(np.concatenate([fpr[i] for i in range(n_classes)]))
+
+# Then interpolate all ROC curves at this points
+mean_tpr = np.zeros_like(all_fpr)
+for i in range(n_classes):
+    mean_tpr += np.interp(all_fpr, fpr[i], tpr[i])
+
+# Finally average it and compute AUC
+mean_tpr /= n_classes
+
+fpr["macro"] = all_fpr
+tpr["macro"] = mean_tpr
+roc_auc["macro"] = metrics.auc(fpr["macro"], tpr["macro"])
+
+# Plot all ROC curves
+plt.figure(figsize=(8,6))
+
+plt.plot(fpr["macro"], tpr["macro"],
+         label='macro-average ROC curve (area = {0:0.2f})'
+               ''.format(roc_auc["macro"]),
+         color='navy', linestyle=':', linewidth=4)
+
+colors = cycle(['aqua', 'darkorange', 'cornflowerblue'])
+for i, color in zip(range(n_classes), colors):
+    plt.plot(fpr[i], tpr[i], color=color, lw=lw,
+             label='ROC curve of class {0} (area = {1:0.2f})'
+             ''.format(i, roc_auc[i]))
+
+plt.plot([0, 1], [0, 1], 'k--', lw=lw)
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Some extension of Receiver operating characteristic to multi-class')
+plt.legend(loc="lower right")
+plt.show()
