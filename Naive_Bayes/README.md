@@ -68,7 +68,7 @@ Cons | - Missing certain combination of values in your training data will lead t
 
 ## Examples
 
-Please Python codes <a href="NB_classifiers.py">here</a>.
+Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 ### 1. Build a spam filter using Multinomial Naive Bayes classifier
 
