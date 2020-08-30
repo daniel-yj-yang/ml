@@ -37,6 +37,17 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 <hr>
 
+### 3. Naive Bayes
+
+y = target
+X = features (x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>n</sub>)
+
+The goal is to estimate p(y|X) = p(X|y) * p(y) / p(X)
+
+Because every feature is independent of each other, p(X) = p(x<sub>1</sub> ⋂ x<sub>2</sub> ⋂ ... ⋂ x<sub>n</sub>) = p(x<sub>1</sub>) * p(x<sub>2</sub>) * ... * p(x<sub>n</sub>)
+
+<hr>
+
 ## Family of Naive Bayes Algorithms
 
 Algorithm | Assumption regarding the distribution of P(x<sub>i</sub>\|y) | Application
