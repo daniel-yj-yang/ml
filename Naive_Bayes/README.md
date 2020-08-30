@@ -39,7 +39,7 @@ P(Event) | P(behavior="clicking_on_link_A") | The proportion of customers who cl
 
 ### 3. Naive Bayes
 
-- y = target
+- y = target/outcome
 - X = features (x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>n</sub>)
 
 The goal is to estimate p(y|X) = p(X|y) * p(y) / p(X)
