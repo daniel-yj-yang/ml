@@ -44,7 +44,7 @@ X = features (x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>n</sub>)
 
 The goal is to estimate p(y|X) = p(X|y) * p(y) / p(X)
 
-Because every feature is assumed to be independent of each other, p(X) = p(x<sub>1</sub> ⋂ x<sub>2</sub> ⋂ ... ⋂ x<sub>n</sub>) = p(x<sub>1</sub>) * p(x<sub>2</sub>) * ... * p(x<sub>n</sub>) = a constant,
+Because every feature is assumed to be independent of each other, p(X) = p(x<sub>1</sub> ⋂ x<sub>2</sub> ⋂ ... ⋂ x<sub>n</sub>) = p(x<sub>1</sub>) * p(x<sub>2</sub>) * ... * p(x<sub>n</sub>) = a constant,<br/>
 p(y|X) &Proportional; p(X|y) * p(y) = p(y) * p(x<sub>1</sub>|y) * p(x<sub>2</sub>|y) * ... * p(x<sub>n</sub>|y) = p(y) * <b>product(i=1 to n)p(x<sub>i</sub>|y)</b>
 
 Then, based on the maximum value of p(y|X) across all values of y, we will classify the outcome to that specific y<sub>j</sub>.<br/>
