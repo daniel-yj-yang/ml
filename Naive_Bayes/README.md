@@ -88,7 +88,7 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 <style>
 .tab {border-collapse:collapse;}
 .tab .first {border-bottom:1px solid #EEE;}
-.tab .second {border-top:1px solid #CCC;box-shadow: inset 0 1px 0 #CCC;}​
+.tab .second {border-top:1px solid #CCC;box-shadow: inset 0 1px 0 #CCC;}
 </style>
   
 <hr>
