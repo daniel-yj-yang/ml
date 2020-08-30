@@ -188,7 +188,7 @@ counts = transformer.transform(counts)
 
 from sklearn.model_selection import train_test_split
 
-X_train, X_test, y_train, y_test = train_test_split(counts, df['label'], test_size=0.3, random_state=74)
+X_train, X_test, y_train, y_test = train_test_split(counts, df['label'], test_size=0.25, random_state=123)
 
 from sklearn.naive_bayes import MultinomialNB
 
@@ -197,8 +197,7 @@ model = MultinomialNB().fit(X_train, y_train)
 ########################################################################################
 # Evaluating the Model
 
-import numpy as np
-
+y_score = model.predict_proba(X_test)
 y_pred = model.predict(X_test)
 print(np.mean(y_pred == y_test))
 
@@ -211,16 +210,6 @@ from sklearn.metrics import confusion_matrix
 print(classification_report(y_test, y_pred, target_names=('ham','spam')))
 cf_matrix = confusion_matrix(y_test, y_pred)
 
-import seaborn as sns
-group_names = ['True Neg','False Pos','False Neg','True Pos']
-group_counts = ["{0:0.0f}".format(value) for value in
-                cf_matrix.flatten()]
-group_percentages = ["{0:.2%}".format(value) for value in
-                     cf_matrix.flatten()/np.sum(cf_matrix)]
-labels = [f"{v1}\n{v2}\n{v3}" for v1, v2, v3 in
-          zip(group_names,group_counts,group_percentages)]
-labels = np.asarray(labels).reshape(2,2)
-sns.heatmap(cf_matrix, annot=labels, fmt='', cmap='Blues')
 
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 labels = ['True Neg','False Pos','False Neg','True Pos']
@@ -230,6 +219,26 @@ make_confusion_matrix(cf_matrix,
                       categories=categories,
                       figsize=(8,6),
                       cbar=False)
+
+# https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
+
+fpr, tpr, thresholds = metrics.roc_curve(y_test, y_score[:,1], pos_label=1)
+# auc = metrics.roc_auc_score(y_test, y_score[:,1])
+auc = np.trapz(tpr,fpr) # alternatively
+
+# https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
+plt.figure(figsize=(8,6))
+lw = 2
+plt.plot(fpr,tpr,color = 'darkorange', lw=lw, label="Multinomial NB (AUC = %0.2f)" % auc )
+plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+plt.xlim([-0.05, 1.05])
+plt.ylim([-0.05, 1.05])
+plt.legend(loc="lower right")
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve')
+plt.show()
+
 
 ######################################################################################################
 ######################################################################################################
@@ -249,7 +258,7 @@ y = iris.target
 
 # splitting X and y into training and testing sets
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=74)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=123)
 
 # training the model on training set
 from sklearn.naive_bayes import GaussianNB
