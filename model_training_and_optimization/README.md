@@ -70,11 +70,13 @@ def Stochastic_Gradient_Descent(f_derivative, theta0, alpha, num_iters):
        theta -- the parameter value after SGD finishes
     """
     start_iter = 0
-    theta= theta0
+    theta = theta0
     for iter in xrange(start_iter + 1, num_iters + 1):
         _, gradient = f_derivate(theta)
-        theta = theta - (alpha * gradient) # there is NO dot product!
+        theta = theta - (alpha * gradient)
     return theta
+    
+# reference: https://towardsdatascience.com/difference-between-batch-gradient-descent-and-stochastic-gradient-descent-1187f1291aa1
 ```
 
 <hr>
