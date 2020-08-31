@@ -90,7 +90,7 @@ Notes:
 - Accuracy is sensitive to **class unbalance** (that is, the ratio of Actual Positive cases [P] to Actual Negative cases [N]), but the ROC curve is **independent** of the P:N ratio and is therefore suitable for comparing classifiers when this ratio may vary (see <a href="https://github.com/daniel-yj-yang/model_evaluation">model evaluation</a>).
 - Accuracy = (TP+TN)/Total (To maximize correct decisions)
 - Precision = TP/(TP+FP) (the higher the precision, the lower the False Positive / Type I error)
-- Recall = TP/(TP+FN) (the higher the recall, the lower the False Negative / Type II error)
+- Recall (Sensitivity) = TP/(TP+FN) (the higher the recall, the lower the False Negative / Type II error)
 - F1 score = the harmonic mean of precision and recall = 2/((1/precision)+(1/recall)) = a measure of accuracy (the higher the F1, the lower the false positive and negative / both Type I and II errors)
 
 <hr>
