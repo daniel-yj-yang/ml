@@ -31,3 +31,4 @@ Approach | ---
 <a href="./batch_gradient_descent">Batch Gradient Descent</a> | ---
 <a href="./mini_batch_gradient_descent">Mini-Batch Gradient Descent</a> | ---
 
+### Visualization of Gradident Descent
