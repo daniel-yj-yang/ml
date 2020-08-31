@@ -33,9 +33,15 @@ No. | It does not require the following
 
 <hr>
 
-Example:
+## Examples:
 
-### 1. Passing exam
+### 1. Retail example
+
+Detailed explanation: <a href="https://danielyang.shinyapps.io/Logistic_Regression/">Online interactive demo of logistic regression</a>
+
+<hr>
+
+### 2. Passing exam
 
 * Raw Data: <a href="./Examples/Passing-exam/Passing-exam.csv">CSV</a>; <a href="./Examples/Passing-exam/Passing-exam.sav">SPSS SAV</a>
 * Python: <a href="./Examples/Passing-exam/Passing-exam.py">Python Code</a>; <a href="./Examples/Passing-exam/Passing-exam.py.output">Python Output</a>
