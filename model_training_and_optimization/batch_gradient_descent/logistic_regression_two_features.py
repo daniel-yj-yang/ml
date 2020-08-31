@@ -58,14 +58,23 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         self.training_History = []
 
         for i in range(self.num_iter):
+
+            # Step #1: The model makes predictions on training data.
+
             z = np.dot(self.X, self.theta)
             h = self.__sigmoid(z)  # y-hat
+
+            # Step #2: Using the error on the predictions to update the model in such a way as to minimize the error.
+
             error = h - self.y
             loss = np.sum(error ** 2)
 
             #self.training_History.append([loss, self.theta.tolist()])
 
             gradient = np.dot(self.X.T, error) / self.y.size
+
+            # Step #3: Specifically, the update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
+
             self.theta -= self.lr * gradient
 
             # self.theta = [0,0,0] is not good for plotting, so starting from here
@@ -192,7 +201,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 # 1. Batch gradient descent
 # https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 model = Logistic_regression_as_optimized_by_batch_gradient_descent(
-    lr=0.1, num_iter=500)
+    lr=0.2, num_iter=1000)
 model.fit(X, y)
 model.animate_decision_boundary()
 
