@@ -14,12 +14,12 @@ A **first-order** (namely, a method that requires at least one first-derivative/
 
 Analogy | Gradient Descent
 --- | ---
-1.&nbsp;A person, who is stuck in the mountain and trying to get down | the algorithm, which is somewhere in the error surface and trying to find the global minimum
-2.&nbsp;Path taken down the mountain | the sequence of parameter settings (coefficients or weights) that the algorithm will explore
+1.&nbsp;A person, who is stuck in the mountain and trying to get down | the method, which is somewhere in the error surface and trying to find θ that globally minimizes J(θ)
+2.&nbsp;Path taken down the mountain | the sequence of θ parameters (coefficients or weights) that the algorithm will explore
 3.&nbsp;The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of the errors surface at that point
 4.&nbsp;The instrument used to measure steepness | differentiation of the cost function, the **partial derivative of J(θ) with respect to θ**
-5.&nbsp;The amount of time they travel before taking another measurement | the learning rate of the algorithm
-6.&nbsp;The altitude of the person's location | the error the model makes when predicting on training data
+5.&nbsp;The amount of time they travel before taking another measurement | the learning rate of the algorithm, α
+6.&nbsp;The altitude of the person's location | the error the model makes when predicting on training data, J(θ)
 
 <p align="center"><img src="./images/gradient_descent.png" width="500px"></p>
 
