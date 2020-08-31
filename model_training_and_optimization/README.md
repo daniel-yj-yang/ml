@@ -100,7 +100,7 @@ def Stochastic_Gradient_Descent(f_derivative, theta0, alpha, num_iters): # A gen
 
 Python <a href="./mini_batch_GD_logistic_regression.py">code</a>
 
-<p align="center"><img src="./images/mini_batch_GD_logistic_regression_graph1.png"><br/><img src="./images/mini_batch_GD_logistic_regression_graph2.png"></p>
+<img src="./images/mini_batch_GD_logistic_regression_graph1.png" width="450px"><img src="./images/mini_batch_GD_logistic_regression_graph2.png" width="450px">
 
 <hr>
 
