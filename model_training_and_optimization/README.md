@@ -6,7 +6,7 @@
 
 ## 2. <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>
 
-A **first-order** (namely, an algorithm that requires at least one first-derivative/gradient) iterative **optimization** algorithm that finds the weights or coefficients that reach a local minimum of a differentiable function.
+A **first-order** (namely, a method that requires at least one first-derivative/gradient) iterative **optimization** method that finds the weights or coefficients that reach a local minimum of a differentiable function.
 
 #### Step#1: The model makes predictions on training data.
 #### Step#2: Using the error on the predictions to update the model in such a way as to minimize the error.
@@ -25,17 +25,26 @@ Analogy | Gradient Descent
 
 <hr>
 
-Gradient Descent Approach | Details
+#### Descriptions:
+
+Approach | Details
 --- | ---
 Batch | - Calculates the error for each example in the training dataset, but only updates the model after all training examples have been evaluated.<br/>- If there are 3 millions examples, we need to sum the errors of 3 million times.<br/>- One cycle through the entire training set is called a training epoch.<br/>- When we refer to gradient descent, we typically mean the batch gradient descent.
 Stochastic (SGD) | - Instead of using the entire training set every time, use only 1 example<br/>- Before for-looping, randomly shuffle the training examples.
 Mini-Batch | - The common ground between batch and SGD.<br/>- Use n data points (instead of just 1 example in SGD) at each iteration.<br/>- It is the most common implementation of gradident descent in the field of deep learning.
 
-Gradient Descent Approach | Pros | Cons
+<hr>
+
+#### Comparisons:
+
+Approach | Pros | Cons
 --- | --- | ---
-Batch |
-Stochastic |
-Mini-Batch |
+Batch | - More stable convergence | - May have local minimum<br/>- Very slow for large data sets<br/>- Take a lot of memory
+Stochastic (SGD) | - Faster learning for large data sets<br/>- May avoid local minimum due to the noise | - Harder to converge<br/>- Higher variance
+Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>- Take less memory than batch<br/> | - Need to specify n (mini-batch size, usually 32)
 
+<hr>
 
-### Visualization of Gradident Descent
+## 3. Visualization of Optimization Methods
+
+<p align="center"><img src="./images/visualization_of_optimization_methods.gif" width="500px"><br/>(<a href="https://towardsdatascience.com/why-visualize-gradient-descent-optimization-algorithms-a393806eee2">image source</a>; see also <a href="https://github.com/ilguyi/optimizers.numpy">here</a>)</p>
