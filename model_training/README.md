@@ -9,13 +9,14 @@
 A **first-order** (namely, an algorithm that requires at least one first-derivative/gradient) iterative optimization algorithm that finds the weights or coefficients that reach a local minimum of a differentiable function.
 
 #### Step#1: The model makes predictions on training data.
-#### Step#2: Using the error on the predictions to update the model in the direction of reducing the error.
+#### Step#2: Using the error on the predictions to update the model in such a way as to minimize the error.
+#### Step#3: The update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
 
 Analogy | Gradient Descent
 --- | ---
 1.&nbsp;A person, who is stuck in the mountain and trying to get down | the algorithm, which is somewhere in the error surface and trying to find the global minimum
 2.&nbsp;Path taken down the mountain | the sequence of parameter settings (coefficients or weights) that the algorithm will explore
-3.&nbsp;The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of the error surface at that point
+3.&nbsp;The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of the errors surface at that point
 4.&nbsp;The instrument used to measure steepness | differentiation (derivative) of the cost function
 5.&nbsp;The amount of time they travel before taking another measurement | the learning rate of the algorithm
 6.&nbsp;The altitude of the person's location | the error the model makes when predicting on training data
