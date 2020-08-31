@@ -10,11 +10,11 @@ A **first-order** (namely, an algorithm that requires at least one first-derivat
 
 Analogy | Gradient Descent
 --- | ---
-A person, who is stuck in the mountain and trying to get down | the algorithm, which is somewhere in the error surface and trying to find the global minimum
-Path taken down the mountain | The sequence of parameter settings that the algorithm will explore
-The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of the error surface at that point
-The instrument used to measure steepness | differentiation of the error function
-The amount of time they travel before taking another measurement | the learning rate of the algorithm
+1. A person, who is stuck in the mountain and trying to get down | the algorithm, which is somewhere in the error surface and trying to find the global minimum
+2. Path taken down the mountain | The sequence of parameter settings that the algorithm will explore
+3. The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of the error surface at that point
+4. The instrument used to measure steepness | differentiation (derivative) of the cost function
+5. The amount of time they travel before taking another measurement | the learning rate of the algorithm
 
 <p align="center"><img src="./images/gradient_descent.png" width="500px"></p>
 
