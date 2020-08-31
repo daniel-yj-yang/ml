@@ -15,6 +15,7 @@ from sklearn.metrics import accuracy_score
 
 plt.rcParams['animation.ffmpeg_path'] = '/usr/local/bin/ffmpeg'
 plt.rcParams['animation.convert_path'] = '/usr/local/bin/convert'
+plt.rcParams.update({'font.size': 20})
 
 # equivalent to rcParams['animation.html'] = 'html5'
 rc('animation', html='html5')
@@ -90,7 +91,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         # https://towardsdatascience.com/building-a-logistic-regression-in-python-301d27367c24
 
         # plot the original data
-        plt.figure(figsize=(7,7))
+        plt.figure(figsize=(8,8))
         plt.scatter(self.X[:, 1], self.X[:, 2], marker="o", c=self.y)
 
         # the decision boundary
@@ -115,7 +116,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 
     def plot_loss_history(self):
         # construct a figure that plots the loss over time
-        plt.figure(figsize=(7,7))
+        plt.figure(figsize=(8,8))
         plt.plot(np.arange(0, len(self.training_History)), np.array(self.training_History)[:,0], label = 'Training Loss')
         plt.legend(loc = 1)
         plt.xlabel("Epoch #")
@@ -125,7 +126,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
     # see also https://xavierbourretsicotte.github.io/animation_ridge.html
     def animate_decision_boundary(self):
         # First set up the figure, the axis, and the plot element we want to animate
-        fig1, ax1 = plt.subplots(figsize=(7,7))
+        fig1, ax1 = plt.subplots(figsize=(8,8))
         line, = ax1.plot([], [], color='red', linestyle='dashed', label='Decision Boundary', lw = 1.5)
         point, = ax1.plot([], [], '*', color = 'red', markersize = 4)
         value_display = ax1.text(0.02, 0.02, '', transform=ax1.transAxes)
