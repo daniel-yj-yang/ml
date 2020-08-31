@@ -45,6 +45,40 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 <hr>
 
+#### Python code examples for linear regression:
+
+```python3
+def Batch_Gradient_Descent(X, y, theta, alpha, num_iters):
+    """
+       Performs gradient descent to learn theta
+    """
+    m = y.size  # number of training examples
+    for i in range(num_iters):
+        y_hat = np.dot(X, theta)
+        theta = theta - alpha * (1.0/m) * np.dot(X.T, y_hat-y)
+    return theta
+    
+def Stochastic_Gradient_Descent(f, theta0, alpha, num_iters):
+    """ 
+       Arguments:
+       f_derivate -- the function to optimize, it takes a single argument
+                     and yield two outputs, a cost and the gradient
+                     with respect to the arguments
+       theta0 -- the initial point to start SGD from
+       num_iters -- total iterations to run SGD for
+       Return:
+       theta -- the parameter value after SGD finishes
+    """
+    start_iter = 0
+    theta= theta0
+    for iter in xrange(start_iter + 1, num_iters + 1):
+        _, gradient = f_derivate(theta)
+        theta = theta - (alpha * gradient) # there is NO dot product!
+    return theta
+```
+
+<hr>
+
 ## 3. Visualization of Different Optimizers
 
 <p align="center"><img src="./images/visualization_of_optimization_methods.gif" width="500px"><br/>(<a href="https://towardsdatascience.com/why-visualize-gradient-descent-optimization-algorithms-a393806eee2">image source</a>; see also <a href="https://github.com/ilguyi/optimizers.numpy">here</a>)</p>
