@@ -40,7 +40,6 @@ Example:
 * Raw Data: <a href="./Examples/Passing-exam/Passing-exam.csv">CSV</a>; <a href="./Examples/Passing-exam/Passing-exam.sav">SPSS SAV</a>
 * Python: <a href="./Examples/Passing-exam/Passing-exam.py">Python Code</a>; <a href="./Examples/Passing-exam/Passing-exam.py.output">Python Output</a>
 * R: <a href="./Examples/Passing-exam/Passing-exam.R">R Code</a>; <a href="./Examples/Passing-exam/Passing-exam.R.output">R Output</a>
-* Detailed explanation: <a href="https://danielyang.shinyapps.io/Logistic_Regression/">Online interactive demo of logistic regression</a>
 
 <img src="./Examples/Passing-exam/Passing-exam.py.png" width="500" />
 <img src="./Examples/Passing-exam/Passing-exam.R.png" width="500" />
