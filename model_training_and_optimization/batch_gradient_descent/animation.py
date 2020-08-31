@@ -39,11 +39,10 @@ def animate(i):
     line.set_data(x, y)
     return (line,)
 
-# call the animator. blit=True means only re-draw the parts that
-# have changed.
+# call the animator. blit=True means only re-draw the parts that have changed.
 anim = animation.FuncAnimation(fig, animate, init_func=init,
                                frames=100, interval=20, blit=True)
 
 anim
 
-anim.save('/Users/daniel/Downloads/animation.gif', fps=60, writer='imagemagick')
+anim.save('/Users/daniel/tmp/animation.gif', fps=60, writer='imagemagick')
