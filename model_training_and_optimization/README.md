@@ -47,7 +47,7 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 #### Python code examples
 
-```python3
+```python
 def Batch_Gradient_Descent(X, y, theta0, alpha, num_iters): # for linear regression
     """
        Performs gradient descent to learn theta
