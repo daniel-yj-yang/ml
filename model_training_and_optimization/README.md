@@ -58,7 +58,7 @@ def Batch_Gradient_Descent(X, y, theta, alpha, num_iters):
         theta = theta - alpha * (1.0/m) * np.dot(X.T, y_hat-y)
     return theta
     
-def Stochastic_Gradient_Descent(f, theta0, alpha, num_iters):
+def Stochastic_Gradient_Descent(f_derivative, theta0, alpha, num_iters):
     """ 
        Arguments:
        f_derivate -- the function to optimize, it takes a single argument
