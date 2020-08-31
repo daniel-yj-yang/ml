@@ -27,7 +27,7 @@ Analogy | Gradient Descent
 
 #### Descriptions:
 
-Gradient Descent Approach | Details
+Approach | Details
 --- | ---
 Batch | - Calculates the error for each example in the training dataset, but only updates the model after all training examples have been evaluated.<br/>- If there are 3 millions examples, we need to sum the errors of 3 million times.<br/>- One cycle through the entire training set is called a training epoch.<br/>- When we refer to gradient descent, we typically mean the batch gradient descent.
 Stochastic (SGD) | - Instead of using the entire training set every time, use only 1 example<br/>- Before for-looping, randomly shuffle the training examples.
@@ -35,7 +35,7 @@ Mini-Batch | - The common ground between batch and SGD.<br/>- Use n data points 
 
 #### Comparisons:
 
-Gradient Descent Approach | Pros | Cons
+Approach | Pros | Cons
 --- | --- | ---
 Batch | - More stable convergence | - May have local minimum<br/>- Very slow for large data sets<br/>- Take a lot of memory
 Stochastic | - Faster learning for large data sets<br/>- May avoid local minimum due to the noise | - Harder to converge<br/>- Higher variance
