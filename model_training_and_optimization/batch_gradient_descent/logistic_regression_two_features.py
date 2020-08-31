@@ -90,7 +90,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         # https://towardsdatascience.com/building-a-logistic-regression-in-python-301d27367c24
 
         # plot the original data
-        fig = plt.figure(figsize=(7,7))
+        plt.figure(figsize=(7,7))
         plt.scatter(self.X[:, 1], self.X[:, 2], marker="o", c=self.y)
 
         # the decision boundary
@@ -108,8 +108,6 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
                      np.dot(self.theta[1], X1_values)) / self.theta[2]
         plt.plot(X1_values, X2_values, color='red',
                  linestyle='dashed', label='Decision Boundary')
-        if(epoch != None):
-            fig.suptitle('Epoch #{}'.format(epoch))
         plt.xlabel('X1')
         plt.ylabel('X2')
         plt.legend()
@@ -117,9 +115,9 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 
     def plot_loss_history(self):
         # construct a figure that plots the loss over time
-        fig = plt.figure(figsize=(7,7))
-        plt.plot(np.arange(0, len(self.training_History)), np.array(self.training_History)[:,0])
-        fig.suptitle("Training Loss")
+        plt.figure(figsize=(7,7))
+        plt.plot(np.arange(0, len(self.training_History)), np.array(self.training_History)[:,0], label = 'Training Loss')
+        plt.legend(loc = 1)
         plt.xlabel("Epoch #")
         plt.ylabel("Loss")
         plt.show()
@@ -168,7 +166,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 
             return line, point, value_display, scatterplot
 
-        #ax1.legend(loc = 1)
+        ax1.legend(loc = "upper left")
 
         # blit=True means only re-draw the parts that have changed.
         anim1 = animation.FuncAnimation(fig1, update_1, init_func=init_1,
