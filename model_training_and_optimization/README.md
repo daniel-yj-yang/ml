@@ -47,7 +47,7 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 ## 3. Example of batch gradient descent -- logistic regression with two features
 
-<p align="center"><img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation.gif" width="500px"><img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch.png" width="500px"></p>
+<p align="center"><img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch.png" width="400px"><img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation.gif" width="400px"></p>
 
 <hr>
 
