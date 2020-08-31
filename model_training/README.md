@@ -25,10 +25,10 @@ Analogy | Gradient Descent
 
 <hr>
 
-Approach | ---
+Optimization Approach | ---
 --- | ---
-<a href="./stochastic_gradient_descent">Stochastic Gradient Descent</a> (SGD) | Use a randomly selected subset of the data (rather than the entire data set) to estimate the gradient. Doing so helps reduce computational burden and achieve faster iterations, especially in high-dimension problems, although it may converge more slowly.
-<a href="./batch_gradient_descent">Batch Gradient Descent</a> | ---
-<a href="./mini_batch_gradient_descent">Mini-Batch Gradient Descent</a> | ---
+<a href="./batch_gradient_descent">Batch Gradient Descent</a> | - Calculates the error for each sample in the training dataset, but only updates the model after all training samples have been evaluated.<br/>- If there are 3 millions samples, we need to sum the errors of 3 million times.<br/>- One cycle through the entire training set is called a training epoch.
+<a href="./stochastic_gradient_descent">Stochastic Gradient Descent</a> (SGD) | - Instead of using the entire training set every time, use only 1 sample<br/>- Before for-looping, randomly shuffle the training samples.
+<a href="./mini_batch_gradient_descent">Mini-Batch Gradient Descent</a> | - The common ground between batch and SGD.<br\>- Use n data points (instead of 1 sample in SGD) at each iteration.<br\>- It is the most common implementation in the field of deep learning.
 
 ### Visualization of Gradident Descent
