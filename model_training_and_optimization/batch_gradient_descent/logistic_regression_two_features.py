@@ -131,6 +131,8 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         value_display = ax1.text(0.02, 0.02, '', transform=ax1.transAxes)
         # https://stackoverflow.com/questions/9401658/how-to-animate-a-scatter-plot?rq=1
         scatterplot = ax1.scatter([], [], marker="o")
+        plt.xlabel('X1')
+        plt.ylabel('X2')
 
         def init_1():
             line.set_data([], [])
