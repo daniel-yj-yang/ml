@@ -8,9 +8,9 @@
 
 A **first-order** (namely, a method that requires at least one first-derivative/gradient) iterative **optimization** method that finds the weights or coefficients that reach a local minimum of a differentiable function.
 
-#### Step#1: The model makes predictions on training data.
-#### Step#2: Using the error on the predictions to update the model in such a way as to minimize the error.
-#### Step#3: The update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
+#### Step #1: The model makes predictions on training data.
+#### Step #2: Using the error on the predictions to update the model in such a way as to minimize the error.
+#### Step #3: Specifically, the update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
 
 Analogy | Gradient Descent
 --- | ---
