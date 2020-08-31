@@ -25,10 +25,17 @@ Analogy | Gradient Descent
 
 <hr>
 
-Optimization Approach | ---
+Gradient Descent Approach | Details
 --- | ---
-<a href="./batch_gradient_descent">Batch Gradient Descent</a> | - Calculates the error for each sample in the training dataset, but only updates the model after all training samples have been evaluated.<br/>- If there are 3 millions samples, we need to sum the errors of 3 million times.<br/>- One cycle through the entire training set is called a training epoch.
-<a href="./stochastic_gradient_descent">Stochastic Gradient Descent</a> (SGD) | - Instead of using the entire training set every time, use only 1 sample<br/>- Before for-looping, randomly shuffle the training samples.
-<a href="./mini_batch_gradient_descent">Mini-Batch Gradient Descent</a> | - The common ground between batch and SGD.<br/>- Use n data points (instead of 1 sample in SGD) at each iteration.<br/>- It is the most common implementation of gradident descent in the field of deep learning.
+Batch | - Calculates the error for each example in the training dataset, but only updates the model after all training examples have been evaluated.<br/>- If there are 3 millions examples, we need to sum the errors of 3 million times.<br/>- One cycle through the entire training set is called a training epoch.<br/>- When we refer to gradient descent, we typically mean the batch gradient descent.
+Stochastic (SGD) | - Instead of using the entire training set every time, use only 1 example<br/>- Before for-looping, randomly shuffle the training examples.
+Mini-Batch | - The common ground between batch and SGD.<br/>- Use n data points (instead of just 1 example in SGD) at each iteration.<br/>- It is the most common implementation of gradident descent in the field of deep learning.
+
+Gradient Descent Approach | Pros | Cons
+--- | --- | ---
+Batch |
+Stochastic |
+Mini-Batch |
+
 
 ### Visualization of Gradident Descent
