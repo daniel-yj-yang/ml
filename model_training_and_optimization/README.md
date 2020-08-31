@@ -45,20 +45,22 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 <hr>
 
-#### Python code examples for linear regression:
+#### Python code examples
 
 ```python3
-def Batch_Gradient_Descent(X, y, theta, alpha, num_iters):
+def Batch_Gradient_Descent(X, y, theta0, alpha, num_iters): # for linear regression
     """
        Performs gradient descent to learn theta
     """
     m = y.size  # number of training examples
+    theta = theta0
     for i in range(num_iters):
         y_hat = np.dot(X, theta)
-        theta = theta - alpha * (1.0/m) * np.dot(X.T, y_hat-y)
+        gradient = (1.0/m) * np.dot(X.T, y_hat-y)
+        theta = theta - (alpha * gradient)
     return theta
     
-def Stochastic_Gradient_Descent(f_derivative, theta0, alpha, num_iters):
+def Stochastic_Gradient_Descent(f_derivative, theta0, alpha, num_iters): # A general case
     """ 
        Arguments:
        f_derivate -- the function to optimize, it takes a single argument
