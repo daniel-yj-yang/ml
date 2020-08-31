@@ -68,7 +68,8 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
             gradient = np.dot(self.X.T, error) / self.y.size
             self.theta -= self.lr * gradient
 
-            self.training_History.append([loss, self.theta.tolist()]) # self.theta = [0,0,0] is not good for plotting, so starting from here
+            # self.theta = [0,0,0] is not good for plotting, so starting from here
+            self.training_History.append([loss, self.theta.tolist()])
 
             if(self.verbose == True and i % 10000 == 0):
                 z = np.dot(self.X, self.theta)
@@ -91,7 +92,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         # https://towardsdatascience.com/building-a-logistic-regression-in-python-301d27367c24
 
         # plot the original data
-        plt.figure(figsize=(8,8))
+        plt.figure(figsize=(8, 8))
         plt.scatter(self.X[:, 1], self.X[:, 2], marker="o", c=self.y)
 
         # the decision boundary
@@ -116,9 +117,10 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 
     def plot_loss_history(self):
         # construct a figure that plots the loss over time
-        plt.figure(figsize=(8,8))
-        plt.plot(np.arange(0, len(self.training_History)), np.array(self.training_History)[:,0], label = 'Training Loss')
-        plt.legend(loc = 1)
+        plt.figure(figsize=(8, 8))
+        plt.plot(np.arange(0, len(self.training_History)), np.array(
+            self.training_History)[:, 0], label='Training Loss')
+        plt.legend(loc=1)
         plt.xlabel("Epoch #")
         plt.ylabel("Loss")
         plt.show()
@@ -126,9 +128,10 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
     # see also https://xavierbourretsicotte.github.io/animation_ridge.html
     def animate_decision_boundary(self):
         # First set up the figure, the axis, and the plot element we want to animate
-        fig1, ax1 = plt.subplots(figsize=(8,8))
-        line, = ax1.plot([], [], color='red', linestyle='dashed', label='Decision Boundary', lw = 1.5)
-        point, = ax1.plot([], [], '*', color = 'red', markersize = 4)
+        fig1, ax1 = plt.subplots(figsize=(8, 8))
+        line, = ax1.plot([], [], color='red', linestyle='dashed',
+                         label='Decision Boundary', lw=1.5)
+        point, = ax1.plot([], [], '*', color='red', markersize=4)
         value_display = ax1.text(0.02, 0.02, '', transform=ax1.transAxes)
         # https://stackoverflow.com/questions/9401658/how-to-animate-a-scatter-plot?rq=1
         scatterplot = ax1.scatter([], [], marker="o")
@@ -147,8 +150,9 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
             # Animate line
             X1_values = [np.min(self.X[:, 1])-0.1, np.max(self.X[:, 1])+0.1]
             this_theta = self.training_History[epoch][1]
-            #print(this_theta)
-            X2_values = (-this_theta[0] - np.dot(this_theta[1], X1_values)) / this_theta[2]
+            # print(this_theta)
+            X2_values = (-this_theta[0] -
+                         np.dot(this_theta[1], X1_values)) / this_theta[2]
             line.set_data(X1_values, X2_values)
             #print(epoch, X1_values, X2_values)
 
@@ -159,17 +163,19 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
             value_display.set_text('Epoch # {}'.format(epoch+1))
 
             # scatterplot
-            scatterplot.set_offsets(self.X[:,1:3])
+            scatterplot.set_offsets(self.X[:, 1:3])
             scatterplot.set_array(self.y)
 
             # https://stackoverflow.com/questions/43674917/animation-in-matplotlib-with-scatter-and-using-set-offsets-autoscale-of-figure
             # scale
-            ax1.set_xlim(min(min(self.X[:,1]),min(X1_values))-0.1, max(max(self.X[:,1]),max(X1_values))+0.1)
-            ax1.set_ylim(min(min(self.X[:,2]),min(X2_values))-0.1, max(max(self.X[:,2]),max(X2_values))+0.1)
+            ax1.set_xlim(min(min(self.X[:, 1]), min(
+                X1_values))-0.1, max(max(self.X[:, 1]), max(X1_values))+0.1)
+            ax1.set_ylim(min(min(self.X[:, 2]), min(
+                X2_values))-0.1, max(max(self.X[:, 2]), max(X2_values))+0.1)
 
             return line, point, value_display, scatterplot
 
-        ax1.legend(loc = "upper left")
+        ax1.legend(loc="upper left")
 
         # blit=True means only re-draw the parts that have changed.
         anim1 = animation.FuncAnimation(fig1, update_1, init_func=init_1,
@@ -177,11 +183,10 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
                                         interval=20,
                                         blit=True)
 
-        anim1.save('/Users/daniel/tmp/animation.gif', fps=60, writer='imagemagick')
+        anim1.save('/Users/daniel/tmp/animation.gif',
+                   fps=60, writer='imagemagick')
 
         return
-
-
 
 
 # 1. Batch gradient descent
