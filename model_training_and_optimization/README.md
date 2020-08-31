@@ -45,6 +45,6 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 <hr>
 
-## 3. Visualization of Optimization Methods
+## 3. Visualization of Different Optimizers
 
 <p align="center"><img src="./images/visualization_of_optimization_methods.gif" width="500px"><br/>(<a href="https://towardsdatascience.com/why-visualize-gradient-descent-optimization-algorithms-a393806eee2">image source</a>; see also <a href="https://github.com/ilguyi/optimizers.numpy">here</a>)</p>
