@@ -29,8 +29,8 @@ Analogy | Gradient Descent
 
 Approach | Details
 --- | ---
-Batch | - Calculates the error for each example in the training dataset, but only updates the model after **the entire training set** has been evaluated.<br/>- If there are 3 millions examples, we need to sum the errors of 3 million times.<br/>- One cycle through the entire training set is called a training epoch.<br/>- When we refer to gradient descent, we typically mean the batch gradient descent.
-<a href="https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=lbp">Stochastic</a> (SGD) | - Instead of using the entire training set every time, use **just 1 example**<br/>- Before for-looping, randomly shuffle the training examples.
+Batch GD or just GD | - Calculates the error for each example in the training dataset, but only updates the model after **the entire training set** has been evaluated.<br/>- If there are 3 millions examples, we need to sum the errors of 3 million times.<br/>- One cycle through the entire training set is called a training epoch.<br/>- When we refer to gradient descent, we typically mean the batch gradient descent.
+(Truly) <a href="https://www.geeksforgeeks.org/ml-stochastic-gradient-descent-sgd/?ref=lbp">Stochastic</a> (SGD) | - Instead of using the entire training set every time, use **just 1 example**<br/>- Before for-looping, randomly shuffle the training examples.
 <a href="https://www.geeksforgeeks.org/ml-mini-batch-gradient-descent-with-python/">Mini-Batch</a> | - The common ground between batch and SGD.<br/>- Use **n data points** (instead of just 1 example in SGD) at each iteration.<br/>- It is the most common implementation of gradident descent in the field of deep learning.
 
 <hr>
@@ -39,8 +39,8 @@ Batch | - Calculates the error for each example in the training dataset, but onl
 
 Approach | Pros | Cons
 --- | --- | ---
-Batch | - More stable convergence | - May have local minimum<br/>- Very slow for large data sets<br/>- Take a lot of memory
-Stochastic (SGD) | - Faster learning for large data sets<br/>- May avoid local minimum due to the noise | - Harder to converge<br/>- Higher variance
+Batch GD or just GD  | - More stable convergence | - May have local minimum<br/>- Very slow for large data sets<br/>- Take a lot of memory
+(Truly) Stochastic (SGD) | - Faster learning for large data sets<br/>- May avoid local minimum due to the noise | - Harder to converge<br/>- Higher variance
 Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>- Take less memory than batch<br/> | - Need to specify n (mini-batch size, usually 32)
 
 <hr>
@@ -83,7 +83,118 @@ def Stochastic_Gradient_Descent(f_derivative, theta0, alpha, num_iters): # A gen
 
 <hr>
 
-## 3. Visualization of Different Optimizers
+## 3. Mini-Batch Gradient Descent in Python
+
+Python <a href="./mini_batch_GD_logistic_regression.py">code</a>
+
+```python3
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug 31 01:19:29 2020
+
+@author: daniel
+"""
+
+# https://www.pyimagesearch.com/2016/10/17/stochastic-gradient-descent-sgd-with-python/
+
+# import the necessary packages
+import matplotlib.pyplot as plt
+from sklearn.datasets.samples_generator import make_blobs
+import numpy as np
+import argparse
+
+
+def sigmoid_activation(x):
+    # compute and return the sigmoid activation value for a
+    # given input value
+    return 1.0 / (1 + np.exp(-x))
+
+
+def next_batch(X, y, batchSize):
+    # loop over our dataset `X` in mini-batches of size `batchSize`
+    for i in np.arange(0, X.shape[0], batchSize):
+        # yield a tuple of the current batched data and labels
+        yield (X[i:i + batchSize], y[i:i + batchSize])
+
+
+# construct the argument parse and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-e", "--epochs", type=float, default=100,
+                help="# of epochs")
+ap.add_argument("-a", "--alpha", type=float, default=0.01,
+                help="learning rate")
+ap.add_argument("-b", "--batch-size", type=int, default=32,
+                help="size of SGD mini-batches")
+args = vars(ap.parse_args())
+
+# generate a 2-class classification problem with 400 data points,
+# where each data point is a 2D feature vector
+(X, y) = make_blobs(n_samples=400, n_features=2, centers=2,
+                    cluster_std=2.5, random_state=95)
+
+# insert a column of 1's as the first entry in the feature
+# vector -- this is a little trick that allows us to treat
+# the bias as a trainable parameter *within* the weight matrix
+# rather than an entirely separate variable
+X = np.c_[np.ones((X.shape[0])), X]
+# initialize our weight matrix such it has the same number of
+# columns as our input features
+print("[INFO] starting training...")
+W = np.random.uniform(size=(X.shape[1],))
+# initialize a list to store the loss value for each epoch
+lossHistory = []
+
+# loop over the desired number of epochs
+for epoch in np.arange(0, args["epochs"]):
+    # initialize the total loss for the epoch
+    epochLoss = []
+    # loop over our data in batches
+    for (batchX, batchY) in next_batch(X, y, args["batch_size"]):
+        # take the dot product between our current batch of
+        # features and weight matrix `W`, then pass this value
+        # through the sigmoid activation function
+        preds = sigmoid_activation(batchX.dot(W))
+        # now that we have our predictions, we need to determine
+        # our `error`, which is the difference between our predictions
+        # and the true values
+        error = preds - batchY
+        # given our `error`, we can compute the total loss value on
+        # the batch as the sum of squared loss
+        loss = np.sum(error ** 2)
+        epochLoss.append(loss)
+        # the gradient update is therefore the dot product between
+        # the transpose of our current batch and the error on the
+        # # batch
+        gradient = batchX.T.dot(error) / batchX.shape[0]
+        # use the gradient computed on the current batch to take
+        # a "step" in the correct direction
+        W += -args["alpha"] * gradient
+    # update our loss history list by taking the average loss
+    # across all batches
+    lossHistory.append(np.average(epochLoss))
+
+# compute the line of best fit by setting the sigmoid function
+# to 0 and solving for X2 in terms of X1
+Y = (-W[0] - (W[1] * X)) / W[2]
+# plot the original data along with our line of best fit
+plt.figure()
+plt.scatter(X[:, 1], X[:, 2], marker="o", c=y)
+plt.plot(X, Y, "r-")
+# construct a figure that plots the loss over time
+fig = plt.figure()
+plt.plot(np.arange(0, args["epochs"]), lossHistory)
+fig.suptitle("Training Loss")
+plt.xlabel("Epoch #")
+plt.ylabel("Loss")
+plt.show()
+```
+
+<p><img src="./images/mini_batch_GD_logistic_regression_graph1.png"><img src="./images/mini_batch_GD_logistic_regression_graph2.png"></p>
+
+<hr>
+
+## 4. Visualization of Different Optimizers
 
 <p align="center"><img src="./images/visualization_of_optimization_methods.gif" width="500px"><br/>(<a href="https://towardsdatascience.com/why-visualize-gradient-descent-optimization-algorithms-a393806eee2">image source</a>; see also <a href="https://github.com/ilguyi/optimizers.numpy">here</a>)</p>
 
