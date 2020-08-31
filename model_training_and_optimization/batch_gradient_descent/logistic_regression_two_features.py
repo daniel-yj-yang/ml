@@ -7,7 +7,6 @@ Created on Wed Feb 21 21:35:32 2018
 """
 
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 import numpy as np
 import sklearn
 from sklearn.metrics import accuracy_score
@@ -21,7 +20,8 @@ y = (iris.target != 0) * 1
 
 # Method 1 - batch gradient descent
 
-class Logistic_regression_based_on_gradient_descent:
+
+class Logistic_regression_as_optimized_by_batch_gradient_descent:
     def __init__(self, lr=0.01, num_iter=100000, fit_intercept=True, verbose=False, plot_decision_boundary_during_training=False):
         self.lr = lr
         self.num_iter = num_iter
@@ -52,7 +52,7 @@ class Logistic_regression_based_on_gradient_descent:
 
         for i in range(self.num_iter):
             z = np.dot(self.X, self.theta)
-            h = self.__sigmoid(z) # y-hat
+            h = self.__sigmoid(z)  # y-hat
             error = h - self.y
             loss = np.sum(error ** 2)
             self.lossHistory.append(loss)
@@ -68,14 +68,13 @@ class Logistic_regression_based_on_gradient_descent:
                 h = self.__sigmoid(z)
                 print(f'loss: {self.__loss(h, self.y)} \t')
 
-
     def predict_prob(self, X):
         if self.fit_intercept:
             X = self.__add_intercept(X)
 
         return self.__sigmoid(np.dot(X, self.theta))
 
-    def predict(self, X, threshold = 0.5):
+    def predict(self, X, threshold=0.5):
         return self.predict_prob(X) >= threshold
 
     def plot_decision_boundary(self, epoch=None):
@@ -99,9 +98,11 @@ class Logistic_regression_based_on_gradient_descent:
         # solve for z = 0 --> x2 = (- theta0 - theta1 x1) / theta2
 
         X1_values = [np.min(self.X[:, 1]) * 0.99, np.max(self.X[:, 1]) * 1.01]
-        X2_values = (-self.theta[0] - np.dot(self.theta[1], X1_values)) / self.theta[2]
-        plt.plot( X1_values, X2_values, color = 'red', linestyle='dashed', label='Decision Boundary')
-        if(epoch!=None):
+        X2_values = (-self.theta[0] -
+                     np.dot(self.theta[1], X1_values)) / self.theta[2]
+        plt.plot(X1_values, X2_values, color='red',
+                 linestyle='dashed', label='Decision Boundary')
+        if(epoch != None):
             fig.suptitle('Epoch #{}'.format(epoch))
         plt.xlabel('X1')
         plt.ylabel('X2')
@@ -118,8 +119,21 @@ class Logistic_regression_based_on_gradient_descent:
         plt.show()
 
 
+# 1. Batch gradient descent
+# https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
+model = Logistic_regression_as_optimized_by_batch_gradient_descent(
+    lr=0.01, num_iter=50, plot_decision_boundary_during_training=True)
+model.fit(X, y)
+model.plot_decision_boundary()
+model.plot_loss_history()
 
-# 1. Sklearn
+print(model.theta)
+predicted_classes = model.predict(X)
+accuracy = accuracy_score(y.flatten(), predicted_classes)
+print(accuracy)
+
+
+# 2. Sklearn
 model = sklearn.linear_model.LogisticRegression(
     fit_intercept=True, C=1e20, penalty='none')
 model.fit(X, y)
@@ -132,18 +146,6 @@ print(accuracy)
 # next1: penalty
 # next2: multi-class
 
-# 2. Batch gradient descent
-# https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
-model = Logistic_regression_based_on_gradient_descent(
-    lr=0.01, num_iter=50, plot_decision_boundary_during_training=True)
-model.fit(X, y)
-model.plot_decision_boundary()
-model.plot_loss_history()
-
-print(model.theta)
-predicted_classes = model.predict(X)
-accuracy = accuracy_score(y.flatten(), predicted_classes)
-print(accuracy)
 
 # 3. Another batch gradient descent
 # https://towardsdatascience.com/building-a-logistic-regression-in-python-301d27367c24
