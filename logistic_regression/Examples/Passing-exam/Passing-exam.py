@@ -32,7 +32,7 @@ print("4. The dependent variable is not measured on an interval or ratio scale.\
 
 
 # Data Source: https://en.wikipedia.org/wiki/Logistic_regression
-data = pd.read_csv("/Users/Daniel/Documents/GitHub/logistic-regression/Examples/Passing-exam/Passing-exam.csv")
+data = pd.read_csv("/Users/daniel/My-Files/My-Projects/GitHub/ml/logistic_regression/Examples/Passing-exam/Passing-exam.csv")
 y = data['Pass']   # Binary DV
 X = data['Hours']  # Continuous IV
 
@@ -64,6 +64,20 @@ def LogisticRegression_based_on_statsmodels(y_pd_series, X_pd_series):
 (beta0, beta1) = LogisticRegression_based_on_statsmodels(y, X)
 
 
+# Method 3 - sklearn.linear_model.SGDClassifier
+from sklearn.linear_model import SGDClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import make_pipeline
+
+# Always scale the input. The most convenient way is to use a pipeline.
+clf = make_pipeline(StandardScaler(),
+                    SGDClassifier(loss="log", max_iter=1000, tol=1e-3))
+clf.fit(np.array(X).reshape(-1,1), y)
+print(clf.predict([[4]]))
+
+
+
+
 # Visualization
 def y_prob(x_value):
     prob = 1/(1+np.exp(-(beta0 + beta1*x_value)))
@@ -89,7 +103,7 @@ plt.show()
 
 sys.exit("STOP")
 
-# Method 3 - Linear Regression
+# Method 4 - Linear Regression
 def LinearRegression_based_on_statsmodels(y_pd_series, X_pd_series):
     model = OLS(endog=y_pd_series, exog=add_constant(X_pd_series))
     result = model.fit()
