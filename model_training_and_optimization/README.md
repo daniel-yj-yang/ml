@@ -47,7 +47,7 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 ## 3. Example of batch gradient descent -- logistic regression with two features
 
-Learning rate | Number of iterations (epochs) | Decision Boundary | Training Loss
+Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss
 --- | --- | --- | ---
 0.1 | 500 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_learning=0.1_epochs=500.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_learning=0.1_epochs=500.png" width="400px">
 0.05 | 1000 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_learning=0.05_epochs=1000.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_learning=0.05_epochs=1000.png" width="400px">
@@ -58,7 +58,7 @@ References:
 
 <hr>
 
-#### Python code examples
+## 4. Other Python code examples
 
 ```python3
 def Batch_Gradient_Descent(X, y, theta0, alpha, num_iters): # for linear regression
@@ -96,118 +96,15 @@ def Stochastic_Gradient_Descent(f_derivative, theta0, alpha, num_iters): # A gen
 
 <hr>
 
-## 3. Mini-Batch Gradient Descent in Python
+## 5. Mini-Batch Gradient Descent in Python
 
 Python <a href="./mini_batch_GD_logistic_regression.py">code</a>
-
-```python3
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 31 01:19:29 2020
-
-@author: daniel
-"""
-
-# https://www.pyimagesearch.com/2016/10/17/stochastic-gradient-descent-sgd-with-python/
-
-# import the necessary packages
-import matplotlib.pyplot as plt
-from sklearn.datasets.samples_generator import make_blobs
-import numpy as np
-import argparse
-
-
-def sigmoid_activation(x):
-    # compute and return the sigmoid activation value for a
-    # given input value
-    return 1.0 / (1 + np.exp(-x))
-
-
-def next_batch(X, y, batchSize):
-    # loop over our dataset `X` in mini-batches of size `batchSize`
-    for i in np.arange(0, X.shape[0], batchSize):
-        # yield a tuple of the current batched data and labels
-        yield (X[i:i + batchSize], y[i:i + batchSize])
-
-
-# construct the argument parse and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-e", "--epochs", type=float, default=100,
-                help="# of epochs")
-ap.add_argument("-a", "--alpha", type=float, default=0.01,
-                help="learning rate")
-ap.add_argument("-b", "--batch-size", type=int, default=32,
-                help="size of SGD mini-batches")
-args = vars(ap.parse_args())
-
-# generate a 2-class classification problem with 400 data points,
-# where each data point is a 2D feature vector
-(X, y) = make_blobs(n_samples=400, n_features=2, centers=2,
-                    cluster_std=2.5, random_state=95)
-
-# insert a column of 1's as the first entry in the feature
-# vector -- this is a little trick that allows us to treat
-# the bias as a trainable parameter *within* the weight matrix
-# rather than an entirely separate variable
-X = np.c_[np.ones((X.shape[0])), X]
-# initialize our weight matrix such it has the same number of
-# columns as our input features
-print("[INFO] starting training...")
-W = np.random.uniform(size=(X.shape[1],))
-# initialize a list to store the loss value for each epoch
-lossHistory = []
-
-# loop over the desired number of epochs
-for epoch in np.arange(0, args["epochs"]):
-    # initialize the total loss for the epoch
-    epochLoss = []
-    # loop over our data in batches
-    for (batchX, batchY) in next_batch(X, y, args["batch_size"]):
-        # take the dot product between our current batch of
-        # features and weight matrix `W`, then pass this value
-        # through the sigmoid activation function
-        preds = sigmoid_activation(batchX.dot(W))
-        # now that we have our predictions, we need to determine
-        # our `error`, which is the difference between our predictions
-        # and the true values
-        error = preds - batchY
-        # given our `error`, we can compute the total loss value on
-        # the batch as the sum of squared loss
-        loss = np.sum(error ** 2)
-        epochLoss.append(loss)
-        # the gradient update is therefore the dot product between
-        # the transpose of our current batch and the error on the
-        # # batch
-        gradient = batchX.T.dot(error) / batchX.shape[0]
-        # use the gradient computed on the current batch to take
-        # a "step" in the correct direction
-        W += -args["alpha"] * gradient
-    # update our loss history list by taking the average loss
-    # across all batches
-    lossHistory.append(np.average(epochLoss))
-
-# compute the line of best fit by setting the sigmoid function
-# to 0 and solving for X2 in terms of X1
-Y = (-W[0] - (W[1] * X)) / W[2]
-# plot the original data along with our line of best fit
-plt.figure()
-plt.scatter(X[:, 1], X[:, 2], marker="o", c=y)
-plt.plot(X, Y, "r-")
-# construct a figure that plots the loss over time
-fig = plt.figure()
-plt.plot(np.arange(0, args["epochs"]), lossHistory)
-fig.suptitle("Training Loss")
-plt.xlabel("Epoch #")
-plt.ylabel("Loss")
-plt.show()
-```
 
 <p align="center"><img src="./images/mini_batch_GD_logistic_regression_graph1.png"><br/><img src="./images/mini_batch_GD_logistic_regression_graph2.png"></p>
 
 <hr>
 
-## 4. Visualization of Different Optimizers
+## 6. Visualization of Different Optimizers
 
 <p align="center"><img src="./images/visualization_of_optimization_methods.gif" width="500px"><br/>(<a href="https://towardsdatascience.com/why-visualize-gradient-descent-optimization-algorithms-a393806eee2">image source</a>; see also <a href="https://github.com/ilguyi/optimizers.numpy">here</a>)</p>
 
