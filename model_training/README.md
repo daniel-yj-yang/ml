@@ -6,7 +6,7 @@
 
 ## 2. <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>
 
-A **first-order** (namely, an algorithm that requires at least one first-derivative/gradient) iterative optimization algorithm that finds the weights or coefficients that reach a local minimum of a differentiable function.
+A **first-order** (namely, an algorithm that requires at least one first-derivative/gradient) iterative **optimization** algorithm that finds the weights or coefficients that reach a local minimum of a differentiable function.
 
 #### Step#1: The model makes predictions on training data.
 #### Step#2: Using the error on the predictions to update the model in such a way as to minimize the error.
