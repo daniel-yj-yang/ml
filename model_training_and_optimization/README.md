@@ -51,6 +51,8 @@ Learning rate | Number of iterations (epochs) | Decision Boundary | Training Los
 --- | --- | --- | ---
 0.1 | 500 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch.png" width="400px">
 
+My <a href="./batch_gradient_descent/">Python code</a> that produced the results
+
 <hr>
 
 #### Python code examples
