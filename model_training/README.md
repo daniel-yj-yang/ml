@@ -8,7 +8,7 @@
 
 A **first-order** (namely, an algorithm that requires at least one first-derivative/gradient) iterative optimization algorithm that finds the weights or coefficients that reach a local minimum of a differentiable function.
 
-#### Step#1: The model make predictions on training data.
+#### Step#1: The model makes predictions on training data.
 #### Step#2: Using the error on the predictions to update the model in the direction of reducing the error.
 
 Analogy | Gradient Descent
@@ -18,7 +18,7 @@ Analogy | Gradient Descent
 3.&nbsp;The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of the error surface at that point
 4.&nbsp;The instrument used to measure steepness | differentiation (derivative) of the cost function
 5.&nbsp;The amount of time they travel before taking another measurement | the learning rate of the algorithm
-6.&nbsp;The altitude of the person's location | the error the model make when predicting on training data
+6.&nbsp;The altitude of the person's location | the error the model makes when predicting on training data
 
 <p align="center"><img src="./images/gradient_descent.png" width="500px"></p>
 
