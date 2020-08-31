@@ -15,3 +15,5 @@ Path taken down the mountain | The sequence of parameter settings that the algor
 The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of the error surface at that point
 The instrument used to measure steepness | differentiation of the error function
 The amount of time they travel before taking another measurement | the learning rate of the algorithm
+
+<p align="center"><img src="./images/gradient_descent.png" width="500px"></p>
