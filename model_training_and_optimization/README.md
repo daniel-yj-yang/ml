@@ -33,9 +33,9 @@ Mini-Batch | - The common ground between batch and SGD.<br/>- Use n data points 
 
 Gradient Descent Approach | Pros | Cons
 --- | --- | ---
-Batch |
-Stochastic |
-Mini-Batch |
+Batch | - More stable convergence | - May have local minimum<br/>- Very slow for large data sets<br/>- Take a lot of memory
+Stochastic | - Faster learning for large data sets<br/>- May avoid local minimum due to the noise | - Harder to converge<br/>- Higher variance
+Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>- Take less memory than batch<br/> | - Need to specify n (mini-batch size, usually 32)
 
 
 ### Visualization of Gradident Descent
