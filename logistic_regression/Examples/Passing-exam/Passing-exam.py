@@ -5,6 +5,11 @@ Created on Wed Feb 21 21:35:32 2018
 
 @author: Daniel Yang, Ph.D. (daniel.yj.yang@gmail.com)
 """
+import argparse
+from sklearn.datasets.samples_generator import make_blobs
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import SGDClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -32,12 +37,16 @@ print("4. The dependent variable is not measured on an interval or ratio scale.\
 
 
 # Data Source: https://en.wikipedia.org/wiki/Logistic_regression
-data = pd.read_csv("/Users/daniel/My-Files/My-Projects/GitHub/ml/logistic_regression/Examples/Passing-exam/Passing-exam.csv")
-y = data['Pass']   # Binary DV
-X = data['Hours']  # Continuous IV
-
+data = pd.read_csv(
+    "/Users/daniel/My-Files/My-Projects/GitHub/ml/logistic_regression/Examples/Passing-exam/Passing-exam.csv")
+y_original = data['Pass']   # Binary DV
+X_original = data['Hours']  # Continuous IV
 
 # Method 1 - Based on Scikit-Learn
+X = X_original
+y = y_original
+
+
 def LogisticRegression_based_on_sklearn(y_pd_series, X_pd_series):
     X_data = np.reshape(X_pd_series.values, (-1, 1))  # 1D to 2D array
     y_data = y_pd_series.values
@@ -52,6 +61,10 @@ def LogisticRegression_based_on_sklearn(y_pd_series, X_pd_series):
 
 
 # Method 2 - Based on StatsModels
+X = X_original
+y = y_original
+
+
 def LogisticRegression_based_on_statsmodels(y_pd_series, X_pd_series):
     # fit_intercept
     model = Logit(endog=y_pd_series, exog=add_constant(X_pd_series))
@@ -64,18 +77,18 @@ def LogisticRegression_based_on_statsmodels(y_pd_series, X_pd_series):
 (beta0, beta1) = LogisticRegression_based_on_statsmodels(y, X)
 
 
-# Method 3 - sklearn.linear_model.SGDClassifier
-from sklearn.linear_model import SGDClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
+# Method 4 - sklearn.linear_model.SGDClassifier
+
+X = X_original
+y = y_original
 
 # Always scale the input. The most convenient way is to use a pipeline.
 clf = make_pipeline(StandardScaler(),
-                    SGDClassifier(loss="log", max_iter=1000, tol=1e-3))
-clf.fit(np.array(X).reshape(-1,1), y)
-print(clf.predict([[4]]))
-
-
+                    SGDClassifier(loss="log", penalty=None, max_iter=10000, tol=1e-5))
+#clf = SGDClassifier(loss="log", max_iter=1000, tol=1e-3)
+clf.fit(np.array(X).reshape(-1, 1), np.array(y))
+print(clf['sgdclassifier'].intercept_)
+print(clf['sgdclassifier'].coef_)
 
 
 # Visualization
@@ -103,7 +116,12 @@ plt.show()
 
 sys.exit("STOP")
 
-# Method 4 - Linear Regression
+# Method 5 - Linear Regression
+
+X = X_original
+y = y_original
+
+
 def LinearRegression_based_on_statsmodels(y_pd_series, X_pd_series):
     model = OLS(endog=y_pd_series, exog=add_constant(X_pd_series))
     result = model.fit()
