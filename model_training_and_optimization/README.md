@@ -51,3 +51,4 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 References:
 - <a href="https://www.geeksforgeeks.org/ml-momentum-based-gradient-optimizer-introduction/?ref=lbp">Momentum-based</a> gradient optimizer
+- <a href="https://www.geeksforgeeks.org/ml-xgboost-extreme-gradient-boosting/?ref=lbp">eXtreme Gradient Boosting</a>
