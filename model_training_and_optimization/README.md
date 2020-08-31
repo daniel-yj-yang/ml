@@ -190,7 +190,7 @@ plt.ylabel("Loss")
 plt.show()
 ```
 
-<p><img src="./images/mini_batch_GD_logistic_regression_graph1.png"><img src="./images/mini_batch_GD_logistic_regression_graph2.png"></p>
+<p align="center"><img src="./images/mini_batch_GD_logistic_regression_graph1.png"><br/><img src="./images/mini_batch_GD_logistic_regression_graph2.png"></p>
 
 <hr>
 
