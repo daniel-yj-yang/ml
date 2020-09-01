@@ -23,9 +23,10 @@ plt.rcParams.update({'font.size': 16})
 rc('animation', html='html5')
 
 # Source: https://towardsdatascience.com/understanding-logistic-regression-step-by-step-704a78be7e0a
-data = pd.read_csv('/Users/daniel/Data-Science/Data/Gender/01_heights_weights_genders.csv')
+data = pd.read_csv(
+    '/Users/daniel/Data-Science/Data/Gender/01_heights_weights_genders.csv')
 y = data['Gender']
-X = data[['Height','Weight']]
+X = data[['Height', 'Weight']]
 
 y = y.map({'Female': 0, 'Male': 1})
 
@@ -111,15 +112,15 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         print(LR_model.intercept_, LR_model.coef_)
         #predicted_classes = LR_model.predict(X)
         #accuracy = accuracy_score(y.flatten(), predicted_classes)
-        #print(accuracy)
+        # print(accuracy)
         return LR_model
 
     def statsmodels_Logit(self, X, y):
         model = Logit(endog=y, exog=add_constant(X))
         results = model.fit(maxiter=10000)
-        #print(results.summary())
-        #print(results.summary2())
-        return results # see results.params.values
+        # print(results.summary())
+        # print(results.summary2())
+        return results  # see results.params.values
 
     def plot_decision_boundary(self, epoch=None):
 
@@ -151,7 +152,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         LR_model_statsmodel = self.statsmodels_Logit(self.X, self.y)
         params_estimates = LR_model_statsmodel.params.values
         X2_values_Logit = (-params_estimates[0] -
-                     np.dot( params_estimates[1], X1_values)) / params_estimates[2]
+                           np.dot(params_estimates[1], X1_values)) / params_estimates[2]
 
         plt.plot(X1_values, X2_values_Logit, color='blue',
                  linestyle='dashed', label='statsmodels Logit solution')
@@ -172,7 +173,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         plt.show()
 
     # see also https://xavierbourretsicotte.github.io/animation_ridge.html
-    def animate_decision_boundary(self):
+    def animate_decision_boundary(self, compare_to_Logit=True):
 
         LR_model_statsmodel = self.statsmodels_Logit(self.X, self.y)
         params_estimates = LR_model_statsmodel.params.values
@@ -180,9 +181,13 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         # First set up the figure, the axis, and the plot element we want to animate
         fig1, ax1 = plt.subplots(figsize=(8, 8))
         line1, = ax1.plot([], [], color='red', linestyle='dashed',
-                         label='BGD decision boundary', lw=1.5)
-        line2, = ax1.plot([], [], color='blue', linestyle='dashed',
-                          label='statsmodels Logit solution', lw=1.5)
+                          label='BGD decision boundary', lw=1.5)
+        if(compare_to_Logit):
+            line2, = ax1.plot([], [], color='blue', linestyle='dashed',
+                              label='statsmodels Logit solution', lw=1.5)
+        else:
+            line2, = ax1.plot([], [])
+
         point, = ax1.plot([], [], '*', color='red', markersize=4)
         value_display = ax1.text(0.72, 0.02, '', transform=ax1.transAxes)
         # https://stackoverflow.com/questions/9401658/how-to-animate-a-scatter-plot?rq=1
@@ -208,9 +213,12 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
                          np.dot(this_theta[1], X1_values)) / this_theta[2]
             line1.set_data(X1_values, X2_values)
 
-            X2_values_Logit= (-params_estimates[0] -
-                     np.dot( params_estimates[1], X1_values)) / params_estimates[2]
-            line2.set_data(X1_values, X2_values_Logit)
+            if(compare_to_Logit):
+                X2_values_Logit = (-params_estimates[0] -
+                                   np.dot(params_estimates[1], X1_values)) / params_estimates[2]
+                line2.set_data(X1_values, X2_values_Logit)
+            else:
+                line2.set_data([], [])
 
             #print(epoch, X1_values, X2_values)
 
@@ -226,8 +234,14 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 
             # https://stackoverflow.com/questions/43674917/animation-in-matplotlib-with-scatter-and-using-set-offsets-autoscale-of-figure
             # scale
-            ax1.set_xlim(     np.min(self.X[:, 1])                                           -0.1,     np.max(self.X[:, 1])                                           +0.1 )
-            ax1.set_ylim( min(np.min(self.X[:, 2]),np.min(X2_values),np.min(X2_values_Logit))-0.1, max(np.max(self.X[:, 2]),np.max(X2_values),np.max(X2_values_Logit))+0.1 )
+            ax1.set_xlim(np.min(self.X[:, 1]) - 0.1,
+                         np.max(self.X[:, 1]) + 0.1)
+            if(compare_to_Logit):
+                ax1.set_ylim(min(np.min(self.X[:, 2]), np.min(X2_values), np.min(
+                    X2_values_Logit))-0.1, max(np.max(self.X[:, 2]), np.max(X2_values), np.max(X2_values_Logit))+0.1)
+            else:
+                ax1.set_ylim(min(np.min(self.X[:, 2]), np.min(
+                    X2_values))-0.1, max(np.max(self.X[:, 2]), np.max(X2_values))+0.1)
 
             return line1, line2, point, value_display, scatterplot
 
@@ -248,10 +262,10 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 # 1. Batch gradient descent
 # https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 model = Logistic_regression_as_optimized_by_batch_gradient_descent(
-    lr=0.0001, num_iter=300)
+    lr=0.0001, num_iter=3)
 model.fit(X, y)
 
-model.animate_decision_boundary()
+model.animate_decision_boundary(compare_to_Logit=True)
 
 model.plot_decision_boundary()
 
