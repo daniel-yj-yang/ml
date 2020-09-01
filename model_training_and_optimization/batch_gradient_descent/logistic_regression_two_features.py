@@ -40,7 +40,7 @@ y = y.map({'Female': 0, 'Male': 1})
 
 class Logistic_regression_as_optimized_by_batch_gradient_descent:
     def __init__(self, lr=0.01, num_iter=100000, fit_intercept=True, verbose=False):
-        self.lr = lr
+        self.alpha = lr
         self.num_iter = num_iter
         self.fit_intercept = fit_intercept
         self.verbose = verbose
@@ -84,7 +84,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 
             # Step #3: Specifically, the update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
 
-            self.theta -= self.lr * gradient
+            self.theta -= self.alpha * gradient
 
             # self.theta = [0,0,0] is not good for plotting, so starting from here
             self.training_History.append([loss, self.theta.tolist()])
