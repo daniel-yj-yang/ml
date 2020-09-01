@@ -8,13 +8,13 @@
 
 A **first-order** (namely, a method that requires at least one first-derivative/gradient) iterative **optimization** method that finds the weights or coefficients that reach a local minimum of a differentiable function, <a href="./cost.md">the error/cost function, J(θ)</a>
 
-#### Step #1: The model makes predictions on training data.
-#### Step #2: Using the <a href="./cost.md">error</a> on the predictions to update the model in such a way as to minimize the <a href="./cost.md">error</a>.
-#### Step #3: Specifically, the update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
+#### Step #1: The model makes predictions on training data using some ballpark θ and a given algorithm.
+#### Step #2: The model calculates the <a href="./cost.md">error/loss</a>, which is a way to quantify how good the predictions are.
+#### Step #3: The model tries to minimize the <a href="./cost.md">error/loss</a>, which can be expressed as a function of its parameters θ via a <a href="./cost.md">cost function J(θ)</a>, by adjusting θ so that error/loss can be reduced along the gradient (slope) of the cost function.
 
 Analogy | Gradient Descent
 --- | ---
-1.&nbsp;A person, who is stuck in the mountain and trying to get down | the method, which is somewhere in the errors surface and trying to find θ that globally minimizes J(θ)
+1.&nbsp;A person, who is stuck in the mountain and trying to get down | the optimization method, which is somewhere in the errors surface and trying to find θ that globally minimizes J(θ)
 2.&nbsp;Path taken down the mountain | the sequence of θ parameters (coefficients or weights) that the algorithm will explore
 3.&nbsp;The steepness of the hill (the direction to travel is the steepest descent) | the slope/gradient of J(θ) with respect to θ
 4.&nbsp;The instrument used to measure steepness | differentiation of the cost function, the **partial derivative of J(θ) with respect to θ**
@@ -58,7 +58,7 @@ Gender | 0.001 | 300 | <img src="./batch_gradient_descent/images/data=gender_log
 
 References:
 - My own <a href="./batch_gradient_descent/logistic_regression_two_features.py">Python code</a> that produced the results
-- For animations techniques, see <a href="./batch_gradient_descent/animation.py">python</a> and <a href="./batch_gradient_descent/animation.ipynb">ipynb</a>
+- For animations techniques, please see <a href="./batch_gradient_descent/animation.py">python</a> and <a href="./batch_gradient_descent/animation.ipynb">ipynb</a>
 
 <hr>
 
@@ -110,7 +110,7 @@ Python <a href="./mini_batch_GD_logistic_regression.py">code</a>
 
 ## 6. Visualization of Different Optimizers
 
-<p align="center"><img src="./images/visualization_of_optimization_methods.gif" width="500px"><br/>(<a href="https://towardsdatascience.com/why-visualize-gradient-descent-optimization-algorithms-a393806eee2">image source</a>; see also <a href="https://github.com/ilguyi/optimizers.numpy">here</a>)</p>
+<p align="center"><img src="./images/visualization_of_optimization_methods.gif" width="500px"><br/>(<a href="https://towardsdatascience.com/why-visualize-gradient-descent-optimization-algorithms-a393806eee2">image source</a>; also see <a href="https://github.com/ilguyi/optimizers.numpy">here</a>)</p>
 
 References:
 - <a href="https://www.geeksforgeeks.org/ml-momentum-based-gradient-optimizer-introduction/?ref=lbp">Momentum-based</a> gradient optimizer
