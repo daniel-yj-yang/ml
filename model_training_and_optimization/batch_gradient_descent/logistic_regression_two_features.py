@@ -30,9 +30,9 @@ X = data[['Height', 'Weight']]
 
 y = y.map({'Female': 0, 'Male': 1})
 
-#iris = datasets.load_iris()
-#X = iris.data[:, :2]
-#y = (iris.target != 0) * 1
+iris = datasets.load_iris()
+X = iris.data[:, :2]
+y = (iris.target != 0) * 1
 
 # modified but a very early version was based on https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 
@@ -175,8 +175,9 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
     # see also https://xavierbourretsicotte.github.io/animation_ridge.html
     def animate_decision_boundary(self, compare_to_Logit=True):
 
-        LR_model_statsmodel = self.statsmodels_Logit(self.X, self.y)
-        params_estimates = LR_model_statsmodel.params.values
+        if(compare_to_Logit):
+            LR_model_statsmodel = self.statsmodels_Logit(self.X, self.y)
+            params_estimates = LR_model_statsmodel.params.values
 
         # First set up the figure, the axis, and the plot element we want to animate
         fig1, ax1 = plt.subplots(figsize=(8, 8))
@@ -262,10 +263,10 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 # 1. Batch gradient descent
 # https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 model = Logistic_regression_as_optimized_by_batch_gradient_descent(
-    lr=0.00025, num_iter=300)
+    lr=0.5, num_iter=500)
 model.fit(X, y)
 
-model.animate_decision_boundary(compare_to_Logit=True)
+model.animate_decision_boundary(compare_to_Logit=False)
 
 model.plot_decision_boundary()
 
