@@ -47,10 +47,12 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 ## 3. Example of batch gradient descent -- logistic regression with two features
 
-Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss
+Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss
 --- | --- | --- | ---
-0.1 | 500 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_learning=0.1_epochs=500.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_learning=0.1_epochs=500.png" width="400px">
-0.2 | 1000 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_learning=0.2_epochs=1000.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_learning=0.2_epochs=1000.png" width="400px">
+Binarized iris | 0.1 | 500 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=iris_learning=0.1_epochs=500.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=iris_learning=0.1_epochs=500.png" width="400px">
+Binarized iris | 0.2 | 1000 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=iris_learning=0.2_epochs=1000.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=iris_learning=0.2_epochs=1000.png" width="400px">
+Gender | 0.00025 | 1000 | --- | ---
+Gender | 0.001 | 1000 | --- | ---
 
 References:
 - My own <a href="./batch_gradient_descent/logistic_regression_two_features.py">Python code</a> that produced the results
