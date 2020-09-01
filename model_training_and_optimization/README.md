@@ -54,7 +54,7 @@ Binarized iris* | 0.5 | 300 | <img src="./batch_gradient_descent/images/logistic
 Gender | 0.00025 | 300 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=gender_learning=0.00025_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=gender_learning=0.00025_epochs=300.png" width="400px">
 Gender | 0.0001 | 300 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=gender_learning=0.0001_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=gender_learning=0.0001_epochs=300.png" width="400px">
 
-\*statsmodel.Logit() cannot be used to estimate coefficients here, due to "Perfect separation detected, results not available". This speaks to the importance of using gradient descent method.
+\*statsmodel.Logit() cannot be used to estimate coefficients here, due to "Perfect separation detected, results not available". This speaks to the importance of using gradient descent method.<br/>
 \*\*Due to a simplified version of the cost function implemented in the code; it could be improved by using <a href="./error.md">the cross-entropy log loss function</a>.
 
 References:
