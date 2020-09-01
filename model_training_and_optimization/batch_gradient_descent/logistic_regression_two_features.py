@@ -184,7 +184,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         line2, = ax1.plot([], [], color='blue', linestyle='dashed',
                           label='statsmodels Logit solution', lw=1.5)
         point, = ax1.plot([], [], '*', color='red', markersize=4)
-        value_display = ax1.text(4.02, 0.02, '', transform=ax1.transAxes)
+        value_display = ax1.text(0.72, 0.02, '', transform=ax1.transAxes)
         # https://stackoverflow.com/questions/9401658/how-to-animate-a-scatter-plot?rq=1
         scatterplot = ax1.scatter([], [], marker="o")
         plt.xlabel('X1')
@@ -248,7 +248,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 # 1. Batch gradient descent
 # https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 model = Logistic_regression_as_optimized_by_batch_gradient_descent(
-    lr=0.00025, num_iter=300)
+    lr=0.0001, num_iter=300)
 model.fit(X, y)
 
 model.animate_decision_boundary()
