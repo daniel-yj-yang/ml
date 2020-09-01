@@ -1,4 +1,4 @@
-Importantly, cost function **connects the algorithm's θ with its prediction loss (error)**, just like how a person (the optimization method) trying to walk down a path (θ's) in an error mountain/surface* (the higher the altitude the greater the error) could translate the location (θ) in a path (θ's) to the corresponding altitude (the loss/error).
+Importantly, cost function **connects the algorithm's θ with its prediction loss (error)**, just like how a person (the optimization method) trying to walk down a path (θ's) in an error mountain/surface* (the higher the altitude the greater the error) could translate the current effort (θ) in an effort path (θ's) to the corresponding altitude (the loss/error).
 
 \*The error mountain/surface describes the relationship between an algorithm and the ground truth.
 
