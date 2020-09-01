@@ -76,7 +76,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 
             # Step #2: Using the error on the predictions to update the model in such a way as to minimize the error.
 
-            error = h - self.y
+            error = h - self.y # it is better to use cross-entropy than this non-convex error function
             loss = np.sum(error ** 2)
 
             #self.training_History.append([loss, self.theta.tolist()])
