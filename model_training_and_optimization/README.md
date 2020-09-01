@@ -6,10 +6,10 @@
 
 ## 2. <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>
 
-A **first-order** (namely, a method that requires at least one first-derivative/gradient) iterative **optimization** method that finds the weights or coefficients that reach a local minimum of a differentiable function, <a href="./error.md">the error/cost function, J(θ)</a>
+A **first-order** (namely, a method that requires at least one first-derivative/gradient) iterative **optimization** method that finds the weights or coefficients that reach a local minimum of a differentiable function, <a href="./cost.md">the error/cost function, J(θ)</a>
 
 #### Step #1: The model makes predictions on training data.
-#### Step #2: Using the <a href="./error.md">error</a> on the predictions to update the model in such a way as to minimize the <a href="./error.md">error</a>.
+#### Step #2: Using the <a href="./cost.md">error</a> on the predictions to update the model in such a way as to minimize the <a href="./cost.md">error</a>.
 #### Step #3: Specifically, the update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
 
 Analogy | Gradient Descent
@@ -47,7 +47,7 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 ## 3. Example of batch gradient descent -- logistic regression with two features
 
-Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss, <a href="./error.md">J(θ)</a>
+Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss, <a href="./cost.md">J(θ)</a>
 --- | --- | --- | --- | ---
 Binarized iris* | 0.1 | 300 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=iris_learning=0.1_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=iris_learning=0.1_epochs=300.png" width="400px">
 Binarized iris* | 0.5 | 300 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=iris_learning=0.5_epochs=300.gif" width="450px"><br/>This wavy, non-convex graph is expected\*\* | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=iris_learning=0.5_epochs=300.png" width="400px">
@@ -55,7 +55,7 @@ Gender | 0.00025 | 300 | <img src="./batch_gradient_descent/images/logistic_regr
 Gender | 0.001 | 300 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=gender_learning=0.001_epochs=300.gif" width="450px"><br/>This wavy, non-convex graph is expected\*\* | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=gender_learning=0.001_epochs=300.png" width="400px">
 
 \*statsmodel.Logit() cannot be used to estimate coefficients here, due to "Perfect separation detected, results not available". This speaks to the importance of using gradient descent method.<br/>
-\*\*Due to a simplified version of the cost function implemented in the code; it could be improved by using <a href="./error.md">the cross-entropy log loss function</a>.
+\*\*Due to a simplified version of the cost function implemented in the code; it could be improved by using <a href="./cost.md">the cross-entropy log loss function</a>.
 
 References:
 - My own <a href="./batch_gradient_descent/logistic_regression_two_features.py">Python code</a> that produced the results
