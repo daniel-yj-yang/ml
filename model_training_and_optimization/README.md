@@ -58,7 +58,7 @@ Gender | 0.0001 | 300 | <img src="./batch_gradient_descent/images/logistic_regre
 
 References:
 - My own <a href="./batch_gradient_descent/logistic_regression_two_features.py">Python code</a> that produced the results
-- For producing animations, <a href="./batch_gradient_descent/animation.py">python</a> and <a href="./batch_gradient_descent/animation.ipynb">ipynb</a>
+- For animations, see <a href="./batch_gradient_descent/animation.py">python</a> and <a href="./batch_gradient_descent/animation.ipynb">ipynb</a>
 
 <hr>
 
