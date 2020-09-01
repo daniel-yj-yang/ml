@@ -29,9 +29,9 @@ y = data['Gender']
 X = data[['Height', 'Weight']]
 y = y.map({'Female': 0, 'Male': 1})
 
-#iris = datasets.load_iris()
-#X = iris.data[:, :2]
-#y = (iris.target != 0) * 1
+iris = datasets.load_iris()
+X = iris.data[:, :2]
+y = (iris.target != 0) * 1
 
 # modified but a very early version was based on https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 
@@ -268,10 +268,10 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 # 1. Batch gradient descent
 # https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 model = Logistic_regression_as_optimized_by_batch_gradient_descent(
-    lr=0.001, num_iter=300)
+    lr=0.5, num_iter=300)
 model.fit(X, y)
 
-model.animate_decision_boundary(compare_to_Logit=True)
+model.animate_decision_boundary(compare_to_Logit=False)
 
 model.plot_decision_boundary()
 
