@@ -77,7 +77,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
             if self.use_simplified_cost:
 
                 # Step #2: Using the error on the predictions to update the model in such a way as to minimize the error.
-                error = h - self.y # it is better to use cross-entropy than this non-convex error function
+                error = h - self.y  # it is better to use cross-entropy than this non-convex error function
                 loss = np.sum(error ** 2)
                 #self.training_History.append([loss, self.theta.tolist()])
                 gradient = np.dot(self.X.T, error) / self.y.size
@@ -85,7 +85,8 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
             else:
 
                 # cross-entropy, log loss function
-                loss = (-np.dot(y.T, np.log(h)) - np.dot((1-y).T, np.log(1-h))) / self.y.size
+                loss = (-np.dot(y.T, np.log(h)) -
+                        np.dot((1-y).T, np.log(1-h))) / self.y.size
                 gradient = np.dot(self.X.T, (h - self.y)) / self.y.size
 
             # Step #3: Specifically, the update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
@@ -188,7 +189,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
         fig1, ax1 = plt.subplots(figsize=(8, 8))
         line1, = ax1.plot([], [], color='red', linestyle='dashed',
                           label='BGD decision boundary', lw=1.5)
-        if compare_to_Logit :
+        if compare_to_Logit:
             line2, = ax1.plot([], [], color='blue', linestyle='dashed',
                               label='statsmodels Logit solution', lw=1.5)
         else:
@@ -242,7 +243,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
             # scale
             ax1.set_xlim(np.min(self.X[:, 1]) - 0.1,
                          np.max(self.X[:, 1]) + 0.1)
-            if compare_to_Logit :
+            if compare_to_Logit:
                 ax1.set_ylim(min(np.min(self.X[:, 2]), np.min(X2_values), np.min(
                     X2_values_Logit))-0.1, max(np.max(self.X[:, 2]), np.max(X2_values), np.max(X2_values_Logit))+0.1)
             else:
