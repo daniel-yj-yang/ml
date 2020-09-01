@@ -1,3 +1,3 @@
-Algorithm | Cost function, the difference between y_hat = h<sub>θ</sub>(x) and y
+Algorithm | Cost function, the difference between y and y_hat (= y_pred = h<sub>θ</sub>(x))
 --- | ---
-a | b
+Linear Regression | (y_hat - y)<sup>2</sup>
