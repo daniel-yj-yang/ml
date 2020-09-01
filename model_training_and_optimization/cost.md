@@ -1,4 +1,4 @@
-Importantly, cost function connects the algorithm's θ and its prediction loss (error), just like how a person going down a path (θ) in a mountain could evaluate how
+Importantly, cost function connects the algorithm's θ and its prediction loss (error), just like how a person walking down a path (θ) in a mountain could evaluate how good the person's direction correctness
 
 Cost function measures the difference between y and y_pred (= y_hat = h<sub>θ</sub>(x)).
 
