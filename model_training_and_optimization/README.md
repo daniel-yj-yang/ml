@@ -10,7 +10,7 @@ A **first-order** (namely, a method that requires at least one first-derivative/
 
 #### Step #1: The model makes predictions on training data first.
 #### Step #2: The model calculates the <a href="./cost.md">error/loss</a>, which is a way to quantify how good the predictions are.
-#### Step #3: The model tries to minimize the <a href="./cost.md">error/loss</a>, which can be expressed as a function of its parameters θ, namely, a <a href="./cost.md">cost function J(θ)</a>, by adjusting θ so that error can be reduced along the gradient (slope) of the cost function.
+#### Step #3: The model tries to minimize the <a href="./cost.md">error/loss</a>, which can be expressed as a function of its parameters θ via a <a href="./cost.md">cost function J(θ)</a>, by adjusting θ so that error/loss can be reduced along the gradient (slope) of the cost function.
 
 Analogy | Gradient Descent
 --- | ---
