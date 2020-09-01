@@ -47,7 +47,7 @@ Mini-Batch | - More robust convergence than batch by avoiding local minimum<br/>
 
 ## 3. Example of batch gradient descent -- logistic regression with two features
 
-Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss
+Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss, <a href="./error.md">J(θ)</a>
 --- | --- | --- | --- | ---
 Binarized iris* | 0.1 | 300 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=iris_learning=0.1_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=iris_learning=0.1_epochs=300.png" width="400px">
 Binarized iris* | 0.5 | 300 | <img src="./batch_gradient_descent/images/logistic_regression_two_features_decision_boundary_animation_data=iris_learning=0.5_epochs=300.gif" width="450px"><br/>This wavy, non-convex graph is expected\*\* | <img src="./batch_gradient_descent/images/logistic_regression_two_features_loss_vs_epoch_data=iris_learning=0.5_epochs=300.png" width="400px">
