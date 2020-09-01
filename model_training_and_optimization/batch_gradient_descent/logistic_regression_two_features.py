@@ -262,7 +262,7 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 # 1. Batch gradient descent
 # https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 model = Logistic_regression_as_optimized_by_batch_gradient_descent(
-    lr=0.0001, num_iter=3)
+    lr=0.00025, num_iter=300)
 model.fit(X, y)
 
 model.animate_decision_boundary(compare_to_Logit=True)
