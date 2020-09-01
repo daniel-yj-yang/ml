@@ -6,10 +6,10 @@
 
 ## 2. <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a>
 
-A **first-order** (namely, a method that requires at least one first-derivative/gradient) iterative **optimization** method that finds the weights or coefficients that reach a local minimum of a differentiable function.
+A **first-order** (namely, a method that requires at least one first-derivative/gradient) iterative **optimization** method that finds the weights or coefficients that reach a local minimum of a differentiable function, <a href="./error.md">the error/cost function, J(θ)</a>
 
 #### Step #1: The model makes predictions on training data.
-#### Step #2: Using the error on the predictions to update the model in such a way as to minimize the error.
+#### Step #2: Using the <a href="./error.md">error</a> on the predictions to update the model in such a way as to minimize the <a href="./error.md">error</a>.
 #### Step #3: Specifically, the update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
 
 Analogy | Gradient Descent
