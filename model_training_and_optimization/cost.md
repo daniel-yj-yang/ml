@@ -1,4 +1,6 @@
-Importantly, cost function **connects the algorithm's θ with its prediction loss (error)**, just like how a person (the optimization method) trying to walk down a path (θ's) in an error mountain (the higher the altitude the greater the error) could translate the location (θ) in a path (θ's) to the corresponding altitude (the loss/error).
+Importantly, cost function **connects the algorithm's θ with its prediction loss (error)**, just like how a person (the optimization method) trying to walk down a path (θ's) in an error mountain* (the higher the altitude the greater the error) could translate the location (θ) in a path (θ's) to the corresponding altitude (the loss/error).
+
+\*The error mountain/surface describes the relationship between an algorithm and the ground truth.
 
 Cost function measures the difference between y and y_pred (= y_hat = h<sub>θ</sub>(x)).
 
