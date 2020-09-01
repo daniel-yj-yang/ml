@@ -1,6 +1,6 @@
 Cost function connects the algorithm's θ and its prediction loss (error).
 
-Cost function measures the difference between y and y_pred (= y_hat = h<sub>θ</sub>(x))
+Cost function measures the difference between y and y_pred (= y_hat = h<sub>θ</sub>(x)).
 
 Algorithm | y_pred | Implementation of the cost function, J(θ) = loss<br/>Generally, the idea is (y_pred - y)<sup>2</sup> | Implementation of the gradient<br/><img src="./images/partial_derivative.png" width="50px">
 --- | --- | --- | ---
