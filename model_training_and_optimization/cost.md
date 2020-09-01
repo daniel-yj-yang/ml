@@ -1,8 +1,8 @@
 Importantly, cost function **connects the algorithm's θ with its prediction loss (error)**, just like how a person (the optimization method) trying to walk down to the bottom in an error mountain/surface* (the higher the altitude the greater the error) could translate the current thinking (θ) in a thought path (θ's) to the corresponding altitude (the loss/error).
 
-\*The error mountain/surface describes the relationship between the ground truth (y) and an algorithm (making y_hat based on θ).
+\*The error mountain/surface describes the relationship between the ground truth (y) and an algorithm (h<sub>θ</sub>(x)).
 
-In other words, cost function connects the algorithm's θ with the difference between y and y_pred (= y_hat = h<sub>θ</sub>(x)).
+In other words, cost function connects the algorithm's θ with the difference between y and h<sub>θ</sub>(x) (= y_hat = y_pred).
 
 Algorithm | y_pred | Implementation of the cost function, J(θ) = loss<br/>Generally, the idea is (y_pred - y)<sup>2</sup> | Implementation of the gradient<br/><img src="./images/partial_derivative.png" width="50px">
 --- | --- | --- | ---
