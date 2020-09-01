@@ -74,32 +74,29 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
             z = np.dot(self.X, self.theta)
             h = self.__sigmoid(z)  # y-hat
 
+            # Step #2: Using the error on the predictions to update the model in such a way as to minimize the error.
             if self.use_simplified_cost:
-
-                # Step #2: Using the error on the predictions to update the model in such a way as to minimize the error.
                 error = h - self.y  # it is better to use cross-entropy than this non-convex error function
                 loss = np.sum(error ** 2)
                 #self.training_History.append([loss, self.theta.tolist()])
-                gradient = np.dot(self.X.T, error) / self.y.size
 
             else:
-
                 # cross-entropy, log loss function
-                loss = (-np.dot(y.T, np.log(h)) -
-                        np.dot((1-y).T, np.log(1-h))) / self.y.size
-                gradient = np.dot(self.X.T, (h - self.y)) / self.y.size
+                #loss = (-np.dot(y.T, np.log(h)) - np.dot((1-y).T, np.log(1-h))) / self.y.size
+                loss = self.__loss(h, self.y)
 
             # Step #3: Specifically, the update to model is to move it along a gradient (slope) of errors down toward a minimum error value.
-
+            gradient = np.dot(self.X.T, (h - self.y)) / self.y.size
             self.theta -= self.alpha * gradient
 
             # self.theta = [0,0,0] is not good for plotting, so starting from here
             self.training_History.append([loss, self.theta.tolist()])
 
             if(self.verbose == True and i % 10000 == 0):
-                z = np.dot(self.X, self.theta)
-                h = self.__sigmoid(z)
-                print(f'loss: {self.__loss(h, self.y)} \t')
+                #z = np.dot(self.X, self.theta)
+                #h = self.__sigmoid(z)
+                #print(f'loss: {self.__loss(h, self.y)} \t')
+                print('loss: {:f} \t'.format(loss))
 
     def predict_prob(self, X):
         if self.fit_intercept:
@@ -269,14 +266,13 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
 # 1. Batch gradient descent
 # https://medium.com/@martinpella/logistic-regression-from-scratch-in-python-124c5636b8ac
 model = Logistic_regression_as_optimized_by_batch_gradient_descent(
-    lr=0.5, num_iter=300)
+    lr=0.1, num_iter=300)
 model.fit(X, y)
+model.plot_loss_history()
 
 model.animate_decision_boundary(compare_to_Logit=False)
 
 model.plot_decision_boundary()
-
-model.plot_loss_history()
 
 print(model.theta)
 predicted_classes = model.predict(X)
