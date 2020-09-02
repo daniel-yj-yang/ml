@@ -144,3 +144,9 @@ ridge_reg_model_2 <- lm.ridge( Fertility ~ ., train, lambda = lambdas )
 #plot(ridge_reg_model_2)
 select(ridge_reg_model_2) # another way to obtain best lambda
 print('smallest value of GCV is another empirically derived index of best lambda')
+
+
+############################################################################################
+# 3. Lasso Regression
+## http://www.science.smith.edu/~jcrouser/SDS293/labs/lab10-r.html
+## https://www.r-bloggers.com/ridge-regression-and-the-lasso/
