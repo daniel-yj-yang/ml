@@ -17,6 +17,7 @@ import math
 import statistics
 import random
 import pandas as pd
+import numpy as np
 
 def eval_results(y, y_pred):
     SSE = sum((y_pred-y)**2)
@@ -74,7 +75,8 @@ eval_results(y_test,  y_test_pred_linearreg_2 )
 # 2. Ridge Regression
 print('\n--------------------------\n2. Ridge Regression\n--------------------------')
 OLS_model = sm.OLS(y_train,X_train_sm)
-ridge_reg_model_1 = OLS_model.fit_regularized(L1_wt = 0.0, alpha = 100)
+# to tune alpha: https://stackoverflow.com/questions/41045752/using-statsmodel-estimations-with-scikit-learn-cross-validation-is-it-possible
+ridge_reg_model_1 = OLS_model.fit_regularized(L1_wt = 0.0, alpha = 0.008) # need to use some GridSearch to find out the best alpha
 print('\nstatsmodels')
 print(ridge_reg_model_1.params)
 y_train_pred_ridgereg_1 = ridge_reg_model_1.predict(X_train_sm)
@@ -84,8 +86,21 @@ eval_results(y_test,  y_test_pred_ridgereg_1 )
 
 
 from sklearn.linear_model import Ridge
-ridge_reg_model_2 = Ridge(alpha = 100)
-ridge_reg_model_2.fit(X_train,y_train)
+from sklearn.linear_model import RidgeCV
+from yellowbrick.regressor import AlphaSelection
+alphas = 10 ** np.linspace(start=1.3, stop=2, num=10000)
+clf = RidgeCV(alphas = alphas).fit(X_train, y_train)
+best_alpha = clf.alpha_
+print('\nbest alpha (lambda) = {:f}'.format(best_alpha))
+# https://www.scikit-yb.org/en/latest/api/regressor/alphas.html
+alphas = 10 ** np.linspace(start=1.3, stop=2, num=10000)
+model = RidgeCV(alphas=alphas)
+visualizer = AlphaSelection(model)
+visualizer.fit(X_train, y_train)
+visualizer.show()
+#
+ridge_reg_model_2 = Ridge(alpha = best_alpha, tol=1e-12, random_state=123)
+ridge_reg_model_2.fit(X_train, y_train)
 print('\nscikit-learn')
 print(ridge_reg_model_2.intercept_, ridge_reg_model_2.coef_)
 y_train_pred_ridgereg_2 = ridge_reg_model_2.predict(X_train)
