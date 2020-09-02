@@ -21,7 +21,7 @@ Algorithm / model | Type | Use case | Online demo / example
 <a href="SVM">Support Vector Machine</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="SVM">Example: R</a>
 <a href="Naive_Bayes">Naive Bayes</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="Naive_Bayes#examples">Examples: Python</a>
 <a href="linear_regression">Linear Regression</a> | Supervised | To explain sales via advertising budget | <a href="./linear_regression/multiple_regression.md">Example: R</a>
-<a href="logistic_regression">Logistic Regression</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="https://danielyang.shinyapps.io/Logistic_Regression/">Demo: Running logistic regression with retail data</a> (\*<b>interactive</b>\*)
+<a href="logistic_regression">Logistic Regression</a> | Supervised | To predict consumer's dichotomous purchasing decision | (1) <a href="logistic_regression">Example: Python</a>; (2) <a href="https://danielyang.shinyapps.io/Logistic_Regression/">Demo: Running logistic regression with retail data</a> (\*<b>interactive</b>\*)
 <a href="decision_trees">Decision Trees</a> | Supervised | To predict consumer's decision of purchasing | <a href="https://github.com/daniel-yj-yang/ML-retail-analytics/blob/master/decision_trees/DT_Purchasing.ipynb">Example: Decision trees of consumer purchasing</a>
 
 <hr>

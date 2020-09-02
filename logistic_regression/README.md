@@ -15,33 +15,28 @@ Related considerations:
 
 <hr>
 
-No. | Assumptions
---- | ---
-1 | Dependent Variable is binary or ordinal
-2 | Observations are independent of each other
-3 | Little or no multicollinearity among the independent variables
-4 | **Linearity of independent variables (the x) and log odds (the z)**
-5 | A large sample size. It needs at minimum of 10 cases with the least frequent outcome for each independent variable in your model.
+## Examples:
 
+### 1. Binaried iris and gender using batch gradient descent
 
-No. | It does not require the following
---- | ---
-1 | It does not need a linear relationship between the dependent and independent variables.
-2 | The error terms (residuals) do not need to be normally distributed.
-3 | Homoscedasticity is not required.
-4 | The dependent variable is not measured on an interval or ratio scale.
+Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss, J(θ), vs. epoch
+--- | --- | --- | --- | ---
+Binarized iris* | 0.1 | 300 | <img src="https://github.com/daniel-yj-yang/model_optimization/raw/master/batch_gradient_descent/images/data=iris_logistic_regression_two_features_decision_boundary_animation_learning=0.1_epochs=300.gif" width="450px"> | <img src="https://github.com/daniel-yj-yang/model_optimization/raw/master/batch_gradient_descent/images/data=iris_logistic_regression_two_features_loss_vs_epoch_learning=0.1_epochs=300.png" width="400px">
+Binarized iris* | 0.5 | 300 | <img src="https://github.com/daniel-yj-yang/model_optimization/raw/master/batch_gradient_descent/images/data=iris_logistic_regression_two_features_decision_boundary_animation_learning=0.5_epochs=300.gif" width="450px"> | <img src="https://github.com/daniel-yj-yang/model_optimization/raw/master/batch_gradient_descent/images/data=iris_logistic_regression_two_features_loss_vs_epoch_learning=0.5_epochs=300.png" width="400px">
+Gender | 0.00025 | 300 | <img src="https://github.com/daniel-yj-yang/model_optimization/raw/master/batch_gradient_descent/images/data=gender_logistic_regression_two_features_decision_boundary_animation_learning=0.00025_epochs=300.gif" width="450px"> | <img src="https://github.com/daniel-yj-yang/model_optimization/raw/master/batch_gradient_descent/images/data=gender_logistic_regression_two_features_loss_vs_epoch_learning=0.00025_epochs=300.png" width="400px">
+Gender | 0.001 | 300 | <img src="https://github.com/daniel-yj-yang/model_optimization/raw/master/batch_gradient_descent/images/data=gender_logistic_regression_two_features_decision_boundary_animation_learning=0.001_epochs=300.gif" width="450px"> | <img src="https://github.com/daniel-yj-yang/model_optimization/raw/master/batch_gradient_descent/images/data=gender_logistic_regression_two_features_loss_vs_epoch_learning=0.001_epochs=300.png" width="400px">
+
+See my <a href="https://github.com/daniel-yj-yang/model_optimization">optimization method page</a> for more details
 
 <hr>
 
-## Examples:
-
-### 1. Retail example
+### 2. Retail example
 
 Detailed explanation: <a href="https://danielyang.shinyapps.io/Logistic_Regression/">Online interactive demo of logistic regression</a>
 
 <hr>
 
-### 2. Passing exam
+### 3. Passing exam
 
 * Raw Data: <a href="./Examples/Passing-exam/Passing-exam.csv">CSV</a>; <a href="./Examples/Passing-exam/Passing-exam.sav">SPSS SAV</a>
 * Python: <a href="./Examples/Passing-exam/Passing-exam.py">Python Code</a>; <a href="./Examples/Passing-exam/Passing-exam.py.output">Python Output</a>
@@ -124,6 +119,24 @@ Cons | Logistic regression
 --- | ---
 1 | As a generalized linear model, it cannot solve non-linear hypothesis-space/decision-boundary problems (a decision tree would be better here)
 2 | Cannot solve non-categorical dependent variables
+
+<hr>
+
+No. | Assumptions
+--- | ---
+1 | Dependent Variable is binary or ordinal
+2 | Observations are independent of each other
+3 | Little or no multicollinearity among the independent variables
+4 | **Linearity of independent variables (the x) and log odds (the z)**
+5 | A large sample size. It needs at minimum of 10 cases with the least frequent outcome for each independent variable in your model.
+
+
+No. | It does not require the following
+--- | ---
+1 | It does not need a linear relationship between the dependent and independent variables.
+2 | The error terms (residuals) do not need to be normally distributed.
+3 | Homoscedasticity is not required.
+4 | The dependent variable is not measured on an interval or ratio scale.
 
 <hr>
 
