@@ -15,24 +15,6 @@ Related considerations:
 
 <hr>
 
-No. | Assumptions
---- | ---
-1 | Dependent Variable is binary or ordinal
-2 | Observations are independent of each other
-3 | Little or no multicollinearity among the independent variables
-4 | **Linearity of independent variables (the x) and log odds (the z)**
-5 | A large sample size. It needs at minimum of 10 cases with the least frequent outcome for each independent variable in your model.
-
-
-No. | It does not require the following
---- | ---
-1 | It does not need a linear relationship between the dependent and independent variables.
-2 | The error terms (residuals) do not need to be normally distributed.
-3 | Homoscedasticity is not required.
-4 | The dependent variable is not measured on an interval or ratio scale.
-
-<hr>
-
 ## Examples:
 
 ### 1. Binaried iris and gender using batch gradient descent
@@ -137,6 +119,24 @@ Cons | Logistic regression
 --- | ---
 1 | As a generalized linear model, it cannot solve non-linear hypothesis-space/decision-boundary problems (a decision tree would be better here)
 2 | Cannot solve non-categorical dependent variables
+
+<hr>
+
+No. | Assumptions
+--- | ---
+1 | Dependent Variable is binary or ordinal
+2 | Observations are independent of each other
+3 | Little or no multicollinearity among the independent variables
+4 | **Linearity of independent variables (the x) and log odds (the z)**
+5 | A large sample size. It needs at minimum of 10 cases with the least frequent outcome for each independent variable in your model.
+
+
+No. | It does not require the following
+--- | ---
+1 | It does not need a linear relationship between the dependent and independent variables.
+2 | The error terms (residuals) do not need to be normally distributed.
+3 | Homoscedasticity is not required.
+4 | The dependent variable is not measured on an interval or ratio scale.
 
 <hr>
 
