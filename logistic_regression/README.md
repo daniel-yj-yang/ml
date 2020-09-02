@@ -37,7 +37,7 @@ No. | It does not require the following
 
 ### 1. Binaried iris and gender using batch gradient descent
 
-Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss, <a href="./cost.md">J(θ)</a>
+Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss, J(θ)
 --- | --- | --- | --- | ---
 Binarized iris* | 0.1 | 300 | <img src="https://github.com/daniel-yj-yang/model_optimization/tree/master/batch_gradient_descent/images/data=iris_logistic_regression_two_features_decision_boundary_animation_learning=0.1_epochs=300.gif" width="450px"> | <img src="https://github.com/daniel-yj-yang/model_optimization/tree/master/batch_gradient_descent/images/data=iris_logistic_regression_two_features_loss_vs_epoch_learning=0.1_epochs=300.png" width="400px">
 Binarized iris* | 0.5 | 300 | <img src="./batch_gradient_descent/images/data=iris_logistic_regression_two_features_decision_boundary_animation_learning=0.5_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/data=iris_logistic_regression_two_features_loss_vs_epoch_learning=0.5_epochs=300.png" width="400px">
