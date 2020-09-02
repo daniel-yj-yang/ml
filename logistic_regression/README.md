@@ -37,6 +37,15 @@ No. | It does not require the following
 
 ### 1. Binaried iris and gender using batch gradient descent
 
+Dataset | Learning rate α | Number of iterations (epochs) | Decision Boundary | Training Loss, <a href="./cost.md">J(θ)</a>
+--- | --- | --- | --- | ---
+Binarized iris* | 0.1 | 300 | <img src="./batch_gradient_descent/images/data=iris_logistic_regression_two_features_decision_boundary_animation_learning=0.1_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/data=iris_logistic_regression_two_features_loss_vs_epoch_learning=0.1_epochs=300.png" width="400px">
+Binarized iris* | 0.5 | 300 | <img src="./batch_gradient_descent/images/data=iris_logistic_regression_two_features_decision_boundary_animation_learning=0.5_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/data=iris_logistic_regression_two_features_loss_vs_epoch_learning=0.5_epochs=300.png" width="400px">
+Gender | 0.00025 | 300 | <img src="./batch_gradient_descent/images/data=gender_logistic_regression_two_features_decision_boundary_animation_learning=0.00025_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/data=gender_logistic_regression_two_features_loss_vs_epoch_learning=0.00025_epochs=300.png" width="400px">
+Gender | 0.001 | 300 | <img src="./batch_gradient_descent/images/data=gender_logistic_regression_two_features_decision_boundary_animation_learning=0.001_epochs=300.gif" width="450px"> | <img src="./batch_gradient_descent/images/data=gender_logistic_regression_two_features_loss_vs_epoch_learning=0.001_epochs=300.png" width="400px">
+
+See my optimization method page for more details
+
 <hr>
 
 ### 2. Retail example
