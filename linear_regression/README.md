@@ -60,7 +60,7 @@ Model performance with <a href="./regularized_linear_regression.R">the testing s
 --- | --- | --- | ---
 RMSE | 418.3987| 374.5406 | 380.2771
 R<sup>2</sup> | 0.2209 | 0.3757 | 0.3564
-Coefficient | <img src="./images/linear_Hitter_coef.png" width="100px"> | <img src="./images/ridge_Hitter_coef.png" width="100px"> | <img src="./images/lasso_Hitter_coef.png" width="100px">
+Coefficient | <img src="./images/linear_Hitter_coef.png" width="200px"> | <img src="./images/ridge_Hitter_coef.png" width="200px"> | <img src="./images/lasso_Hitter_coef.png" width="200px">
 
 Compared to linear regression, both ridge and lasso regression appear to have improved the model performance.
 
