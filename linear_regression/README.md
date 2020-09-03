@@ -50,9 +50,9 @@ Model | Penalty | Description
 
 <hr>
 
-### Example: Ridge and Lasso Regression
+### Example: Ridge Regression (alpha=0) and Lasso Regression (alpha=1)
 
-λ is the only parameter to adjust. When λ increases, coefficients tend to shrink but MSE tends to increase (see graphs below). Thus, there exists a sweet spot where coefficients shrink and MSE is also the lowest. Because the implementations in R and Python are different, the coefficients across different implementations may not be directly comparable; however, the MSE/RMSE/R<sup>2</sup> are comparable.
+With each regression, λ is the only parameter to adjust. When λ increases, coefficients tend to shrink but MSE tends to increase (see graphs below). Thus, there exists a sweet spot where coefficients shrink and MSE is also the lowest. Because the implementations in R and Python are different, the coefficients across different implementations may not be directly comparable; however, the MSE/RMSE/R<sup>2</sup> are comparable.
 
 Regression | Coef vs log lambda | MSE vs. log lambda
 --- | --- | ---
