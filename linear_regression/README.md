@@ -52,8 +52,16 @@ Model | Penalty | Description
 
 ### Example: Ridge Regression
 
-λ is the only parameter to adjust. When λ increases, coefficients decrease but MSE increase. Thus, there is a sweet spot where coefficients shrink and MSE is also the lowest.
+λ is the only parameter to adjust. When λ increases, coefficients decrease but MSE increase. Thus, there is a sweet spot where coefficients shrink and MSE is also the lowest. Because the implementations in R and Python are different, the coefficients across different implementations are not directly comparable; only the MSE/RMSE/R<sup>2</sup> would be comparable.
 
 <img src="./images/ridge_regression_swiss_data_coef_vs_log_lambda.png" width="500px"> <img src="./images/ridge_regression_swiss_data_MSE_vs_log_lambda.png" width="500px">
+
+Model performance with the testing set | Linear regression | Ridge regression
+--- | --- | ---
+RMSE | 9.5467 | 9.3278
+R<sup>2</sup> | 0.2139 | 0.2495
+
+
+
 
 My own codes: <a href="./regularized_linear_regression.R">R</a> and <a href="./regularized_linear_regression.py">Python</a>
