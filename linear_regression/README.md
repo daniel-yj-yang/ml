@@ -61,7 +61,6 @@ Model performance with <a href="./regularized_linear_regression.R">the testing s
 RMSE | 9.5467 | 9.3278
 R<sup>2</sup> | 0.2139 | 0.2495
 
-
-
+Ridge regression appears to have improved the model performance.
 
 My own codes: <a href="./regularized_linear_regression.R">R</a> and <a href="./regularized_linear_regression.py">Python</a>
