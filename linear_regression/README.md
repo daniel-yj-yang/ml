@@ -56,7 +56,7 @@ Model | Penalty | Description
 
 <img src="./images/ridge_Hitter_coef_vs_log_lambda.png" width="500px"> <img src="./images/ridge_Hitter_MSE_vs_log_lambda.png" width="500px">
 
-Model performance with <a href="./regularized_linear_regression.R">the testing set</a> | Linear regression | Ridge regression | Lasso
+Model performance<br/>with <a href="./regularized_linear_regression.R">the testing set</a> | Linear regression | Ridge regression | Lasso
 --- | --- | --- | ---
 RMSE | 418.3987| 374.5406 | 380.2771
 R<sup>2</sup> | 0.2209 | 0.3757 | 0.3564
