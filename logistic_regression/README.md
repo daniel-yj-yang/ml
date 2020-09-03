@@ -26,7 +26,7 @@ Binarized iris* | 0.5 | 300 | <img src="https://github.com/daniel-yj-yang/ml/raw
 Gender | 0.00025 | 300 | <img src="https://github.com/daniel-yj-yang/ml/raw/master/model_optimization/batch_gradient_descent/images/data=gender_logistic_regression_two_features_decision_boundary_animation_learning=0.00025_epochs=300.gif" width="450px"> | <img src="https://github.com/daniel-yj-yang/ml/raw/master/model_optimization/batch_gradient_descent/images/data=gender_logistic_regression_two_features_loss_vs_epoch_learning=0.00025_epochs=300.png" width="400px">
 Gender | 0.001 | 300 | <img src="https://github.com/daniel-yj-yang/ml/raw/master/model_optimization/batch_gradient_descent/images/data=gender_logistic_regression_two_features_decision_boundary_animation_learning=0.001_epochs=300.gif" width="450px"> | <img src="https://github.com/daniel-yj-yang/ml/raw/master/model_optimization/batch_gradient_descent/images/data=gender_logistic_regression_two_features_loss_vs_epoch_learning=0.001_epochs=300.png" width="400px">
 
-See my <a href="https://github.com/daniel-yj-yang/model_optimization">optimization method page</a> for more details
+See my <a href="../model_optimization">optimization method page</a> for more details
 
 <hr>
 
