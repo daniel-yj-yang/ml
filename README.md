@@ -1,5 +1,5 @@
 # Machine Learning
-<b>Learning the (hidden or obvious) regularity of the world via computer algorithms that <a href="https://github.com/daniel-yj-yang/model_optimization">optimize parameters through training</a></b>.
+<b>Learning the (hidden or obvious) regularity of the world via computer algorithms that <a href="./model_optimization">optimize parameters through training</a></b>.
 
 <hr>
 
