@@ -48,6 +48,6 @@ Factors | Details
 --- | ---
 Nature of the data | Categorical, continuous, etc.
 Goal of analysis | * To describe, estimate, predict, cluster, classify, associate, explain, etc.<br/>* For example, decision trees are more readily interpretable than neural networks
-Algorithm performance | * For classification, predictive power can be assessed via <a href="https://github.com/daniel-yj-yang/model-evaluation/">the area under ROC</a><br/>* For regression, there are a variety of choices, including <a href="https://github.com/daniel-yj-yang/model-evaluation/">R<sup>2</sup>, AIC, RMSE</a>
+<a href="./model_evaluation">Algorithm performance / Model evaluation</a> | * For classification, predictive power can be assessed via <a href="./model-evaluation/">the area under ROC</a><br/>* For regression, there are a variety of choices, including <a href="./model-evaluation/">R<sup>2</sup>, AIC, RMSE</a>
 <a href="http://ucanalytics.com/blogs/model-selection-retail-case-study-example-part-7/">Business integration</a> | * Data availability<br/>* Model tuning vs. new model<br/>* Thinking through IT integration at the beginning of the project<br/>* Business end users' actual uses
 
