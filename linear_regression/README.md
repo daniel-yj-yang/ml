@@ -52,7 +52,7 @@ Model | Penalty | Description
 
 ### Example: Ridge Regression
 
-λ is the only parameter to adjust. When λ increases, coefficients decrease but MSE increase.
+λ is the only parameter to adjust. When λ increases, coefficients decrease but MSE increase. Thus, there is a sweet spot where coefficients shrink and MSE is also the lowest.
 
 <img src="./images/ridge_regression_swiss_data_coef_vs_log_lambda.png" width="500px"> <img src="./images/ridge_regression_swiss_data_MSE_vs_log_lambda.png" width="500px">
 
