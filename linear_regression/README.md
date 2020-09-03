@@ -56,10 +56,11 @@ Model | Penalty | Description
 
 <img src="./images/ridge_Hitter_coef_vs_log_lambda.png" width="500px"> <img src="./images/ridge_Hitter_MSE_vs_log_lambda.png" width="500px">
 
-Model performance with <a href="./regularized_linear_regression.R">the testing set</a> | Linear regression | Ridge regression
---- | --- | ---
-RMSE | 9.5467 | 9.3278
-R<sup>2</sup> | 0.2139 | 0.2495
+Model performance with <a href="./regularized_linear_regression.R">the testing set</a> | Linear regression | Ridge regression | Lasso
+--- | --- | --- | ---
+RMSE | 418.3987| 374.5406 | 380.2771
+R<sup>2</sup> | 0.2209 | 0.3757 | 0.3564024
+Coefficient | <img src="./linear_Hitter_coef.png" width="100px"> | <img src="./ridge_Hitter_coef.png" width="100px"> | <img src="./lasso_Hitter_coef.png" width="100px">
 
 Ridge regression appears to have improved the model performance.
 
