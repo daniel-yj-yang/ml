@@ -113,6 +113,9 @@ y_test_pred_ridgereg_2 = ridge_reg_model_2.predict(X_test)
 eval_results(y_train, y_train_pred_ridgereg_2)
 eval_results(y_test,  y_test_pred_ridgereg_2)
 
+##########################################################################################
+# Not completed (below)
+##########################################################################################
 
 # 3. Lasso Regression
 print('\n\n--------------------------\n3. Lasso Regression\n--------------------------\n')
