@@ -1,4 +1,4 @@
-rm(list=ls())
+rm(list = ls())
 cat("\014")
 
 # https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net
@@ -9,12 +9,12 @@ cat("\014")
 # Initialization
 
 eval_results <- function(y, y_pred) {
-  SSE <- sum((y_pred - y)^2)
-  RMSE = sqrt(SSE/length(y))
-  
-  SST <- sum((y - mean(y))^2)
+  SSE <- sum((y_pred - y) ^ 2)
+  RMSE = sqrt(SSE / length(y))
+
+  SST <- sum((y - mean(y)) ^ 2)
   R_square <- 1 - (SSE / SST)
-  
+
   # Model performance metrics
   data.frame(
     RMSE = RMSE,
@@ -22,15 +22,15 @@ eval_results <- function(y, y_pred) {
   )
 }
 
-library(glmnet)  # for ridge regression
-library(MASS)    # for ridge regression
+library(glmnet) # for ridge regression
+library(MASS) # for ridge regression
 library(data.table)
 
-set.seed(123)    # seed for reproducibility
+set.seed(123) # seed for reproducibility
 
 swiss <- datasets::swiss
 #X <- subset(swiss, select = -c( Fertility ))
-X <- model.matrix(Fertility~., swiss)[,-1] # to avoid the following error message in ridge regression:
+X <- model.matrix(Fertility ~ ., swiss)[, -1] # to avoid the following error message in ridge regression:
 #Error in elnet(x, is.sparse, ix, jx, y, weights, offset, type.gaussian,  : 
 #                 'list' object cannot be coerced to type 'double'
 y <- subset(swiss, select = c("Fertility"))
@@ -50,7 +50,7 @@ y_test = y[test_idx,]
 ############################################################################################
 # 1. Linear Regression - OLS
 
-lr_model <- lm(Fertility~., data = train)
+lr_model <- lm(Fertility ~ ., data = train)
 summary(lr_model)
 
 # Prediction and evaluation on train data
@@ -66,31 +66,31 @@ eval_results(y_test, y_test_pred_lr)
 # http://www.science.smith.edu/~jcrouser/SDS293/labs/lab10-r.html
 
 rr_insights <- function(ridge.model, nth) {
-  print( paste0('The ', nth, '-th lambda value = ', ridge.model$lambda[nth] ) )
-  print( paste0('The coefficients associated with the ', nth, '-th lambda value' ) )
-  print( coef(ridge.model)[,nth] )
-  print( paste0('The L2 norm associated with the ', nth, '-th lambda value = ', sqrt(sum(coef(ridge.model)[-1,nth]^2)) ) )
+  print(paste0('The ', nth, '-th lambda value = ', ridge.model$lambda[nth]))
+  print(paste0('The coefficients associated with the ', nth, '-th lambda value'))
+  print(coef(ridge.model)[, nth])
+  print(paste0('The L2 norm associated with the ', nth, '-th lambda value = ', sqrt(sum(coef(ridge.model)[-1, nth] ^ 2))))
 }
 
 plot_L2_norm_vs_lambda <- function(ridge.model) {
   n_lambdas <- ncol(coef(ridge.model))
-  L2_norm_vs_lambda_dt <- data.table( L2_norm = 123,
+  L2_norm_vs_lambda_dt <- data.table(L2_norm = 123,
                                    lambda = 123)[0]
-  for(ith in 1:n_lambdas) {
-    this_L2_norm  <- sqrt(sum(coef(ridge.model)[-1,ith]^2))
+  for (ith in 1:n_lambdas) {
+    this_L2_norm <- sqrt(sum(coef(ridge.model)[-1, ith] ^ 2))
     this_lambda <- ridge.model$lambda[ith]
     L2_norm_vs_lambda_dt <- rbind(L2_norm_vs_lambda_dt,
-                                  data.table( L2_norm = this_L2_norm,
+                                  data.table(L2_norm = this_L2_norm,
                                               lambda = this_lambda))
   }
-  
+
   require(ggplot2)
-  ggplot(L2_norm_vs_lambda_dt) + 
-    aes(x = log(L2_norm_vs_lambda_dt$lambda), y = L2_norm_vs_lambda_dt$L2_norm, color = "red") + 
-    geom_line(size=2) +
-    #ggeom_smooth(method = 'loess') +
-    xlab( 'log(λ)' ) +
-    ylab( 'L2 norm' ) +
+  ggplot(L2_norm_vs_lambda_dt) +
+    aes(x = log(L2_norm_vs_lambda_dt$lambda), y = L2_norm_vs_lambda_dt$L2_norm, color = "red") +
+    geom_line(size = 2) +
+  #ggeom_smooth(method = 'loess') +
+  xlab('log(λ)') +
+    ylab('L2 norm') +
     ggtitle("L2 norm vs log(λ)")
 }
 
@@ -101,21 +101,21 @@ pairs(X)
 # set up the initial model without the best lambda yet
 # http://www.science.smith.edu/~jcrouser/SDS293/labs/lab10-r.html
 
-lambdas <- 10^seq(5, -3, length = 300)
+lambdas <- 10 ^ seq(5, -3, length = 300)
 ridge_reg_model <- glmnet(x = X_train, y = y_train, alpha = 0, lambda = lambdas, thresh = 1e-12)
 
 rr_insights(ridge_reg_model, 226)
 dim(coef(ridge_reg_model))
-plot(ridge_reg_model, xvar = "norm",   label = T)
+plot(ridge_reg_model, xvar = "norm", label = T)
 plot(ridge_reg_model, xvar = "lambda", label = T)
-plot(ridge_reg_model, xvar = "dev",    label = T)
+plot(ridge_reg_model, xvar = "dev", label = T)
 plot_L2_norm_vs_lambda(ridge_reg_model)
 
 summary(ridge_reg_model)
 
 # find the best lambda
-set.seed(123)    # seed for reproducibility
-cv.ridge <- cv.glmnet( x = X_train, y = y_train, alpha = 0, lambda = lambdas, nfolds = 10 )
+set.seed(123) # seed for reproducibility
+cv.ridge <- cv.glmnet(x = X_train, y = y_train, alpha = 0, lambda = lambdas, nfolds = 10)
 plot(cv.ridge)
 best_lambda <- cv.ridge$lambda.min
 print(paste0('best_lambda (empiricially derived): ', best_lambda))
@@ -139,7 +139,7 @@ eval_results(y_test, y_test_pred_rr)
 
 #################################################################################
 #### MASS
-ridge_reg_model_2 <- lm.ridge( Fertility ~ ., train, lambda = lambdas )
+ridge_reg_model_2 <- lm.ridge(Fertility ~ ., train, lambda = lambdas)
 #print(ridge_reg_model_2)
 #plot(ridge_reg_model_2)
 select(ridge_reg_model_2) # another way to obtain best lambda
