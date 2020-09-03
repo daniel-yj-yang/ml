@@ -53,3 +53,5 @@ Model | Penalty | Description
 ### Example: Ridge Regression
 
 <img src="./images/ridge_regression_swiss_data_coef_vs_log_lambda.png" width="500px"> <img src="./images/ridge_regression_swiss_data_MSE_vs_log_lambda.png" width="500px">
+
+My own codes: <a href="./regularized_linear_regression.R">R</a> and <a href="./regularized_linear_regression.py">Python</a>
