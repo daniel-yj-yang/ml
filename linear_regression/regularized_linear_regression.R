@@ -150,3 +150,9 @@ print('smallest value of GCV is another empirically derived index of best lambda
 # 3. Lasso Regression
 ## http://www.science.smith.edu/~jcrouser/SDS293/labs/lab10-r.html
 ## https://www.r-bloggers.com/ridge-regression-and-the-lasso/
+## https://www.r-bloggers.com/ordinary-least-squares-ols-linear-regression-in-r/
+## https://www.analyticsvidhya.com/blog/2016/01/ridge-lasso-regression-python-complete-tutorial/#four
+## https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net
+## https://courses.analyticsvidhya.com/courses/take/big-mart-sales-prediction-using-r/texts/6120184-model-building
+## https://rstudio-pubs-static.s3.amazonaws.com/381886_981132516a8e437284327a405ca4d91a.html
+
