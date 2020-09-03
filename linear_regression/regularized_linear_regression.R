@@ -22,35 +22,69 @@ eval_results <- function(y, y_pred) {
   )
 }
 
+library(ISLR) # dataset: Hitters
 library(glmnet) # for ridge regression
 library(MASS) # for ridge regression
 library(data.table)
+library(magrittr)
+library(dplyr)
 
 set.seed(123) # seed for reproducibility
 
-swiss <- datasets::swiss
-#X <- subset(swiss, select = -c( Fertility ))
-X <- model.matrix(Fertility ~ ., swiss)[, -1] # to avoid the following error message in ridge regression:
-#Error in elnet(x, is.sparse, ix, jx, y, weights, offset, type.gaussian,  : 
-#                 'list' object cannot be coerced to type 'double'
-y <- subset(swiss, select = c("Fertility"))
+Hitters = na.omit(Hitters)
 
-#train_idx = sample(1:nrow(X), nrow(X)/2)
-train_idx = c(31, 15, 14, 3, 42, 37, 45, 25, 26, 27, 5, 38, 28, 9, 29, 44, 8, 39, 7, 10, 34, 19, 4)
-test_idx = (-train_idx)
+#swiss <- datasets::swiss
+##X <- subset(swiss, select = -c( Fertility ))
+#X <- model.matrix(Fertility ~ ., swiss)[, -1] # to avoid the following error message in ridge regression:
+##Error in elnet(x, is.sparse, ix, jx, y, weights, offset, type.gaussian,  : 
+##                 'list' object cannot be coerced to type 'double'
+#y <- subset(swiss, select = c("Fertility"))
 
-train <- swiss[train_idx,]
-X_train <- X[train_idx,]
-y_train <- y[train_idx,]
+##train_idx = sample(1:nrow(X), nrow(X)/2)
+#train_idx = c(31, 15, 14, 3, 42, 37, 45, 25, 26, 27, 5, 38, 28, 9, 29, 44, 8, 39, 7, 10, 34, 19, 4)
+#test_idx = (-train_idx)
 
-test <- swiss[test_idx,]
-X_test <- X[test_idx,]
-y_test = y[test_idx,]
+X = model.matrix(Salary ~ ., Hitters)[, -1] # trim off the first column
+# leaving only the predictors
+y = Hitters %>%
+  select(Salary) %>%
+  unlist() %>%
+  as.numeric()
+
+set.seed(1)
+
+train = Hitters %>%
+  sample_frac(0.5)
+
+test = Hitters %>%
+  setdiff(train)
+
+X_train = model.matrix(Salary ~ ., train)[, -1]
+X_test = model.matrix(Salary ~ ., test)[, -1]
+
+y_train = train %>%
+  select(Salary) %>%
+  unlist() %>%
+  as.numeric()
+
+y_test = test %>%
+  select(Salary) %>%
+  unlist() %>%
+  as.numeric()
+
+#train <- swiss[train_idx,]
+#X_train <- X[train_idx,]
+#y_train <- y[train_idx,]
+
+#test <- swiss[test_idx,]
+#X_test <- X[test_idx,]
+#y_test = y[test_idx,]
 
 ############################################################################################
 # 1. Linear Regression - OLS
 
-lr_model <- lm(Fertility ~ ., data = train)
+#lr_model <- lm(Fertility ~ ., data = train)
+lr_model <- lm(Salary ~ ., data = train)
 summary(lr_model)
 
 # Prediction and evaluation on train data
@@ -65,7 +99,7 @@ eval_results(y_test, y_test_pred_lr)
 # 2. Ridge Regression
 # http://www.science.smith.edu/~jcrouser/SDS293/labs/lab10-r.html
 
-rr_insights <- function(ridge.model, nth) {
+model_insights <- function(ridge.model, nth) {
   print(paste0('The ', nth, '-th lambda value = ', ridge.model$lambda[nth]))
   print(paste0('The coefficients associated with the ', nth, '-th lambda value'))
   print(coef(ridge.model)[, nth])
@@ -101,15 +135,15 @@ pairs(X)
 # set up the initial model without the best lambda yet
 # http://www.science.smith.edu/~jcrouser/SDS293/labs/lab10-r.html
 
-lambdas <- 10 ^ seq(5, -3, length = 300)
-ridge_reg_model <- glmnet(x = X_train, y = y_train, alpha = 0, lambda = lambdas, thresh = 1e-12)
+lambdas <- exp(seq(3, 9, length = 10000))
+ridge_reg_model <- glmnet(x = X_train, y = y_train, alpha = 0, lambda = lambdas, thresh = 1e-9, maxit = 1e6)
 
-rr_insights(ridge_reg_model, 226)
+model_insights(ridge_reg_model, 226)
 dim(coef(ridge_reg_model))
 plot(ridge_reg_model, xvar = "norm", label = T)
 plot(ridge_reg_model, xvar = "lambda", label = T)
 plot(ridge_reg_model, xvar = "dev", label = T)
-plot_L2_norm_vs_lambda(ridge_reg_model)
+#plot_L2_norm_vs_lambda(ridge_reg_model)
 
 summary(ridge_reg_model)
 
@@ -122,12 +156,12 @@ print(paste0('best_lambda (empiricially derived): ', best_lambda))
 print(predict(ridge_reg_model, s = best_lambda, type = "coefficients"))
 
 # Prediction and evaluation on train data -- equivalent to OLS
-y_train_pred_rr <- predict(ridge_reg_model, s = 0, newx = X_train, exact = T, x = X_train, y = y_train)
-eval_results(y_train, y_train_pred_rr)
+#y_train_pred_rr <- predict(ridge_reg_model, s = 0, newx = X_train, exact = T, x = X_train, y = y_train)
+#eval_results(y_train, y_train_pred_rr)
 
 # Prediction and evaluation on test data -- equivalent to OLS
-y_test_pred_rr <- predict(ridge_reg_model, s = 0, newx = X_test, exact = T, x = X_train, y = y_train)
-eval_results(y_test, y_test_pred_rr)
+#y_test_pred_rr <- predict(ridge_reg_model, s = 0, newx = X_test, exact = T, x = X_train, y = y_train)
+#eval_results(y_test, y_test_pred_rr)
 
 # Prediction and evaluation on train data -- Ridge Regression
 y_train_pred_rr <- predict(ridge_reg_model, s = best_lambda, newx = X_train)
@@ -139,11 +173,12 @@ eval_results(y_test, y_test_pred_rr)
 
 #################################################################################
 #### MASS
-ridge_reg_model_2 <- lm.ridge(Fertility ~ ., train, lambda = lambdas)
-#print(ridge_reg_model_2)
-#plot(ridge_reg_model_2)
-select(ridge_reg_model_2) # another way to obtain best lambda
-print('smallest value of GCV is another empirically derived index of best lambda')
+##ridge_reg_model_2 <- lm.ridge(Fertility ~ ., train, lambda = lambdas)
+#ridge_reg_model_2 <- lm.ridge(Salary ~ ., train, lambda = lambdas)
+##print(ridge_reg_model_2)
+##plot(ridge_reg_model_2)
+#select(ridge_reg_model_2) # another way to obtain best lambda
+#print('smallest value of GCV is another empirically derived index of best lambda')
 
 
 ############################################################################################
@@ -155,4 +190,40 @@ print('smallest value of GCV is another empirically derived index of best lambda
 ## https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net
 ## https://courses.analyticsvidhya.com/courses/take/big-mart-sales-prediction-using-r/texts/6120184-model-building
 ## https://rstudio-pubs-static.s3.amazonaws.com/381886_981132516a8e437284327a405ca4d91a.html
+
+lambdas <- exp(seq(-4, 4, length = 10000))
+lasso_reg_model <- glmnet(x = X_train, y = y_train, alpha = 1, lambda = lambdas, thresh = 1e-9, maxit = 1e6)
+
+model_insights(lasso_reg_model, 226)
+dim(coef(lasso_reg_model))
+plot(lasso_reg_model, xvar = "norm", label = T)
+plot(lasso_reg_model, xvar = "lambda", label = T)
+plot(lasso_reg_model, xvar = "dev", label = T)
+#plot_L2_norm_vs_lambda(lasso_reg_model)
+
+summary(lasso_reg_model)
+
+# find the best lambda
+set.seed(123) # seed for reproducibility
+cv.lasso <- cv.glmnet(x = X_train, y = y_train, alpha = 1, lambda = lambdas, nfolds = 10)
+plot(cv.lasso)
+best_lambda <- cv.lasso$lambda.min
+print(paste0('best_lambda (empiricially derived): ', best_lambda))
+print(predict(lasso_reg_model, s = best_lambda, type = "coefficients"))
+
+# Prediction and evaluation on train data -- equivalent to OLS
+#y_train_pred_lasso_reg <- predict(lasso_reg_model, s = 0, newx = X_train, exact = T, x = X_train, y = y_train)
+#eval_results(y_train, y_train_pred_lasso_reg)
+
+# Prediction and evaluation on test data -- equivalent to OLS
+#y_test_pred_lasso_reg <- predict(lasso_reg_model, s = 0, newx = X_test, exact = T, x = X_train, y = y_train)
+#eval_results(y_test, y_test_pred_lasso_reg)
+
+# Prediction and evaluation on train data -- lasso Regression
+y_train_pred_lasso_reg <- predict(lasso_reg_model, s = best_lambda, newx = X_train)
+eval_results(y_train, y_train_pred_lasso_reg)
+
+# Prediction and evaluation on test data -- lasso Regression
+y_test_pred_lasso_reg <- predict(lasso_reg_model, s = best_lambda, newx = X_test)
+eval_results(y_test, y_test_pred_lasso_reg)
 
