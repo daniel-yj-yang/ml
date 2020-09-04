@@ -1,5 +1,5 @@
 # Machine Learning
-<b>Learning the (hidden or obvious) <a href="./regularity_of_the_world/">regularity of the world</a> via computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>.
+<b>Learning the (hidden or obvious) <a href="./regularity/">regularity of the world</a> via computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>.
 
 <hr>
 
