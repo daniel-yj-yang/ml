@@ -1,7 +1,11 @@
+# Principal Component Analysis
+To diagonalize the covariance matrix
 
 ### Concepts
 
-<img src="./images/PCA_concepts_covariance.png" width="300px">
+<img src="./images/PCA_concepts_covariance.png" width="150px">
+
+Q: 
 
 <hr>
 
