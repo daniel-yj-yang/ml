@@ -4,7 +4,7 @@
 
 - <b>A</b> is a square matrix, <b>v</b> is an eigenvector, and <b>λ</b> is an eigenvalue.
 - Multiplying <b>v</b> by <b>A</b>
-- Almost all vectors change direction when they are multiplied by <b>A</b>. However, certain exceptional vectors <b>v</b> that does not change direction when multiplied by <b>A</b>, and the vector <b>Av</b> is a number (<b>λ</b>) times the original <b>v</b>.
+- Almost all vectors change direction when they are multiplied by <b>A</b>. However, certain exceptional vectors <b>v</b> that does not change direction when multiplied by <b>A</b> (a linear transformation), and the vector <b>Av</b> is a number (<b>λ</b>) times the original <b>v</b>.
 
 
 ## Examples
