@@ -3,7 +3,7 @@ To project the original data on a reduced dimensional (e.g., 2D) space
 
 <hr>
 
-### Concepts
+### Math Concepts
 
 To <a href="https://mathworld.wolfram.com/MatrixDiagonalization.html">diagonalize</a> the covariance matrix
 
