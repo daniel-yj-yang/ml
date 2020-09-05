@@ -30,3 +30,4 @@ Method | Use | Examples
 
 ## References:
 * k-means clustering: <a href="./k-means-clustering.py">Python code</a> and <a href="./k-means clustering.ipynb">Jupyter Notebook</a>
+* A set of visually-appealing plotting methods: https://rpubs.com/sinhrks/plot_pca
