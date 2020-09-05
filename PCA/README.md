@@ -23,7 +23,7 @@ Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
 
 - Goal: to find eigenvalue ```λ``` and the associated eigenvector ```W``` that satisfy ```QW = λW```
-- We are interested in a larger eigenvalue ```λ```, because its associated eigenvector ```W``` will be a dimension that can account for more variance in Q.
+- We are interested in a larger eigenvalue ```λ```, because its associated eigenvector ```W``` will be a dimension that can account for more variance in ```Q```.
 - Q = WΛW'
 - Λ = W'QW
 
