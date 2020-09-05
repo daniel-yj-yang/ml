@@ -2,11 +2,11 @@
 
 ```Av = λv```
 
-- <b>A</b> is a square matrix, <b>v</b> is an eigenvector, and <b>λ</b> is an eigenvalue.
-- Multiplying <b>v</b> by <b>A</b>
-- Almost all vectors change direction when they are multiplied by <b>A</b>. However, certain exceptional vectors <b>v</b> that does not change direction when multiplied by <b>A</b> (a linear transformation), and the vector <b>Av</b> is a number (<b>λ</b>) times the original <b>v</b>.
+- ```A``` is a square matrix, ```v``` is an eigenvector, and ```λ``` is an eigenvalue.
+- Multiplying ```v``` by ```A```
+- Almost all vectors change direction when they are multiplied by ```A```. However, certain exceptional vectors ```v``` that does not change direction when multiplied by ```A``` (a linear transformation), and the vector ```Av``` is a number (```λ```) times the original ```v```.
 
-To derive <b>v</b> and <b>λ</b>, given <b>A</b>:
+To derive ```v``` and ```λ```, given ```A```:
 
 ```
 Av - λv = 0
