@@ -1,5 +1,7 @@
 # Principal Component Analysis
-To diagonalize the covariance matrix
+To diagonalize the covariance matrix, and then to project the original data on a reduced dimensional (e.g., 2D) space
+
+<hr>
 
 ### Concepts
 
