@@ -15,10 +15,9 @@ If v is non-zero, the equation will only have a solution if |A - λ·I| = 0
 By solving |A - λ·I| = 0, we can obtain λ
 Finally, using λ, we can obtain the corresponding v
 ```
+<hr>
 
 ## Examples
-
-<hr>
 
 Clojure:
 ```Clojure
