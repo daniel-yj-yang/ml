@@ -27,7 +27,7 @@ Polynomial Regression | <table><tr><th>Function</th><th>Math Expression, y ~ f(x
 Method | Details
 --- | ---
 To minimize cost function | <img src="./images/minimize_cost_function.png" width="600px">
-To compute analytically with <a href="http://mlwiki.org/index.php/Normal_Equation">normal equation</a> | <img src="./images/normal_equation.png" width="200px"><br/>X transpose times X inverse times X transpose times Y<br/>Implementation:<br/>R: solve( t(X) %\*% X ) %\*% t(X) %\*% Y
+To compute analytically with <a href="http://mlwiki.org/index.php/Normal_Equation">normal equation</a> | <img src="./images/normal_equation.png" width="200px"><br/>X transpose times X inverse times X transpose times Y<br/><br/>Implementation:<br/>- Clojure (<a href="https://github.com/incanter/incanter/wiki/Matrices">incanter</a>): (solve (mmult (trans X) X))<br/>- R: solve( t(X) %\*% X ) %\*% t(X) %\*% Y<br/>
 
 <hr>
 
