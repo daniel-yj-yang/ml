@@ -1,5 +1,5 @@
 # Principal Component Analysis
-To <a href="https://mathworld.wolfram.com/MatrixDiagonalization.html">diagonalize</a> the covariance matrix, and then to project the original data on a reduced dimensional (e.g., 2D) space
+To project the original data on a reduced dimensional (e.g., 2D) space
 
 <hr>
 
