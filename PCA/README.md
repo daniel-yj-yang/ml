@@ -5,8 +5,6 @@ To project the original data on a reduced dimensional (e.g., 2D) space
 
 ### Math Concepts
 
-To <a href="https://mathworld.wolfram.com/MatrixDiagonalization.html">diagonalize</a> the covariance matrix
-
 <img src="./images/PCA_concepts_covariance.png" width="150px">
 
 Matrix | Meaning
