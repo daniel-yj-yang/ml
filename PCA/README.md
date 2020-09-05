@@ -5,7 +5,7 @@ To project the original data on a reduced dimensional (e.g., 2D) space
 
 ### Background Concept
 
-Covariance matrix reflects how much the features in X are linearly linked with each other.
+Covariance matrix ```Q``` reflects how much the features in ```X``` are linearly linked with each other.
 
 - ```Q = X'X / (n-1)```
 
@@ -22,8 +22,8 @@ Matrix | Meaning
 Goal: To find the eigenvalues and eigenvectors of the covariance matrix Q
 
 
-- Goal: to find eigenvalue λ and the associated eigenvector W that satisfy ```QW = λW```
-- We are interested in a larger eigenvalue λ, because its associated eigenvector W will be a dimension that can account for more variance in Q.
+- Goal: to find eigenvalue ```λ``` and the associated eigenvector ```W``` that satisfy ```QW = λW```
+- We are interested in a larger eigenvalue ```λ```, because its associated eigenvector ```W``` will be a dimension that can account for more variance in Q.
 - Q = WΛW'
 - Λ = W'QW
 
