@@ -3,16 +3,37 @@ To project the original data on a reduced dimensional (e.g., 2D) space
 
 <hr>
 
-### Concepts
+### Background Concept
 
-<img src="./images/PCA_concepts_covariance.png" width="150px">
+Covariance matrix ```Q``` reflects how much the features in ```X``` are linearly linked with each other.
+
+- ```Q = X'X / (n-1)```
 
 Matrix | Meaning
 --- | ---
-<b>X</b> | the empirical covariance matrix for the original variables
-<b>Q</b> | the empirical matrix for the original variables
-<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of <b>X<sup>T</sup>X</b>
-<b>Λ</b> | the diagonal matrix of <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> λ<sub>(k)</sub> of <b>X<sup>T</sup>X</b>
+<b>X</b> | the empirical matrix for the original variables, column centered
+<b>Q</b> | the empirical covariance matrix for the original variables
+
+<hr>
+
+### Key Concept of PCA
+
+
+Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
+
+
+- Goal: to find eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
+- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can account for the most variance in ```Q```.
+
+Matrix | Meaning
+--- | ---
+<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
+<b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
+
+Note.
+- Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
+- Importantly, ```WW' = I``` as ```W``` is orthonormal
+- Some interesting properties: ```Λ = W'QW``` and ```Q = WΛW'```
 
 <hr>
 
