@@ -28,6 +28,18 @@ user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 
 <hr>
 
+```Python
+>>> import numpy as np
+>>> from scipy.linalg import eig
+>>> A = np.array([[-6,3],[4,5]])
+>>> results = eig(A)
+>>> results
+(array([-7.+0.j,  6.+0.j]), array([[-0.9486833 , -0.24253563],
+       [ 0.31622777, -0.9701425 ]]))
+```
+
+<hr>
+
 R:
 ```R
 > A <- matrix(c(-6, 3, 4, 5), 2, 2, byrow = T)
