@@ -22,7 +22,7 @@ Matrix | Meaning
 Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
 
-- Goal: to find eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
+- Goal: to find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
 - Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can account for the most variance in ```Q```.
 
 Matrix | Meaning
