@@ -21,13 +21,22 @@ Note.
 - See also: https://www.mathsisfun.com/algebra/eigenvalue.html
 
 ```Clojure
-user=> (def A (matrix [[-6 3] [4 5]]))
-#'user/A
+user=> (def X (matrix [[-6 3] [4 5]]))
+#'user/X
 
-user=> (decomp-eigenvalue A)
+user=> (decomp-eigenvalue X)
 {:values (-7.0 6.0), :vectors [-0.9487 -0.2433
  0.3162 -0.9730]
 }
+
+;; Xv = λv
+user=> (mmult X (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; Xv
+[-1.4595
+-5.8381]
+
+user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
+[-1.4595
+-5.8381]
 ```
 
 <hr>
