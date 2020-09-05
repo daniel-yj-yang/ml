@@ -32,7 +32,7 @@ Matrix | Meaning
 
 Note.
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
-- Importantly, ```WW' = I``` as ```W``` is orthonormal
+- Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
 - Some interesting properties: ```Λ = W'QW``` and ```Q = WΛW'```
 
 <hr>
