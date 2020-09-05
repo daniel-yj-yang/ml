@@ -28,6 +28,7 @@ user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 
 <hr>
 
+Python:
 ```Python
 >>> import numpy as np
 >>> from scipy.linalg import eig
