@@ -35,6 +35,9 @@ Note.
 - Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
 - Some interesting properties: ```Λ = W'QW``` and ```Q = WΛW'```
 
+See also.
+- <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>
+
 <hr>
 
 ### Example - the iris dataset
