@@ -20,3 +20,7 @@
 
 #### Biplot: PCA score plot + loading plot
 <img src="./images/PCA_iris_biplot.png" width="700px">
+
+<hr>
+
+<a href="./PCA.R">R code</a>
