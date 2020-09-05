@@ -1,4 +1,10 @@
 
+### Concepts
+
+<img src="./images/PCA_concepts_covariance.png" width="300px">
+
+<hr>
+
 ### Example - iris
 
 <hr>
