@@ -13,7 +13,7 @@ Matrix | Meaning
 --- | ---
 <b>X</b> | the empirical matrix for the original variables, column centered
 <b>Q</b> | the empirical covariance matrix for the original variables
-<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of <b>X<sup>T</sup>X</b>
+<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of <b>Q</b>
 <b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> of <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> λ<sub>(k)</sub> of <b>X<sup>T</sup>X</b>
 
 Note. 
