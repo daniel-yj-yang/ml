@@ -27,8 +27,8 @@ Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
 Matrix | Meaning
 --- | ---
-<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of <b>Q</b>
-<b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> of <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> λ<sub>(k)</sub> of <b>Q</b>
+<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of ```Q```
+<b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> of <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
 
 Note.
 - Detailed explanation of <a href="./eigenvector_and_eigenvalue.md">eigenvector and eigenvalue</a>
