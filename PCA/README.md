@@ -41,7 +41,7 @@ Matrix | Meaning
 <hr>
 
 #### Code
-<a href="./PCA.R">R code</a>
+- <a href="./PCA.R">R code</a>
 
 <hr>
 
