@@ -32,7 +32,7 @@ Matrix | Meaning
 
 Note.
 - Detailed explanation of <a href="./eigenvector_and_eigenvalue.md">eigenvector and eigenvalue</a>
-- Some interesting properties: ```Q = WΛW'``` and ```Λ = W'QW```
+- Some interesting properties: ```Λ = W'QW``` and ```Q = WΛW'```
 
 <hr>
 
