@@ -5,9 +5,8 @@ To project the original data on a reduced dimensional (e.g., 2D) space
 
 ### Math Concepts
 
-X'X / (n-1) = Q = WΛW'
-
-<img src="./images/PCA_concepts_covariance.png" width="150px">
+- X'X / (n-1) = Q = WΛW'
+- Λ = W'QW
 
 Matrix | Meaning
 --- | ---
