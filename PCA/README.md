@@ -20,6 +20,8 @@ Note.
 - An eigenvalue is a number that indicates how much variance there is in the data in that direction of the eigenvector.
 - See also: https://www.mathsisfun.com/algebra/eigenvalue.html
 
+<hr>
+
 Clojure:
 ```Clojure
 user=> (def X (matrix [[-6 3] [4 5]]))
@@ -40,13 +42,17 @@ user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 -5.8381]
 ```
 
+<hr>
+
 R:
 ```R
 > X <- matrix(c(-6, 3, 4, 5), 2, 2, byrow = T)
+
 > X
      [,1] [,2]
 [1,]   -6    3
 [2,]    4    5
+
 > eigen(X)
 eigen() decomposition
 $values
