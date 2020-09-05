@@ -40,4 +40,11 @@ Matrix | Meaning
 
 <hr>
 
+#### Code
 <a href="./PCA.R">R code</a>
+
+<hr>
+
+### Reference
+
+- <a href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579">Making sense of PCA</a>
