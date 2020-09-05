@@ -10,7 +10,10 @@ To derive <b>v</b> and <b>λ</b>, given <b>A</b>:
 
 ```
 Av - λv = 0
-v(A-λI) = 0
+(A - λ·I)v = 0
+If v is non-zero, the equation will only have a solution if |A - λ·I| = 0
+By solving |A - λ·I| = 0, we can obtain λ
+Finally, using λ, we can obtain the corresponding v
 ```
 
 ## Examples
