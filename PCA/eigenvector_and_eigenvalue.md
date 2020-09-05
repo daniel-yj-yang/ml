@@ -2,9 +2,9 @@
 
 ```Av = λv```
 
-- A is a square matrix, and v is an eigenvector, λ is an eigenvalue.
-- Multiplying v by A
-- Almost all vectors change direction when they are multiplied by A. However, certain exceptional vectors v are in the same direction as Av. Those are the “eigenvectors”. <b>A vector/direction that does not change direction when multiplied by A</b>, and the vector Av is a number (λ) times the original v.
+- <b>A</b> is a square matrix, <b>v</b> is an eigenvector, and <b>λ</b> is an eigenvalue.
+- Multiplying <b>v</b> by <b>A</b>
+- Almost all vectors change direction when they are multiplied by A. However, certain exceptional vectors <b>v</b> that does not change direction when multiplied by A</b>, and the vector <b>Av</b> is a number (λ) times the original <b>v</b>.
 
 
 ## Examples
