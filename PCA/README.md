@@ -11,7 +11,8 @@ To find the eigenvectors and eigenvalues of the covariance matrix
 
 ### Math Concepts
 
-- X'X / (n-1) = Q = WΛW'
+- ```Q = X'X / (n-1)```
+- Q = WΛW'
 - Λ = W'QW
 
 Matrix | Meaning
