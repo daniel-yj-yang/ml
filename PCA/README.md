@@ -5,7 +5,11 @@ To diagonalize the covariance matrix
 
 <img src="./images/PCA_concepts_covariance.png" width="150px">
 
-Q: 
+Matrix | Meaning
+--- | ---
+<b>X</b> | the empirical covariance matrix for the original variables
+<b>Q</b> | the empirical matrix for the original variables
+<b>W</b> | a p-by-p matrix of weights whose columns are the eigenvectors of X<sup>T</sup>X
 
 <hr>
 
