@@ -1,11 +1,22 @@
-
-### Concepts
-
-<img src="./images/PCA_concepts_covariance.png" width="300px">
+# Principal Component Analysis
+To diagonalize the covariance matrix, and then to project the original data on a reduced dimensional (e.g., 2D) space
 
 <hr>
 
-### Example - iris
+### Concepts
+
+<img src="./images/PCA_concepts_covariance.png" width="150px">
+
+Matrix | Meaning
+--- | ---
+<b>X</b> | the empirical covariance matrix for the original variables
+<b>Q</b> | the empirical matrix for the original variables
+<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of <b>X<sup>T</sup>X</b>
+<b>Λ</b> | the diagonal matrix of <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> λ<sub>(k)</sub> of <b>X<sup>T</sup>X</b>
+
+<hr>
+
+### Example - the iris dataset
 
 <hr>
 
