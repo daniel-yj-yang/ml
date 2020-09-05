@@ -24,14 +24,15 @@ Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
 - Goal: to find eigenvalue ```λ``` and the associated eigenvector ```W``` that satisfy ```QW = λW```
 - We are interested in a larger eigenvalue ```λ```, because its associated eigenvector ```W``` will be a dimension that can account for more variance in ```Q```.
-- Q = WΛW'
-- Λ = W'QW
 
+Matrix | Meaning
+--- | ---
 <b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of <b>Q</b>
 <b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> of <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> λ<sub>(k)</sub> of <b>Q</b>
 
 Note.
 - Detailed explanation of <a href="./eigenvector_and_eigenvalue.md">eigenvector and eigenvalue</a>
+- Some interesting properties: ```Q = WΛW'``` and ```Λ = W'QW```
 
 <hr>
 
