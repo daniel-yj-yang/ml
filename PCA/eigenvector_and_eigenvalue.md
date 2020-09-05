@@ -6,6 +6,12 @@
 - Multiplying <b>v</b> by <b>A</b>
 - Almost all vectors change direction when they are multiplied by <b>A</b>. However, certain exceptional vectors <b>v</b> that does not change direction when multiplied by <b>A</b> (a linear transformation), and the vector <b>Av</b> is a number (<b>λ</b>) times the original <b>v</b>.
 
+To derive <b>v</b> and <b>λ</b>, given <b>A</b>:
+
+```
+Av - λv = 0
+v(A-λI) = 0
+```
 
 ## Examples
 
