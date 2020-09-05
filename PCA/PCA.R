@@ -3,7 +3,7 @@
 require(datasets)
 data(iris)
 
-iris.pca <- prcomp(iris[,c(1:4)], center = TRUE,scale. = TRUE)
+iris.pca <- prcomp(iris[,c(1:4)], center = TRUE, scale. = TRUE)
 
 summary(iris.pca)
 
