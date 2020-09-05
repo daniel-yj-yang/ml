@@ -16,8 +16,9 @@ Matrix | Meaning
 <b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of <b>X<sup>T</sup>X</b>
 <b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> of <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> λ<sub>(k)</sub> of <b>X<sup>T</sup>X</b>
 
-Note. An eigenvalue is a number that indicates how much variance there is in the data in that direction of the eigenvector.
-See also: https://www.mathsisfun.com/algebra/eigenvalue.html
+Note. 
+- An eigenvalue is a number that indicates how much variance there is in the data in that direction of the eigenvector.
+- See also: https://www.mathsisfun.com/algebra/eigenvalue.html
 
 <hr>
 
