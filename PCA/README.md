@@ -19,7 +19,7 @@ Matrix | Meaning
 ### Key Concept of PCA
 
 
-Goal: To find the eigenvalues and eigenvectors of the covariance matrix Q
+Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
 
 - Goal: to find eigenvalue ```λ``` and the associated eigenvector ```W``` that satisfy ```QW = λW```
