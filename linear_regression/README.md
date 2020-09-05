@@ -27,7 +27,7 @@ Polynomial Regression | <table><tr><th>Function</th><th>Math Expression, y ~ f(x
 Method | Details
 --- | ---
 To minimize cost function | <img src="./images/minimize_cost_function.png" width="600px">
-To compute analytically with <a href="http://mlwiki.org/index.php/Normal_Equation">normal equation</a> | <img src="./images/normal_equation.png" width="200px"><br/>X transpose times X inverse times X transpose times y<br/><br/>Implementation:<br/>- <b>Clojure</b> (<a href="https://github.com/incanter/incanter/wiki/Matrices">incanter</a>): ```(mmult (mmult (solve (mmult (trans X) X)) (trans X)) y)```<br/>- <b>Python</b>*: ```inv(X.T.dot(X)).dot(X.T).dot(y)```<br/>- <b>R</b>: ```solve( t(X) %\*% X ) %\*% t(X) %\*% y```<br/><br/>*Note: from numpy.linalg import inv
+To compute analytically with <a href="http://mlwiki.org/index.php/Normal_Equation">normal equation</a> | <img src="./images/normal_equation.png" width="200px"><br/>X transpose times X inverse times X transpose times y<br/><br/>Implementation:<br/>- <b>Clojure</b> (<a href="https://github.com/incanter/incanter/wiki/Matrices">incanter</a>): ```(mmult (mmult (solve (mmult (trans X) X)) (trans X)) y)```<br/>- <b>Python</b>*: ```inv(X.T.dot(X)).dot(X.T).dot(y)```<br/>- <b>R</b>: ```solve( t(X) %*% X ) %*% t(X) %*% y```<br/><br/>*Note: from numpy.linalg import inv
 
 <hr>
 
