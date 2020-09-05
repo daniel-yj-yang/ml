@@ -14,7 +14,7 @@ Matrix | Meaning
 
 <hr>
 
-### Example - iris
+### Example - the iris dataset
 
 <hr>
 
