@@ -20,6 +20,7 @@ Note.
 - An eigenvalue is a number that indicates how much variance there is in the data in that direction of the eigenvector.
 - See also: https://www.mathsisfun.com/algebra/eigenvalue.html
 
+Clojure:
 ```Clojure
 user=> (def X (matrix [[-6 3] [4 5]]))
 #'user/X
@@ -37,6 +38,24 @@ user=> (mmult X (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; Xv
 user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 [-1.4595
 -5.8381]
+```
+
+R:
+```R
+> X <- matrix(c(-6, 3, 4, 5), 2, 2, byrow = T)
+> X
+     [,1] [,2]
+[1,]   -6    3
+[2,]    4    5
+> eigen(X)
+eigen() decomposition
+$values
+[1] -7  6
+
+$vectors
+           [,1]       [,2]
+[1,] -0.9486833 -0.2425356
+[2,]  0.3162278 -0.9701425
 ```
 
 <hr>
