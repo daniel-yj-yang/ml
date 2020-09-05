@@ -20,6 +20,16 @@ Note.
 - An eigenvalue is a number that indicates how much variance there is in the data in that direction of the eigenvector.
 - See also: https://www.mathsisfun.com/algebra/eigenvalue.html
 
+```Clojure
+user=> (def A (matrix [[-6 3] [4 5]]))
+#'user/A
+
+user=> (decomp-eigenvalue A)
+{:values (-7.0 6.0), :vectors [-0.9487 -0.2433
+ 0.3162 -0.9730]
+}
+```
+
 <hr>
 
 ### Example - the iris dataset
