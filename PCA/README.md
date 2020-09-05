@@ -9,7 +9,8 @@ Matrix | Meaning
 --- | ---
 <b>X</b> | the empirical covariance matrix for the original variables
 <b>Q</b> | the empirical matrix for the original variables
-<b>W</b> | a p-by-p matrix of weights whose columns are the eigenvectors of X<sup>T</sup>X
+<b>W</b> | the p-by-p matrix of weights whose columns are the eigenvectors of <b>X<sup>T</sup>X</b>
+<b>Λ</b> | the diagonal matrix of eigenvalues λ<sub>(k)</sub> of <b>X<sup>T</sup>X</b>
 
 <hr>
 
