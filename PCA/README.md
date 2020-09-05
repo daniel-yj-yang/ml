@@ -3,6 +3,12 @@ To project the original data on a reduced dimensional (e.g., 2D) space
 
 <hr>
 
+### Concepts
+
+To find the eigenvectors and eigenvalues of the covariance matrix
+
+<hr>
+
 ### Math Concepts
 
 - X'X / (n-1) = Q = WΛW'
@@ -15,10 +21,9 @@ Matrix | Meaning
 <b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> of <b>Q</b>
 <b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> of <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> λ<sub>(k)</sub> of <b>Q</b>
 
-Note. 
-- An eigenvalue is a number that indicates how much variance there is in the data in that direction of the eigenvector.
-- See also: https://www.mathsisfun.com/algebra/eigenvalue.html
+Note.
 - Detailed explanation of <a href="./eigenvector_and_eigenvalue.md">eigenvector and eigenvalue</a>
+- An eigenvector with a larger eigenvalue is a dimension that can account for more variance in the covariance matrix.
 
 <hr>
 
