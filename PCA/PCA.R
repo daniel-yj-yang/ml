@@ -9,6 +9,9 @@ iris.pca <- prcomp(iris[,c(1:4)], center = TRUE, scale. = TRUE)
 
 summary(iris.pca)
 
+require(magrittr)
+iris.pca$rotation ^2 %>% colSums() # the eigenvector is normalized to have magnitude/length of 1
+
 require(ggbiplot)
 ggbiplot(iris.pca, ellipse=TRUE, groups=iris$Species, obs.scale = 1, var.scale = 1)
 
