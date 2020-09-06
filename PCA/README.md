@@ -35,7 +35,7 @@ A: To allow retaining of the variation present in the data set, in terms of vari
 ```
 
 #### Implementation Procedural Goal
-To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfies ```Qv = λv```.
+To find each eigenvalue ```λ``` and the corresponding eigenvector ```v``` that satisfies ```Qv = λv```.
 - Importantly, we are interested in the largest few eigenvalues (e.g., ```λ1```), because their associated eigenvectors (e.g., ```v1```) will be dimensions that can retain the most variation present in ```X``` (e.g., via ```Qv1 = λ1v1```).
 - The first principal component ```v1``` is the direction that maximizes the variance along that direction in the projected data, namely, ```v1'X``` has the maximum variance (and iteratively, ```v2'X``` has the maximum variance while ```v2``` accounts for the remaining variation)
 
