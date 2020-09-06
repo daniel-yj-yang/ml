@@ -31,7 +31,6 @@ Matrix | Meaning
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
-A: To allow retaining of the variation present in the data set, in terms of variances (diagnoal) and covariances (off-diagnoal) among features, by eigenvalues (the sum equals to the sum of the variances) and eigenvectors.
 ```
 
 #### Implementation Procedural Goal
@@ -47,6 +46,7 @@ Notes:
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
 - Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
 - Property: ```Λ = W'QW```
+- The sum of eigenvalues equals to the sum of the variances in ```Q```
 - Why the y-axis in the scree plot is labled as percentage of explained **variance**? Please see an interpretation <a href="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
 
 See also:
