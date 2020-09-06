@@ -57,7 +57,7 @@ See also:
 ### Example - the iris dataset
 
 <img src="./images/iris.jpg" width="1000px">
-(<a href="https://www.integratedots.com/determine-number-of-iris-species-with-k-means/">image source</a>)
+(image sources: <a href="https://www.fs.fed.us/wildflowers/beauty/iris/Blue_Flag/iris_virginica.shtml">Virginica</a>; <a href="https://www.lakeforest.edu/academics/programs/environmental/courses/es204/iris_versicolor.php">Versicolor</a>; <a href="https://alchetron.com/Iris-setosa"Setosa</a>)
 
 <hr>
 
