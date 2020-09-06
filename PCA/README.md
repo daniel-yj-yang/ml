@@ -56,7 +56,7 @@ See also:
 
 ### Example - the iris dataset
 
-<img src="./images/iris.jpg" width="1000px">
+<p align="center"><img src="./images/iris.jpg" width="900px"></p>
 (image sources: <a href="https://www.fs.fed.us/wildflowers/beauty/iris/Blue_Flag/iris_virginica.shtml">virginica</a>; <a href="https://www.lakeforest.edu/academics/programs/environmental/courses/es204/iris_versicolor.php">versicolor</a>; <a href="https://alchetron.com/Iris-setosa">setosa</a>)
 
 <hr>
