@@ -1,5 +1,5 @@
 # Principal Component Analysis
-To project the original data onto a reduced dimensional (e.g., 2D) space
+To project complicated original data onto a lower dimensional (e.g., 2D) space
 
 <hr>
 
