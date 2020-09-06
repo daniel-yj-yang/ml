@@ -5,7 +5,7 @@ To project the original data onto a reduced dimensional (e.g., 2D) space
 
 ### Background Concept
 
-Covariance matrix ```Q``` reflects how much the features in ```X``` are linearly correlated with each other.
+A covariance matrix ```Q``` reflects the variability in the features (```X```) in terms of diagnoal (variance) and off-diagnoal (covariance, joint variability).
 
 - ```Q = X'X / (n-1)```
 
@@ -18,15 +18,15 @@ Matrix | Meaning
 
 ### Key Concept of PCA
 
-Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```, in order to reproduce the covariance matrix using eigenvectors and eigenvalues (```Q = WΛW'```)
+Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```, which by defintion can reproduce ```Q``` (namely, ```Q = WΛW'```)
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized)?
-A: It allows eigenvalues to reflect the variances (diagnoal) and the eigenvectors to reflect the covariances (off-diagnoal) among features.
+A: It allows eigenvalues to decompose the variances (diagnoal) and the eigenvectors to decompose the covariances (off-diagnoal) among features.
 ```
 
-- Goal: to find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
-- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the lion's share of essence/characteristics in ```Q```.
+- Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
+- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the lion's share of variability in ```Q```.
 
 Matrix | Meaning
 --- | ---
