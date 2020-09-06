@@ -47,7 +47,7 @@ Notes:
 - Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
 - Property: ```Λ = W'QW```
 - The sum of eigenvalues equals to the sum of the variances in ```Q```
-- Why the y-axis in the scree plot is labled as percentage of explained **variance**? Please see an interpretation <a href="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
+- Why the y-axis in the scree plot is labled as percentage of explained **variance**? See an interpretation <a href="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
 
 See also:
 - <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>
