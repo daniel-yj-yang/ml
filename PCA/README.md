@@ -21,8 +21,8 @@ Matrix | Meaning
 Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
 ```
-Q: Why using the covariance matrix (or correlation matrix if standardized) ?
-A: To allow eigenvalue and eigenvector to capture the correlation among variables.
+Q: Why using the covariance matrix (or correlation matrix if standardized)?
+A: To allow eigenvalue and eigenvector to reflect the covariance among variables.
 ```
 
 - Goal: to find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
@@ -37,6 +37,7 @@ Note.
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
 - Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
 - Some interesting properties: ```Λ = W'QW``` and ```Q = WΛW'```
+- Why the y-axis in the scree plot is labled as percentage of explained variance? Please see an interpretation <a herf="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
 
 See also.
 - <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>
