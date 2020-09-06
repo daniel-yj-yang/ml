@@ -23,11 +23,11 @@ Matrix | Meaning
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
-A: To allow retaining of the variation present in the data set, in terms of variances (diagnoal) and covariances (off-diagnoal) among features, by eigenvalues (the sum equals to the sum of the variances) and eigenvectors of the covariance matrix.
+A: To allow retaining of the variation present in the data set, in terms of variances (diagnoal) and covariances (off-diagnoal) among features, by eigenvalues (the sum equals to the sum of the variances) and eigenvectors.
 ```
 
 - Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
-- Importantly, we are interested in the largest eigenvalue ```λ```, because (perhaps) its associated eigenvector ```v``` will be a dimension that can capture the largest joint variability in ```Q```.
+- Importantly, we are interested in the largest eigenvalue ```λ1```, because (perhaps) its associated eigenvector ```v1``` will be a dimension that can retain the most variation present in ```X``` (via ```Qv1 = λ1v1```)
 
 Matrix | Meaning
 --- | ---
