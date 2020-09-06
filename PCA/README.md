@@ -3,43 +3,53 @@ To project complicated original data onto a lower dimensional (e.g., 2D) space
 
 <hr>
 
-### Background Concept
+### Background Concepts
 
-A covariance matrix ```Q``` reflects the variability in the features (```X```) in terms of diagnoal (variance) and off-diagnoal (covariance, joint variability).
+A covariance matrix ```Q``` reflects the variation/variability of ```p``` features in ```X```.
 
 - ```Q = X'X / (n-1)```
 
 Matrix | Meaning
 --- | ---
-<b>X</b> | the empirical matrix for the original variables, column centered
+<b>X</b> | the empirical matrix for the original ```p``` variables, column centered
 <b>Q</b> | the empirical covariance matrix for the original variables
 
 <hr>
 
-### Key Concept of PCA
+### Key Concepts of PCA
 
-Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```, which by defintion can reproduce ```Q``` (namely, ```Q = WΛW'```)
+#### Common-Language Goal
+To find ```m``` principal components to account for most of the variability in ```X```, where ```m``` << ```p```
 
-```
-Q: Why using the covariance matrix (or correlation matrix if standardized)?
-A: It allows eigenvalues to decompose the variances (diagnoal) and the eigenvectors to decompose the covariances (off-diagnoal) among features.
-```
-
-- Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
-- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the largest joint variability in ```Q```.
+#### Technical Goal
+To find the eigenvalues and eigenvectors of the covariance matrix ```Q``` to <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">decompose</a> and reproduce ```Q``` (namely, via <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">singular value decomposition</a>): ```Q = WΛW'```
 
 Matrix | Meaning
 --- | ---
 <b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
 <b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
 
-Note.
+```
+Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
+```
+
+#### Implementation Procedural Goal
+To find each eigenvalue ```λ``` and the corresponding eigenvector ```v``` that satisfies ```Qv = λv```.
+- Importantly, we are interested in the largest few eigenvalues (e.g., ```λ1```), because their corresponding eigenvectors (e.g., ```v1```) will be dimensions that can retain the most variation present in ```X```.
+- Specifically, the first principal component ```v1``` is the direction that maximizes the variance along that direction in the projected data, namely, PC1 = ```v1'X``` has the maximum variance (note. Var(PC1) is actually ```λ1```) (and iteratively, PC2 = ```v2'X``` has the maximum variance while ```v2``` accounts for the remaining variation)
+
+#### <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">Solutions</a>
+- For k = 1, 2, ..., p, the k<sup>th</sup> PC is given by **z<sub>k</sub> = v<sub>k</sub>'X**, where v<sub>k</sub> is an eigenvector of ```Q``` corresponding to its k<sup>th</sup> largest eigvenvalue λ<sub>k</sub>.
+- If v<sub>k</sub> is chosen to have unit length (i.e., v<sub>k</sub>'v<sub>k</sub> = 1) then **Var(z<sub>k</sub>) = λ<sub>k</sub>**.
+
+Notes:
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
 - Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
-- Some interesting properties: ```Λ = W'QW``` and ```Q = WΛW'```
-- Why the y-axis in the scree plot is labled as percentage of explained **variance**? Please see an interpretation <a href="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
+- Property: ```Λ = W'QW```
+- The sum of eigenvalues equals to the sum of the variances in ```Q```
+- Why the y-axis in the scree plot is labled as percentage of explained **variance**? See an interpretation <a href="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
 
-See also.
+See also:
 - <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>
 
 <hr>

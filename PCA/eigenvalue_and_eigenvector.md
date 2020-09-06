@@ -86,4 +86,4 @@ $vectors
 <hr>
 
 Thoughts:
-1. Can one use dissimilarity matrix instead of covariance to feed to eigen-decomp?
+1. What if we use matrix other than covariance matrix (e.g., dissimilarity matrix) to feed to decomp-eigenvalue?
