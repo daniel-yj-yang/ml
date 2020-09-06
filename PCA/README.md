@@ -31,8 +31,8 @@ Q: Why using the covariance matrix (or correlation matrix if standardized), as o
 A: To allow retaining of the variation present in the data set, in terms of variances (diagnoal) and covariances (off-diagnoal) among features, by eigenvalues (the sum equals to the sum of the variances) and eigenvectors.
 ```
 
-- Implementation Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfies ```Qv = λv```
-- Importantly, we are interested in the largest few eigenvalues (e.g., ```λ1```), because their associated eigenvectors (e.g., ```v1```) will be dimensions that can retain the most variation present in ```X``` (e.g., via ```Qv1 = λ1v1```)
+- Implementation Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfies ```Qv = λv```.
+- Importantly, we are interested in the largest few eigenvalues (e.g., ```λ1```), because their associated eigenvectors (e.g., ```v1```) will be dimensions that can retain the most variation present in ```X``` (e.g., via ```Qv1 = λ1v1```).
 - The first principal component ```λ1``` is the direction that maximizes the variation along that direction in the projected data.
 
 Notes:
