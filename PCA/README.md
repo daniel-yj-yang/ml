@@ -49,7 +49,7 @@ Notes:
 - Property: ```Λ = W'QW```
 - Why the y-axis in the scree plot is labled as percentage of explained **variance**? Please see an interpretation <a href="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
 
-See also.
+See also:
 - <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>
 
 <hr>
