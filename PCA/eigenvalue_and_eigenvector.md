@@ -6,6 +6,10 @@
 - ```Av``` is pronounced as: multiplying ```v``` by ```A```.
 - Almost all vectors change direction when they are multiplied by ```A```. However, certain exceptional vectors ```v``` that does not change direction when multiplied by ```A``` (a linear transformation), and the vector ```Av``` is a number (```λ```) times the original ```v```.
 
+<hr>
+
+## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
+
 To derive ```v``` and ```λ```, given ```A```:
 
 ```
@@ -15,10 +19,6 @@ If v is non-zero, the equation will only have a solution if |A - λ·I| = 0
 By solving |A - λ·I| = 0, we can obtain λ
 Finally, using λ, we can obtain the corresponding v
 ```
-
-<hr>
-
-## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
 
 <p align="center"><img src="./images/eigenvalue_eigenvector_by_hand.png" width="700px"></p>
 
