@@ -5,7 +5,7 @@ To project the original data onto a reduced dimensional (e.g., 2D) space
 
 ### Background Concept
 
-Covariance matrix ```Q``` reflects how much the features in ```X``` are linearly linked with each other.
+Covariance matrix ```Q``` reflects how much the features in ```X``` are linearly correlated with each other.
 
 - ```Q = X'X / (n-1)```
 
@@ -21,6 +21,8 @@ Matrix | Meaning
 
 Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
+Q: Why using the covariance matrix (or correlation matrix if standardized) ?
+A: To allow eigenvalue and eigenvector to capture the correlation among variables.
 
 - Goal: to find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
 - Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can account for the most variance in ```Q```.
