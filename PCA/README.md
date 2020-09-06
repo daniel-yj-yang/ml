@@ -26,7 +26,7 @@ A: To allow eigenvalue and eigenvector to capture the correlation among variable
 ```
 
 - Goal: to find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
-- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can account for the most variance in ```Q```.
+- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the most characteristics in ```Q```.
 
 Matrix | Meaning
 --- | ---
