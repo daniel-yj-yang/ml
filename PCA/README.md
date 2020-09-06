@@ -18,7 +18,7 @@ Matrix | Meaning
 
 ### Key Concept of PCA
 
-Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
+Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```, in order to reproduce the covariance matrix using orthogonal eigenvectors and their eigenvalues
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized)?
