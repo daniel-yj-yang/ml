@@ -3,7 +3,7 @@ To project complicated original data onto a lower dimensional (e.g., 2D) space
 
 <hr>
 
-### Background Concept
+### Background Concepts
 
 A covariance matrix ```Q``` reflects the variation/variability of ```p``` features in ```X``` in terms of diagnoal (variance) and off-diagnoal (covariance, joint variability).
 
@@ -16,13 +16,13 @@ Matrix | Meaning
 
 <hr>
 
-### Key Concept of PCA
+### Key Concepts of PCA
 
 #### Common-Language Goal
 To find ```m``` principal components to account for most of the variability in ```X```, where ```m``` << ```p```
 
 #### Technical Goal***
-To find the eigenvalues and eigenvectors of the covariance matrix ```Q``` to <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">decompose</a> and reproduce ```Q``` (namely, singular value decomposition): ```Q = WΛW'```
+To find the eigenvalues and eigenvectors of the covariance matrix ```Q``` to <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">decompose</a> and reproduce ```Q``` (namely, <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">singular value decomposition</a>): ```Q = WΛW'```
 
 Matrix | Meaning
 --- | ---
