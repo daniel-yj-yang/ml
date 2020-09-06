@@ -39,7 +39,7 @@ Note.
 - Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
 - Property: ```Λ = W'QW```
 - Why the y-axis in the scree plot is labled as percentage of explained **variance**? Please see an interpretation <a href="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
-- The first principal component is the direction that maximizes the variance along that direction in the projected data.
+- The first principal component is the direction that maximizes the variation along that direction in the projected data.
 
 See also.
 - <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>
