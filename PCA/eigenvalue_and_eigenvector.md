@@ -21,7 +21,7 @@ Finally, using λ, we can obtain the corresponding v
 
 ## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
 
-<p align="center"><img src="./images/eigenvalue_eigenvector_by_hand.png" width="800px"></p>
+<p align="center"><img src="./images/eigenvalue_eigenvector_by_hand.png" width="700px"></p>
 
 <hr>
 
