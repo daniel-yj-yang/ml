@@ -23,7 +23,7 @@ Matrix | Meaning
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
-A: (Perhaps) It allows eigenvalues to decompose the variances (diagnoal) and the eigenvectors to decompose the covariances (off-diagnoal) among features.
+A: To allow retaining of the variation present in the data set, in terms of variances (diagnoal) and covariances (off-diagnoal) among features, by eigenvalues (the sum equals to the sum of the variances) and eigenvectors of the covariance matrix.
 ```
 
 - Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
