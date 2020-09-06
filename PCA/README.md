@@ -18,11 +18,12 @@ Matrix | Meaning
 
 ### Key Concept of PCA
 
-
 Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
+```
 Q: Why using the covariance matrix (or correlation matrix if standardized) ?
 A: To allow eigenvalue and eigenvector to capture the correlation among variables.
+```
 
 - Goal: to find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
 - Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can account for the most variance in ```Q```.
