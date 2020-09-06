@@ -21,18 +21,18 @@ Matrix | Meaning
 - ***Common-Language Goal***: To find ```m``` principal components to account for most of the variability in ```X```, where ```m``` << ```p```
 - ***Technical Goal***: To find the eigenvalues and eigenvectors of the covariance matrix ```Q``` to <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">decompose</a> and reproduce ```Q``` (namely, singular value decomposition): ```Q = WΛW'```
 
+Matrix | Meaning
+--- | ---
+<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
+<b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
+
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
 A: To allow retaining of the variation present in the data set, in terms of variances (diagnoal) and covariances (off-diagnoal) among features, by eigenvalues (the sum equals to the sum of the variances) and eigenvectors.
 ```
 
-- Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfies ```Qv = λv```
+- Implementation Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfies ```Qv = λv```
 - Importantly, we are interested in the largest few eigenvalues (e.g., ```λ1```), because their associated eigenvectors (e.g., ```v1```) will be dimensions that can retain the most variation present in ```X``` (e.g., via ```Qv1 = λ1v1```)
-
-Matrix | Meaning
---- | ---
-<b>W</b> | the p-by-p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
-<b>Λ</b> | the <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
 
 Note.
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
