@@ -19,7 +19,7 @@ Matrix | Meaning
 ### Key Concept of PCA
 
 - Common-Language Goal: To find ```m``` principal components to account for most of the variations in ```X```, where ```m``` << ```p```
-- Technical Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```, which by defintion can reproduce ```Q``` (namely, ```Q = WΛW'```)
+- Technical Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q``` to <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">decompose</a> and reproduce ```Q``` (namely, singular value decomposition): ```Q = WΛW'```
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
