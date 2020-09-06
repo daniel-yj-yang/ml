@@ -11,7 +11,6 @@
 ## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
 
 To derive ```v``` and ```λ```, given ```A```:
-
 ```
 Av - λv = 0
 (A - λ·I)v = 0
@@ -20,6 +19,7 @@ By solving |A - λ·I| = 0, we can obtain λ
 Finally, using λ, we can obtain the corresponding v
 ```
 
+For example:
 <p align="center"><img src="./images/eigenvalue_eigenvector_by_hand.png" width="700px"></p>
 
 <hr>
