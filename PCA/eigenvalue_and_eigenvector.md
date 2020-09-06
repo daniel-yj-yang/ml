@@ -21,6 +21,8 @@ Finally, using λ, we can obtain the corresponding v
 
 ## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
 
+<img src="./images/eigenvalues_and_eigenvectors_by_hand.png">
+
 <hr>
 
 ## Examples
