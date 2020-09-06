@@ -5,7 +5,7 @@ To project the original data onto a reduced dimensional (e.g., 2D) space
 
 ### Background Concept
 
-Covariance matrix ```Q``` reflects how much the features in ```X``` are linearly linked with each other.
+A covariance matrix ```Q``` reflects the variability in the features (```X```) in terms of diagnoal (variance) and off-diagnoal (covariance, joint variability).
 
 - ```Q = X'X / (n-1)```
 
@@ -18,12 +18,15 @@ Matrix | Meaning
 
 ### Key Concept of PCA
 
+Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```, which by defintion can reproduce ```Q``` (namely, ```Q = WΛW'```)
 
-Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
+```
+Q: Why using the covariance matrix (or correlation matrix if standardized)?
+A: It allows eigenvalues to decompose the variances (diagnoal) and the eigenvectors to decompose the covariances (off-diagnoal) among features.
+```
 
-
-- Goal: to find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
-- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can account for the most variance in ```Q```.
+- Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
+- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the largest joint variability in ```Q```.
 
 Matrix | Meaning
 --- | ---
@@ -34,6 +37,7 @@ Note.
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
 - Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
 - Some interesting properties: ```Λ = W'QW``` and ```Q = WΛW'```
+- Why the y-axis in the scree plot is labled as percentage of explained **variance**? Please see an interpretation <a href="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
 
 See also.
 - <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>

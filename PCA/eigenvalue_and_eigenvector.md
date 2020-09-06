@@ -16,6 +16,11 @@ If v is non-zero, the equation will only have a solution if |A - λ·I| = 0
 By solving |A - λ·I| = 0, we can obtain λ
 Finally, using λ, we can obtain the corresponding v
 ```
+
+<hr>
+
+## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
+
 <hr>
 
 ## Examples
@@ -74,3 +79,8 @@ $vectors
 [1,] -0.9486833 -0.2425356
 [2,]  0.3162278 -0.9701425
 ```
+
+<hr>
+
+Thoughts:
+1. Can one use dissimilarity matrix instead of covariance to feed to eigen-decomp?
