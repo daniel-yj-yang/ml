@@ -26,7 +26,7 @@ A: It allows eigenvalues to decompose the variances (diagnoal) and the eigenvect
 ```
 
 - Goal: To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
-- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the lion's share of variability in ```Q```.
+- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the largest joint variability in ```Q```.
 
 Matrix | Meaning
 --- | ---
