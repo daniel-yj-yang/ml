@@ -56,6 +56,8 @@ See also:
 
 ### Example - the iris dataset
 
+<img src="./images/iris.jpg" width="1000px">
+
 <hr>
 
 #### Scree plot (1): To see the eigenvalue of each principal component
