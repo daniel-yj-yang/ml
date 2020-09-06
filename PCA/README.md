@@ -36,7 +36,7 @@ Q: Why using the covariance matrix (or correlation matrix if standardized), as o
 #### Implementation Procedural Goal
 To find each eigenvalue ```λ``` and the corresponding eigenvector ```v``` that satisfies ```Qv = λv```.
 - Importantly, we are interested in the largest few eigenvalues (e.g., ```λ1```), because their corresponding eigenvectors (e.g., ```v1```) will be dimensions that can retain the most variation present in ```X```.
-- Specifically, the first principal component ```v1``` is the direction that maximizes the variance along that direction in the projected data, namely, PC1 = ```v1'X``` has the maximum variance (note. Var(PC1) is actually ```λ1```) (and iteratively, PC2 = ```v2'X``` has the maximum variance while ```v2``` accounts for the remaining variation)
+- Specifically, the first principal component ```v1``` is the direction that maximizes the variance along that direction in the projected data, namely, PC1 = ```v1'X``` has the maximum variance among all PC's (note. **Var(PC1)** is actually ```λ1```) (and iteratively, PC2 = ```v2'X``` has the 2nd maximum variance while ```v2``` accounts for the remaining variation)
 
 #### <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">Solutions</a>
 - For k = 1, 2, ..., p, the k<sup>th</sup> PC is given by **z<sub>k</sub> = v<sub>k</sub>'X**, where v<sub>k</sub> is an eigenvector of ```Q``` corresponding to its k<sup>th</sup> largest eigvenvalue λ<sub>k</sub>.
@@ -56,8 +56,8 @@ See also:
 
 ### Example - the iris dataset
 
-<img src="./images/iris.jpg" width="1000px">
-(<a href="https://www.integratedots.com/determine-number-of-iris-species-with-k-means/">image source</a>)
+<p align="center"><img src="./images/iris.jpg" width="900px"></p>
+(image sources: <a href="https://www.fs.fed.us/wildflowers/beauty/iris/Blue_Flag/iris_virginica.shtml">virginica</a>; <a href="https://www.lakeforest.edu/academics/programs/environmental/courses/es204/iris_versicolor.php">versicolor</a>; <a href="https://alchetron.com/Iris-setosa">setosa</a>)
 
 <hr>
 
@@ -81,7 +81,8 @@ See also:
 
 <hr>
 
-#### Code
+#### Codes
+- <a href="https://github.com/daniel-yj-yang/programming_language/tree/master/Clojure/build/incanter">Clojure code</a>
 - <a href="./PCA.R">R code</a>
 
 <hr>
