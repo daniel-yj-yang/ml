@@ -5,7 +5,6 @@
 - ```A``` is a square matrix, ```v``` is an eigenvector, and ```λ``` is an eigenvalue.
 - ```Av``` is pronounced as: multiplying ```v``` by ```A```.
 - Almost all vectors change direction when they are multiplied by ```A```. However, certain exceptional vectors ```v``` that does not change direction when multiplied by ```A``` (a linear transformation), and the vector ```Av``` is a number (```λ```) times the original ```v```.
-- When ```λ``` is larger, ```v``` accounts for more variance in ```A```.
 
 To derive ```v``` and ```λ```, given ```A```:
 
