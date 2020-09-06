@@ -36,7 +36,7 @@ Q: Why using the covariance matrix (or correlation matrix if standardized), as o
 #### Implementation Procedural Goal
 To find each eigenvalue ```λ``` and the corresponding eigenvector ```v``` that satisfies ```Qv = λv```.
 - Importantly, we are interested in the largest few eigenvalues (e.g., ```λ1```), because their corresponding eigenvectors (e.g., ```v1```) will be dimensions that can retain the most variation present in ```X```.
-- Specifically, the first principal component ```v1``` is the direction that maximizes the variance along that direction in the projected data, namely, PC1 = ```v1'X``` has the maximum variance (note. Var(PC1) is actually ```λ1```) (and iteratively, PC2 = ```v2'X``` has the maximum variance while ```v2``` accounts for the remaining variation)
+- Specifically, the first principal component ```v1``` is the direction that maximizes the variance along that direction in the projected data, namely, PC1 = ```v1'X``` has the maximum variance (note. **Var(PC1)** is actually ```λ1```) (and iteratively, PC2 = ```v2'X``` has the maximum variance while ```v2``` accounts for the remaining variation)
 
 #### <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">Solutions</a>
 - For k = 1, 2, ..., p, the k<sup>th</sup> PC is given by **z<sub>k</sub> = v<sub>k</sub>'X**, where v<sub>k</sub> is an eigenvector of ```Q``` corresponding to its k<sup>th</sup> largest eigvenvalue λ<sub>k</sub>.
