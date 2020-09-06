@@ -41,7 +41,7 @@ To find each eigenvalue ```λ``` and the corresponding eigenvector ```v``` that 
 
 #### <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">Solutions</a>
 - For k = 1, 2, ..., p, the k<sup>th</sup> PC is given by z<sub>k</sub> = v<sub>k</sub>'X, where v<sub>k</sub> is an eigenvector of ```Q``` corresponding to its k<sup>th</sup> largest eigvenvalue λ<sub>k</sub>.
-- If v<sub>k</sub> is chosen to have unit length (i.e., v<sub>k</sub>'v<sub>k</sub> = 1) then Var(z<sub>k</sub>) = λ<sub>k</sub>.
+- If v<sub>k</sub> is chosen to have unit length (i.e., v<sub>k</sub>'v<sub>k</sub> = 1) then **Var(z<sub>k</sub>) = λ<sub>k</sub>**.
 
 Notes:
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
