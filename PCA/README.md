@@ -37,7 +37,7 @@ Note.
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
 - Importantly, ```WW' = W'W = I``` as ```W``` is orthonormal
 - Some interesting properties: ```Λ = W'QW``` and ```Q = WΛW'```
-- Why the y-axis in the scree plot is labled as percentage of explained variance? Please see an interpretation <a herf="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
+- Why the y-axis in the scree plot is labled as percentage of explained **variance**? Please see an interpretation <a herf="https://stats.stackexchange.com/questions/22569/pca-and-proportion-of-variance-explained">here</a>
 
 See also.
 - <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>
