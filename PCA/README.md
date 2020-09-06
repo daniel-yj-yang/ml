@@ -56,6 +56,9 @@ See also:
 
 ### Example - the iris dataset
 
+<img src="./images/iris.jpg" width="1000px">
+(<a href="https://www.integratedots.com/determine-number-of-iris-species-with-k-means/">image source</a>)
+
 <hr>
 
 #### Scree plot (1): To see the eigenvalue of each principal component
