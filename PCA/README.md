@@ -5,7 +5,7 @@ To project complicated original data onto a lower dimensional (e.g., 2D) space
 
 ### Background Concept
 
-A covariance matrix ```Q``` reflects the variability in the features (```X```) in terms of diagnoal (variance) and off-diagnoal (covariance, joint variability).
+A covariance matrix ```Q``` reflects the variability of ```p``` features (```X```) in terms of diagnoal (variance) and off-diagnoal (covariance, joint variability).
 
 - ```Q = X'X / (n-1)```
 
@@ -18,7 +18,8 @@ Matrix | Meaning
 
 ### Key Concept of PCA
 
-Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```, which by defintion can reproduce ```Q``` (namely, ```Q = WΛW'```)
+- Common-Language Goal: To find ```m``` principal components to account for most of the variations in ```X```, where ```m``` << ```p```
+- Technical Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```, which by defintion can reproduce ```Q``` (namely, ```Q = WΛW'```)
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
