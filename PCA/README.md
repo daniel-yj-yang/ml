@@ -5,7 +5,7 @@ To project complicated original data onto a lower dimensional (e.g., 2D) space
 
 ### Background Concept
 
-A covariance matrix ```Q``` reflects the variation/variability of ```p``` features (```X```) in terms of diagnoal (variance) and off-diagnoal (covariance, joint variability).
+A covariance matrix ```Q``` reflects the variation/variability of ```p``` features in ```X``` in terms of diagnoal (variance) and off-diagnoal (covariance, joint variability).
 
 - ```Q = X'X / (n-1)```
 
