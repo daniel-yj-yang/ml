@@ -22,11 +22,11 @@ Goal: To find the eigenvalues and eigenvectors of the covariance matrix ```Q```
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized)?
-A: To allow eigenvalue and eigenvector to reflect the covariance among variables.
+A: It allows eigenvalues to reflect the variances (diagnoal) and the eigenvectors to reflect the covariances (off-diagnoal) among features.
 ```
 
 - Goal: to find each eigenvalue ```λ``` and the associated eigenvector ```v``` that satisfy ```Qv = λv```
-- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the most characteristics in ```Q```.
+- Importantly, we are interested in the largest eigenvalue ```λ```, because its associated eigenvector ```v``` will be a dimension that can capture the lion's share of essence/characteristics in ```Q```.
 
 Matrix | Meaning
 --- | ---
