@@ -21,7 +21,7 @@ Matrix | Meaning
 #### Common-Language Goal
 To find ```m``` principal components to account for most of the variability in ```X```, where ```m``` << ```p```
 
-#### Technical Goal***
+#### Technical Goal
 To find the eigenvalues and eigenvectors of the covariance matrix ```Q``` to <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">decompose</a> and reproduce ```Q``` (namely, <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">singular value decomposition</a>): ```Q = WΛW'```
 
 Matrix | Meaning
