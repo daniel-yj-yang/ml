@@ -16,6 +16,10 @@ sum(eigenvalues)
 require(magrittr)
 eigenvectors ^2 %>% colSums() # the eigenvector is normalized to have magnitude/length of 1
 
+PCs <- scale(iris[,c(1:4)]) %*% eigenvectors
+apply(PCs, 2, var)
+apply(PCs, 2, var) - eigenvalues  ## Var(PCs) = eigenvalues
+
 # biplot
 require(ggbiplot)
 ggbiplot(iris.pca, ellipse=TRUE, groups=iris$Species, obs.scale = 1, var.scale = 1)
