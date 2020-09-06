@@ -39,10 +39,9 @@ To find each eigenvalue ```λ``` and the associated eigenvector ```v``` that sat
 - Importantly, we are interested in the largest few eigenvalues (e.g., ```λ1```), because their associated eigenvectors (e.g., ```v1```) will be dimensions that can retain the most variation present in ```X``` (e.g., via ```Qv1 = λ1v1```).
 - The first principal component ```v1``` is the direction that maximizes the variance along that direction in the projected data, namely, ```v1'X``` has the maximum variance (and iteratively, ```v2'X``` has the maximum variance while ```v2``` accounts for the remaining variation)
 
-#### Solutions
+#### <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">Solutions</a>
 - For k = 1, 2, ..., p, the k<sup>th</sup> PC is given by z<sub>k</sub> = v<sub>k</sub>'X, where v<sub>k</sub> is an eigenvector of ```Q``` corresponding to its k<sup>th</sup> largest eigvenvalue λ<sub>k</sub>.
--
-
+- If v<sub>k</sub> is chosen to have unit length (i.e., v<sub>k</sub>'v<sub>k</sub> = 1) then Var(z<sub>k</sub>) = λ<sub>k</sub>.
 
 Notes:
 - Detailed explanation of <a href="./eigenvalue_and_eigenvector.md">eigenvalue and eigenvector</a>
