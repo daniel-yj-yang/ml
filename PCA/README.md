@@ -116,7 +116,7 @@ This is primarily using <b>X<sub>L-reconstructed-by-PCA</sub> = T<sub>L</sub>W<s
   </tr>
   </table>
 
-In general, for a color image of (n\*p\*3) bytes, the memory requirement after PCA compression is (n\*L\*3 + p\*L\*3 + 1\*p\*3) bytes, where L << p.<br/>
+For a color image of (n\*p\*3) bytes, the memory requirement after PCA compression is (n\*L\*3 + p\*L\*3 + 1\*p\*3) bytes, where L << p.<br/>
 In the Lego art: The Kiss example, n = 697, p = 1127, L = 1 ~ 30, and <b>T<sub>L</sub></b> is a n x L matrix, <b>W<sub>L</sub></b> is a p x L matrix
 <hr>
 
