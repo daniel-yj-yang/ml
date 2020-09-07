@@ -9,7 +9,7 @@ To project complicated original data onto a lower dimensional (e.g., 2D) space
 To find ```m``` principal components to account for most of the variation in ```X```, where ```m``` << ```p```
 
 - <a href="./README.md#approach-1-eigendecomposition-of-the-data-covariance-matrix">Approach 1: Eigendecomposition of the data covariance matrix</a>
-- Approach 2: Singular value decomposition of the data matrix
+- <a href="./README.md#approach-2-singular-value-decomposition-of-the-data-matrix">Approach 2: Singular value decomposition of the data matrix</a>
 
 <hr>
 
