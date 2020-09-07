@@ -35,8 +35,8 @@ Matrix | Meaning
 --- | ---
 <b>W</b> | A p x p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
 <b>Λ</b> | A <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
-<b>T</b> | The full projected (on principal component dimensions) score matrix, <b>T = XW</b>
-<b>T<sub>L</sub></b> | A truncated/reduced projected (on principal component dimensions) score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors
+<b>T</b> | The full projected score matrix, <b>T = XW</b>, reflecting X being projected on principal component dimensions
+<b>T<sub>L</sub></b> | A truncated/reduced score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
