@@ -109,6 +109,7 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
   </tr>
   </table>
 
+In general, for a color image of n\*p\*3 bytes, the PCA compression will lead to an image of p\*L\*3 + L\*n\*3 + 1\*n\*3 bytes, where L << p.
 <hr>
 
 ### Example 2 - Eigenface
