@@ -70,9 +70,14 @@ According to compact SVD, ```X = UDV'```
 
 Matrix | Meaning
 --- | ---
-<b>U</b> | A n x p real-valued matrix (where U'U = I<sub>p</sub>) with orthonormal columns
-<b>D</b> | A p x p real-valued diagnoal matrix, with the non-zero singular values on the diagnoal
-<b>V</b> | A p x p real-valued orthonormal matrix, where V' = V<sup>-1</sup>
+<b>U</b> | A n x p real-valued matrix (where <b>U'U = I<sub>p</sub></b>) with orthonormal columns
+<b>D</b> | A p x p real-valued diagnoal matrix, with the non-zero singular values on the diagnoal. Importantly, <b>D<sup>2</sup> / (n-1) = Λ</b>
+<b>V</b> | A p x p real-valued orthonormal matrix, where <b>V' = V<sup>-1</sup></b> and <b>V'V = I</b>. Importantly, ```V``` is equivalent to ```W```. 
+
+Now, using ```U```, ```D```, and ```V```, we can derive the projected score matrix ```T = UD = XV```
+
+Note:
+- 
 
 <hr>
 
