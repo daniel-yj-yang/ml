@@ -86,7 +86,7 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
 
 ### Example 1 - Image reconstruction / compression
 
-This is primarily using <b>X<sub>L-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>'</b>
+This is primarily using <b>X<sub>raw-as-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>' + X<sub>colMeans</sub></b>
 
 <table align="center">
   <tr>
