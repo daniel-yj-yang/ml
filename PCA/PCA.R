@@ -1,45 +1,72 @@
+rm(list=ls())
+cat("\014")
+
 # Daniel Yang, Ph.D. (daniel.yj.yang@gmail.com)
 
 # https://www.datacamp.com/community/tutorials/pca-analysis-r
 
 require(datasets)
+
+#gender <- read.csv('/Users/daniel/Data-Science/Data/Gender/01_heights_weights_genders.csv')
+#data <- gender[,c(2:3)]
+#groups <- gender$Gender
+
+#data(swiss)
+#data <- swiss[,c(2:6)]
+#groups <- rep(0, nrow(swiss))
+
 data(iris)
+data <- iris[,c(1:4)]
+groups <- iris$Species
 
-iris.pca <- prcomp(iris[,c(1:4)], center = TRUE, scale. = TRUE)
+########################################################################################
+## Use SVD to perform PCA without calculating Q, the covariance matrix of X
+n <- nrow(X)
+X <- scale(data) # X = UDV'
+svd_results <- svd(X)
+U <- svd_results$u
+t(U) %*% U # U'U = I
+D <- diag(svd_results$d) 
+eigenvalues <- (svd_results$d/sqrt(n-1))**2 # equivalent to eigenvalues of Q, the covariance matrix of X
+V <- svd_results$v # equivalent to W, the eigenvectors of Q, the covariance matrix of X
+t(V) %*% V # V'V = I
+PCs <- U %*% D # projected score matrix T, equivalent to X %*% V
+########################################################################################
 
-summary(iris.pca)
+pca_results <- prcomp(data, center = TRUE, scale. = TRUE)
 
-eigenvalues <- iris.pca$sdev^2
-eigenvectors <- iris.pca$rotation
+summary(pca_results)
+
+eigenvalues <- pca_results$sdev^2
+eigenvectors <- pca_results$rotation
 
 sum(eigenvalues)
 require(magrittr)
 eigenvectors ^2 %>% colSums() # the eigenvector is normalized to have magnitude/length of 1
 
-PCs <- scale(iris[,c(1:4)]) %*% eigenvectors
+PCs <- scale(data) %*% eigenvectors # projected score matrix T
 apply(PCs, 2, var)
 apply(PCs, 2, var) - eigenvalues  ## Var(PCs) = eigenvalues
 
-# biplot
-require(ggbiplot)
-ggbiplot(iris.pca, ellipse=TRUE, groups=iris$Species, obs.scale = 1, var.scale = 1)
-
 # http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/118-principal-component-analysis-in-r-prcomp-vs-princomp/
 require(factoextra)
-fviz_eig(iris.pca)
 
 # scree plot
-fviz_eig(iris.pca, choice = "eigenvalue", geom = "line", addlabels = TRUE, xlab = "Principal Component" )
-fviz_eig(iris.pca, choice = "variance", geom = "bar", addlabels = TRUE, xlab = "Principal Component" )
+fviz_eig(pca_results, choice = "eigenvalue", geom = "line", addlabels = TRUE, xlab = "Principal Component" )
+fviz_eig(pca_results, choice = "variance", geom = "bar", addlabels = TRUE, xlab = "Principal Component" )
 
 # loading plot
-fviz_pca_var(iris.pca,
+fviz_pca_var(pca_results,
              col.var = "contrib", # Color by contributions to the PC
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
              repel = TRUE     # Avoid text overlapping
 )
-fviz_pca_biplot(iris.pca, 
+fviz_pca_biplot(pca_results, 
                 repel = TRUE,
                 col.var = "#2E9FDF", # Variables color
                 col.ind = "#696969"  # Individuals color
 )
+
+# biplot
+require(ggbiplot)
+ggbiplot(pca_results, ellipse=TRUE, groups=groups, obs.scale = 1, var.scale = 1)
