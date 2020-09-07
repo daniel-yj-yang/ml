@@ -62,6 +62,7 @@ See also:
 <hr>
 
 ### Approach 2: <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">Singular value decomposition</a> of the data matrix
+The standard way to perform PCA because it does not require calculating the covariance matrix
 
 <hr>
 
