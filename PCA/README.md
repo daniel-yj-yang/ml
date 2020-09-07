@@ -35,7 +35,7 @@ Matrix | Meaning
 --- | ---
 <b>W</b> | A p x p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
 <b>Λ</b> | A <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
-<b>T</b> | The projected score matrix, ```T = XW```
+<b>T</b> | The full projected score matrix, ```T = XW```
 <b>T<sub>L</sub></b> | A truncated projected score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors
 
 ```
@@ -66,7 +66,7 @@ See also:
 ### Approach 2: <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">Singular value decomposition</a> of the data matrix
 As another matrix factorization, SVD is the standard way to perform PCA because it does not require calculating the covariance matrix
 
-According to compact SVD, ```X = UDV'```
+According to compact SVD, <b>X = UDV'</b>
 
 Matrix | Meaning
 --- | ---
@@ -74,10 +74,7 @@ Matrix | Meaning
 <b>D</b> | A p x p real-valued diagnoal matrix, with the non-zero singular values on the diagnoal. Importantly, <b>D<sup>2</sup> / (n-1) = Λ</b>
 <b>V</b> | A p x p real-valued orthonormal matrix, where <b>V' = V<sup>-1</sup></b> and <b>V'V = I</b>. Importantly, ```V``` is equivalent to ```W```. 
 
-Now, using ```U```, ```D```, and ```V```, we can derive the projected score matrix ```T = UD = XV```
-
-Note:
-- 
+Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full projected score matrix <b>T = UD = XV</b> and the first L columns are <b>T<sub>L</sub></b>.
 
 <hr>
 
