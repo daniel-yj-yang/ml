@@ -23,8 +23,8 @@ A covariance matrix ```Q``` reflects the variation/variability of ```p``` featur
 
 Matrix | Meaning
 --- | ---
-<b>X</b> | the empirical matrix for the original ```p``` variables, column centered
-<b>Q</b> | the empirical covariance matrix for the original variables
+<b>X</b> | the empirical n x p matrix for the original ```p``` variables, column centered
+<b>Q</b> | the empirical p x p covariance matrix for the original variables
 
 <hr>
 
@@ -62,7 +62,15 @@ See also:
 <hr>
 
 ### Approach 2: <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">Singular value decomposition</a> of the data matrix
-The standard way to perform PCA because it does not require calculating the covariance matrix
+As another matrix factorization, SVD is the standard way to perform PCA because it does not require calculating the covariance matrix
+
+According to compact SVD, ```X = UDV'```
+
+Matrix | Meaning
+--- | ---
+<b>U</b> | A n x p real-valued matrix (where U'U = I<sub>p</sub>) with orthonormal columns
+<b>D</b> | A p x p real-valued diagnoal matrix, with the non-zero singular values on the diagnoal
+<b>V</b> | A p x p real-valued orthonormal matrix, where V' = V<sup>-1</sup>
 
 <hr>
 
