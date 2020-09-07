@@ -78,7 +78,25 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
 
 <hr>
 
-### Example 1 - the iris dataset
+### Example 1 - the Lena test image reconstruction
+
+(test image <img src="https://www.ece.rice.edu/~wakin/images/">source)
+
+<hr>
+
+### Example 2 - Eigenface
+
+Example: Given 1000 original faces, derive 1000 principal components (eigenfaces). Take the top 50 principal components. The original face can be expressed as the following:
+
+Original face = mean face + weighted combinations of selected eigenfaces
+
+- https://towardsdatascience.com/eigenfaces-recovering-humans-from-ghosts-17606c328184
+- https://demonstrations.wolfram.com/FaceRecognitionUsingTheEigenfaceAlgorithm/
+- https://www.youtube.com/watch?v=JqEI0-RCC8w
+
+<hr>
+
+### Example 3 - the iris dataset
 
 <p align="center"><img src="./images/iris.jpg" width="900px"></p>
 (image sources: <a href="https://www.fs.fed.us/wildflowers/beauty/iris/Blue_Flag/iris_virginica.shtml">virginica</a>; <a href="https://www.lakeforest.edu/academics/programs/environmental/courses/es204/iris_versicolor.php">versicolor</a>; <a href="https://alchetron.com/Iris-setosa">setosa</a>)
@@ -108,18 +126,6 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
 #### Codes
 - <a href="https://github.com/daniel-yj-yang/programming_language/tree/master/Clojure/build/incanter">Clojure code</a>
 - <a href="./PCA.R">R code</a>
-
-<hr>
-
-### Example 2 - Eigenface
-
-Example: Given 1000 original faces, derive 1000 principal components (eigenfaces). Take the top 50 principal components. The original face can be expressed as the following:
-
-Original face = mean face + weighted combinations of selected eigenfaces
-
-- https://towardsdatascience.com/eigenfaces-recovering-humans-from-ghosts-17606c328184
-- https://demonstrations.wolfram.com/FaceRecognitionUsingTheEigenfaceAlgorithm/
-- https://www.youtube.com/watch?v=JqEI0-RCC8w
 
 <hr>
 
