@@ -5,15 +5,19 @@ cat("\014")
 
 require(png)
 require(colorspace)
+#require(imager) # https://dahtah.github.io/imager/imager.html
 
 # to read the test image as a matrix
 # https://stackoverflow.com/questions/31800687/how-to-get-a-pixel-matrix-from-grayscale-image-in-r
+
 x <- readPNG("/Users/daniel/Data-Science/Data/Faces/Lena/Lena-gray-512x512.png")
+img_width <- 256
+img_height <- 256
 dim(x)
 
-y <- rgb(x[,,1], x[,,2], x[,,3], alpha = x[,,4])
-yg <- desaturate(y)
-yn_255 <- col2rgb(yg)[1, ]
+y <- rgb(x[,,1], x[,,2], x[,,3], alpha = x[,,4]) # if there is no alpha option in Preview, try save as PNG, reopen the PNG, and save it again
+yg <- desaturate(y) # gray scale
+yn_255 <- col2rgb(yg)[1, ] # gray scale
 yn <- yn_255/255
 dim(y) <- dim(yg) <- dim(yn) <- dim(yn_255) <- dim(x)[1:2]
 
@@ -31,7 +35,7 @@ pixmatplot <- function (x, ...) {
 #pixmatplot(y)
 #pixmatplot(yg)
 
-plot_matrix_gray_image <- function(this_array, filename = 'test.png', text = "", width=dim(this_array)[1], height=dim(this_array)[2]) {
+plot_array_gray_image <- function(this_array, filename = 'test.png', text = "", width=dim(this_array)[1], height=dim(this_array)[2]) {
   # https://stackoverflow.com/questions/5638462/r-image-of-a-pixel-matrix
   png(file.path('/Users/daniel/tmp', filename), width=width, height=height)
   par(mar = rep(0, 4)) # Set up a plot with no margin
@@ -41,7 +45,7 @@ plot_matrix_gray_image <- function(this_array, filename = 'test.png', text = "",
   dev.off()
 }
 
-plot_matrix_gray_image(yn_255, text = "Original", width = 256, height = 256)
+#plot_array_gray_image(yn_255, text = "Original", width = img_width, height = img_height)
 
 # to use PCA to reconstruct Lena
 # https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com
@@ -50,13 +54,13 @@ mu = colMeans(X)
 
 Xpca = prcomp(X, center = TRUE, scale. = FALSE)
 
-for(n_PCs in 1:50) {
+for(n_PCs in 1:30) {
   print(n_PCs)
   nComp = n_PCs
-  Xhat = Xpca$x[,1:nComp] %*% t(Xpca$rotation[,1:nComp])
+  Xhat = Xpca$x[,1:nComp] %*% t(Xpca$rotation[,1:nComp]) # X_L = T_L * W_L
   Xhat = scale(Xhat, center = -mu, scale = FALSE) # reconstructed
   
-  plot_matrix_gray_image(Xhat, filename = paste0(sprintf("%03d", nComp),'.png'), text = paste0('PCs: ',nComp), width = 256, height = 256)
+  plot_array_gray_image(Xhat, filename = paste0(sprintf("%03d", nComp),'.png'), text = paste0('PCs: ',nComp), width = img_width, height = img_height)
 }
 
 # finally, use imagemagick to create gif
