@@ -64,9 +64,9 @@ See also:
 <hr>
 
 ### Approach 2: <a href="https://en.wikipedia.org/wiki/Singular_value_decomposition">Singular value decomposition</a> of the data matrix
-As another matrix factorization, SVD is the standard way to perform PCA because it does not require calculating the covariance matrix
+As another matrix factorization, SVD is the standard way to perform PCA because it does not require calculating the covariance matrix.
 
-According to compact SVD, <b>X = UDV'</b>
+According to compact SVD, <b>X = UDV'</b>.
 
 Matrix | Meaning
 --- | ---
