@@ -35,8 +35,8 @@ Matrix | Meaning
 --- | ---
 <b>W</b> | A p x p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
 <b>Λ</b> | A <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
-<b>T</b> | The full projected score matrix, <b>T = XW</b>, reflecting ```X``` being projected on principal component dimensions<br/><br/>Importantly, this also gives us a way to <a href="https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com">reconstruct</a> <b>X<sub>centered</sub></b>: <b>X<sub>centered_as_reconstructed_by_PCA</sub> = TW'</b><br/>and thus <b>X<sub>raw</sub> = X<sub>centered_as_reconstructed_by_PCA</sub> + X<sub>mean</sub></b>
-<b>T<sub>L</sub></b> | A truncated/reduced score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors
+<b>T</b> | The full projected score matrix, <b>T = XW</b>, reflecting ```X``` being projected on principal component dimensions<br/><br/>Importantly, this also gives us a way to <a href="https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com">reconstruct</a> <b>X<sub>centered</sub></b>: <b>X<sub>reconstructed_by_PCA</sub> = TW'</b><br/>and thus <b>X<sub>raw</sub> = X<sub>reconstructed_by_PCA</sub> + X<sub>mean</sub></b>
+<b>T<sub>L</sub></b> | A truncated/reduced score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors<br/><br/>Similarly, <b>X<sub>L-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>'</b>
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
@@ -99,8 +99,9 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
 
 Example: Given 1000 original faces, derive 1000 principal components (eigenfaces). Take the top 50 principal components. The original face can be expressed as the following:
 
-Original face = mean face + weighted combinations of selected eigenfaces
+Original face = mean face + weighted combinations of the top 50 eigenfaces
 
+See also:
 - https://towardsdatascience.com/eigenfaces-recovering-humans-from-ghosts-17606c328184
 - https://demonstrations.wolfram.com/FaceRecognitionUsingTheEigenfaceAlgorithm/
 - https://www.youtube.com/watch?v=JqEI0-RCC8w
@@ -109,8 +110,8 @@ Original face = mean face + weighted combinations of selected eigenfaces
 
 ### Example 3 - the iris dataset
 
-<p align="center"><img src="./images/iris.jpg" width="900px"></p>
-(image sources: <a href="https://www.fs.fed.us/wildflowers/beauty/iris/Blue_Flag/iris_virginica.shtml">virginica</a>; <a href="https://www.lakeforest.edu/academics/programs/environmental/courses/es204/iris_versicolor.php">versicolor</a>; <a href="https://alchetron.com/Iris-setosa">setosa</a>)
+<p align="center"><img src="./images/iris.jpg" width="900px"><br/>
+(image sources: <a href="https://www.fs.fed.us/wildflowers/beauty/iris/Blue_Flag/iris_virginica.shtml">virginica</a>; <a href="https://www.lakeforest.edu/academics/programs/environmental/courses/es204/iris_versicolor.php">versicolor</a>; <a href="https://alchetron.com/Iris-setosa">setosa</a>)</p>
 
 <hr>
 
