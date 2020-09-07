@@ -80,7 +80,7 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
 
 ### Example 1 - Image reconstruction
 
-<table>
+<table align="center">
   <tr>
     <td>
       The Lena test image, a 512x512 matrix<br/>
