@@ -29,7 +29,7 @@ Matrix | Meaning
 <hr>
 
 #### Technical Goal
-To find the eigenvalues and eigenvectors of the covariance matrix ```Q``` that <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">decompose</a> and reproduce ```Q``` (note: ```Q = WΛW'```), which can be used to derive the projected score matrix <b>T<sub>L</sub></b> for the first ```L``` largest eigenvalues and their eigenvectors.
+To find the eigenvalues and eigenvectors of the covariance matrix ```Q``` that <a href="http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/pca.pdf">decompose</a> and reproduce ```Q``` (note: ```Q = WΛW'```), which can be used to derive a truncated projected score matrix <b>T<sub>L</sub></b> for the first ```L``` largest eigenvalues and their eigenvectors.
 
 Matrix | Meaning
 --- | ---
