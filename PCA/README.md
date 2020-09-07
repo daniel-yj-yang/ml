@@ -40,7 +40,7 @@ Matrix | Meaning
 <b>T</b> | The n x p full projected score matrix, <b>T = XW</b>, reflecting ```X``` being projected on principal component dimensions<br/><br/>Importantly, this also gives us a way to <a href="https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com">reconstruct</a> <b>X = TW'</b><br/>and thus <b>X<sub>raw</sub> = TW' + X<sub>colMeans</sub></b>
 <b>T<sub>L</sub></b> | A n x L truncated score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors<br/><br/>Similarly, <b>X<sub>raw-as-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>' + X<sub>colMeans</sub></b>
 <b>W<sub>L</sub></b> | A p x L truncated matrix whose columns are the first ```L``` eigenvectors
-<b>X<sub>raw-as-reconstructed-by-PCA</sub> | A n x p matrix
+<b>X<sub>raw-as-reconstructed-by-PCA</sub> | A n x p matrix, reconstructued using ```L``` PCs as opposed to ```p``` features
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
