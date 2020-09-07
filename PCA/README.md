@@ -24,7 +24,7 @@ A covariance matrix ```Q``` reflects the variation/variability of ```p``` featur
 Matrix | Meaning
 --- | ---
 <b>X</b> | the empirical n x p matrix for the original ```p``` variables, column centered
-<b>X<sub>colMeans</sub></b> | the empirical 1 x p matrix for the original ```p``` variables, column means of <b>X</b>
+<b>X<sub>colMeans</sub></b> | the empirical 1 x p matrix, column means of <b>X</b>
 <b>Q</b> | the empirical p x p covariance matrix for the original variables
 
 <hr>
