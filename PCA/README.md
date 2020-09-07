@@ -6,7 +6,7 @@ To project complicated original data onto a lower dimensional (e.g., 2D) space
 ### Key Concepts of PCA
 
 #### Common-Language Goal
-To find ```m``` principal components to account for most of the variation in ```X```, where ```m``` << ```p```
+To find ```L``` principal components to account for most of the variation in ```X```, where ```L``` << ```p```
 
 - <a href="./README.md#approach-1-eigendecomposition-of-the-data-covariance-matrix">Approach 1: Eigendecomposition of the data covariance matrix</a>
 - <a href="./README.md#approach-2-singular-value-decomposition-of-the-data-matrix">Approach 2: Singular value decomposition of the data matrix</a>
