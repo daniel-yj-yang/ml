@@ -48,6 +48,24 @@ PCs <- scale(data) %*% eigenvectors # projected score matrix T
 apply(PCs, 2, var)
 apply(PCs, 2, var) - eigenvalues  ## Var(PCs) = eigenvalues
 
+
+###########################################################################
+################# Reconstruction using PCA
+# https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com
+X = iris[,1:4]
+mu = colMeans(X)
+
+Xpca = prcomp(X)
+
+nComp = 2
+Xhat = Xpca$x[,1:nComp] %*% t(Xpca$rotation[,1:nComp])
+Xhat = scale(Xhat, center = -mu, scale = FALSE)
+
+# compare the first iris
+Xhat[1,]
+iris[1,]
+###########################################################################
+
 # http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/118-principal-component-analysis-in-r-prcomp-vs-princomp/
 require(factoextra)
 
@@ -61,7 +79,19 @@ fviz_pca_var(pca_results,
              gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
              repel = TRUE     # Avoid text overlapping
 )
+fviz_pca_var(pca_results,
+             label = "none",
+             col.var = "contrib", # Color by contributions to the PC
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE     # Avoid text overlapping
+)
 fviz_pca_biplot(pca_results, 
+                repel = TRUE,
+                col.var = "#2E9FDF", # Variables color
+                col.ind = "#696969"  # Individuals color
+)
+fviz_pca_biplot(pca_results,
+                label = "none",
                 repel = TRUE,
                 col.var = "#2E9FDF", # Variables color
                 col.ind = "#696969"  # Individuals color
