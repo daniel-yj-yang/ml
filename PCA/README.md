@@ -24,6 +24,7 @@ A covariance matrix ```Q``` reflects the variation/variability of ```p``` featur
 Matrix | Meaning
 --- | ---
 <b>X</b> | the empirical n x p matrix for the original ```p``` variables, column centered
+<b>X<sub>colMeans</sub></b> | the empirical 1 x p matrix for the original ```p``` variables, column means of <b>X</b>
 <b>Q</b> | the empirical p x p covariance matrix for the original variables
 
 <hr>
@@ -36,7 +37,7 @@ Matrix | Meaning
 <b>W</b> | A p x p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
 <b>Λ</b> | A <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
 <b>T</b> | The n x p full projected score matrix, <b>T = XW</b>, reflecting ```X``` being projected on principal component dimensions<br/><br/>Importantly, this also gives us a way to <a href="https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com">reconstruct</a> <b>X<sub>centered</sub></b>: <b>X<sub>reconstructed_by_PCA</sub> = TW'</b><br/>and thus <b>X<sub>raw</sub> = X<sub>reconstructed_by_PCA</sub> + X<sub>mean</sub></b>
-<b>T<sub>L</sub></b> | A p x L truncated/reduced score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors<br/><br/>Similarly, <b>X<sub>L-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>'</b>
+<b>T<sub>L</sub></b> | A n x L truncated/reduced score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors<br/><br/>Similarly, <b>X<sub>L-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>'</b>
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
@@ -109,7 +110,7 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
   </tr>
   </table>
 
-In general, for a color image of (n\*p\*3) bytes, the PCA compression will lead to an image of (p\*L\*3 + L\*n\*3 + 1\*n\*3) bytes, where L << p.
+In general, for a color image of (n\*p\*3) bytes, the PCA compression will lead to an image of (p\*L\*3 + L\*n\*3 + 1\*p\*3) bytes, where L << p.
 <hr>
 
 ### Example 2 - Eigenface
