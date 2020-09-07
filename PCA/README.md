@@ -78,7 +78,7 @@ Matrix | Meaning
 <b>V</b> | A p x p real-valued orthonormal matrix, where <b>V' = V<sup>-1</sup></b> and <b>V'V = VV' = I</b>. Importantly, <b>V</b> is equivalent to <b>W</b>
 <b>U<sub>L</sub></b> | A n x L truncated matrix, where L << p
 <b>D<sub>L</sub></b> | A L x L truncated matrix, where L << p
-<b>V<sub>L</sub></b> | A p x L truncated matrix, where L << p, and <b>X<sub>reconstructed-by-PCA</sub> = U<sub>L</sub>D<sub>L</sub>V<sub>L</sub>'</b>
+<b>V<sub>L</sub></b> | A p x L truncated matrix, where L << p, and <b>X<sub>reconstructed-by-PCA</sub> = U<sub>L</sub>D<sub>L</sub>V<sub>L</sub>' + X<sub>colMeans</sub></b>
 
 Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix <b>T = UD = XV</b> and the first L columns are <b>T<sub>L</sub></b>, or equivalently <b>T<sub>L</sub> = U<sub>L</sub>D<sub>L</sub></b>.
 
