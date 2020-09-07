@@ -82,9 +82,9 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
 
 <table align="center">
   <tr>
-    <td>
+    <td><p align="center">
       The Lena test image, a 512x512 matrix<br/>
-<img src="./images/Lena_original.png" width="256px"><br/>(test image <a href="https://www.ece.rice.edu/~wakin/images/">source</a>)
+<img src="./images/Lena_original.png" width="256px"><br/>(test image <a href="https://www.ece.rice.edu/~wakin/images/">source</a>)</p>
     </td>
     <td>Reconstructed using 01 - 50 out of 512 PCs<br/>
 <img src="./images/Lena_reconstructed_PCs_from_1_to_50.gif" width="256px"><br/>
