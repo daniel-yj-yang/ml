@@ -36,7 +36,7 @@ Matrix | Meaning
 --- | ---
 <b>W</b> | A p x p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
 <b>Λ</b> | A <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
-<b>T</b> | The n x p full projected score matrix, <b>T = XW</b>, reflecting ```X``` being projected on principal component dimensions<br/><br/>Importantly, this also gives us a way to <a href="https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com">reconstruct</a> <b>X<sub>centered</sub> = TW'</b><br/>and thus <b>X<sub>reconstructed-by-PCA</sub> = X<sub>centered</sub> + X<sub>colMeans</sub></b>
+<b>T</b> | The n x p full projected score matrix, <b>T = XW</b>, reflecting ```X``` being projected on principal component dimensions<br/><br/>Importantly, this also gives us a way to <a href="https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com">reconstruct</a> <b>X<sub>centered</sub> = TW'</b><br/>and thus <b>X = X<sub>centered</sub> + X<sub>colMeans</sub></b>
 <b>T<sub>L</sub></b> | A n x L truncated score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors<br/><br/>Similarly, <b>X<sub>reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>' + X<sub>colMeans</sub></b>
 <b>W<sub>L</sub></b> | A p x L truncated matrix whose columns are the first ```L``` eigenvectors
 <b>X<sub>reconstructed-by-PCA</sub> | A n x p matrix
