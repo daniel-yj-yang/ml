@@ -8,6 +8,9 @@ To project complicated original data onto a lower dimensional (e.g., 2D) space
 #### Common-Language Goal
 To find ```m``` principal components to account for most of the variation in ```X```, where ```m``` << ```p```
 
+- Approach 1: Eigendecomposition of the data covariance matrix
+- Approach 2: Singular value decomposition of the data matrix
+
 <hr>
 
 ### Approach 1: Eigendecomposition of the data covariance matrix
@@ -55,6 +58,10 @@ Notes:
 
 See also:
 - <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">Dimensionality reduction and principal component regression</a>
+
+<hr>
+
+### Approach 2: Singular value decomposition of the data matrix
 
 <hr>
 
