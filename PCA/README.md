@@ -111,6 +111,15 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
 
 <hr>
 
+### Example 2 - Eigenface
+
+Example: Given 1000 original faces, derive 1000 principal components (eigenfaces). Take the top 50 principal components. The original face can be expressed as the following:
+
+- https://towardsdatascience.com/eigenfaces-recovering-humans-from-ghosts-17606c328184
+- https://demonstrations.wolfram.com/FaceRecognitionUsingTheEigenfaceAlgorithm/
+
+<hr>
+
 ### Reference
 
 - <a href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579">Making sense of PCA</a>
