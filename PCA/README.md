@@ -152,6 +152,11 @@ See also:
 
 <hr>
 
+#### Cumulative proportion of variance explained (0.0 - 1.0)
+<img src="./images/PCA_iris_cumulative_variance_explained_proportion.png" width="600px">
+
+<hr>
+
 #### Loading plot: To see how much each feature influences a principal component
 <img src="./images/PCA_iris_loading_plot.png" width="600px">
 
