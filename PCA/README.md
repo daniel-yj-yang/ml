@@ -74,7 +74,7 @@ Matrix | Meaning
 <b>D</b> | A p x p real-valued diagnoal matrix, with the non-zero singular values on the diagnoal. Importantly, <b>D<sup>2</sup> / (n-1) = Λ</b>
 <b>V</b> | A p x p real-valued orthonormal matrix, where <b>V' = V<sup>-1</sup></b> and <b>V'V = I</b>. Importantly, ```V``` is equivalent to ```W```. 
 
-Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full projected score matrix <b>T = UD = XV</b> and the first L columns are <b>T<sub>L</sub></b>.
+Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full projected score matrix <b>T = UD = XV</b> and the first L columns are <b>T<sub>L</sub></b>, or equivalently <b>T<sub>L</sub> = U<sub>L</sub>D<sub>L</sub></b>.
 
 <hr>
 
