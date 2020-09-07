@@ -82,8 +82,3 @@ $vectors
 [1,] -0.9486833 -0.2425356
 [2,]  0.3162278 -0.9701425
 ```
-
-<hr>
-
-Thoughts:
-1. What if we use matrix other than covariance matrix (e.g., dissimilarity matrix) to feed to decomp-eigenvalue?
