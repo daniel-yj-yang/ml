@@ -101,6 +101,7 @@ Example: Given 1000 original faces, derive 1000 principal components (eigenfaces
 
 Original face = mean face + weighted combinations of selected eigenfaces
 
+See also:
 - https://towardsdatascience.com/eigenfaces-recovering-humans-from-ghosts-17606c328184
 - https://demonstrations.wolfram.com/FaceRecognitionUsingTheEigenfaceAlgorithm/
 - https://www.youtube.com/watch?v=JqEI0-RCC8w
