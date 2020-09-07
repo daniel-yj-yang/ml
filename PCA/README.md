@@ -115,8 +115,11 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
 
 Example: Given 1000 original faces, derive 1000 principal components (eigenfaces). Take the top 50 principal components. The original face can be expressed as the following:
 
+Original face = mean face + weighted combinations of selected eigenfaces
+
 - https://towardsdatascience.com/eigenfaces-recovering-humans-from-ghosts-17606c328184
 - https://demonstrations.wolfram.com/FaceRecognitionUsingTheEigenfaceAlgorithm/
+- https://www.youtube.com/watch?v=JqEI0-RCC8w
 
 <hr>
 
