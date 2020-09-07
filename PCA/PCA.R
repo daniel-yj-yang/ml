@@ -21,8 +21,8 @@ groups <- iris$Species
 
 ########################################################################################
 ## Use SVD to perform PCA without calculating Q, the covariance matrix of X
+X <- scale(data, center = TRUE, scale = FALSE) # X = UDV'
 n <- nrow(X)
-X <- scale(data) # X = UDV'
 svd_results <- svd(X)
 U <- svd_results$u
 t(U) %*% U # U'U = I
@@ -64,6 +64,26 @@ Xhat = scale(Xhat, center = -mu, scale = FALSE)
 # compare the first iris
 Xhat[1,]
 iris[1,]
+###########################################################################
+
+# scree plot / cumulative plot
+# https://rpubs.com/njvijay/27823
+pcaCharts <- function(x) {
+  x.var <- x$sdev ^ 2
+  x.pvar <- x.var/sum(x.var)
+  #print("proportions of variance:")
+  #print(x.pvar)
+  
+  par(mfrow=c(2,2))
+  plot(x.pvar,xlab="Principal component", ylab="Proportion of variance explained", ylim=c(0,1), type='b')
+  plot(cumsum(x.pvar),xlab="Principal component", ylab="Cumulative Proportion of variance explained", ylim=c(0,1), type='b')
+  screeplot(x)
+  screeplot(x,type="l")
+  par(mfrow=c(1,1))
+}
+
+pcaCharts(pca_results)
+
 ###########################################################################
 
 # http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/118-principal-component-analysis-in-r-prcomp-vs-princomp/
