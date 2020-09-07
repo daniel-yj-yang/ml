@@ -84,7 +84,8 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
   <tr>
     <td><p align="center">
       The Lena test image, a 512x512 matrix<br/>
-<img src="./images/Lena_original.png" width="256px"><br/>(test image <a href="https://www.ece.rice.edu/~wakin/images/">source</a>)</p>
+<img src="./images/Lena_original.png" width="256px"><br/>
+      (test image <a href="https://www.ece.rice.edu/~wakin/images/">source</a>)</p>
     </td>
     <td><p align="center">Reconstructed using up to 30 out of 512 PCs<br/>
 <img src="./images/Lena_reconstructed_up_to_30_PCs.gif" width="256px"><br/>
@@ -94,7 +95,8 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
   <tr>
     <td><p align="center">
       Lego art: The Kiss, a 697x1127x3 matrix<br/>
-      <img src="./images/Lego_art_The_Kiss_original.png" width="256px"></p>
+      <img src="./images/Lego_art_The_Kiss_original.png" width="256px"><br/>
+      (painting <a href="https://en.wikipedia.org/wiki/The_Kiss_(Klimt)">info</a>)</p>
     </td>
     <td><p align="center">Reconstructed using up to 30 out of 697 PCs<br/>
       <img src="./images/Lego_art_The_Kiss_reconstructed_up_to_30_PCs.gif" width="256px"><br/>
