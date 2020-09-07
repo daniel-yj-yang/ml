@@ -6,7 +6,7 @@ To project complicated original data onto a lower dimensional (e.g., 2D) space
 ### Key Concepts of PCA
 
 #### Common-Language Goal
-To find ```m``` principal components to account for most of the variation in ```X```, where ```m``` << ```p```
+To find ```L``` principal components to account for most of the variation in ```X```, where ```L``` << ```p```
 
 - <a href="./README.md#approach-1-eigendecomposition-of-the-data-covariance-matrix">Approach 1: Eigendecomposition of the data covariance matrix</a>
 - <a href="./README.md#approach-2-singular-value-decomposition-of-the-data-matrix">Approach 2: Singular value decomposition of the data matrix</a>
@@ -23,8 +23,10 @@ A covariance matrix ```Q``` reflects the variation/variability of ```p``` featur
 
 Matrix | Meaning
 --- | ---
-<b>X</b> | the empirical n x p matrix for the original ```p``` variables, column centered
-<b>Q</b> | the empirical p x p covariance matrix for the original variables
+<b>X<sub>raw</sub></b> | A n x p empirical matrix for the original ```p``` variables; <b>X<sub>raw</sub> = X + X<sub>colMeans</sub></b>
+<b>X = X<sub>col-centered</sub></b> | A n x p empirical matrix for the column-centered ```p``` variables
+<b>X<sub>colMeans</sub></b> | A 1 x p empirical matrix, column means of <b>X<sub>raw</sub></b>
+<b>Q</b> | A p x p empirical covariance matrix for the ```p``` features in <b>X</b>
 
 <hr>
 
@@ -35,8 +37,10 @@ Matrix | Meaning
 --- | ---
 <b>W</b> | A p x p matrix of weights whose columns are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a> ```v``` of ```Q```
 <b>Λ</b> | A <a href="https://en.wikipedia.org/wiki/Diagonal_matrix">diagonal matrix</a> whose diagnoal elements are the <a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvalues</a> ```λ``` of ```Q```
-<b>T</b> | The full projected score matrix, <b>T = XW</b>, reflecting ```X``` being projected on principal component dimensions<br/><br/>Importantly, this also gives us a way to <a href="https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com">reconstruct</a> <b>X<sub>centered</sub></b>: <b>X<sub>reconstructed_by_PCA</sub> = TW'</b><br/>and thus <b>X<sub>raw</sub> = X<sub>reconstructed_by_PCA</sub> + X<sub>mean</sub></b>
-<b>T<sub>L</sub></b> | A truncated/reduced score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors<br/><br/>Similarly, <b>X<sub>L-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>'</b>
+<b>T</b> | The n x p full projected score matrix, <b>T = XW</b>, reflecting ```X``` being projected on principal component dimensions<br/><br/>Importantly, this also gives us a way to <a href="https://stats.stackexchange.com/questions/229092/how-to-reverse-pca-and-reconstruct-original-variables-from-several-principal-com">reconstruct</a> <b>X = TW'</b><br/>and thus <b>X<sub>raw</sub> = TW' + X<sub>colMeans</sub></b>
+<b>T<sub>L</sub></b> | A n x L truncated score matrix <b>T<sub>L</sub> = XW<sub>L</sub></b>, for the first ```L``` largest eigenvalues and their eigenvectors<br/><br/>Similarly, <b>X<sub>raw-as-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>' + X<sub>colMeans</sub></b>
+<b>W<sub>L</sub></b> | A p x L truncated matrix whose columns are the first ```L``` eigenvectors
+<b>X<sub>raw-as-reconstructed-by-PCA</sub> | A n x p matrix, reconstructued using ```L``` PCs as opposed to ```p``` features, where ```L``` << ```p```
 
 ```
 Q: Why using the covariance matrix (or correlation matrix if standardized), as opposed to other matrices?
@@ -72,22 +76,29 @@ Matrix | Meaning
 --- | ---
 <b>U</b> | A n x p real-valued matrix (where <b>U'U = I<sub>p</sub></b>) with orthonormal columns
 <b>D</b> | A p x p real-valued diagnoal matrix, with the non-zero singular values on the diagnoal. Importantly, <b>D<sup>2</sup> / (n-1) = Λ</b>
-<b>V</b> | A p x p real-valued orthonormal matrix, where <b>V' = V<sup>-1</sup></b> and <b>V'V = VV' = I</b>. Importantly, <b>V</b> is equivalent to <b>W</b> 
+<b>V</b> | A p x p real-valued orthonormal matrix, where <b>V' = V<sup>-1</sup></b> and <b>V'V = VV' = I</b>. Importantly, <b>V</b> is equivalent to <b>W</b>
+<b>U<sub>L</sub></b> | A n x L truncated matrix, where L << p
+<b>D<sub>L</sub></b> | A L x L truncated matrix, where L << p
+<b>V<sub>L</sub></b> | A p x L truncated matrix, where L << p, and <b>X<sub>raw-as-reconstructed-by-PCA</sub> = U<sub>L</sub>D<sub>L</sub>V<sub>L</sub>' + X<sub>colMeans</sub></b>
 
 Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix <b>T = UD = XV</b> and the first L columns are <b>T<sub>L</sub></b>, or equivalently <b>T<sub>L</sub> = U<sub>L</sub>D<sub>L</sub></b>.
 
 <hr>
 
-### Example 1 - Image reconstruction
+### Example 1 - Image reconstruction / compression
+
+This is primarily using <b>X<sub>raw-as-reconstructed-by-PCA</sub> = T<sub>L</sub>W<sub>L</sub>' + X<sub>colMeans</sub></b>
 
 <table align="center">
   <tr>
     <td><p align="center">
       The Lena test image, a 512x512 matrix<br/>
+      Memory: 512x512 (<b>X</b>) = 262,144 bytes<br/>
 <img src="./images/Lena_original.png" width="256px"><br/>
       (test image <a href="https://www.ece.rice.edu/~wakin/images/">source</a>)</p>
     </td>
     <td><p align="center">Reconstructed using up to 30 out of 512 PCs<br/>
+      Memory: 512x30 (<b>T<sub>L</sub></b>) + 512x30 (<b>W<sub>L</sub></b>) + 1x512 (<b>X<sub>colMeans</sub></b>) = 31,232 (12%)<br/>
 <img src="./images/Lena_reconstructed_up_to_30_PCs.gif" width="256px"><br/>
       (generated by my own <a href="./PCA_face_reconstruction.R">code</a> in R)</p>
     </td>
@@ -95,16 +106,20 @@ Now, using <b>U</b>, <b>D</b>, and <b>V</b>, we can derive the full score matrix
   <tr>
     <td><p align="center">
       Lego art: The Kiss, a 697x1127x3 matrix<br/>
+      Memory: 697x1127x3 (<b>X</b>) = 2,356,557 bytes<br/>
       <img src="./images/Lego_art_The_Kiss_original.png" width="256px"><br/>
       (painting <a href="https://en.wikipedia.org/wiki/The_Kiss_(Klimt)">info</a>)</p>
     </td>
     <td><p align="center">Reconstructed using up to 30 out of 697 PCs<br/>
+      Memory: 697x30x3 (<b>T<sub>L</sub></b>) + 1127x30x3 (<b>W<sub>L</sub></b>) + 1x1127x3 (<b>X<sub>colMeans</sub></b>) = 167,541 (7%)<br/>
       <img src="./images/Lego_art_The_Kiss_reconstructed_up_to_30_PCs.gif" width="256px"><br/>
       (generated by my own <a href="./PCA_color_photo_reconstruction.R">code</a> in R)</p>
     </td>
   </tr>
   </table>
 
+For a color image of (n\*p\*3) bytes, the memory requirement after PCA compression is (n\*L\*3 + p\*L\*3 + 1\*p\*3) bytes, where L << p.<br/>
+In the Lego art: The Kiss example, n = 697, p = 1127, L = 1 ~ 30, and <b>T<sub>L</sub></b> is a n x L matrix, <b>W<sub>L</sub></b> is a p x L matrix
 <hr>
 
 ### Example 2 - Eigenface
