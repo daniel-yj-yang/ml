@@ -167,8 +167,15 @@ See also:
 
 <hr>
 
+#### Scatterplot (3D)
+
+<img src="./images/PCA_iris_3D_scatter.png" width="700px">
+
+<hr>
+
 #### Codes
 - <a href="https://github.com/daniel-yj-yang/programming_language/tree/master/Clojure/build/incanter">Clojure code</a>
+- <a href="./PCA_iris_scatter.py">Python code</a>
 - <a href="./PCA.R">R code</a>
 
 <hr>
