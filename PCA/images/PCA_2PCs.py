@@ -79,3 +79,71 @@ plt.plot([ 0,             0   ],
          [ np.min(PCs), np.max(PCs) ],
          'r')
 plt.show()
+
+
+
+# Big Mart Sales
+import pandas as pd
+X_raw = pd.read_csv('/Users/daniel/Data-Science/Data/Retail/Big_Mart_Sales/Python/train.csv')
+for col in X_raw.columns:
+    print(col)
+X_raw = X_raw.drop(columns=['Item_Identifier','Item_Outlet_Sales'])
+X_colMeans = mean(X_raw, axis = 0)
+X_colStds = std(X_raw, axis=0)
+X = (X_raw - X_colMeans) / X_colStds
+pca = PCA(n_components=2)
+PCs = pca.fit_transform(X)
+#create a new figure
+plt.figure(figsize=(7,7))
+plt.scatter(PCs[:,0], PCs[:,1])
+plt.axis('equal')
+plt.show()
+
+
+
+# https://stackoverflow.com/questions/38698277/plot-normal-distribution-in-3d
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import multivariate_normal
+#from mpl_toolkits.mplot3d import Axes3D
+from numpy import sqrt
+
+#Parameters to set
+mu_x = 0
+variance_x = 3
+
+mu_y = 0
+variance_y = 15
+
+r_xy = 0
+covariance_xy = sqrt(variance_x) * sqrt(variance_y) * r_xy
+
+#Create grid and multivariate normal
+x = np.linspace(-10,10,500)
+y = np.linspace(-10,10,500)
+X, Y = np.meshgrid(x,y)
+pos = np.empty(X.shape + (2,))
+pos[:, :, 0] = X; pos[:, :, 1] = Y
+rv = multivariate_normal([mu_x, mu_y], [[variance_x, covariance_xy], [covariance_xy, variance_y]])
+Z = rv.pdf(pos)
+
+#Make a 3D plot
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+ax.plot_surface(X, Y, Z, cmap='viridis', linewidth=0)
+ax.set_xlabel('X axis')
+ax.set_ylabel('Y axis')
+ax.set_zlabel('Z axis')
+plt.show()
+
+X_raw = pd.DataFrame({ 'X': X.flatten(), 'Y': Y.flatten(), 'Z': Z.flatten() })
+X_colMeans = mean(X_raw, axis = 0)
+X_colStds = std(X_raw, axis=0)
+X = (X_raw - X_colMeans) / X_colStds
+pca = PCA(n_components=2)
+PCs = pca.fit_transform(X)
+#create a new figure
+plt.figure(figsize=(7,7))
+plt.scatter(PCs[:,0], PCs[:,1])
+plt.axis('equal')
+plt.show()
