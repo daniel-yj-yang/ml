@@ -7,7 +7,7 @@ to allow to reconstruct the original data using much fewer variables.
 ### Key Concepts of PCA
 
 #### Common-Language Goal
-To <a href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues">summarize</a> ```X``` of ```p``` variables with fewer variables. To do so, we find ```L``` best variables (principal components) that (a) show as much variation across data in ```X``` as possible and equivalently, (b) allow to reconstruct the original ```p``` variables as well as possible, where ```L``` << ```p```.
+To <a href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues">summarize</a> ```X``` of ```p``` variables with fewer variables. To do so, we find ```L``` best variables (principal components) that (a) show as much variation across data in ```X``` as possible and equivalently, (b) allow to reconstruct the original ```p``` variables with as little error as possible, where ```L``` << ```p```.
 
 - <a href="./README.md#approach-1-eigendecomposition-of-the-data-covariance-matrix">Approach 1: Eigendecomposition of the data covariance matrix</a>
 - <a href="./README.md#approach-2-singular-value-decomposition-of-the-data-matrix">Approach 2: Singular value decomposition of the data matrix</a>
