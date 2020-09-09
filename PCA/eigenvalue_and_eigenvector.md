@@ -8,7 +8,11 @@
 - "eigen" means "own", "proper", "characteristic"
 - Reference: <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Eigendecomposition of a matrix</a>
 
-### ```AQ = QΛ``` and ```A = QΛQ<sup>-1</sup>```
+### ```AQ = QΛ``` and ```A = QΛQ^-1```
+
+- ```Q``` is the square n × n matrix whose ith column is the eigenvector qi of ```A```
+- ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λii = λi```
+- This can be used to reconstruct the original matrix
 
 <hr>
 
