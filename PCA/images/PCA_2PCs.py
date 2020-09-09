@@ -136,6 +136,7 @@ ax.set_ylabel('Y axis')
 ax.set_zlabel('Z axis')
 plt.show()
 
+#PCA
 X_raw = pd.DataFrame({ 'X': X.flatten(), 'Y': Y.flatten(), 'Z': Z.flatten() })
 X_colMeans = mean(X_raw, axis = 0)
 X_colStds = std(X_raw, axis=0)
