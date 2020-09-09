@@ -14,7 +14,7 @@ Algorithm / model | Type | Use case | Online demo / example
 <a href="content-based_filtering">Content-Based Filtering</a> | Unsupervised | To <b><a href="./recommendation_system">recommend</a></b> an item to a buyer because the item strongly fits the user's preference | <a href="content-based_filtering">Example: Illustration</a>
 <a href="clustering">Clustering</a> | Unsupervised | To understand the grouping of consumers with respect to their purchase habits | <a href="clustering">Examples: Python, R</a>
 <a href="PCA">PCA</a> | Unsupervised | (a) To project data on a 2D map;<br/>(b) To reconstruct data using PCs | <a href="PCA">Examples: Clojure, Python, R</a>
-<a href="t-SNE">t-SNE</a> | Unsupervised | To visualize data consisting of legitimate and fraudulent transactions on a 2D map | <a href="t-SNE">Example: R</a>
+<a href="t-SNE">t-SNE</a> | Unsupervised | To visualize data consisting of legitimate and fraudulent transactions on a 2D map | <a href="t-SNE">Examples: Python, R</a>
 <a href="UMAP">UMAP</a> | Unsupervised | To visualize higher dimensional data on a 2D map | <a href="UMAP">Examples: Python, R</a>
 <a href="network_analysis">Network Analysis</a> | Unsupervised | To understand the dynamics of how purchasing one item may affect purchasing another | <a href="network_analysis">Example: R</a>
 <a href="Bayesian_networks">Bayesian/Probabilities Networks</a> | Supervised | To predict the chain of events linking to greater likelihood of consumer purchasing | <a href="Bayesian_networks">Example: R</a>
