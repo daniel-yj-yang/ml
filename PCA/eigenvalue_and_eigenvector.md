@@ -8,19 +8,27 @@
 - "eigen" means "own", "proper", "characteristic"
 - Reference: <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Eigendecomposition of a matrix</a>
 
+<hr>
+
 ### ```AQ = QΛ``` and ```A = QΛQ^-1```
 
-- ```Q``` is the square n × n matrix whose ith column is the eigenvector qi of ```A```
-- ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λii = λi```
+- ```Q``` is the square n × n matrix whose ith column is the eigenvector ```v_i``` of ```A```
+- ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λ_ii = λ_i```
 - This can be used to reconstruct the original matrix
-
-### A represents a linear transformation and Q represent the characteristics of such a transformation in terms of vectors
-
-- https://alyssaq.github.io/2015/understanding-eigenvectors-and-eigenvalues-visually/
 
 <hr>
 
-## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
+### ```A``` can be viewed as a linear transformation
+
+Importantly, ```Q``` and ```Λ``` <b>can be viewed as the characteristics of such a transformation</b> in terms of vectors/directions and stretch/shrink magnitudes, respectively.
+
+For example: after <b><i>Ax</i></b>, the original dashed box <b><i>x</i></b> is transformed (a) along the direction of ```v1``` by a magnitude of ```λ1```, and also (b) along the direction of ```v2``` by a magnitude of ```λ2```.
+
+<p align="center"><img src="./images/eigenvalue_eigenvector_as_characteristics_of_A.png" width="800px"><br/></p>
+
+<hr>
+
+### To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
 
 To derive ```v``` and ```λ```, given ```A```:
 ```
@@ -36,7 +44,7 @@ For example:
 
 <hr>
 
-## Examples
+## Code Examples
 
 ### Clojure:
 ```Clojure
@@ -66,15 +74,17 @@ user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 >>> from scipy.linalg import eig
 >>> from numpy import diag
 >>> A = np.array([[-6,3],[4,5]])
->>> values, vectors = eig(A)
->>> values
+>>> eigenvalues, eigenvectors = eig(A)
+>>> eigenvalues  ;; λ
 array([-7.+0.j,  6.+0.j])
->>> vectors
+
+>>> eigenvectors  ;; v
 array([[-0.9486833 , -0.24253563],
        [ 0.31622777, -0.9701425 ]])
->>> Q = vectors
->>> L = diag(values)
->>> Q.dot(L).dot(inv(Q))
+       
+>>> Q = eigenvectors
+>>> L = diag(eigenvalues)
+>>> Q.dot(L).dot(inv(Q))  ;; reconstruct A = QΛQ^-1
 array([[-6.+0.j,  3.+0.j],
        [ 4.+0.j,  5.+0.j]])
 ```
