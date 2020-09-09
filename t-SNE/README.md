@@ -20,13 +20,21 @@ Steps | Description
 
 <hr>
 
-## Example
+## Example 1: Credit Card Transactions
 
 Using a <a href="https://www.kaggle.com/mlg-ulb/creditcardfraud">dataset</a> of credit card transactions, I performed my own <a href="./credit_card_fraud_t-SNE.R">variation</a> of a <a href="https://github.com/ihh300/Fraud_Detection/blob/master/cc_tsne.R">R code</a>.
 
 The dataset has 284,807 transactions (492 fraud transactions and 284,315 legitimate transactions) and 29 feature variables. Using perplexity = 29, 1,000 iterations, and a balanced dataset (492 fraud transactions and 492 legitimate transactions), the t-SNE algorithm reduces the complicated higher-dimensional relationships between the 29 feature variables to a 2D space:
 
 <p align="center"><img src="./images/credit_card_transactions_t-SNE_2D.png" width="700px"><br/>Note. t-SNE preserves much of the distinction between the two classes using the 29 feature variables without knowing the Class variable.</p>
+
+<hr>
+
+## Example 2: The Digits Dataset</a>
+
+Using the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html">digits</a> dataset, I performed my modified version of <a href="./digits_t-SNE.py">t-SNE Python code</a>. The results are as following:
+
+<p align="center"><img src="./images/digits_t-SNE-2D.png" width="600px"></p>
 
 <hr>
 
