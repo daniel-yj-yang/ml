@@ -18,7 +18,8 @@
 
 - ```Q``` and ```Λ``` the characteristics of such a transformation in terms of vectors/directions and stretch/shrink magnitudes, respectively.
 
-For example: the original dashed box is transformed by ```v1``` times ```λ1```, and by ```v2``` times ```λ2```
+For example: after <b><i>Ax</i></b>, the original dashed box <b><i>x</i></b> is transformed (a) along the direction of ```v1``` by a magnitude of ```λ1```, and also (b) along the direction of ```v2``` by a magnitude of ```λ2```.
+
 <p align="center"><img src="./images/eigenvalue_eigenvector_as_characteristics_of_A.png" width="800px></p>
 
 <hr>
