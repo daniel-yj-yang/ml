@@ -44,7 +44,7 @@ For example:
 
 <hr>
 
-## Examples
+## Code Examples
 
 ### Clojure:
 ```Clojure
