@@ -115,7 +115,7 @@ variance_x = 3
 mu_y = 0
 variance_y = 15
 
-r_xy = 0.5
+r_xy = 0
 covariance_xy = sqrt(variance_x) * sqrt(variance_y) * r_xy
 
 #Create grid and multivariate normal
