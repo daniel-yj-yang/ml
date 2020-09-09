@@ -60,11 +60,19 @@ user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 ```Python
 >>> import numpy as np
 >>> from scipy.linalg import eig
+>>> from numpy import diag
 >>> A = np.array([[-6,3],[4,5]])
->>> results = eig(A)
->>> results
-(array([-7.+0.j,  6.+0.j]), array([[-0.9486833 , -0.24253563],
-       [ 0.31622777, -0.9701425 ]]))
+>>> values, vectors = eig(A)
+>>> values
+array([-7.+0.j,  6.+0.j])
+>>> vectors
+array([[-0.9486833 , -0.24253563],
+       [ 0.31622777, -0.9701425 ]])
+>>> Q = vectors
+>>> L = diag(values)
+>>> Q.dot(L).dot(inv(Q))
+array([[-6.+0.j,  3.+0.j],
+       [ 4.+0.j,  5.+0.j]])
 ```
 
 <hr>
