@@ -24,7 +24,7 @@ For example: after <b><i>Ax</i></b>, the original dashed box <b><i>x</i></b> is 
 
 <hr>
 
-## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
+### To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
 
 To derive ```v``` and ```λ```, given ```A```:
 ```
