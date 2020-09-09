@@ -8,11 +8,15 @@
 - "eigen" means "own", "proper", "characteristic"
 - Reference: <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Eigendecomposition of a matrix</a>
 
+<hr>
+
 ### ```AQ = QΛ``` and ```A = QΛQ^-1```
 
 - ```Q``` is the square n × n matrix whose ith column is the eigenvector ```v_i``` of ```A```
 - ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λ_ii = λ_i```
 - This can be used to reconstruct the original matrix
+
+<hr>
 
 ### ```A``` can be viewed as a linear transformation
 
@@ -20,7 +24,7 @@ Importantly, ```Q``` and ```Λ``` <b>can be viewed as the characteristics of suc
 
 For example: after <b><i>Ax</i></b>, the original dashed box <b><i>x</i></b> is transformed (a) along the direction of ```v1``` by a magnitude of ```λ1```, and also (b) along the direction of ```v2``` by a magnitude of ```λ2```.
 
-<p align="center"><img src="./images/eigenvalue_eigenvector_as_characteristics_of_A.png" width="800px></p>
+<p align="center"><img src="./images/eigenvalue_eigenvector_as_characteristics_of_A.png" width="800px><br/></p>
 
 <hr>
 
