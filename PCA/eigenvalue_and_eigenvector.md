@@ -1,6 +1,6 @@
 ## Key Concepts
 
-```Av = λv```
+### ```Av = λv```
 
 - ```A``` is a square matrix, ```v``` is an eigenvector, and ```λ``` is an eigenvalue.
 - ```Av``` is pronounced as: multiplying ```v``` by ```A```.
@@ -28,7 +28,7 @@ For example:
 
 ## Examples
 
-Clojure:
+### Clojure:
 ```Clojure
 user=> (def A (matrix [[-6 3] [4 5]]))
 #'user/A
@@ -50,7 +50,7 @@ user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 
 <hr>
 
-Python:
+### Python:
 ```Python
 >>> import numpy as np
 >>> from scipy.linalg import eig
@@ -63,7 +63,7 @@ Python:
 
 <hr>
 
-R:
+### R:
 ```R
 > A <- matrix(c(-6, 3, 4, 5), 2, 2, byrow = T)
 
