@@ -14,7 +14,7 @@
 - ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λii = λi```
 - This can be used to reconstruct the original matrix
 
-### A can be viewed as a linear transformation
+### ```A``` can be viewed as a linear transformation
 
 Importantly, ```Q``` and ```Λ``` <b>can be viewed as the characteristics of such a transformation</b> in terms of vectors/directions and stretch/shrink magnitudes, respectively.
 
