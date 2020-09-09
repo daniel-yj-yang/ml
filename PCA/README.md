@@ -178,9 +178,3 @@ See also:
 - <a href="https://github.com/daniel-yj-yang/programming_language/tree/master/Clojure/build/incanter">Clojure code</a>
 - <a href="./PCA_iris_scatter.py">Python code</a>
 - <a href="./PCA.R">R code</a>
-
-<hr>
-
-### Reference
-
-- <a href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579">Making sense of PCA</a>
