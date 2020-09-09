@@ -10,8 +10,8 @@
 
 ### ```AQ = QΛ``` and ```A = QΛQ^-1```
 
-- ```Q``` is the square n × n matrix whose ith column is the eigenvector qi of ```A```
-- ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λii = λi```
+- ```Q``` is the square n × n matrix whose ith column is the eigenvector ```v_i``` of ```A```
+- ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λ_ii = λ_i```
 - This can be used to reconstruct the original matrix
 
 ### ```A``` can be viewed as a linear transformation
@@ -70,15 +70,17 @@ user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 >>> from scipy.linalg import eig
 >>> from numpy import diag
 >>> A = np.array([[-6,3],[4,5]])
->>> values, vectors = eig(A)
->>> values
+>>> eigenvalues, eigenvectors = eig(A)
+>>> eigenvalues  ;; λ
 array([-7.+0.j,  6.+0.j])
->>> vectors
+
+>>> eigenvectors  ;; v
 array([[-0.9486833 , -0.24253563],
        [ 0.31622777, -0.9701425 ]])
->>> Q = vectors
->>> L = diag(values)
->>> Q.dot(L).dot(inv(Q))
+       
+>>> Q = eigenvectors
+>>> L = diag(eigenvalues)
+>>> Q.dot(L).dot(inv(Q))  ;; reconstruct A = QΛQ^-1
 array([[-6.+0.j,  3.+0.j],
        [ 4.+0.j,  5.+0.j]])
 ```
