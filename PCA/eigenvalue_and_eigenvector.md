@@ -16,7 +16,7 @@
 
 ### A can be viewed as a linear transformation
 
-- ```Q``` and ```Λ``` the characteristics of such a transformation in terms of vectors/directions and stretch/shrink magnitudes, respectively.
+Importantly, ```Q``` and ```Λ``` <b>can be viewed as the characteristics of such a transformation</b> in terms of vectors/directions and stretch/shrink magnitudes, respectively.
 
 For example: after <b><i>Ax</i></b>, the original dashed box <b><i>x</i></b> is transformed (a) along the direction of ```v1``` by a magnitude of ```λ1```, and also (b) along the direction of ```v2``` by a magnitude of ```λ2```.
 
