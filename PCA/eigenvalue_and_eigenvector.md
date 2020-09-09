@@ -8,6 +8,8 @@
 - "eigen" means "own", "proper", "characteristic"
 - Reference: <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Eigendecomposition of a matrix</a>
 
+### ```AQ = QΛ``` and ```A = QΛQ<sup>-1</sup>```
+
 <hr>
 
 ## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
