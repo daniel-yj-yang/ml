@@ -2,7 +2,7 @@
 To summarize original data on a much lower dimensional (e.g., 2D) space;
 to allow reconstructing the original data using much fewer variables.
 
-<p align="center"><img src="./images/PCA_2PCs.png" width="700px"><br/>(<a href="./images/PCA_2PCs.py">Python code</a> for this image)</p>
+<p align="center"><img src="./images/PCA_2PCs.png" width="700px"><br/><img src="./images/PCA_2PCs-2.png" width="700px"><br/>(<a href="./images/PCA_2PCs.py">Python code</a> for this image)</p>
 
 <hr>
 
