@@ -1,12 +1,22 @@
 ## Key Concepts
 
-```Av = λv```
+### ```Av = λv```
 
 - ```A``` is a square matrix, ```v``` is an eigenvector, and ```λ``` is an eigenvalue.
 - ```Av``` is pronounced as: multiplying ```v``` by ```A```.
 - Almost all vectors change direction when they are multiplied by ```A```. However, certain exceptional vectors ```v``` that does not change direction when multiplied by ```A``` (a linear transformation), and the vector ```Av``` is a number (```λ```) times the original ```v```.
 - "eigen" means "own", "proper", "characteristic"
 - Reference: <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Eigendecomposition of a matrix</a>
+
+### ```AQ = QΛ``` and ```A = QΛQ^-1```
+
+- ```Q``` is the square n × n matrix whose ith column is the eigenvector qi of ```A```
+- ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λii = λi```
+- This can be used to reconstruct the original matrix
+
+### A represents a linear transformation and Q represent the characteristics of such a transformation in terms of vectors
+
+- https://alyssaq.github.io/2015/understanding-eigenvectors-and-eigenvalues-visually/
 
 <hr>
 
@@ -28,7 +38,7 @@ For example:
 
 ## Examples
 
-Clojure:
+### Clojure:
 ```Clojure
 user=> (def A (matrix [[-6 3] [4 5]]))
 #'user/A
@@ -50,20 +60,28 @@ user=> (mult 6 (sel (:vectors (decomp-eigenvalue X)) :cols 1)) ;; λv, λ = 6
 
 <hr>
 
-Python:
+### Python:
 ```Python
 >>> import numpy as np
 >>> from scipy.linalg import eig
+>>> from numpy import diag
 >>> A = np.array([[-6,3],[4,5]])
->>> results = eig(A)
->>> results
-(array([-7.+0.j,  6.+0.j]), array([[-0.9486833 , -0.24253563],
-       [ 0.31622777, -0.9701425 ]]))
+>>> values, vectors = eig(A)
+>>> values
+array([-7.+0.j,  6.+0.j])
+>>> vectors
+array([[-0.9486833 , -0.24253563],
+       [ 0.31622777, -0.9701425 ]])
+>>> Q = vectors
+>>> L = diag(values)
+>>> Q.dot(L).dot(inv(Q))
+array([[-6.+0.j,  3.+0.j],
+       [ 4.+0.j,  5.+0.j]])
 ```
 
 <hr>
 
-R:
+### R:
 ```R
 > A <- matrix(c(-6, 3, 4, 5), 2, 2, byrow = T)
 
