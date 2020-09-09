@@ -19,6 +19,8 @@ data(iris)
 data <- iris[,c(1:4)]
 groups <- iris$Species
 
+#data <- read.csv('/Users/daniel/tmp/X_raw.csv')
+
 ########################################################################################
 ## Use SVD to perform PCA without calculating Q, the covariance matrix of X
 X <- scale(data, center = TRUE, scale = FALSE) # X = UDV'
