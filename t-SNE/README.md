@@ -32,7 +32,7 @@ The dataset has 284,807 transactions (492 fraud transactions and 284,315 legitim
 
 ## Example 2: The Digits Dataset</a>
 
-Using the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html">digits</a> dataset, I performed my modified version of <a href="./digits_t-SNE.py">t-SNE Python code</a>. The results are as following:
+Using the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html">digits</a> dataset, I ran my modified version of <a href="./digits_t-SNE.py">t-SNE Python code</a>. The results are as following:
 
 <p align="center"><img src="./images/digits_t-SNE-2D.png" width="600px"></p>
 
