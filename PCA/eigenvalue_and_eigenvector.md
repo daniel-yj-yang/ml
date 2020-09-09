@@ -14,6 +14,10 @@
 - ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λii = λi```
 - This can be used to reconstruct the original matrix
 
+### A represents a linear transformation and Q represent the characteristics of such a transformation in terms of vectors
+
+- https://alyssaq.github.io/2015/understanding-eigenvectors-and-eigenvalues-visually/
+
 <hr>
 
 ## To find eigenvalues and eigenvectors of a matrix <a href="http://math.mit.edu/~gs/linearalgebra/ila0601.pdf">by hand</a>
