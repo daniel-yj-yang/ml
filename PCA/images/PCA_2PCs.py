@@ -3,7 +3,7 @@
 """
 Created on Wed Sep  9 10:01:51 2020
 
-@author: daniel
+@author: Daniel Yang Ph.D (daniel.yj.yang@gmail.com)
 """
 
 # generate variables
