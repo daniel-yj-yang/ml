@@ -1,6 +1,6 @@
 # Principal Component Analysis
-To summarize complicated original data on a lower dimensional (e.g., 2D) space;
-to allow to reconstruct the complicated original data using fewer variables.
+To summarize complicated original data on a much lower dimensional (e.g., 2D) space;
+to allow to reconstruct the complicated original data using much fewer variables.
 
 <hr>
 
