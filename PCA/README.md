@@ -12,6 +12,8 @@ To <a href="https://stats.stackexchange.com/questions/2691/making-sense-of-princ
 - <a href="./README.md#approach-1-eigendecomposition-of-the-data-covariance-matrix">Approach 1: Eigendecomposition of the data covariance matrix</a>
 - <a href="./README.md#approach-2-singular-value-decomposition-of-the-data-matrix">Approach 2: Singular value decomposition of the data matrix</a>
 
+<p align="center"><img src="./images/PCA_2PCs.png" width="700px"></p>
+
 <hr>
 
 ### Approach 1: Eigendecomposition of the data covariance matrix
