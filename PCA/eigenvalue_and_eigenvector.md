@@ -14,9 +14,12 @@
 - ```Λ``` is the diagonal matrix whose diagonal elements are the corresponding eigenvalues, ```Λii = λi```
 - This can be used to reconstruct the original matrix
 
-### A represents a linear transformation and Q represent the characteristics of such a transformation in terms of vectors
+### A can be viewed as a linear transformation
 
-- https://alyssaq.github.io/2015/understanding-eigenvectors-and-eigenvalues-visually/
+- ```Q``` and ```Λ``` the characteristics of such a transformation in terms of vectors/directions and stretch/shrink magnitudes, respectively.
+
+For example: the original dashed box is transformed by ```v1``` times ```λ1```, and by ```v2``` times ```λ2```
+<p align="center"><img src="./images/eigenvalue_eigenvector_as_characteristics_of_A.png" width="800px></p>
 
 <hr>
 
