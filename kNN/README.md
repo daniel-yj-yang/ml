@@ -4,9 +4,9 @@ Birds of the same feather are expected to flock together
 <hr>
 
 ## Examples:
-* <a href="./kNN-examples.R">R code</a> to classify/predict a flower into species of <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html">iris</a> [virginica, Versicolor, or setosa] by [petal.length, sepal.length, petal.width and sepal.length].
+* <a href="./kNN-examples.R">R code</a> and <a href="./kNN-iris.py">Python code</a> to classify/predict a flower into species of <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html">iris</a> [virginica, Versicolor, or setosa] by [petal.length, sepal.length, petal.width and sepal.length].
 
-<p align="center"><img src="./images/kNN-decision-boundary-iris-example-R.png" width="500px"><img src="./images/kNN-decision-boundary-iris-example-python.png" width="500px"></p>
+<p align="center"><img src="./images/kNN-decision-boundary-iris-example-R.png" width="500px"><img src="./images/kNN-decision-boundary-iris-example-Python.png" width="500px"></p>
 
 * <a href="./kNN-examples.R">R code</a> to classify/predict a <a href="https://ggplot2.tidyverse.org/reference/diamonds.html">diamond</a> into quality of the cut [Fair, Good, Very Good, Premium, Ideal] by [carat, depth, table, price, x, y, z].
 
