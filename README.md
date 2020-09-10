@@ -18,7 +18,7 @@ Algorithm / model | Type | Use case | Online demo / example
 <a href="UMAP">UMAP</a> | Unsupervised | To visualize higher dimensional data on a 2D map | <a href="UMAP">Examples: Python, R</a>
 <a href="network_analysis">Network Analysis</a> | Unsupervised | To understand the dynamics of how purchasing one item may affect purchasing another | <a href="network_analysis">Example: R</a>
 <a href="Bayesian_networks">Bayesian/Probabilities Networks</a> | Supervised | To predict the chain of events linking to greater likelihood of consumer purchasing | <a href="Bayesian_networks">Example: R</a>
-<a href="kNN">k-Nearest Neighbors</a> | Supervised | To predict what product a new customer may like, given the customer's characteristics | <a href="kNN">Example: R</a>
+<a href="kNN">k-Nearest Neighbors</a> | Supervised | To predict what product a new customer may like, given the customer's characteristics | <a href="kNN">Examples: Python, R</a>
 <a href="SVM">Support Vector Machine</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="SVM">Example: R</a>
 <a href="Naive_Bayes">Naive Bayes</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="Naive_Bayes#examples">Examples: Python</a>
 <a href="linear_regression">Linear Regression</a> | Supervised | To explain sales via advertising budget | <a href="./linear_regression/multiple_regression.md">Examples: Python, R</a>
