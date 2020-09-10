@@ -31,8 +31,8 @@ Step#1 | Step#2 | Step#3
 
 ## How to pick the right k?
 
-* Use a <a href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/">validation error curve</a> to pick k.
 * A common practice is to use the square root of the number of features as the starting point to select k.
+* Then use a <a href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/">validation error curve</a> to pick k.
 
 <hr>
 
