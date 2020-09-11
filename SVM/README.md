@@ -7,7 +7,9 @@ To separate data using a hyperplane in a higher dimension (a kernel trick) to fa
 
 * Spam detector/filter using the <a href="https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection">UCI SMS spam dataset</a> (4,827 non-spam's and 747 spam's) (see <a href="./SMS_spam_classifier.py">my variation</a> of Python code)
 
-<img src="./images/SMS_spam_classifier_results.png" width="350px">
+Hyperparameter | Results
+--- | ---
+C = 1000<br/>gamma = 0.001<br/>kernel = rbf | <img src="./images/SMS_spam_classifier_results.png" width="350px">
 
 <hr>
 
