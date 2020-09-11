@@ -1,0 +1,168 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 10 23:20:59 2020
+
+@author: daniel
+"""
+
+# modified from https://www.panggi.com/articles/sms-spam-filter-using-scikit-learn-and-textblob/
+# converted from python2 to python3
+
+# Imports
+import pandas as pd
+import os
+import sys
+import getopt
+import pickle
+import csv
+import sklearn
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.svm import SVC, LinearSVC
+from sklearn.metrics import classification_report, f1_score, accuracy_score, confusion_matrix
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test_split, GridSearchCV
+from textblob import TextBlob
+
+#import nltk
+
+# Dataset
+MESSAGES = pd.read_csv('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/SMSSpamCollection',
+                       sep='\t', quoting=csv.QUOTE_NONE, names=["label", "message"])
+
+# Preprocessing
+
+
+def tokens(message):
+    message = str(message) #, 'utf8')
+    return TextBlob(message).words
+
+
+def lemmas(message):
+    message = str(message).lower() #), 'utf8').lower()
+    words = TextBlob(message).words
+    return [word.lemma for word in words]
+
+# Training
+
+
+def train_multinomial_nb(messages):
+    # split dataset for cross validation
+    msg_train, msg_test, label_train, label_test = train_test_split(
+        messages['message'], messages['label'], test_size=0.2)
+    # create pipeline
+    pipeline = Pipeline([('bow', CountVectorizer(analyzer=lemmas)),
+                         ('tfidf', TfidfTransformer()), ('classifier', MultinomialNB())])
+    # pipeline parameters to automatically explore and tune
+    params = {
+        'tfidf__use_idf': (True, False),
+        'bow__analyzer': (lemmas, tokens),
+    }
+    grid = GridSearchCV(
+        pipeline,
+        params,  # parameters to tune via cross validation
+        refit=True,  # fit using all data, on the best detected classifier
+        n_jobs=-1,
+        scoring='accuracy',
+        cv=5, #StratifiedKFold(n_splits=5).split(label_train),
+    )
+    # train
+    nb_detector = grid.fit(msg_train, label_train)
+    print("")
+    predictions = nb_detector.predict(msg_test)
+    print(":: Confusion Matrix")
+    print("")
+    print(confusion_matrix(label_test, predictions))
+    print("")
+    print(":: Classification Report")
+    print("")
+    print(classification_report(label_test, predictions))
+    # save model to pickle file
+    file_name = '/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl'
+    with open(file_name, 'wb') as fout:
+        pickle.dump(nb_detector, fout)
+    print('model written to: ' + file_name)
+
+
+def train_svm(messages):
+    # split dataset for cross validation
+    msg_train, msg_test, label_train, label_test = train_test_split(
+        messages['message'], messages['label'], test_size=0.2)
+    # create pipeline
+    pipeline = Pipeline([('bow', CountVectorizer(analyzer=lemmas)),
+                         ('tfidf', TfidfTransformer()), ('classifier', SVC())])
+    # pipeline parameters to automatically explore and tune
+    params = [
+        {'classifier__C': [1, 10, 100, 1000],
+            'classifier__kernel': ['linear']},
+        {'classifier__C': [1, 10, 100, 1000], 'classifier__gamma': [
+            0.001, 0.0001], 'classifier__kernel': ['rbf']},
+    ]
+    grid = GridSearchCV(
+        pipeline,
+        param_grid=params,  # parameters to tune via cross validation
+        refit=True,  # fit using all data, on the best detected classifier
+        n_jobs=-1,
+        scoring='accuracy',
+        cv=5 # StratifiedKFold(label_train, n_splits=5),
+    )
+    # train
+    svm_detector = grid.fit(msg_train, label_train)
+    print("")
+    print(":: Confusion Matrix")
+    print("")
+    print(confusion_matrix(label_test, svm_detector.predict(msg_test)))
+    print("")
+    print(":: Classification Report")
+    print("")
+    print(classification_report(label_test, svm_detector.predict(msg_test)))
+    # save model to pickle file
+    file_name = '/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl'
+    with open(file_name, 'wb') as fout:
+        pickle.dump(svm_detector, fout)
+    print('model written to: ' + file_name)
+
+
+def main(argv):
+  # check if models exist, if not run training
+    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl') == False):
+        print("")
+        print("Creating Naive Bayes Model.....")
+        train_multinomial_nb(MESSAGES)
+
+    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
+        print("")
+        print("Creating SVM Model.....")
+        train_svm(MESSAGES)
+
+    inputmessage = ''
+    try:
+        opts, args = getopt.getopt(argv, "hm:", ["message="])
+    except getopt.GetoptError:
+        print('SMS_spam_classifier.py -m <message string>')
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == '-h':
+            print('SMS_spam_classifier.py -m <message string>')
+            sys.exit()
+        elif opt in ("-m", "--message"):
+            prediction = predict(arg)
+            print('This message is predicted by', prediction)
+        else:
+            print('SMS_spam_classifier.py -m <message string>')
+            sys.exit()
+
+
+def predict(message):
+    nb_detector = pickle.load(open('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl','rb'))
+    svm_detector = pickle.load(open('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl','rb'))
+
+    nb_predict = nb_detector.predict([message])[0]
+    svm_predict = svm_detector.predict([message])[0]
+
+    return 'SVM as ' + svm_predict + ' and Naive Bayes as ' + nb_predict
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
