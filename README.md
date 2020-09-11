@@ -19,7 +19,7 @@ Algorithm / model | Type | Use case | Online demo / example
 <a href="network_analysis">Network Analysis</a> | Unsupervised | To understand the dynamics of how purchasing one item may affect purchasing another | <a href="network_analysis">Example: R</a>
 <a href="Bayesian_networks">Bayesian/Probabilities Networks</a> | Supervised | To predict the chain of events linking to greater likelihood of consumer purchasing | <a href="Bayesian_networks">Example: R</a>
 <a href="kNN">k-Nearest Neighbors</a> | Supervised | To predict what product a new customer may like, given the customer's characteristics | <a href="kNN">Examples: Python, R</a>
-<a href="SVM">Support Vector Machine</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="SVM">Examples: Python, R</a>
+<a href="SVM">Support Vector Machine (SVM)</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="SVM">Examples: Python, R</a>
 <a href="Naive_Bayes">Naive Bayes</a> | Supervised | To predict consumer's dichotomous purchasing decision | <a href="Naive_Bayes#examples">Examples: Python</a>
 <a href="linear_regression">Linear Regression</a> | Supervised | To explain sales via advertising budget | <a href="./linear_regression/multiple_regression.md">Examples: Python, R</a>
 <a href="logistic_regression">Logistic Regression</a> | Supervised | To predict consumer's dichotomous purchasing decision | (1) <a href="logistic_regression">Example: Python</a>; (2) <a href="https://danielyang.shinyapps.io/Logistic_Regression/">Demo: Running logistic regression with retail data</a> (\*<b>interactive</b>\*)
