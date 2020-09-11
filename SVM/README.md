@@ -5,7 +5,7 @@ To separate data using a hyperplane in a higher dimension (a kernel trick) to fa
 
 ## Example 1 - SMS spam detector
 
-* Spam detector/filter using the <a href="https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection">UCI SMS spam dataset</a> (4,827 non-spam's and 747 spam's) (see <a href="./SMS_spam_classifier.py">my variation</a> of Python code)
+* Spam detector/filter using the <a href="https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection">UCI SMS spam dataset</a> (4,827 non-spam's and 747 spam's) (see <a href="./SMS_spam_classifier.py">my variation</a> of Python code), using 20% of the data as the test set
 
 Hyperparameter | Results
 --- | ---
