@@ -3,10 +3,19 @@ To separate data using a hyperplane in a higher dimension (a kernel trick) to fa
 
 <hr>
 
-## Examples
+## Example 1 - SMS spam detector
 
-* <a href="https://www.r-bloggers.com/support-vector-machines-with-the-mlr-package/">Spam filter</a> using 4,601 E-mails (2,788 non-spam's and 1,813 spam's) and 57 variables indicating the frequency of certain words and characters (see <a href="./spam_filter_SVM.R">my variation</a> of R code)
-* Spam filter using the <a href="https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection">UCI SMS spam dataset</a> (4,827 non-spam's and 747 spam's)
+* Spam detector/filter using the <a href="https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection">UCI SMS spam dataset</a> (4,827 non-spam's and 747 spam's) (see <a href="./SMS_spam_classifier.py">my variation</a> of Python code), using 20% of the data as the test set
+
+Hyperparameter | Results
+--- | ---
+C = 1000<br/>gamma = 0.001<br/>kernel = rbf | <img src="./images/SMS_spam_classifier_results.png" width="400px">
+
+<hr>
+
+## Example 2 - E-mail spam detector
+
+<a href="https://www.r-bloggers.com/support-vector-machines-with-the-mlr-package/">Spam filter</a> using 4,601 E-mails (2,788 non-spam's and 1,813 spam's) and 57 variables indicating the frequency of certain words and characters (see <a href="./spam_filter_SVM.R">my variation</a> of R code)
 
 <hr>
 
