@@ -9,7 +9,7 @@ To separate data using a hyperplane in a higher dimension (a kernel trick) to fa
 
 Hyperparameter | Results
 --- | ---
-C = 1000<br/>gamma = 0.001<br/>kernel = rbf | <img src="./images/SMS_spam_classifier_results.png" width="350px">
+C = 1000<br/>gamma = 0.001<br/>kernel = rbf | <img src="./images/SMS_spam_classifier_results.png" width="400px">
 
 <hr>
 
