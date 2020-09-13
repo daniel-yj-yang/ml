@@ -91,15 +91,23 @@ def make_confusion_matrix(cf,
         #if it is a binary confusion matrix, show some more stats
         if len(cf)==2:
             #Metrics for Binary Confusion Matrices
-            precision = cf[1,1] / sum(cf[:,1])
-            recall    = cf[1,1] / sum(cf[1,:])
-            f1_score  = 2*precision*recall / (precision + recall)
-            stats_text = "\n\nAccuracy={:0.3f}\nPrecision={:0.3f}\nRecall={:0.3f}\nF1 Score={:0.3f}".format(
-                accuracy,precision,recall,f1_score)
+            TP = cf[1,1]
+#            TN = cf[0,0]
+            FP = cf[0,1]
+            FN = cf[1,0]
+            precision = TP / (TP+FP)
+            recall    = TP / (TP+FN)
+            f1_score  = TP / (TP + 0.5*(FP+FN)) # 2*precision*recall / (precision + recall)
+            alpha = FP / (TP+FP)
+            stats_text = "\n\nAccuracy =(TP+TN)/Total={:0.3f}\nPrecision (lower Type I error)=TP/(TP+FP)={:0.3f}\nRecall/sensitivity (lower Type II error)=TP/(TP+FN)={:0.3f}\nF1 Score (lower both errors)=TP/(TP+0.5*(FP+FN))={:0.3f}\n\n(1-β) (a level on the y-axis of ROC curve)=Recall\nα (a level on the x-axis of ROC curve)=FP/(TP+FP)={:0.3f}".format(
+                accuracy,precision,recall,f1_score,alpha)
         else:
             stats_text = "\n\nAccuracy={:0.3f}".format(accuracy)
     else:
         stats_text = ""
+
+    print("stats_text [" + stats_text)
+    print("]")
 
 
     # SET FIGURE PARAMETERS ACCORDING TO OTHER ARGUMENTS
@@ -113,7 +121,7 @@ def make_confusion_matrix(cf,
 
 
     # MAKE THE HEATMAP VISUALIZATION
-    plt.figure(figsize=figsize)
+    fig = plt.figure(figsize=figsize)
     sns.heatmap(cf,annot=box_labels,fmt="",cmap=cmap,cbar=cbar,xticklabels=categories,yticklabels=categories)
 
     if xyplotlabels:
@@ -124,6 +132,7 @@ def make_confusion_matrix(cf,
 
     if title:
         plt.title(title)
+    fig.tight_layout()
 
 ######################################################################################################
 
@@ -218,7 +227,7 @@ categories = ['Ham', 'Spam']
 make_confusion_matrix(cf_matrix,
                       group_names=labels,
                       categories=categories,
-                      figsize=(8,6),
+                      figsize=(8,9),
                       cbar=False)
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
@@ -228,7 +237,7 @@ auc = metrics.roc_auc_score(y_test, y_score[:,1])
 #auc = np.trapz(tpr,fpr) # alternatively
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-plt.figure(figsize=(8,6))
+fig = plt.figure(figsize=(8,6))
 lw = 2
 plt.plot(fpr,tpr,color = 'darkorange', lw=lw, label="Multinomial NB (AUC = %0.2f)" % auc )
 plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
@@ -238,6 +247,7 @@ plt.legend(loc="lower right")
 plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
 plt.title('ROC Curve')
+fig.tight_layout()
 plt.show()
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py

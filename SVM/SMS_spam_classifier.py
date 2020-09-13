@@ -9,12 +9,27 @@ Created on Thu Sep 10 23:20:59 2020
 
 # https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
 
+from textblob import TextBlob
+from sklearn.model_selection import train_test_split, GridSearchCV # StratifiedKFold, cross_val_score,
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import classification_report, confusion_matrix # , f1_score, accuracy_score
+from sklearn.svm import SVC #, LinearSVC
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+#import sklearn
+import csv
+import pickle
+import getopt
+import sys
+import os
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 plt.rcParams.update({'font.size': 20})
 plt.rcParams.update({'figure.figsize': (8, 6)})
+
 
 def make_confusion_matrix(cf,
                           group_names=None,
@@ -26,7 +41,7 @@ def make_confusion_matrix(cf,
                           xyplotlabels=True,
                           sum_stats=True,
                           figsize=None,
-                          cmap='Blues', # or 'binary'
+                          cmap='Blues',  # or 'binary'
                           title=None):
     '''
     This function will make a pretty plot of an sklearn Confusion Matrix cm using a Seaborn heatmap visualization.
@@ -48,11 +63,10 @@ def make_confusion_matrix(cf,
     title:         Title for the heatmap. Default is None.
     '''
 
-
     # CODE TO GENERATE TEXT INSIDE EACH SQUARE
     blanks = ['' for i in range(cf.size)]
 
-    if group_names and len(group_names)==cf.size:
+    if group_names and len(group_names) == cf.size:
         group_labels = ["{}\n".format(value) for value in group_names]
     else:
         group_labels = blanks
@@ -63,46 +77,46 @@ def make_confusion_matrix(cf,
         group_counts = blanks
 
     if percent:
-        group_percentages = ["{0:.2%}".format(value) for value in cf.flatten()/np.sum(cf)]
+        group_percentages = ["{0:.2%}".format(
+            value) for value in cf.flatten()/np.sum(cf)]
     else:
         group_percentages = blanks
 
-    box_labels = [f"{v1}{v2}{v3}".strip() for v1, v2, v3 in zip(group_labels,group_counts,group_percentages)]
-    box_labels = np.asarray(box_labels).reshape(cf.shape[0],cf.shape[1])
-
+    box_labels = [f"{v1}{v2}{v3}".strip() for v1, v2, v3 in zip(
+        group_labels, group_counts, group_percentages)]
+    box_labels = np.asarray(box_labels).reshape(cf.shape[0], cf.shape[1])
 
     # CODE TO GENERATE SUMMARY STATISTICS & TEXT FOR SUMMARY STATS
     if sum_stats:
-        #Accuracy is sum of diagonal divided by total observations
-        accuracy  = np.trace(cf) / float(np.sum(cf))
+        # Accuracy is sum of diagonal divided by total observations
+        accuracy = np.trace(cf) / float(np.sum(cf))
 
-        #if it is a binary confusion matrix, show some more stats
-        if len(cf)==2:
-            #Metrics for Binary Confusion Matrices
-            precision = cf[1,1] / sum(cf[:,1])
-            recall    = cf[1,1] / sum(cf[1,:])
-            f1_score  = 2*precision*recall / (precision + recall)
+        # if it is a binary confusion matrix, show some more stats
+        if len(cf) == 2:
+            # Metrics for Binary Confusion Matrices
+            precision = cf[1, 1] / sum(cf[:, 1])
+            recall = cf[1, 1] / sum(cf[1, :])
+            f1_score = 2*precision*recall / (precision + recall)
             stats_text = "\n\nAccuracy={:0.3f}\nPrecision={:0.3f}\nRecall={:0.3f}\nF1 Score={:0.3f}".format(
-                accuracy,precision,recall,f1_score)
+                accuracy, precision, recall, f1_score)
         else:
             stats_text = "\n\nAccuracy={:0.3f}".format(accuracy)
     else:
         stats_text = ""
 
-
     # SET FIGURE PARAMETERS ACCORDING TO OTHER ARGUMENTS
-    if figsize==None:
-        #Get default figure size if not set
+    if figsize == None:
+        # Get default figure size if not set
         figsize = plt.rcParams.get('figure.figsize')
 
-    if xyticks==False:
-        #Do not show categories if xyticks is False
-        categories=False
-
+    if xyticks == False:
+        # Do not show categories if xyticks is False
+        categories = False
 
     # MAKE THE HEATMAP VISUALIZATION
     plt.figure(figsize=figsize)
-    sns.heatmap(cf,annot=box_labels,fmt="",cmap=cmap,cbar=cbar,xticklabels=categories,yticklabels=categories)
+    sns.heatmap(cf, annot=box_labels, fmt="", cmap=cmap, cbar=cbar,
+                xticklabels=categories, yticklabels=categories)
 
     if xyplotlabels:
         plt.ylabel('True label')
@@ -118,21 +132,8 @@ def make_confusion_matrix(cf,
 # modified from https://www.panggi.com/articles/sms-spam-filter-using-scikit-learn-and-textblob/
 # converted from python2 to python3
 
+
 # Imports
-import pandas as pd
-import os
-import sys
-import getopt
-import pickle
-import csv
-import sklearn
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.svm import SVC, LinearSVC
-from sklearn.metrics import classification_report, f1_score, accuracy_score, confusion_matrix
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test_split, GridSearchCV
-from textblob import TextBlob
 
 #import nltk
 
@@ -144,12 +145,12 @@ MESSAGES = pd.read_csv('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection
 
 
 def tokens(message):
-    message = str(message) #, 'utf8')
+    message = str(message)  # , 'utf8')
     return TextBlob(message).words
 
 
 def lemmas(message):
-    message = str(message).lower() #), 'utf8').lower()
+    message = str(message).lower()  # ), 'utf8').lower()
     words = TextBlob(message).words
     return [word.lemma for word in words]
 
@@ -174,7 +175,7 @@ def train_multinomial_nb(messages):
         refit=True,  # fit using all data, on the best detected classifier
         n_jobs=-1,
         scoring='accuracy',
-        cv=5, #StratifiedKFold(n_splits=5).split(label_train),
+        cv=5,  # StratifiedKFold(n_splits=5).split(label_train),
     )
     # train
     nb_detector = grid.fit(msg_train, label_train)
@@ -189,26 +190,28 @@ def train_multinomial_nb(messages):
     print(cf_matrix)
 
     # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-    labels = ['True Neg','False Pos','False Neg','True Pos']
+    labels = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     categories = ['Ham', 'Spam']
     make_confusion_matrix(cf_matrix,
-                      group_names=labels,
-                      categories=categories,
-                      figsize=(8,6),
-                      cbar=False)
+                          group_names=labels,
+                          categories=categories,
+                          figsize=(8, 6),
+                          cbar=False)
 
     # comparing actual response values (y_test) with predicted response values (y_pred)
     from sklearn import metrics
     print("Model accuracy(in %):", metrics.accuracy_score(y_test, y_pred)*100)
 
-    fpr, tpr, thresholds = metrics.roc_curve(y_test, y_score[:,1], pos_label='spam')
-    auc = metrics.roc_auc_score(y_test, y_score[:,1])
+    fpr, tpr, thresholds = metrics.roc_curve(
+        y_test, y_score[:, 1], pos_label='spam')
+    auc = metrics.roc_auc_score(y_test, y_score[:, 1])
     print(auc)
 
     # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-    plt.figure(figsize=(8,6))
+    plt.figure(figsize=(8, 6))
     lw = 2
-    plt.plot(fpr,tpr,color = 'darkorange', lw=lw, label="Multinomial NB (AUC = %0.2f)" % auc )
+    plt.plot(fpr, tpr, color='darkorange', lw=lw,
+             label="Multinomial NB (AUC = %0.2f)" % auc)
     plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
     plt.xlim([-0.05, 1.05])
     plt.ylim([-0.05, 1.05])
@@ -238,9 +241,9 @@ def train_svm(messages):
                          ('tfidf', TfidfTransformer()), ('classifier', SVC(probability=True))])
     # pipeline parameters to automatically explore and tune
     params = [
-        {'classifier__C': [1, 10, 100, 1000],
+        {'classifier__C': [0.1, 1, 10, 100, 1000],
             'classifier__kernel': ['linear']},
-        {'classifier__C': [1, 10, 100, 1000], 'classifier__gamma': [
+        {'classifier__C': [0.1, 1, 10, 100, 1000], 'classifier__gamma': [
             0.001, 0.0001], 'classifier__kernel': ['rbf']},
     ]
     grid = GridSearchCV(
@@ -249,7 +252,7 @@ def train_svm(messages):
         refit=True,  # fit using all data, on the best detected classifier
         n_jobs=-1,
         scoring='accuracy',
-        cv=5 # StratifiedKFold(label_train, n_splits=5),
+        cv=5  # StratifiedKFold(label_train, n_splits=5),
     )
     # train
     svm_detector = grid.fit(msg_train, label_train)
@@ -264,26 +267,28 @@ def train_svm(messages):
     print(cf_matrix)
 
     # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-    labels = ['True Neg','False Pos','False Neg','True Pos']
+    labels = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     categories = ['Ham', 'Spam']
     make_confusion_matrix(cf_matrix,
-                      group_names=labels,
-                      categories=categories,
-                      figsize=(8,6),
-                      cbar=False)
+                          group_names=labels,
+                          categories=categories,
+                          figsize=(8, 6),
+                          cbar=False)
 
     # comparing actual response values (y_test) with predicted response values (y_pred)
     from sklearn import metrics
     print("Model accuracy(in %):", metrics.accuracy_score(y_test, y_pred)*100)
 
-    fpr, tpr, thresholds = metrics.roc_curve(y_test, y_score[:,1], pos_label='spam')
-    auc = metrics.roc_auc_score(y_test, y_score[:,1])
+    fpr, tpr, thresholds = metrics.roc_curve(
+        y_test, y_score[:, 1], pos_label='spam')
+    auc = metrics.roc_auc_score(y_test, y_score[:, 1])
     print(auc)
 
     # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-    plt.figure(figsize=(8,6))
+    plt.figure(figsize=(8, 6))
     lw = 2
-    plt.plot(fpr,tpr,color = 'darkorange', lw=lw, label="SVM (AUC = %0.2f)" % auc )
+    plt.plot(fpr, tpr, color='darkorange', lw=lw,
+             label="SVM (AUC = %0.2f)" % auc)
     plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
     plt.xlim([-0.05, 1.05])
     plt.ylim([-0.05, 1.05])
@@ -316,7 +321,7 @@ def main(argv):
         print("Creating SVM Model.....")
         train_svm(MESSAGES)
 
-    inputmessage = ''
+    #inputmessage = ''
     try:
         opts, args = getopt.getopt(argv, "hm:", ["message="])
     except getopt.GetoptError:
@@ -335,8 +340,10 @@ def main(argv):
 
 
 def predict(message):
-    nb_detector = pickle.load(open('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl','rb'))
-    svm_detector = pickle.load(open('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl','rb'))
+    nb_detector = pickle.load(open(
+        '/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl', 'rb'))
+    svm_detector = pickle.load(open(
+        '/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl', 'rb'))
 
     nb_predict = nb_detector.predict([message])[0]
     svm_predict = svm_detector.predict([message])[0]
