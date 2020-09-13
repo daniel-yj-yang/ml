@@ -34,6 +34,11 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 
 Note:
 - The y-axis and x-axis on the ROC curve are probabilities conditioned on the true class label and <a href="https://stats.stackexchange.com/questions/7207/roc-vs-precision-and-recall-curves">will be the same regardless of what P(Y<sub>actual</sub>=1) is</a> and insenitive to unbalanced sample class size.
+-  Since ROC curve is insensitive to different baseline probabilities, ROC curve is suitable for answering the following question:
+
+```
+How well can this classifier be expected to perform in general, regardless of different baseline probabilities?
+```
 
 <hr>
 
@@ -73,6 +78,13 @@ X-axis (recall) | going horizontal | higher values mean lower false negative rat
 <br>
 <p align="center"><img src="./images/precision_recall_curve.png" width="450px" /></p>
 
+Note:
+- Since PR curve is sensitive to different baseline probabilities, PR curve is suitable for answering the following question:
+
+```
+How meaningful is a positive result from my classifier, given the specific baseline probabilities of my problem?
+```
+ 
 <hr>
 
 ### <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a>
