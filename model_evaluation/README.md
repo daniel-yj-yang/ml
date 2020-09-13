@@ -23,7 +23,7 @@ Multicollinearity test | Diagnostic	| ---
 
 ## <a href="https://stats.stackexchange.com/questions/34193/how-to-choose-an-error-metric-when-evaluating-a-classifier">Classification</a>
 
-### ROC curve
+### ROC (Receiver operating characteristic) curve
 
 axis | name | conditional probability | meaning
 --- | --- | --- | ---
