@@ -37,7 +37,7 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 <a href="http://www.dataschool.io/roc-curves-and-auc-explained/">AUC</a> (Area Under Curve) of the ROC curve
 
 - ROC curve is a plot of Power (1-β; Recall) as a function of α (that is, 1-specificity)
-- AUC measures the performance of a binary classifier **averaged across all possible decision thresholds (0.0 – 1.0)**; when decision threshold (cut-off score of y probability for class=1 vs. class=0) increases and α likely decreases  (going left on the x-axis of the ROC plot), less false positive but also less true positive
+- AUC measures the performance of a binary classifier **averaged across all possible decision thresholds (the threshold to reject the null hypothesis)**; increasing decision threshold (cut-off probability score for predicting y=1 vs. y=0) equals to moving a point on the ROC curve to the left.
 
 <p align="center"><img src="./images/decision_threshold.png" width="400px"><br/>(<a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
 <p align="center"><img src="./images/decision_threshold_ROC.gif" width="600px"><br/>(<a href="http://arogozhnikov.github.io/2015/10/05/roc-curve.html">website reference</a>)</p>
