@@ -25,8 +25,10 @@ Multicollinearity test | Diagnostic	| ---
 
 ### ROC curve
 
-- y-axis is True Positive Rate = Recall = Sensitivity = prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=1)
-- x-axis is False Positive Rate = prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=0)
+axis | name | conditional probability | meaning
+--- | --- | --- | ---
+y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β
+x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean lower α
 
 <hr>
 
@@ -35,7 +37,7 @@ Multicollinearity test | Diagnostic	| ---
 <a href="http://www.dataschool.io/roc-curves-and-auc-explained/">AUC</a> (Area Under Curve) of the ROC curve
 
 - ROC curve is a plot of Power (1-β; Recall) as a function of α (that is, 1-specificity)
-- AUC measures the performance of a binary classifier **averaged across all possible decision thresholds (0.0 – 1.0)**; when decision threshold (cut-off score of y probability for class=1 vs. class=0) increases and α likely decreases  (going left on the x-axis of the ROC plot), less false positive but also less true positive
+- AUC measures the performance of a binary classifier **averaged across all possible decision thresholds (the threshold to reject the null hypothesis)**; increasing decision threshold (cut-off probability score for predicting y=1 vs. y=0) equals to moving a point on the ROC curve to the left.
 
 <p align="center"><img src="./images/decision_threshold.png" width="400px"><br/>(<a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
 <p align="center"><img src="./images/decision_threshold_ROC.gif" width="600px"><br/>(<a href="http://arogozhnikov.github.io/2015/10/05/roc-curve.html">website reference</a>)</p>
@@ -110,7 +112,7 @@ Derived Index | Direction in the table| Definition | To minimize | Example | Als
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate (TPR) | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss;<br/>Recall = 1-β | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
 F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | FP and FN | --- | Another measure of accuracy
 False Negative Rate (FNR) | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
-Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | α;<br/>Specificity = 1-α | --- | Correct rejection rate, threshold, (1-α)
+Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | α;<br/>Specificity = 1-α | --- | Correct rejection rate, (1-α)
 False Positive Rate (FPR)<br>=(1-Specificity) | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
 False Discovery Rate (FDR) | vertical | <b>p(y_actual=0 \| y_pred=1)</b> = FP/(TP+FP) | --- | --- | ---
 False Omission Rate (FOR) | vertical | <b>p(y_actual=1 \| y_pred=0)</b> = FN/(TN+FN) | --- | --- | ---
