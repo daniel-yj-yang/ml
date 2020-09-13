@@ -52,7 +52,7 @@ False Positive Rate, x-axis of the ROC curve | prob(y<sub>pred</sub>=1 \| y<sub>
 
 <hr>
 
-Better classification models:<br/>
+Classification models with varying predictive power:<br/>
 <p align="center"><img src="./images/roccomp.jpg" width="300px"><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)<br/><br/><img src="./images/ROC_curve_better_models.png" width="500px"></p>
 
 <hr>
