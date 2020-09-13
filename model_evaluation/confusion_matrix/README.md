@@ -62,9 +62,9 @@ Higher decision threshold:<br/>
 
 <hr>
 
-Derived Index | Definition | Visualization
---- | --- | ---
-Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | <img src="./images/precision.png" width="150px">
+Derived Index | Definition | Visualization 1 | Visualization 2
+--- | --- | --- | ---
+Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | <img src="./images/precision_1.png" width="150px"> | <img src="./images/precision_2.png" width="150px">
 
 <hr>
 
