@@ -104,7 +104,7 @@ False Negative Rate | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | ---
 Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | --- | --- | Correct rejection rate, threshold, (1-α)
 (1-Specificity)<br>=False Positive Rate | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
 False Discovery Rate (FDR) | vertical | <b>p(y_actual=0 \| y_pred=1)</b> = FP/(TP+FP) | --- | --- | ---
-False Omission Rate (FOR) | vertical | FN/(TN+FN) | --- | --- | ---
+False Omission Rate (FOR) | vertical | <b>p(y_actual=1 \| y_pred=0)</b> = FN/(TN+FN) | --- | --- | ---
 Misclassification Rate | both | (FP+FN)/Total | --- | --- | Error rate
 Prevalence | horizontal | P/Total | --- | --- | ---
 Negative Predictive Value | --- | <b>p(y_actual=0 \| y_pred=0)</b> = TN/(TN+FN) | --- | --- | ---
