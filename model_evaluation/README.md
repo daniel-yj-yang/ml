@@ -28,6 +28,8 @@ Multicollinearity test | Diagnostic	| ---
 - y-axis is True Positive Rate = Recall = Sensitivity = prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=1)
 - x-axis is False Positive Rate = prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=0)
 
+<hr>
+
 ### Use the ROC curve
 
 <a href="http://www.dataschool.io/roc-curves-and-auc-explained/">AUC</a> (Area Under Curve) of the ROC curve
