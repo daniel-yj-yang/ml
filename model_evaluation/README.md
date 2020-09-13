@@ -154,9 +154,10 @@ k-fold cross-validation | To assessing how the results of a statistical analys
 
 ## Hyperparameter tuning
 
-To perform <a href="https://scikit-learn.org/stable/modules/grid_search.html">grid search</a>
+- To perform <a href="https://scikit-learn.org/stable/modules/grid_search.html">grid search</a>
 
 <hr>
 
 ## References
-* A <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">comprehensive collection</a> of model evaluation functions in Scikit-learn
+
+- A <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">comprehensive collection</a> of model evaluation functions in Scikit-learn
