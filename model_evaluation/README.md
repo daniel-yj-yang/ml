@@ -39,7 +39,7 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 <a href="http://www.dataschool.io/roc-curves-and-auc-explained/">AUC</a> (Area Under Curve) of the ROC curve
 
 - ROC curve is a plot of Power (1-β; Recall) as a function of α (that is, 1-specificity)
-- AUC can be interpreted as the probability that the model ranks a random positive example (a random sample of y<sub>actual</sub>=1) **more highly** than a random negative example (a random sample of y<sub>actual</sub>=0), where "ranks more highly" means prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) > prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), that is, y-axis > x-axis on the ROC curve.
+- AUC can be interpreted as the probability that the model **ranks** a random positive example (a random sample of y<sub>actual</sub>=1) **more highly** than a random negative example (a random sample of y<sub>actual</sub>=0), where "ranks more highly" means prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) > prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), that is, y-axis > x-axis on the ROC curve.
 - If prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) = prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), then y-axis = x-axis, then AUC = 0.5, which is like random guessing.
 
 - AUC is an aggregate measure of binary classifier's performance **across all possible decision thresholds (the threshold to make the decision that y<sub>pred</sub>=1)**
