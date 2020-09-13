@@ -42,3 +42,7 @@
     <td>All samples</td>
   </tr>
   </table>
+  
+Derived Index | Visualization
+--- | ---
+Recall | <img src="./images/recall.png" width="150px">
