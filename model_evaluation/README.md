@@ -43,7 +43,7 @@ Multicollinearity test | Diagnostic	| ---
 - AUC can be interpreted as predictive power
 
 <br>
-<p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">Image Source</a>)</p>
+<p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
   
 <p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a cleaner separation of the y probability distributions of True Positive vs. True Negative, given X's</p>
 
