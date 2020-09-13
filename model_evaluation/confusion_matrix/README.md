@@ -45,4 +45,5 @@
   
 Derived Index | Visualization
 --- | ---
-Recall | <img src="./images/recall.png" width="150px">
+Recall, True Positive Rate, y-axis of the ROC curve | <img src="./images/recall.png" width="150px">
+False Positive Rate, x-axis of the ROC curve | <img src="./images/FPR.png" width="150px">
