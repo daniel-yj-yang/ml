@@ -46,8 +46,8 @@ Multicollinearity test | Diagnostic	| ---
   
 Axis | direction on the confusion matrix | stands for?
 --- | --- | ---
-X-axis (recall) | going horizontal | higher values mean lower false negatives (Type II error)
-Y-axis (precision) | going vertical | higher values mean lower false positives (Type I error)
+X-axis (recall) | going horizontal | higher values mean lower false negative rate (Type II error)
+Y-axis (precision) | going vertical | higher values mean lower false discovery rate (FDR)
 
 <br>
 <p align="center"><img src="./images/PR_curve.png" width="50%" /><br/>(<a href="https://blogs.msdn.microsoft.com/andreasderuiter/2015/02/09/using-roc-plots-and-the-auc-measure-in-azure-ml/">Image Source</a>)</p>
