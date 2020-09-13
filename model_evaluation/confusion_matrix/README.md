@@ -16,6 +16,9 @@
     <td>
       <img src="./images/y_actual=1.png" width="150px">
     </td>
+    <td>
+      <img src="./images/FN.png" width="150px">
+    </td>
   </tr>
   <tr>
     <td>Sum</td>
