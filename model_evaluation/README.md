@@ -60,7 +60,7 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 
 <hr>
 
-## <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
+### <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
   
 Axis | direction on the confusion matrix | meaning
 --- | --- | ---
@@ -72,7 +72,7 @@ X-axis (recall) | going horizontal | higher values mean lower false negative rat
 
 <hr>
 
-## <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a> (used in classification)
+### <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a> (used in classification)
 
 * Say "YES" (Positive) = Identification
 * Say "NO" (Negative) = Rejection
@@ -133,7 +133,7 @@ Negative Likelihood Ratio (LR-) | --- | β/(1-α) | --- | β=.20,(1-α)=.95,β/(
 
 <hr>
 
-## Unbalanced sample classes, that is, prob(y<sub>actual</sub>=1) >> 50% (or << 50%)
+### Unbalanced sample classes, that is, prob(y<sub>actual</sub>=1) >> 50% (or << 50%)
 
 Accuracy is <a href="https://datascience.stackexchange.com/questions/806/advantages-of-auc-vs-standard-accuracy">sensitive</a> to class imbalance, but AUC is <a href="http://fastml.com/what-you-wanted-to-know-about-auc/">insensitive</a> to that.
 
@@ -151,7 +151,7 @@ Adjusting prior probabilities | --- | Naive Bayes
 
 <hr>
 
-## <a href="https://developers.google.com/machine-learning/crash-course/classification/thresholding">Classification (Decision) threshold</a>
+### <a href="https://developers.google.com/machine-learning/crash-course/classification/thresholding">Classification (Decision) threshold</a>
 Decision threshold = a probability score of y; above which we will classify the example as class=1 (positive)
 
 <p align="center"><img src="./images/decision_threshold.png" width="400px"><br/>(<a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
@@ -177,6 +177,6 @@ k-fold cross-validation | To assessing how the results of a statistical analys
 
 <hr>
 
-## References
+## Reference
 
 - A <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">comprehensive collection</a> of model evaluation functions in Scikit-learn
