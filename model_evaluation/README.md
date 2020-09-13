@@ -70,10 +70,10 @@ How well can this classifier be expected to perform in general, regardless of di
 
 ### <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
   
-Axis | direction on the confusion matrix | meaning
---- | --- | ---
-Y-axis (precision) | going vertical | higher values mean lower false discovery rate (FDR)
-X-axis (recall) | going horizontal | higher values mean lower false negative rate (Type II error)
+axis | name | conditional probability | meaning
+--- | --- | --- | ---
+y-axis | Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | higher values mean lower FDR
+x-axis | Recall | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β
 
 <br>
 <p align="center"><img src="./images/precision_recall_curve.png" width="450px" /></p>
