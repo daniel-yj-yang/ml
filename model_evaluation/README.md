@@ -62,12 +62,12 @@ Y-axis (precision) | going vertical | higher values mean lower false positives (
 <table>
     <tr>
         <td><p align="right">\ Predict</p>Actual</td>
-        <td>Predicted No</td>
-        <td>Predicted Yes</td>
+        <td>y_pred=0</td>
+        <td>y_pred=1</td>
         <td>Sum</td>
     </tr>
     <tr>
-        <td>Actual No</td>
+        <td>y_actual=0</td>
         <td>True Negative (TN)<br>Correct Rejection<br><a
                 href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">Specificity</a> = True Negative Rate
             (1-α) = TN/N<br>Note: Negative Predictive Value = TN/(TN+FN)</td>
@@ -77,7 +77,7 @@ Y-axis (precision) | going vertical | higher values mean lower false positives (
         <td>N=TN+FP</td>
     </tr>
     <tr>
-        <td>Actual Yes</td>
+        <td>y_actual=1</td>
         <td><b>False Negative</b> (FN)<br>Miss, Type II Error<br><a
                 href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_II_error">False Negative Rate (FNR;
                 β)</a> = FN/P<br>Note: False Omission Rate = FN/(TN+FN)</td>
@@ -97,17 +97,17 @@ Y-axis (precision) | going vertical | higher values mean lower false positives (
 Derived Index | Direction in the table| Definition | To minimize | Example | Also known as
 --- | --- | --- | --- | --- | ---
 <b>Accuracy</b> | both | (TP+TN)/Total | --- | --- | ---
-**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | TP/(TP+FP) | Type I error, False Alarm| High cost associated with a false medical diagnosis (e.g., ASD) | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
-**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate | horizontal | TP/(TP+FN) | Type II error, Miss | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
-F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | Type I and II errors | --- | A measure of accuracy
-False Negative Rate | horizontal | FN/P | --- | --- | Type II error rate, Miss Rate, β
-Specificity  | horizontal | TN/N | --- | --- | Correct rejection rate, threshold, (1-α)
-(1-Specificity)<br>=False Positive Rate | horizontal | FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
-False Discovery Rate (FDR) | vertical | FP/(TP+FP) | --- | --- | ---
-False Omission Rate (FOR) | vertical | FN/(TN+FN) | --- | --- | ---
+**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | <b>p(y_actual=1 \| y_pred=1)</b> = TP/(TP+FP) | FDR;<br>Precision = 1-FDR | --- | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
+**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss;<br/>Recall = 1-β | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
+F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | FP and FN | --- | Another measure of accuracy
+False Negative Rate (FNR) | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
+Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | α;<br/>Specificity = 1-α | --- | Correct rejection rate, threshold, (1-α)
+(1-Specificity)<br>=False Positive Rate | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
+False Discovery Rate (FDR) | vertical | <b>p(y_actual=0 \| y_pred=1)</b> = FP/(TP+FP) | --- | --- | ---
+False Omission Rate (FOR) | vertical | <b>p(y_actual=1 \| y_pred=0)</b> = FN/(TN+FN) | --- | --- | ---
 Misclassification Rate | both | (FP+FN)/Total | --- | --- | Error rate
 Prevalence | horizontal | P/Total | --- | --- | ---
-Negative Predictive Value | --- | TN/(TN+FN) | --- | --- | ---
+Negative Predictive Value (NPV) | vertical | <b>p(y_actual=0 \| y_pred=0)</b> = TN/(TN+FN) | FOR;<br/>NPV = 1-FOR | --- | ---
 Positive Likelihood Ratio (LR+) | --- | (1-β)/α<br>cf. the ROC curve | --- | (1-β)=.80,α=.05,(1-β)/α=16 | ---
 Negative Likelihood Ratio (LR-) | --- | β/(1-α) | --- | β=.20,(1-α)=.95,β/(1-α)=.21 | ---
 <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">Diagnostic Odds Ratio (DOR)</a> | --- | (LR+)/(LR-)<br>=(1-β)(1-α)/(αβ) | --- | β=.20,α=.05,DOR=76 | ---
