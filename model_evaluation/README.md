@@ -44,13 +44,13 @@ Multicollinearity test | Diagnostic	| ---
 
 ## <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
   
-Axis | direction on the confusion matrix | stands for?
+Axis | direction on the confusion matrix | meaning
 --- | --- | ---
 X-axis (recall) | going horizontal | higher values mean lower false negative rate (Type II error)
 Y-axis (precision) | going vertical | higher values mean lower false discovery rate (FDR)
 
 <br>
-<p align="center"><img src="./images/PR_curve.png" width="50%" /><br/>(<a href="https://blogs.msdn.microsoft.com/andreasderuiter/2015/02/09/using-roc-plots-and-the-auc-measure-in-azure-ml/">Image Source</a>)</p>
+<p align="center"><img src="./images/PR_curve_new.png" width="450px" /></p>
 
 <hr>
 
