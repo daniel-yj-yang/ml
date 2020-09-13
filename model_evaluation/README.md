@@ -160,8 +160,8 @@ Decision threshold = a probability score of y<sub>pred</sub>; above which we wil
 <p align="center"><img src="./images/decision_threshold.png" width="600px"><br/>(modified from <a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
 
 Raising classification threshold will...
-- reduce false positives in general, thus, **precision** will probably increase.
-- cause the number of true positives to decrease or stay the same and cause the number of false negatives to increase or stay the same, thus **recall** will either stay constant or decrease.
+- reduces false positives generally speaking, thus raising precision.
+- causes the number of true positives to decrease or stay the same and will cause the number of false negatives to increase or stay the same. Thus, recall will either stay constant or decrease.
 
 <hr>
 
