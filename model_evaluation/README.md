@@ -82,7 +82,7 @@ Note:
 - Since precision (but not recall) is sensitive to different baseline probabilities, PR curve is suitable for answering the following question:
 
 ```
-How meaningful is a positive result from my classifier, given the specific baseline probabilities of the population of my problem?
+How meaningful is a positive result from my classifier, given the specific baseline probabilities of my population?
 ```
  
 <hr>
