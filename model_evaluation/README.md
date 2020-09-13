@@ -158,11 +158,5 @@ To perform <a href="https://scikit-learn.org/stable/modules/grid_search.html">gr
 
 <hr>
 
-## Model Evaluation Pipeline
-
-<a href="./model_evaluation_pipeline">To evaluate multiple models quickly by merely plugging in the dataset</a>
-
-<hr>
-
 ## References
 * A <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">comprehensive collection</a> of model evaluation functions in Scikit-learn
