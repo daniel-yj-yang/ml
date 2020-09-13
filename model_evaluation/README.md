@@ -79,7 +79,7 @@ X-axis (recall) | going horizontal | higher values mean lower false negative rat
 <p align="center"><img src="./images/precision_recall_curve.png" width="450px" /></p>
 
 Note:
-- Since PR curve is sensitive to different baseline probabilities, PR curve is suitable for answering the following question:
+- Since precision (but not recall) is sensitive to different baseline probabilities, PR curve is suitable for answering the following question:
 
 ```
 How meaningful is a positive result from my classifier, given the specific baseline probabilities of my problem?
