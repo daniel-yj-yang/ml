@@ -25,8 +25,10 @@ Multicollinearity test | Diagnostic	| ---
 
 ### ROC curve
 
-- y-axis is True Positive Rate = Recall = Sensitivity = prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=1)
-- x-axis is False Positive Rate = prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=0)
+axis | name | conditional probability | meaning
+--- | --- | --- | ---
+y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=1) | higher values mean lower β
+x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=0) | higher values mean lower α
 
 <hr>
 
