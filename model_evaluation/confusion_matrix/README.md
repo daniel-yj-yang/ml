@@ -66,8 +66,8 @@ Derived Index | Definition | Visualization 1 | Visualization 2
 --- | --- | --- | ---
 Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | <img src="./images/precision_1.png" width="150px"> | <img src="./images/precision_2.png" width="150px">
 
-Raising classification threshold does not impact precision in Visualization 1, but increases precision in Visualization 2.
-This illustrates why raising classification threshold will probably (but not always) increase precision.
+Note. Raising classification threshold does not impact precision in Visualization 1, but increases precision in Visualization 2.
+This illustrates why raising classification threshold will usually (**but not always**) increase precision.
 
 <hr>
 
