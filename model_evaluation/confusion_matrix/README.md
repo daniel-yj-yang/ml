@@ -57,4 +57,9 @@ Better classification models:<br/>
 
 <hr>
 
+Higher decision threshold:<br/>
+<p align="center"><img src="./images/decision_threshold.png" width="300px"><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)<br/><br/><img src="./images/higher_decision_threshold_1.png" width="500px"></p>
+
+<hr>
+
 For other illustrations, please see the <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint deck</a> I made.
