@@ -62,7 +62,7 @@ How well can this classifier be expected to perform in general, regardless of di
 - AUC can be converted to the Gini index, which is 2\*AUC-1
 - AUC can also be interpreted as predictive power
 
-<p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a more <b>sensitive</b> detection of the actual y, given X's and α; (from the model's perspective, the y_actual=1 distribution is gradually more separable from y_actual=0, as the model becomes more sensitive to the features that separates these two);<br/>that is, given a specific α = p(y_pred=1 | y_actual=0) decreases, recall = p(y_pred=1 | y_actual=1) increases</p>
+<p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a more <b>sensitive</b> detection of the actual y, given X's and α;<br/>that is, given a specific α = p(y_pred=1 | y_actual=0) decreases, recall = p(y_pred=1 | y_actual=1) increases;<br/>From the model's perspective, the y_actual=1 distribution is gradually more separable from y_actual=0, as the model becomes more sensitive to the X features that separate the two y classes</p>
 
 - When comparing two models and **their ROC curves cross**, it is possible to have higher AUC scores in one model but the other model <a href="https://stackoverflow.com/questions/38387913/reason-of-having-high-auc-and-low-accuracy-in-a-balanced-dataset">performs better</a> for a majority of the thresholds with which one may actually use the classifier.
 
