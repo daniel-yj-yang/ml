@@ -30,6 +30,8 @@ axis | name | conditional probability | meaning
 y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β
 x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean higher α
 
+<p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
+ 
 <hr>
 
 ### Use the ROC curve
@@ -48,11 +50,8 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 
 - For a random classifier, it will be right/wrong 50% of the time, thus half predictions would be true/false positives, thus the diagonal line
 - AUC can be converted to the Gini index, which is 2\*AUC-1
-- AUC can be interpreted as predictive power
+- AUC can also be interpreted as predictive power
 
-<br>
-<p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
-  
 <p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a cleaner separation of the y probability distributions of True Positive vs. True Negative, given X's</p>
 
 <hr>
