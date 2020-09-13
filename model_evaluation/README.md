@@ -31,7 +31,10 @@ y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| 
 x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean higher α
 
 <p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
- 
+
+Note:
+- The y-axis and x-axis on the ROC curve are probabilities conditioned on the true class label and <a href="https://stats.stackexchange.com/questions/7207/roc-vs-precision-and-recall-curves">will be the same regardless of what P(Y<sub>actual</sub>=1) is</a> and insenitive to unbalanced sample class size.
+
 <hr>
 
 ### Use the ROC curve
