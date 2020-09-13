@@ -23,6 +23,13 @@ Multicollinearity test | Diagnostic	| ---
 
 ## <a href="https://stats.stackexchange.com/questions/34193/how-to-choose-an-error-metric-when-evaluating-a-classifier">Classification</a>
 
+### ROC curve
+
+- y-axis is True Positive Rate
+- x-axis is False Positive Rate
+
+### Use the ROC curve
+
 <a href="http://www.dataschool.io/roc-curves-and-auc-explained/">AUC</a> (Area Under Curve) of the ROC curve
 
 - ROC curve is a plot of Power (1-β; Recall) as a function of α (that is, 1-specificity)
