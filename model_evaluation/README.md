@@ -46,11 +46,11 @@ Multicollinearity test | Diagnostic	| ---
   
 Axis | direction on the confusion matrix | meaning
 --- | --- | ---
-X-axis (recall) | going horizontal | higher values mean lower false negative rate (Type II error)
 Y-axis (precision) | going vertical | higher values mean lower false discovery rate (FDR)
+X-axis (recall) | going horizontal | higher values mean lower false negative rate (Type II error)
 
 <br>
-<p align="center"><img src="./images/precision_recall_curve.png" width="500px" /></p>
+<p align="center"><img src="./images/precision_recall_curve.png" width="450px" /></p>
 
 <hr>
 
