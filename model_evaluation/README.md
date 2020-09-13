@@ -133,7 +133,7 @@ Negative Likelihood Ratio (LR-) | --- | β/(1-α) | --- | β=.20,(1-α)=.95,β/(
 
 <hr>
 
-## Unbalanced sample classes
+## Unbalanced sample classes, that is, prob(y<sub>actual</sub>=1) >> 50% (or << 50%)
 
 Accuracy is <a href="https://datascience.stackexchange.com/questions/806/advantages-of-auc-vs-standard-accuracy">sensitive</a> to class imbalance, but AUC is <a href="http://fastml.com/what-you-wanted-to-know-about-auc/">insensitive</a> to that.
 
