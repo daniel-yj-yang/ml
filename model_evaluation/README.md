@@ -25,10 +25,10 @@ Multicollinearity test | Diagnostic	| ---
 
 ### ROC (Receiver operating characteristic) curve
 
-axis | name | conditional probability | meaning
---- | --- | --- | ---
-y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β
-x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean higher α
+axis | name | conditional probability | meaning | sensitive to base probabilities, prob(y<sub>actual</sub>=1)
+--- | --- | --- | --- | ---
+y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β | No
+x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean higher α | No
 
 <p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
 
@@ -70,10 +70,10 @@ How well can this classifier be expected to perform in general, regardless of di
 
 ### <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
   
-axis | name | conditional probability | meaning
---- | --- | --- | ---
-y-axis | Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | higher values mean lower FDR
-x-axis | Recall | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β
+axis | name | conditional probability | meaning | sensitive to base probabilities, prob(y<sub>actual</sub>=1)
+--- | --- | --- | --- | ---
+y-axis | Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | higher values mean lower FDR | Yes
+x-axis | Recall | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β | No
 
 <br>
 <p align="center"><img src="./images/precision_recall_curve.png" width="450px" /></p>
