@@ -50,7 +50,7 @@ X-axis (recall) | going horizontal | higher values mean lower false negative rat
 Y-axis (precision) | going vertical | higher values mean lower false discovery rate (FDR)
 
 <br>
-<p align="center"><img src="./images/PR_curve_new.png" width="450px" /></p>
+<p align="center"><img src="./images/precision_recall_curve.png" width="500px" /></p>
 
 <hr>
 
