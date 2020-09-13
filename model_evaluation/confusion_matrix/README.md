@@ -9,6 +9,16 @@
   </tr>
   <tr>
     <td>
-      <img src="./images/y_actual=0.png">
+      <img src="./images/y_actual=0.png" width="150px">
     </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="./images/y_actual=1.png" width="150px">
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+  </tr>
   </table>
