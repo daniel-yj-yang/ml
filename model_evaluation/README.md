@@ -75,7 +75,9 @@ X-axis (recall) | going horizontal | higher values mean lower false negative rat
 
 <hr>
 
-### <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a> (used in classification)
+### <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a>
+
+For visualization, see <a href="./visualization_of_confusion_matrix.pptx">PowerPoint illustrations</a> that I made.
 
 * Say "YES" (Positive) = Identification
 * Say "NO" (Negative) = Rejection
