@@ -43,7 +43,7 @@ Linear Regression | 1. Linearity: The relationship between X and Y is linear.<br
 
 ## Algorithm Selection:
 
-It dependes on several factors, including (a) the nature of the data, (b) the goal of the analysis, (c) the <a href="https://github.com/daniel-yj-yang/model-evaluation/">relative performance of the algorithm</a>, and (d) the possibility to integrate with business & operations.
+It dependes on several factors, including (a) the nature of the data, (b) the goal of the analysis, (c) the <a href="./model-evaluation/">relative performance of the algorithm</a>, and (d) the possibility to integrate with business & operations.
 
 Factors | Details
 --- | ---
