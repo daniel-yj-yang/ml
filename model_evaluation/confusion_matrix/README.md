@@ -57,4 +57,4 @@ Better classification models:<br/>
 
 <hr>
 
-For other illustrations, please see the <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint deck</a>
+For other illustrations, please see the <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint deck</a>.
