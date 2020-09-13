@@ -85,14 +85,6 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
   </tr>
 </table>
 
-Notes:
-- AUC = an aggregate measure of classification performance across all possible classification thresholds. Interpretation: the probability that the model ranks a **random positive example** (e.g., an actual spam Email) more highly (e.g., estimated as having a higher probability of being a spam Email) than a **random negative example** (e.g., an actual non-spam Email) (> 50% of the time), while AUC = 0.50 = randomly guessing.
-- Accuracy is sensitive to **class unbalance** (that is, the ratio of Actual Positive cases [P] to Actual Negative cases [N]), but the ROC curve is **independent** of the P:N ratio and is therefore suitable for comparing classifiers when this ratio may vary (see <a href="https://github.com/daniel-yj-yang/model_evaluation">model evaluation</a>).
-- Accuracy = (TP+TN)/Total (To maximize correct decisions)
-- Precision = TP/(TP+FP) (the higher the precision, the lower the False Positive / Type I error)
-- Recall (Sensitivity) = TP/(TP+FN) (the higher the recall, the lower the False Negative / Type II error)
-- F1 score = the harmonic mean of precision and recall = 2/((1/precision)+(1/recall)) = a measure of accuracy (the higher the F1, the lower the false positive and negative / both Type I and II errors)
-
 <hr>
 
 ### 2. Using Gaussian Naive Bayes to classify iris

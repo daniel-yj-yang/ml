@@ -23,12 +23,17 @@ Multicollinearity test | Diagnostic	| ---
 
 ## <a href="https://stats.stackexchange.com/questions/34193/how-to-choose-an-error-metric-when-evaluating-a-classifier">Classification</a>
 
-### ROC curve
+### ROC (Receiver operating characteristic) curve
 
 axis | name | conditional probability | meaning
 --- | --- | --- | ---
 y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β
-x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean lower α
+x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean higher α
+
+<p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
+
+Note:
+- The y-axis and x-axis on the ROC curve are probabilities conditioned on the true class label and <a href="https://stats.stackexchange.com/questions/7207/roc-vs-precision-and-recall-curves">will be the same regardless of what P(Y<sub>actual</sub>=1) is</a> and insenitive to unbalanced sample class size.
 
 <hr>
 
@@ -37,7 +42,12 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 <a href="http://www.dataschool.io/roc-curves-and-auc-explained/">AUC</a> (Area Under Curve) of the ROC curve
 
 - ROC curve is a plot of Power (1-β; Recall) as a function of α (that is, 1-specificity)
-- AUC measures the performance of a binary classifier **averaged across all possible decision thresholds (the threshold to reject the null hypothesis)**
+- AUC can be interpreted as the probability that the model **ranks** a random positive example (a random sample of y<sub>actual</sub>=1) **more highly** than a random negative example (a random sample of y<sub>actual</sub>=0), where "ranks more highly" means prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) > prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), that is, y-axis > x-axis on the ROC curve.
+- If prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) = prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), then y-axis = x-axis, then AUC = 0.5, which is like random guessing.
+
+- Accuracy is sensitive to **class unbalance** (that is, the ratio of Actual Positive cases [P] to Actual Negative cases [N]), but the ROC curve is **independent** of the P:N ratio and is therefore suitable for comparing classifiers when this ratio may vary (see <a href="https://github.com/daniel-yj-yang/model_evaluation">model evaluation</a>).
+
+- AUC is an aggregate measure of binary classifier's performance **across all possible decision thresholds (the threshold to make the decision that y<sub>pred</sub>=1)**
 - Increasing decision threshold (cut-off probability score for predicting y=1 vs. y=0) equals to moving a point on the ROC curve to the left, making it harder to classify y=1 or reducing the size of y<sub>pred</sub>=1.
 
 <p align="center"><img src="./images/decision_threshold.png" width="600px"><br/>(modified from <a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
@@ -45,16 +55,15 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 
 - For a random classifier, it will be right/wrong 50% of the time, thus half predictions would be true/false positives, thus the diagonal line
 - AUC can be converted to the Gini index, which is 2\*AUC-1
-- AUC can be interpreted as predictive power
+- AUC can also be interpreted as predictive power
 
-<br>
-<p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
-  
-<p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a cleaner separation of the y probability distributions of True Positive vs. True Negative, given X's</p>
+<p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a more sensitive detection of the actual y, given X's and α</p>
+
+- When comparing two models and **their ROC curves cross**, it is possible to have higher AUC scores in one model but the other model <a href="https://stackoverflow.com/questions/38387913/reason-of-having-high-auc-and-low-accuracy-in-a-balanced-dataset">performs better</a> for a majority of the thresholds with which one may actually use the classifier.
 
 <hr>
 
-## <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
+### <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
   
 Axis | direction on the confusion matrix | meaning
 --- | --- | ---
@@ -66,7 +75,9 @@ X-axis (recall) | going horizontal | higher values mean lower false negative rat
 
 <hr>
 
-## <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a> (used in classification)
+### <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a>
+
+For visualization, see <a href="./visualization_of_confusion_matrix.pptx">PowerPoint illustrations</a> that I made.
 
 * Say "YES" (Positive) = Identification
 * Say "NO" (Negative) = Rejection
@@ -111,7 +122,7 @@ Derived Index | Direction in the table| Definition | To minimize | Example | Als
 <b>Accuracy</b> | both | (TP+TN)/Total | --- | --- | ---
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | <b>p(y_actual=1 \| y_pred=1)</b> = TP/(TP+FP) | FDR;<br>Precision = 1-FDR | --- | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate (TPR) | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss;<br/>Recall = 1-β | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
-F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | FP and FN | --- | Another measure of accuracy
+F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | FP and FN | --- | Another measure of accuracy<br>the harmonic mean of precision and recall
 False Negative Rate (FNR) | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
 Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | α;<br/>Specificity = 1-α | --- | Correct rejection rate, (1-α)
 False Positive Rate (FPR)<br>=(1-Specificity) | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
@@ -127,31 +138,21 @@ Negative Likelihood Ratio (LR-) | --- | β/(1-α) | --- | β=.20,(1-α)=.95,β/(
 
 <hr>
 
+### Unbalanced sample classes, that is, prob(y<sub>actual</sub>=1) >> 50% (or << 50%)
+
 Accuracy is <a href="https://datascience.stackexchange.com/questions/806/advantages-of-auc-vs-standard-accuracy">sensitive</a> to class imbalance, but AUC is <a href="http://fastml.com/what-you-wanted-to-know-about-auc/">insensitive</a> to that.
 
 For example, 99% of the cases are in the same class (e.g., non-ASD), and it's easy to achieve 99% accuracy by predicting the majority/average all the time but AUC will be very low.
-
-When comparing two models and **their ROC curves cross**, it is possible to have higher AUC scores in one model but the other model <a href="https://stackoverflow.com/questions/38387913/reason-of-having-high-auc-and-low-accuracy-in-a-balanced-dataset">performs better</a> for a majority of the thresholds with which one may actually use the classifier.
 
 <hr>
 
 <a href="https://www.researchgate.net/post/In_classification_how_do_i_handle_an_unbalanced_training_set">Ways to deal with unbalanced data</a> | Details | For ...
 --- | --- | ---
+Use AUC rather than accuracy | AUC is insensitive to unbalanced sample classes | ---
 Sampling methods | e.g., post-hoc up-sampling or down-sampling | Confusion matrix
 Alternative cutoff | --- | Confusion matrix
 Unequal case weights | different weights on individual data points | Logistic regression
 Adjusting prior probabilities | --- | Naive Bayes 
-
-<hr>
-
-## <a href="https://developers.google.com/machine-learning/crash-course/classification/thresholding">Classification (Decision) threshold</a>
-Decision threshold = a probability score of y; above which we will classify the example as class=1 (positive)
-
-<p align="center"><img src="./images/decision_threshold.png" width="400px"><br/>(<a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
-
-Raising classification threshold will...
-- reduce false positives in general, thus, **precision** will probably increase.
-- cause the number of true positives to decrease or stay the same and cause the number of false negatives to increase or stay the same, thus **recall** will either stay constant or decrease.
 
 <hr>
 
@@ -170,6 +171,6 @@ k-fold cross-validation | To assessing how the results of a statistical analys
 
 <hr>
 
-## References
+## Reference
 
 - A <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">comprehensive collection</a> of model evaluation functions in Scikit-learn
