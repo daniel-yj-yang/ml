@@ -52,4 +52,9 @@ False Positive Rate, x-axis of the ROC curve | <img src="./images/FPR.png" width
 
 <hr>
 
+Better models:
 <img src="./images/roccomp.jpg" width="300px"><img src="./images/ROC_curve_better_models.png" width="500px">
+
+<hr>
+
+For other illustrations, please see the <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint deck</a>
