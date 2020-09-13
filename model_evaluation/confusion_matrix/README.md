@@ -58,7 +58,7 @@ Better classification models:<br/>
 <hr>
 
 Higher decision threshold:<br/>
-<p align="center"><img src="./images/decision_threshold.png" width="500px"><br/>(modified from <a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)<br/><br/><img src="./images/higher_decision_threshold.png" width="500px"></p>
+<p align="center"><img src="./images/decision_threshold.png" width="500px"><br/>(modified from <a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)<br/><br/><img src="./images/higher_decision_threshold.png" width="450px"></p>
 
 <hr>
 
