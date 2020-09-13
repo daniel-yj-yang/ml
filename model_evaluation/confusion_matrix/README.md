@@ -37,5 +37,8 @@
   </tr>
   <tr>
     <td>Sum</td>
+    <td>TN + FN</td>
+    <td>TP + FP</td>
+    <td>All samples</td>
   </tr>
   </table>
