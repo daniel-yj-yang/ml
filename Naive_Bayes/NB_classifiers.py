@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 plt.rcParams.update({'font.size': 20})
-plt.rcParams.update({'figure.figsize': (8, 6)})
+plt.rcParams.update({'figure.figsize': (10, 8)})
 
 def make_confusion_matrix(cf,
                           group_names=None,
@@ -92,14 +92,14 @@ def make_confusion_matrix(cf,
         if len(cf)==2:
             #Metrics for Binary Confusion Matrices
             TP = cf[1,1]
-#            TN = cf[0,0]
+            TN = cf[0,0]
             FP = cf[0,1]
             FN = cf[1,0]
             precision = TP / (TP+FP)
             recall    = TP / (TP+FN)
             f1_score  = TP / (TP + 0.5*(FP+FN)) # 2*precision*recall / (precision + recall)
-            alpha = FP / (TP+FP)
-            stats_text = "\n\nAccuracy =(TP+TN)/Total={:0.3f}\nPrecision (lower Type I error)=TP/(TP+FP)={:0.3f}\nRecall/sensitivity (lower Type II error)=TP/(TP+FN)={:0.3f}\nF1 Score (lower both errors)=TP/(TP+0.5*(FP+FN))={:0.3f}\n\n(1-β) (a level on the y-axis of ROC curve)=Recall\nα (a level on the x-axis of ROC curve)=FP/(TP+FP)={:0.3f}".format(
+            alpha = FP / (TN+FP)
+            stats_text = "\n\nAccuracy =(TP+TN)/Total={:0.3f}\nPrecision (1-FDR)=TP/(TP+FP)={:0.3f}\nRecall/sensitivity/power (1-β)=TP/(TP+FN)={:0.3f}\nF1 Score (lower FP and FN)=TP/(TP+0.5*(FP+FN))={:0.3f}\n\n(1-β) (a level on the y-axis of ROC curve)=Recall\nα (a level on the x-axis of ROC curve)=FP/(TN+FP)={:0.3f}".format(
                 accuracy,precision,recall,f1_score,alpha)
         else:
             stats_text = "\n\nAccuracy={:0.3f}".format(accuracy)
@@ -237,15 +237,15 @@ auc = metrics.roc_auc_score(y_test, y_score[:,1])
 #auc = np.trapz(tpr,fpr) # alternatively
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-fig = plt.figure(figsize=(8,6))
+fig = plt.figure(figsize=(10,8))
 lw = 2
 plt.plot(fpr,tpr,color = 'darkorange', lw=lw, label="Multinomial NB (AUC = %0.2f)" % auc )
 plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 plt.xlim([-0.05, 1.05])
 plt.ylim([-0.05, 1.05])
 plt.legend(loc="lower right")
-plt.xlabel('False Positive Rate')
-plt.ylabel('True Positive Rate')
+plt.xlabel('False Positive Rate = p(y_pred=1 | y_actual=0)')
+plt.ylabel('True Positive Rate = p(y_pred=1 | y_actual=1)')
 plt.title('ROC Curve')
 fig.tight_layout()
 plt.show()
@@ -263,6 +263,8 @@ from sklearn.metrics import plot_precision_recall_curve
 disp = plot_precision_recall_curve(model, X_test, y_test)
 #disp.figsize = (10,10)
 disp.ax_.set_title('Precision-Recall Curve')
+disp.ax_.set_xlabel('Recall p(y_pred=1 | y_actual=1)')
+disp.ax_.set_ylabel('Precision p(y_actual=1 | y_pred=1)')
 #disp.plot()
 
 
