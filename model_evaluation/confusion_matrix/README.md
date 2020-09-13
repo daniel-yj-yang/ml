@@ -2,10 +2,10 @@
 
 <table>
   <tr>
-    <td>x</td>
+    <td><p align="right">\ Predict</p>Actual</td>
     <td><img src="./images/y_pred=0.png" width="150px"></td>
     <td><img src="./images/y_pred=1.png" width="150px"></td>
-    <td>xxxx</td>
+    <td>Sum</td>
   </tr>
   <tr>
     <td>
@@ -18,7 +18,6 @@
     </td>
   </tr>
   <tr>
-    <td>
-    </td>
+    <td>Sum</td>
   </tr>
   </table>
