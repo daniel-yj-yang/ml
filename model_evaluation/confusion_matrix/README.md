@@ -50,7 +50,7 @@ Derived Index | Definition | Visualization 1 | Visualization 2
 Recall, True Positive Rate, y-axis of the ROC curve | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | <img src="./images/recall_1.png" width="150px"> | <img src="./images/recall_2.png" width="150px">
 False Positive Rate, x-axis of the ROC curve | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | <img src="./images/FPR_1.png" width="150px"> | <img src="./images/FPR_2.png" width="150px">
 
-Note. Raising classification threshold does not decrease recall in Visualization 1, but does not impact recall n Visualization 2.
+Note. Raising classification threshold does not decrease recall in Visualization 1, but does not impact recall in Visualization 2 (where recall = 1).
 This illustrates why recall will **always decrease or stay the same** when raising classification threshold.
 
 <hr>
