@@ -25,7 +25,7 @@ Multicollinearity test | Diagnostic	| ---
 
 ### ROC curve
 
-- y-axis is True Positive Rate = Recall = Sensitivity
+- y-axis is True Positive Rate = Recall = Sensitivity = P(Y<sub>pred</sub>=1 | Y<sub>actual</sub>=1)
 - x-axis is False Positive Rate
 
 ### Use the ROC curve
