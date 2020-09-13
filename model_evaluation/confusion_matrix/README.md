@@ -52,4 +52,4 @@ False Positive Rate, x-axis of the ROC curve | <img src="./images/FPR.png" width
 
 <hr>
 
-<img src="./images/ROC_curve_better_model.png" width="800px">
+<img src="./images/ROC_curve_better_models.png" width="800px">
