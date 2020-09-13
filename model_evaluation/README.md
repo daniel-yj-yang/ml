@@ -42,6 +42,8 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 - AUC can be interpreted as the probability that the model **ranks** a random positive example (a random sample of y<sub>actual</sub>=1) **more highly** than a random negative example (a random sample of y<sub>actual</sub>=0), where "ranks more highly" means prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) > prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), that is, y-axis > x-axis on the ROC curve.
 - If prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) = prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), then y-axis = x-axis, then AUC = 0.5, which is like random guessing.
 
+- Accuracy is sensitive to **class unbalance** (that is, the ratio of Actual Positive cases [P] to Actual Negative cases [N]), but the ROC curve is **independent** of the P:N ratio and is therefore suitable for comparing classifiers when this ratio may vary (see <a href="https://github.com/daniel-yj-yang/model_evaluation">model evaluation</a>).
+
 - AUC is an aggregate measure of binary classifier's performance **across all possible decision thresholds (the threshold to make the decision that y<sub>pred</sub>=1)**
 - Increasing decision threshold (cut-off probability score for predicting y=1 vs. y=0) equals to moving a point on the ROC curve to the left, making it harder to classify y=1 or reducing the size of y<sub>pred</sub>=1.
 
@@ -113,7 +115,7 @@ Derived Index | Direction in the table| Definition | To minimize | Example | Als
 <b>Accuracy</b> | both | (TP+TN)/Total | --- | --- | ---
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | <b>p(y_actual=1 \| y_pred=1)</b> = TP/(TP+FP) | FDR;<br>Precision = 1-FDR | --- | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate (TPR) | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss;<br/>Recall = 1-β | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
-F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | FP and FN | --- | Another measure of accuracy
+F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | FP and FN | --- | Another measure of accuracy<br>the harmonic mean of precision and recall
 False Negative Rate (FNR) | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
 Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | α;<br/>Specificity = 1-α | --- | Correct rejection rate, (1-α)
 False Positive Rate (FPR)<br>=(1-Specificity) | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
