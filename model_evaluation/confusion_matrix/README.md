@@ -45,4 +45,4 @@
   
 Derived Index | Visualization
 --- | ---
-Recall | <img src="./images/recall.png" width="150px">
+Recall, True Positive Rate | <img src="./images/recall.png" width="150px">
