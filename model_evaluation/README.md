@@ -56,6 +56,8 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 
 <p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a cleaner separation of the y probability distributions of True Positive vs. True Negative, given X's</p>
 
+- When comparing two models and **their ROC curves cross**, it is possible to have higher AUC scores in one model but the other model <a href="https://stackoverflow.com/questions/38387913/reason-of-having-high-auc-and-low-accuracy-in-a-balanced-dataset">performs better</a> for a majority of the thresholds with which one may actually use the classifier.
+
 <hr>
 
 ## <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
@@ -131,16 +133,17 @@ Negative Likelihood Ratio (LR-) | --- | β/(1-α) | --- | β=.20,(1-α)=.95,β/(
 
 <hr>
 
+## Unbalanced sample classes
+
 Accuracy is <a href="https://datascience.stackexchange.com/questions/806/advantages-of-auc-vs-standard-accuracy">sensitive</a> to class imbalance, but AUC is <a href="http://fastml.com/what-you-wanted-to-know-about-auc/">insensitive</a> to that.
 
 For example, 99% of the cases are in the same class (e.g., non-ASD), and it's easy to achieve 99% accuracy by predicting the majority/average all the time but AUC will be very low.
-
-When comparing two models and **their ROC curves cross**, it is possible to have higher AUC scores in one model but the other model <a href="https://stackoverflow.com/questions/38387913/reason-of-having-high-auc-and-low-accuracy-in-a-balanced-dataset">performs better</a> for a majority of the thresholds with which one may actually use the classifier.
 
 <hr>
 
 <a href="https://www.researchgate.net/post/In_classification_how_do_i_handle_an_unbalanced_training_set">Ways to deal with unbalanced data</a> | Details | For ...
 --- | --- | ---
+Use AUC rather than accuracy | AUC is insensitive to unbalanced sample classes | ---
 Sampling methods | e.g., post-hoc up-sampling or down-sampling | Confusion matrix
 Alternative cutoff | --- | Confusion matrix
 Unequal case weights | different weights on individual data points | Logistic regression
