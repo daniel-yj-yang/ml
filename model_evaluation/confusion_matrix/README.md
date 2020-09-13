@@ -45,7 +45,7 @@
 
 <hr>
 
-Derived Index | Definition | Visualization
+Derived Index | Definition | Visualization 1
 --- | --- | ---
 Recall, True Positive Rate, y-axis of the ROC curve | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | <img src="./images/recall.png" width="150px">
 False Positive Rate, x-axis of the ROC curve | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | <img src="./images/FPR.png" width="150px">
