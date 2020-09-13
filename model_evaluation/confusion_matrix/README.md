@@ -53,7 +53,7 @@ False Positive Rate, x-axis of the ROC curve | <img src="./images/FPR.png" width
 <hr>
 
 Better classification models:<br/>
-<img src="./images/roccomp.jpg" width="300px"><img src="./images/ROC_curve_better_models.png" width="500px">
+<p align="center"><img src="./images/roccomp.jpg" width="300px"><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p><br/><img src="./images/ROC_curve_better_models.png" width="500px">
 
 <hr>
 
