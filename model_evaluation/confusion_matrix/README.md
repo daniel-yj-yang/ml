@@ -14,6 +14,9 @@
     <td>
       <img src="./images/TN.png" width="150px">
     </td>
+    <td>
+      <img src="./images/FP.png" width="150px">
+    </td>
   </tr>
   <tr>
     <td>
@@ -21,6 +24,9 @@
     </td>
     <td>
       <img src="./images/FN.png" width="150px">
+    </td>
+    <td>
+      <img src="./images/TP.png" width="150px">
     </td>
   </tr>
   <tr>
