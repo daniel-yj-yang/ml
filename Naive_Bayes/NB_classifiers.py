@@ -309,6 +309,8 @@ cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 make_confusion_matrix(cf_matrix_3x3, categories= iris.target_names, figsize=(8,6), cbar=False)
 
+# Stop here
+
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 # But this example is to binarize the y first...
 
