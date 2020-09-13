@@ -99,7 +99,7 @@ def make_confusion_matrix(cf,
             recall    = TP / (TP+FN)
             f1_score  = TP / (TP + 0.5*(FP+FN)) # 2*precision*recall / (precision + recall)
             alpha = FP / (TN+FP)
-            stats_text = "\n\nAccuracy =(TP+TN)/Total={:0.3f}\nPrecision (1-FDR)=TP/(TP+FP)={:0.3f}\nRecall/sensitivity/power (1-β)=TP/(TP+FN)={:0.3f}\nF1 Score (lower FP and FN)=TP/(TP+0.5*(FP+FN))={:0.3f}\n\n(1-β) (a level on the y-axis of ROC curve)=Recall\nα (a level on the x-axis of ROC curve)=FP/(TN+FP)={:0.3f}".format(
+            stats_text = "\n\nAccuracy =(TP+TN)/Total={:0.3f}\nPrecision (1-FDR) = p(y_actual=1 | y_pred=1) = {:0.3f}\nRecall/sensitivity/power (1-β) = p(y_pred=1 | y_actual=1) = {:0.3f}\nF1 Score (lower FP and FN)=TP/(TP+0.5*(FP+FN))={:0.3f}\n\n(1-β) (a level on the y-axis of ROC curve)=Recall\nα (a level on the x-axis of ROC curve) = p(y_pred=1 | y_actual=0) = {:0.3f}".format(
                 accuracy,precision,recall,f1_score,alpha)
         else:
             stats_text = "\n\nAccuracy={:0.3f}".format(accuracy)
