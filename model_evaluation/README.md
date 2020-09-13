@@ -157,7 +157,7 @@ Adjusting prior probabilities | --- | Naive Bayes
 ### <a href="https://developers.google.com/machine-learning/crash-course/classification/thresholding">Classification (Decision) threshold</a>
 Decision threshold = a probability score of y<sub>pred</sub>; above which we will classify the example as class=1 (positive)
 
-<p align="center"><img src="./images/decision_threshold.png" width="600px"><br/>(<a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
+<p align="center"><img src="./images/decision_threshold.png" width="600px"><br/>(modified from <a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
 
 Raising classification threshold will...
 - reduce false positives in general, thus, **precision** will probably increase.
