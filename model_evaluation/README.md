@@ -154,17 +154,6 @@ Adjusting prior probabilities | --- | Naive Bayes
 
 <hr>
 
-### <a href="https://developers.google.com/machine-learning/crash-course/classification/thresholding">Classification (Decision) threshold</a>
-Decision threshold = a probability score of y<sub>pred</sub>; above which we will classify the example as class=1 (positive)
-
-<p align="center"><img src="./images/decision_threshold.png" width="600px"><br/>(modified from <a href="https://towardsdatascience.com/fine-tuning-a-classifier-in-scikit-learn-66e048c21e65">image source</a>)</p>
-
-Raising classification threshold will...
-- reduces false positives generally speaking, thus raising precision.
-- causes the number of true positives to decrease or stay the same and will cause the number of false negatives to increase or stay the same. Thus, recall will either stay constant or decrease.
-
-<hr>
-
 ## Generalizability evaluation
 
 Method | Purpose | Implementation
