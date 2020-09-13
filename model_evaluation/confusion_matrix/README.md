@@ -45,16 +45,16 @@
 
 <hr>
 
-Derived Index | Visualization
---- | ---
-Recall, True Positive Rate, y-axis of the ROC curve | <img src="./images/recall.png" width="150px">
-False Positive Rate, x-axis of the ROC curve | <img src="./images/FPR.png" width="150px">
+Derived Index | Definition | Visualization
+--- | --- | ---
+Recall, True Positive Rate, y-axis of the ROC curve | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | <img src="./images/recall.png" width="150px">
+False Positive Rate, x-axis of the ROC curve | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | <img src="./images/FPR.png" width="150px">
 
 <hr>
 
 Better classification models:<br/>
-<img src="./images/roccomp.jpg" width="300px"><img src="./images/ROC_curve_better_models.png" width="500px">
+<p align="center"><img src="./images/roccomp.jpg" width="300px"><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)<br/><br/><img src="./images/ROC_curve_better_models.png" width="500px"></p>
 
 <hr>
 
-For other illustrations, please see the <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint deck</a>.
+For other illustrations, please see the <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint deck</a> I made.
