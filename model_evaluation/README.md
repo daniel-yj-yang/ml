@@ -89,7 +89,7 @@ How meaningful is a positive result from my classifier, given the specific basel
 
 ### <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a>
 
-For visualization using conditional probabilities, please see <a href="./images/confusion_matrix/visualization_of_confusion_matrix.pptx">PowerPoint illustrations</a> that I made.
+For visualization using conditional probabilities, please see <a href="./confusion_matrix/">illustrations</a> that I made.
 
 * Say "YES" (Positive) = Identification
 * Say "NO" (Negative) = Rejection
