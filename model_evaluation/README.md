@@ -106,7 +106,7 @@ For visualization using conditional probabilities, please see <a href="./images/
         <td>True Negative (TN)<br>Correct Rejection<br><a
                 href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">Specificity</a> = True Negative Rate
             (1-α) = TN/N<br>Note: Negative Predictive Value = TN/(TN+FN)</td>
-        <td><b>False Positive</b> (FP)<br>Type I error<br><a
+        <td><b>False Positive</b> (FP)<br>False alarm, Type I error<br><a
                 href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">False Positive Rate (FPR;
                 α)</a> = FP/N<br>Note: False Discovery rate = FP/(TP+FP)</td>
         <td>N=TN+FP</td>
