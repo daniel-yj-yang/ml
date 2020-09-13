@@ -57,7 +57,7 @@ Note:
 - AUC can be converted to the Gini index, which is 2\*AUC-1
 - AUC can also be interpreted as predictive power
 
-<p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a more sensitive detection of the actual y, given X's and α</p>
+<p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a more **sensitive** detection of the actual y, given X's and α</p>
 
 - When comparing two models and **their ROC curves cross**, it is possible to have higher AUC scores in one model but the other model <a href="https://stackoverflow.com/questions/38387913/reason-of-having-high-auc-and-low-accuracy-in-a-balanced-dataset">performs better</a> for a majority of the thresholds with which one may actually use the classifier.
 
