@@ -62,4 +62,10 @@ Higher decision threshold:<br/>
 
 <hr>
 
+Derived Index | Definition | Visualization
+--- | --- | ---
+Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | <img src="./images/precision.png" width="150px">
+
+<hr>
+
 For other illustrations, please see the <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint deck</a> I made.
