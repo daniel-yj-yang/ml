@@ -23,6 +23,15 @@ Multicollinearity test | Diagnostic	| ---
 
 ## <a href="https://stats.stackexchange.com/questions/34193/how-to-choose-an-error-metric-when-evaluating-a-classifier">Classification</a>
 
+### ROC curve
+
+- y-axis is True Positive Rate = Recall = Sensitivity = prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=1)
+- x-axis is False Positive Rate = prob(y<sub>pred</sub>=1 | y<sub>actual</sub>=0)
+
+<hr>
+
+### Use the ROC curve
+
 <a href="http://www.dataschool.io/roc-curves-and-auc-explained/">AUC</a> (Area Under Curve) of the ROC curve
 
 - ROC curve is a plot of Power (1-β; Recall) as a function of α (that is, 1-specificity)
@@ -36,7 +45,7 @@ Multicollinearity test | Diagnostic	| ---
 - AUC can be interpreted as predictive power
 
 <br>
-<p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">Image Source</a>)</p>
+<p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
   
 <p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a cleaner separation of the y probability distributions of True Positive vs. True Negative, given X's</p>
 
@@ -46,11 +55,11 @@ Multicollinearity test | Diagnostic	| ---
   
 Axis | direction on the confusion matrix | meaning
 --- | --- | ---
-X-axis (recall) | going horizontal | higher values mean lower false negative rate (Type II error)
 Y-axis (precision) | going vertical | higher values mean lower false discovery rate (FDR)
+X-axis (recall) | going horizontal | higher values mean lower false negative rate (Type II error)
 
 <br>
-<p align="center"><img src="./images/PR_curve_new.png" width="450px" /></p>
+<p align="center"><img src="./images/precision_recall_curve.png" width="450px" /></p>
 
 <hr>
 
@@ -98,11 +107,11 @@ Derived Index | Direction in the table| Definition | To minimize | Example | Als
 --- | --- | --- | --- | --- | ---
 <b>Accuracy</b> | both | (TP+TN)/Total | --- | --- | ---
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | <b>p(y_actual=1 \| y_pred=1)</b> = TP/(TP+FP) | FDR;<br>Precision = 1-FDR | --- | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
-**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss;<br/>Recall = 1-β | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
+**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate (TPR) | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss;<br/>Recall = 1-β | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
 F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | FP and FN | --- | Another measure of accuracy
 False Negative Rate (FNR) | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
 Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | α;<br/>Specificity = 1-α | --- | Correct rejection rate, threshold, (1-α)
-(1-Specificity)<br>=False Positive Rate | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
+False Positive Rate (FPR)<br>=(1-Specificity) | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
 False Discovery Rate (FDR) | vertical | <b>p(y_actual=0 \| y_pred=1)</b> = FP/(TP+FP) | --- | --- | ---
 False Omission Rate (FOR) | vertical | <b>p(y_actual=1 \| y_pred=0)</b> = FN/(TN+FN) | --- | --- | ---
 Misclassification Rate | both | (FP+FN)/Total | --- | --- | Error rate
@@ -154,15 +163,10 @@ k-fold cross-validation | To assessing how the results of a statistical analys
 
 ## Hyperparameter tuning
 
-To perform <a href="https://scikit-learn.org/stable/modules/grid_search.html">grid search</a>
-
-<hr>
-
-## Model Evaluation Pipeline
-
-<a href="./model_evaluation_pipeline">To evaluate multiple models quickly by merely plugging in the dataset</a>
+- To perform <a href="https://scikit-learn.org/stable/modules/grid_search.html">grid search</a>
 
 <hr>
 
 ## References
-* A <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">comprehensive collection</a> of model evaluation functions in Scikit-learn
+
+- A <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">comprehensive collection</a> of model evaluation functions in Scikit-learn
