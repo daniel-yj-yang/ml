@@ -223,11 +223,11 @@ cf_matrix = confusion_matrix(y_test, y_pred)
 
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 labels = ['True Neg','False Pos','False Neg','True Pos']
-categories = ['Ham', 'Spam']
+categories = ['Ham (y=0)', 'Spam (y=1)']
 make_confusion_matrix(cf_matrix,
                       group_names=labels,
                       categories=categories,
-                      figsize=(8,9),
+                      figsize=(12,10),
                       cbar=False)
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
