@@ -42,12 +42,12 @@ How well can this classifier be expected to perform in general, regardless of di
 
 <hr>
 
-### Use the ROC curve
+### Interpretation of the ROC curve
 
 <a href="http://www.dataschool.io/roc-curves-and-auc-explained/">AUC</a> (Area Under Curve) of the ROC curve
 
 - ROC curve is a plot of Power (1-β; Recall) as a function of α (that is, 1-specificity)
-- AUC can be interpreted as the probability that the model **ranks** a random positive example (a random sample of y<sub>actual</sub>=1) **more highly** than a random negative example (a random sample of y<sub>actual</sub>=0), where "ranks more highly" means prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) > prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), that is, y-axis > x-axis on the ROC curve.
+- AUC can be interpreted as the **probability** that the model **ranks** a random positive example (a random sample of y<sub>actual</sub>=1) **more highly** than a random negative example (a random sample of y<sub>actual</sub>=0), where "ranks more highly" means prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) > prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), that is, y-axis > x-axis on the ROC curve.
 - If prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) = prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), then y-axis = x-axis, then AUC = 50% probability, which is the same as random guessing.
 
 - Accuracy is sensitive to **class unbalance** (that is, the ratio of Actual Positive cases [P] to Actual Negative cases [N]), but the ROC curve is **independent** of the P:N ratio and is therefore suitable for comparing classifiers when this ratio may vary (see <a href="https://github.com/daniel-yj-yang/model_evaluation">model evaluation</a>).
@@ -62,7 +62,7 @@ How well can this classifier be expected to perform in general, regardless of di
 - AUC can be converted to the Gini index, which is 2\*AUC-1
 - AUC can also be interpreted as predictive power
 
-<p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a more <b>sensitive</b> detection of the actual y, given X's and α</p>
+<p align="center"><img src="./images/prob_distribution_and_ROC.gif" width="600px"><br/>When y_preb_prob > the decision threshold, y_pred=1;<br/>Ideally, the performance of a ML classification algorithm would improve over time via training, resulting in a more <b>sensitive</b> detection of the actual y, given X's and α;<br/>that is, given a specific α = p(y_pred=1 | y_actual=0) decreases, recall = p(y_pred=1 | y_actual=1) increases;<br/>From the model's perspective, the y_actual=1 probability distribution (given X's) is gradually more separable from y_actual=0 probability distribution (given X's), as the model becomes more sensitive to the difference of the two y classes (given X's).</p>
 
 - When comparing two models and **their ROC curves cross**, it is possible to have higher AUC scores in one model but the other model <a href="https://stackoverflow.com/questions/38387913/reason-of-having-high-auc-and-low-accuracy-in-a-balanced-dataset">performs better</a> for a majority of the thresholds with which one may actually use the classifier.
 
@@ -82,14 +82,14 @@ Note:
 - Since precision (but not recall) is sensitive to different baseline probabilities, PR curve is suitable for answering the following question:
 
 ```
-How meaningful is a positive result from my classifier, given the specific baseline probabilities of my problem?
+How meaningful is a positive result from my classifier, given the specific baseline probabilities of my population?
 ```
  
 <hr>
 
 ### <a href="http://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">Confusion matrix</a>
 
-For visualization using conditional probabilities, please see <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint illustrations</a> that I made.
+For visualization using conditional probabilities, please see <a href="./confusion_matrix/">illustrations</a> that I made.
 
 * Say "YES" (Positive) = Identification
 * Say "NO" (Negative) = Rejection
