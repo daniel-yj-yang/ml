@@ -100,7 +100,7 @@ Derived Index | Direction in the table| Definition | To minimize | Example | Als
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | <b>p(y_actual=1 \| y_pred=1)</b> = TP/(TP+FP) | FDR;<br>Precision = 1-FDR | --- | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
 F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | Type I and II errors | --- | A measure of accuracy
-False Negative Rate | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
+False Negative Rate (FNR) | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
 Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | --- | --- | Correct rejection rate, threshold, (1-α)
 (1-Specificity)<br>=False Positive Rate | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
 False Discovery Rate (FDR) | vertical | <b>p(y_actual=0 \| y_pred=1)</b> = FP/(TP+FP) | --- | --- | ---
