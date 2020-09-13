@@ -11,6 +11,9 @@
     <td>
       <img src="./images/y_actual=0.png" width="150px">
     </td>
+    <td>
+      <img src="./images/TN.png" width="150px">
+    </td>
   </tr>
   <tr>
     <td>
