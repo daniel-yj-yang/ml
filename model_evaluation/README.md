@@ -97,7 +97,7 @@ Y-axis (precision) | going vertical | higher values mean lower false positives (
 Derived Index | Direction in the table| Definition | To minimize | Example | Also known as
 --- | --- | --- | --- | --- | ---
 <b>Accuracy</b> | both | (TP+TN)/Total | --- | --- | ---
-**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | <b>p(y_actual=1 \| y_pred=1)</b> = TP/(TP+FP) | FDR<br>Precision = 1-FDR | --- | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
+**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | <b>p(y_actual=1 \| y_pred=1)</b> = TP/(TP+FP) | FDR;<br>Precision = 1-FDR | --- | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β)
 F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | Type I and II errors | --- | A measure of accuracy
 False Negative Rate | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
