@@ -89,4 +89,4 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 ### 2. Using Gaussian Naive Bayes to classify iris
 
-<p align="center"><img src="./images/iris_classifier_cf_matrix_3x3.png" width="500px"></p>
+<p align="center"><img src="./images/iris_classifier_cf_matrix_3x3.png" width="600px"></p>
