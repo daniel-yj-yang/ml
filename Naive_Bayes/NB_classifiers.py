@@ -308,7 +308,7 @@ from sklearn.metrics import confusion_matrix
 cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
 
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-make_confusion_matrix(cf_matrix_3x3, categories= iris.target_names, figsize=(8,6), cbar=False)
+make_confusion_matrix(cf_matrix_3x3, categories= iris.target_names, figsize=(9,7), cbar=False)
 
 # Stop here
 
