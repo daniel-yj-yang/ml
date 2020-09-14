@@ -6,7 +6,7 @@ Created on Sat Aug 29 15:32:23 2020
 @author: daniel
 """
 
-# https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
+# modified from https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -121,8 +121,9 @@ def make_confusion_matrix(cf,
 
 
     # MAKE THE HEATMAP VISUALIZATION
-    fig = plt.figure(figsize=figsize)
-    sns.heatmap(cf,annot=box_labels,fmt="",cmap=cmap,cbar=cbar,xticklabels=categories,yticklabels=categories)
+    fig, ax = plt.subplots(figsize=figsize)
+    sns.heatmap(cf,annot=box_labels,fmt="",cmap=cmap,cbar=cbar,xticklabels=categories,linewidths=0.5,linecolor='black')
+    ax.set_yticklabels(categories, va='center', rotation = 90, position=(0,0.28))
 
     if xyplotlabels:
         plt.ylabel('True label')
@@ -342,7 +343,7 @@ tpr["macro"] = mean_tpr
 roc_auc["macro"] = metrics.auc(fpr["macro"], tpr["macro"])
 
 # Plot all ROC curves
-plt.figure(figsize=(8,6))
+plt.figure(figsize=(12,10))
 
 plt.plot(fpr["macro"], tpr["macro"],
          label='macro-average ROC curve (area = {0:0.2f})'
