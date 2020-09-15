@@ -104,8 +104,7 @@ cf_matrix = confusion_matrix(y_test, y_pred)
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 # https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
 me.plot_confusion_matrix(cf_matrix,
-                      y_classes=['Ham (y=0)', 'Spam (y=1)'],
-                      figsize=(12,10))
+                      y_classes=['Ham (y=0)', 'Spam (y=1)'])
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 
@@ -185,8 +184,7 @@ cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
 
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 me.plot_confusion_matrix(cf_matrix_3x3,
-                         y_classes = iris.target_names,
-                         figsize=(9,7))
+                         y_classes = iris.target_names)
 
 ######################################################################################################
 # Stop here

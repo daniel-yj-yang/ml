@@ -95,10 +95,9 @@ def train_multinomial_nb(messages):
     print(cf_matrix)
 
     # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-    categories = ['0=Ham', '1=Spam']
+    categories = ['Ham (y=0)', 'Spam (y=1)']
     me.plot_confusion_matrix(cm = cf_matrix,
-                             y_classes = categories,
-                             figsize=(12,10))
+                             y_classes = categories)
 
     # comparing actual response values (y_test) with predicted response values (y_pred)
     from sklearn import metrics
@@ -169,10 +168,9 @@ def train_svm(messages):
     print(cf_matrix)
 
     # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-    categories = ['0=Ham', '1=Spam']
+    categories = ['Ham (y=0)', 'Spam (y=1)']
     me.plot_confusion_matrix(cm = cf_matrix,
-                          y_classes = categories,
-                          figsize=(12,10))
+                          y_classes = categories)
 
     # comparing actual response values (y_test) with predicted response values (y_pred)
     from sklearn import metrics
@@ -210,12 +208,12 @@ def train_svm(messages):
 
 def main(argv):
   # check if models exist, if not run training
-    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl') == False):
+    if(not os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl') == False):
         print("")
         print("Creating Naive Bayes Model.....")
         train_multinomial_nb(MESSAGES)
 
-    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
+    if(not os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
         print("")
         print("Creating SVM Model.....")
         train_svm(MESSAGES)
