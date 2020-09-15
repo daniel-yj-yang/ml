@@ -9,7 +9,7 @@ To separate data using a hyperplane in a higher dimension (a kernel trick) to fa
 
 Hyperparameter | Confusion Matrix | ROC curve
 --- | --- | ---
-C = 10<br/>kernel = linear | <img src="./images/SMS_spam_detector_CF_matrix.png" width="400px"> | <img src="./images/SMS_spam_detector_ROC_curve.png" width="400px">
+C = 1000<br/>gamma = 0.001<br/>kernel = rbf | <img src="./images/SMS_spam_detector_CF_matrix.png" width="400px"> | <img src="./images/SMS_spam_detector_ROC_curve.png" width="400px">
 
 <hr>
 
