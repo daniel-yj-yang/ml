@@ -6,134 +6,12 @@ Created on Sat Aug 29 15:32:23 2020
 @author: daniel
 """
 
-# modified from https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
-
+from machlearn import model_evaluation as me
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 
-plt.rcParams.update({'font.size': 20})
-plt.rcParams.update({'figure.figsize': (10, 8)})
-
-def make_confusion_matrix(cf,
-                          group_names=None,
-                          categories='auto',
-                          count=True,
-                          percent=True,
-                          cbar=True,
-                          xyticks=True,
-                          xyplotlabels=True,
-                          sum_stats=True,
-                          figsize=None,
-                          cmap='Blues', # or 'binary'
-                          title=None):
-    '''
-    This function will make a pretty plot of an sklearn Confusion Matrix cm using a Seaborn heatmap visualization.
-
-    Arguments
-    ---------
-    cf:            confusion matrix to be passed in
-
-    group_names:   List of strings that represent the labels row by row to be shown in each square.
-
-    categories:    List of strings containing the categories to be displayed on the x,y axis. Default is 'auto'
-
-    count:         If True, show the raw number in the confusion matrix. Default is True.
-
-    normalize:     If True, show the proportions for each category. Default is True.
-
-    cbar:          If True, show the color bar. The cbar values are based off the values in the confusion matrix.
-                   Default is True.
-
-    xyticks:       If True, show x and y ticks. Default is True.
-
-    xyplotlabels:  If True, show 'True Label' and 'Predicted Label' on the figure. Default is True.
-
-    sum_stats:     If True, display summary statistics below the figure. Default is True.
-
-    figsize:       Tuple representing the figure size. Default will be the matplotlib rcParams value.
-
-    cmap:          Colormap of the values displayed from matplotlib.pyplot.cm. Default is 'Blues'
-                   See http://matplotlib.org/examples/color/colormaps_reference.html
-
-    title:         Title for the heatmap. Default is None.
-
-    '''
-
-
-    # CODE TO GENERATE TEXT INSIDE EACH SQUARE
-    blanks = ['' for i in range(cf.size)]
-
-    if group_names and len(group_names)==cf.size:
-        group_labels = ["{}\n".format(value) for value in group_names]
-    else:
-        group_labels = blanks
-
-    if count:
-        group_counts = ["{0:0.0f}\n".format(value) for value in cf.flatten()]
-    else:
-        group_counts = blanks
-
-    if percent:
-        group_percentages = ["{0:.2%}".format(value) for value in cf.flatten()/np.sum(cf)]
-    else:
-        group_percentages = blanks
-
-    box_labels = [f"{v1}{v2}{v3}".strip() for v1, v2, v3 in zip(group_labels,group_counts,group_percentages)]
-    box_labels = np.asarray(box_labels).reshape(cf.shape[0],cf.shape[1])
-
-
-    # CODE TO GENERATE SUMMARY STATISTICS & TEXT FOR SUMMARY STATS
-    if sum_stats:
-        #Accuracy is sum of diagonal divided by total observations
-        accuracy  = np.trace(cf) / float(np.sum(cf))
-
-        #if it is a binary confusion matrix, show some more stats
-        if len(cf)==2:
-            #Metrics for Binary Confusion Matrices
-            TP = cf[1,1]
-            TN = cf[0,0]
-            FP = cf[0,1]
-            FN = cf[1,0]
-            precision = TP / (TP+FP)
-            recall    = TP / (TP+FN)
-            f1_score  = TP / (TP + 0.5*(FP+FN)) # 2*precision*recall / (precision + recall)
-            alpha = FP / (TN+FP)
-            stats_text = "\n\nAccuracy =(TP+TN)/Total={:0.3f}\nPrecision (1-FDR) = p(y_actual=1 | y_pred=1) = {:0.3f}\nRecall/sensitivity/power (1-β) = p(y_pred=1 | y_actual=1) = {:0.3f}\nF1 Score (lower FP and FN)=TP/(TP+0.5*(FP+FN))={:0.3f}\n\n(1-β) (a level on the y-axis of ROC curve)=Recall\nα (a level on the x-axis of ROC curve) = p(y_pred=1 | y_actual=0) = {:0.3f}".format(
-                accuracy,precision,recall,f1_score,alpha)
-        else:
-            stats_text = "\n\nAccuracy={:0.3f}".format(accuracy)
-    else:
-        stats_text = ""
-
-    print("stats_text [" + stats_text)
-    print("]")
-
-
-    # SET FIGURE PARAMETERS ACCORDING TO OTHER ARGUMENTS
-    if figsize==None:
-        #Get default figure size if not set
-        figsize = plt.rcParams.get('figure.figsize')
-
-    if xyticks==False:
-        #Do not show categories if xyticks is False
-        categories=False
-
-
-    # MAKE THE HEATMAP VISUALIZATION
-    fig, ax = plt.subplots(figsize=figsize)
-    sns.heatmap(cf,annot=box_labels,fmt="",cmap=cmap,cbar=cbar,xticklabels=categories,linewidths=0.5,linecolor='black')
-    ax.set_yticklabels(categories, va='center', rotation = 90, position=(0,0.28))
-
-    if xyplotlabels:
-        plt.ylabel('True label')
-        plt.xlabel('Predicted label' + stats_text)
-    else:
-        plt.xlabel(stats_text)
-
-    if title:
-        plt.title(title)
-    fig.tight_layout()
+#plt.rcParams.update({'font.size': 20})
+#plt.rcParams.update({'figure.figsize': (10, 8)})
 
 ######################################################################################################
 
@@ -210,7 +88,7 @@ model = MultinomialNB().fit(X_train, y_train)
 
 y_score = model.predict_proba(X_test)
 y_pred = model.predict(X_test)
-print(np.mean(y_pred == y_test))
+#print(np.mean(y_pred == y_test))
 
 # comparing actual response values (y_test) with predicted response values (y_pred)
 from sklearn import metrics
@@ -222,14 +100,12 @@ print(classification_report(y_test, y_pred, target_names=('ham','spam')))
 cf_matrix = confusion_matrix(y_test, y_pred)
 
 
+# some references
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-labels = ['True Neg','False Pos','False Neg','True Pos']
-categories = ['Ham (y=0)', 'Spam (y=1)']
-make_confusion_matrix(cf_matrix,
-                      group_names=labels,
-                      categories=categories,
-                      figsize=(12,10),
-                      cbar=False)
+# https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
+me.plot_confusion_matrix(cf_matrix,
+                      y_classes=['Ham (y=0)', 'Spam (y=1)'],
+                      figsize=(12,10))
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 
@@ -308,8 +184,11 @@ from sklearn.metrics import confusion_matrix
 cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
 
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-make_confusion_matrix(cf_matrix_3x3, categories= iris.target_names, figsize=(9,7), cbar=False)
+me.plot_confusion_matrix(cf_matrix_3x3,
+                         y_classes = iris.target_names,
+                         figsize=(9,7))
 
+######################################################################################################
 # Stop here
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
