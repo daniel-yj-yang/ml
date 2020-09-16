@@ -208,12 +208,12 @@ def train_svm(messages):
 
 def main(argv):
   # check if models exist, if not run training
-    if(not os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl') == False):
+    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl') == False):
         print("")
         print("Creating Naive Bayes Model.....")
         train_multinomial_nb(MESSAGES)
 
-    if(not os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
+    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
         print("")
         print("Creating SVM Model.....")
         train_svm(MESSAGES)

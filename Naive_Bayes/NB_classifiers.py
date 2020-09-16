@@ -120,7 +120,7 @@ auc = metrics.roc_auc_score(y_test, y_score[:, 1])
 # auc = np.trapz(tpr,fpr) # alternatively
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-fig = plt.figure(figsize=(10, 8))
+fig = plt.figure()#figsize=(8, 6))
 lw = 2
 plt.plot(fpr, tpr, color='darkorange', lw=lw,
          label="Multinomial NB (AUC = %0.2f)" % auc)
@@ -128,8 +128,8 @@ plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 plt.xlim([-0.05, 1.05])
 plt.ylim([-0.05, 1.05])
 plt.legend(loc="lower right")
-plt.xlabel('False Positive Rate = p(y_pred=1 | y_actual=0)')
-plt.ylabel('True Positive Rate = p(y_pred=1 | y_actual=1)')
+plt.xlabel('False Positive Rate = p($y_{{pred}}$=1 | $y_{{actual}}$=0)')
+plt.ylabel('True Positive Rate = p($y_{{pred}}$=1 | $y_{{actual}}$=1)')
 plt.title('ROC Curve')
 fig.tight_layout()
 plt.show()
@@ -145,8 +145,8 @@ print('Average precision-recall score: {0:0.2f}'.format(
 disp = plot_precision_recall_curve(model, X_test, y_test)
 #disp.figsize = (10,10)
 disp.ax_.set_title('Precision-Recall Curve')
-disp.ax_.set_xlabel('Recall p(y_pred=1 | y_actual=1)')
-disp.ax_.set_ylabel('Precision p(y_actual=1 | y_pred=1)')
+disp.ax_.set_xlabel('Recall p($y_{{pred}}$=1 | $y_{{actual}}$=1)')
+disp.ax_.set_ylabel('Precision p($y_{{actual}}$=1 | $y_{{pred}}$=1)')
 # disp.plot()
 
 
