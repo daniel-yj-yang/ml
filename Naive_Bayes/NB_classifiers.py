@@ -114,8 +114,8 @@ me.plot_confusion_matrix(cf_matrix,
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py
-me.plot_ROC_and_PR_curves(fitted_model=model, X=X_test, y_true_array=y_test,
-                          y_pred_score_array=y_score[:, 1], model_name='Multinomial NB')
+me.plot_ROC_and_PR_curves(fitted_model=model, X=X_test,
+                          y_true=y_test, y_pred_score=y_score[:, 1], y_pos_label=1, model_name='Multinomial NB')
 
 
 ######################################################################################################

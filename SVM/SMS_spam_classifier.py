@@ -102,7 +102,7 @@ def train_multinomial_nb(messages):
                              y_classes=categories)
 
     me.plot_ROC_and_PR_curves(fitted_model=nb_detector, X=msg_test,
-                              y_true_array=y_test, y_pred_score_array=y_score[:, 1], y_pos_label='spam', model_name='Multinomial NB')
+                              y_true=y_test, y_pred_score=y_score[:, 1], y_pos_label='spam', model_name='Multinomial NB')
 
     print("")
     print(":: Classification Report")
@@ -155,7 +155,7 @@ def train_svm(messages):
                              y_classes=categories)
 
     me.plot_ROC_and_PR_curves(fitted_model=svm_detector, X=msg_test,
-                              y_true_array=y_test, y_pred_score_array=y_score[:, 1], y_pos_label='spam', model_name='SVM')
+                              y_true=y_test, y_pred_score=y_score[:, 1], y_pos_label='spam', model_name='SVM')
 
     print("")
     print(":: Classification Report")
