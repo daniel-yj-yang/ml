@@ -99,28 +99,8 @@ def train_multinomial_nb(messages):
     me.plot_confusion_matrix(cm = cf_matrix,
                              y_classes = categories)
 
-    # comparing actual response values (y_test) with predicted response values (y_pred)
-    from sklearn import metrics
-    print("Model accuracy(in %):", metrics.accuracy_score(y_test, y_pred)*100)
-
-    fpr, tpr, thresholds = metrics.roc_curve(
-        y_test, y_score[:, 1], pos_label='spam')
-    auc = metrics.roc_auc_score(y_test, y_score[:, 1])
-    print(auc)
-
-    # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-    plt.figure(figsize=(8, 6))
-    lw = 2
-    plt.plot(fpr, tpr, color='darkorange', lw=lw,
-             label="Multinomial NB (AUC = %0.2f)" % auc)
-    plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-    plt.xlim([-0.05, 1.05])
-    plt.ylim([-0.05, 1.05])
-    plt.legend(loc="lower right")
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('ROC Curve')
-    plt.show()
+    me.plot_ROC_and_PR_curve(fitted_model = nb_detector, X = msg_test,
+                             y_true_array = y_test, y_pred_score_array = y_score[:, 1], y_pos_label='spam', model_name = 'Multinomial NB')
 
     print("")
     print(":: Classification Report")
@@ -172,28 +152,8 @@ def train_svm(messages):
     me.plot_confusion_matrix(cm = cf_matrix,
                           y_classes = categories)
 
-    # comparing actual response values (y_test) with predicted response values (y_pred)
-    from sklearn import metrics
-    print("Model accuracy(in %):", metrics.accuracy_score(y_test, y_pred)*100)
-
-    fpr, tpr, thresholds = metrics.roc_curve(
-        y_test, y_score[:, 1], pos_label='spam')
-    auc = metrics.roc_auc_score(y_test, y_score[:, 1])
-    print(auc)
-
-    # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-    plt.figure(figsize=(8, 6))
-    lw = 2
-    plt.plot(fpr, tpr, color='darkorange', lw=lw,
-             label="SVM (AUC = %0.2f)" % auc)
-    plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-    plt.xlim([-0.05, 1.05])
-    plt.ylim([-0.05, 1.05])
-    plt.legend(loc="lower right")
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('ROC Curve')
-    plt.show()
+    me.plot_ROC_and_PR_curve(fitted_model = svm_detector, X = msg_test,
+                             y_true_array = y_test, y_pred_score_array = y_score[:, 1], y_pos_label='spam', model_name = 'SVM')
 
     print("")
     print(":: Classification Report")
@@ -213,7 +173,7 @@ def main(argv):
         print("Creating Naive Bayes Model.....")
         train_multinomial_nb(MESSAGES)
 
-    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
+    if(not os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
         print("")
         print("Creating SVM Model.....")
         train_svm(MESSAGES)
