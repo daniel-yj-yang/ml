@@ -99,7 +99,7 @@ def train_multinomial_nb(messages):
     me.plot_confusion_matrix(cm = cf_matrix,
                              y_classes = categories)
 
-    me.plot_ROC_and_PR_curve(fitted_model = nb_detector, X = msg_test,
+    me.plot_ROC_and_PR_curves(fitted_model = nb_detector, X = msg_test,
                              y_true_array = y_test, y_pred_score_array = y_score[:, 1], y_pos_label='spam', model_name = 'Multinomial NB')
 
     print("")
@@ -152,7 +152,7 @@ def train_svm(messages):
     me.plot_confusion_matrix(cm = cf_matrix,
                           y_classes = categories)
 
-    me.plot_ROC_and_PR_curve(fitted_model = svm_detector, X = msg_test,
+    me.plot_ROC_and_PR_curves(fitted_model = svm_detector, X = msg_test,
                              y_true_array = y_test, y_pred_score_array = y_score[:, 1], y_pos_label='spam', model_name = 'SVM')
 
     print("")
