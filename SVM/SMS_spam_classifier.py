@@ -11,10 +11,12 @@ Created on Thu Sep 10 23:20:59 2020
 
 from machlearn import model_evaluation as me
 from textblob import TextBlob
-from sklearn.model_selection import train_test_split, GridSearchCV # StratifiedKFold, cross_val_score,
+# StratifiedKFold, cross_val_score,
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.pipeline import Pipeline
-from sklearn.metrics import classification_report, confusion_matrix # , f1_score, accuracy_score
-from sklearn.svm import SVC #, LinearSVC
+# , f1_score, accuracy_score
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.svm import SVC  # , LinearSVC
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 #import sklearn
@@ -25,7 +27,7 @@ import sys
 import os
 import pandas as pd
 #import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #import seaborn as sns
 
 #plt.rcParams.update({'font.size': 20})
@@ -96,11 +98,11 @@ def train_multinomial_nb(messages):
 
     # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
     categories = ['Ham (y=0)', 'Spam (y=1)']
-    me.plot_confusion_matrix(cm = cf_matrix,
-                             y_classes = categories)
+    me.plot_confusion_matrix(cm=cf_matrix,
+                             y_classes=categories)
 
-    me.plot_ROC_and_PR_curves(fitted_model = nb_detector, X = msg_test,
-                             y_true_array = y_test, y_pred_score_array = y_score[:, 1], y_pos_label='spam', model_name = 'Multinomial NB')
+    me.plot_ROC_and_PR_curves(fitted_model=nb_detector, X=msg_test,
+                              y_true_array=y_test, y_pred_score_array=y_score[:, 1], y_pos_label='spam', model_name='Multinomial NB')
 
     print("")
     print(":: Classification Report")
@@ -149,11 +151,11 @@ def train_svm(messages):
 
     # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
     categories = ['Ham (y=0)', 'Spam (y=1)']
-    me.plot_confusion_matrix(cm = cf_matrix,
-                          y_classes = categories)
+    me.plot_confusion_matrix(cm=cf_matrix,
+                             y_classes=categories)
 
-    me.plot_ROC_and_PR_curves(fitted_model = svm_detector, X = msg_test,
-                             y_true_array = y_test, y_pred_score_array = y_score[:, 1], y_pos_label='spam', model_name = 'SVM')
+    me.plot_ROC_and_PR_curves(fitted_model=svm_detector, X=msg_test,
+                              y_true_array=y_test, y_pred_score_array=y_score[:, 1], y_pos_label='spam', model_name='SVM')
 
     print("")
     print(":: Classification Report")

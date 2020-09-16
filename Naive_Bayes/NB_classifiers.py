@@ -98,9 +98,11 @@ y_pred = model.predict(X_test)
 #print(np.mean(y_pred == y_test))
 
 # comparing actual response values (y_test) with predicted response values (y_pred)
-print("Multinomial Naive Bayes model accuracy(in %): {:0.2%}".format(metrics.accuracy_score(y_test, y_pred)))
+print("Multinomial Naive Bayes model accuracy(in %): {:0.2%}".format(
+    metrics.accuracy_score(y_test, y_pred)))
 
-print(classification_report(y_test, y_pred, target_names=('Ham (y=0)', 'Spam (y=1)')))
+print(classification_report(y_test, y_pred,
+                            target_names=('Ham (y=0)', 'Spam (y=1)')))
 cf_matrix = confusion_matrix(y_test, y_pred)
 
 
@@ -112,7 +114,8 @@ me.plot_confusion_matrix(cf_matrix,
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py
-me.plot_ROC_and_PR_curves(fitted_model = model, X = X_test, y_true_array = y_test, y_pred_score_array = y_score[:, 1], model_name = 'Multinomial NB')
+me.plot_ROC_and_PR_curves(fitted_model=model, X=X_test, y_true_array=y_test,
+                          y_pred_score_array=y_score[:, 1], model_name='Multinomial NB')
 
 
 ######################################################################################################
@@ -144,7 +147,8 @@ y_pred = gnb.predict(X_test)
 print(np.mean(y_pred == y_test))
 
 # comparing actual response values (y_test) with predicted response values (y_pred)
-print("Gaussian Naive Bayes model accuracy(in %): {:0.2%}".format(metrics.accuracy_score(y_test, y_pred)*100))
+print("Gaussian Naive Bayes model accuracy(in %): {:0.2%}".format(
+    metrics.accuracy_score(y_test, y_pred)*100))
 
 cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
 
