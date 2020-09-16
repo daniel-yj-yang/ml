@@ -9,8 +9,6 @@ Created on Sat Aug 29 15:32:23 2020
 from itertools import cycle
 from sklearn.naive_bayes import GaussianNB
 from sklearn.datasets import load_iris
-from sklearn.metrics import plot_precision_recall_curve
-from sklearn.metrics import average_precision_score
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from sklearn import metrics
@@ -100,54 +98,21 @@ y_pred = model.predict(X_test)
 #print(np.mean(y_pred == y_test))
 
 # comparing actual response values (y_test) with predicted response values (y_pred)
-print("Multinomial Naive Bayes model accuracy(in %):",
-      metrics.accuracy_score(y_test, y_pred)*100)
+print("Multinomial Naive Bayes model accuracy(in %): {:0.2%}".format(metrics.accuracy_score(y_test, y_pred)))
 
-print(classification_report(y_test, y_pred, target_names=('ham', 'spam')))
+print(classification_report(y_test, y_pred, target_names=('Ham (y=0)', 'Spam (y=1)')))
 cf_matrix = confusion_matrix(y_test, y_pred)
 
 
-# some references
+# some references:
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 # https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
 me.plot_confusion_matrix(cf_matrix,
                          y_classes=['Ham (y=0)', 'Spam (y=1)'])
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-
-fpr, tpr, thresholds = metrics.roc_curve(y_test, y_score[:, 1], pos_label=1)
-auc = metrics.roc_auc_score(y_test, y_score[:, 1])
-# auc = np.trapz(tpr,fpr) # alternatively
-
-# https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
-fig = plt.figure()#figsize=(8, 6))
-lw = 2
-plt.plot(fpr, tpr, color='darkorange', lw=lw,
-         label="Multinomial NB (AUC = %0.2f)" % auc)
-plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-plt.xlim([-0.05, 1.05])
-plt.ylim([-0.05, 1.05])
-plt.legend(loc="lower right")
-plt.xlabel('False Positive Rate = p($y_{{pred}}$=1 | $y_{{actual}}$=0)')
-plt.ylabel('True Positive Rate = p($y_{{pred}}$=1 | $y_{{actual}}$=1)')
-plt.title('ROC Curve')
-fig.tight_layout()
-plt.show()
-
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py
-
-average_precision = average_precision_score(y_test, y_score[:, 1])
-
-print('Average precision-recall score: {0:0.2f}'.format(
-      average_precision))
-
-
-disp = plot_precision_recall_curve(model, X_test, y_test)
-#disp.figsize = (10,10)
-disp.ax_.set_title('Precision-Recall Curve')
-disp.ax_.set_xlabel('Recall p($y_{{pred}}$=1 | $y_{{actual}}$=1)')
-disp.ax_.set_ylabel('Precision p($y_{{actual}}$=1 | $y_{{pred}}$=1)')
-# disp.plot()
+me.plot_ROC_and_PR_curve(fitted_model = model, X = X_test, y_true_array = y_test, y_pred_score_array = y_score[:, 1], label = 'Multinomial NB')
 
 
 ######################################################################################################
@@ -179,8 +144,7 @@ y_pred = gnb.predict(X_test)
 print(np.mean(y_pred == y_test))
 
 # comparing actual response values (y_test) with predicted response values (y_pred)
-print("Gaussian Naive Bayes model accuracy(in %):",
-      metrics.accuracy_score(y_test, y_pred)*100)
+print("Gaussian Naive Bayes model accuracy(in %): {:0.2%}".format(metrics.accuracy_score(y_test, y_pred)*100))
 
 cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
 
