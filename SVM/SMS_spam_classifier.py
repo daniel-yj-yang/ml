@@ -67,7 +67,7 @@ def lemmas(message):
 def train_multinomial_nb(messages):
     # split dataset for cross validation
     msg_train, msg_test, label_train, label_test = train_test_split(
-        messages['message'], messages['label'], test_size=0.2)
+        messages['message'], messages['label'], test_size=0.2, random_state=123)
     # create pipeline
     pipeline = Pipeline([('bow', CountVectorizer(analyzer=lemmas)),
                          ('tfidf', TfidfTransformer()), ('classifier', MultinomialNB())])
@@ -118,7 +118,7 @@ def train_multinomial_nb(messages):
 def train_svm(messages):
     # split dataset for cross validation
     msg_train, msg_test, label_train, label_test = train_test_split(
-        messages['message'], messages['label'], test_size=0.2)
+        messages['message'], messages['label'], test_size=0.2, random_state=123)
     # create pipeline
     pipeline = Pipeline([('bow', CountVectorizer(analyzer=lemmas)),
                          ('tfidf', TfidfTransformer()), ('classifier', SVC(probability=True))])
@@ -170,12 +170,12 @@ def train_svm(messages):
 
 def main(argv):
   # check if models exist, if not run training
-    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl') == False):
+    if(not os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_nb_model.pkl') == False):
         print("")
         print("Creating Naive Bayes Model.....")
         train_multinomial_nb(MESSAGES)
 
-    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
+    if(not os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
         print("")
         print("Creating SVM Model.....")
         train_svm(MESSAGES)
