@@ -77,10 +77,10 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 <table align="center">
   <tr>
     <td>
-      <p align="center"><img src="./images/NB_spam_detector_ROC_curve.png" width="400px"></p>
+      <p align="center"><img src="./images/NB_spam_detector_ROC_curve.png" width="500px"></p>
     </td>
     <td>
-      <p align="center"><img src="./images/NB_spam_detector_PR_curve.png" width="400px"></p>
+      <p align="center"><img src="./images/NB_spam_detector_PR_curve.png" width="500px"></p>
     </td>
   </tr>
 </table>

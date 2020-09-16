@@ -7,9 +7,9 @@ To separate data using a hyperplane in a higher dimension (a kernel trick) to fa
 
 * Spam detector/filter using the <a href="https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection">UCI SMS spam dataset</a> (4,827 non-spam's and 747 spam's) (see <a href="./SMS_spam_classifier.py">my variation</a> of Python code), using 20% of the data as the test set
 
-Hyperparameter | Confusion Matrix | ROC curve
---- | --- | ---
-C = 1000<br/>gamma = 0.001<br/>kernel = rbf | <img src="./images/SMS_spam_detector_CF_matrix.png" width="600px"> | <img src="./images/SMS_spam_detector_ROC_curve.png" width="350px">
+Hyperparameter | Confusion Matrix, ROC curve 
+--- | ---
+C = 1000<br/>gamma = 0.001<br/>kernel = rbf | <img src="./images/SMS_spam_detector_CF_matrix.png" width="600px"><br/><br/><img src="./images/SMS_spam_detector_ROC_curve.png" width="600px">
 
 <hr>
 
