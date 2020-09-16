@@ -148,7 +148,7 @@ print(np.mean(y_pred == y_test))
 
 # comparing actual response values (y_test) with predicted response values (y_pred)
 print("Gaussian Naive Bayes model accuracy(in %): {:0.2%}".format(
-    metrics.accuracy_score(y_test, y_pred)*100))
+    metrics.accuracy_score(y_test, y_pred)))
 
 cf_matrix_3x3 = confusion_matrix(y_test, y_pred)
 
