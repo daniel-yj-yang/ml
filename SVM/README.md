@@ -12,10 +12,10 @@ To separate data using a hyperplane in a higher dimension (a kernel trick) to fa
 - gamma = 0.001
 - kernel = rbf
 
-<p align="center"><img src="./images/SMS_spam_detector_CF_matrix.png" width="500px"></p>
+<p align="center"><img src="./images/SMS_spam_detector_CF_matrix.png" width="600px"></p>
 <table align="center"><tr>
-  <td><img src="./images/SMS_spam_detector_ROC_curve.png" height="400px"></td>
-  <td><img src="./images/SMS_spam_detector_PR_curve.png" height="400px"></td>
+  <td><img src="./images/SMS_spam_detector_ROC_curve.png" height="500px"></td>
+  <td><img src="./images/SMS_spam_detector_PR_curve.png" height="500px"></td>
   </tr></table>
 
 <hr>
