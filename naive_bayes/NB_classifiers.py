@@ -108,7 +108,7 @@ print(classification_report(y_test, y_pred,
 # some references:
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 # https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
-me.plot_confusion_matrix(y_test, y_pred, y_classes=['Ham (y=0)', 'Spam (y=1)'])
+me.plot_confusion_matrix(y_test, y_pred, y_classes=('Ham (y=0)', 'Spam (y=1)'))
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py
