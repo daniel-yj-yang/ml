@@ -51,7 +51,9 @@ Recall, True Positive Rate, y-axis of the ROC curve | prob(y<sub>pred</sub>=1 \|
 False Positive Rate, x-axis of the ROC curve | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | <img src="./images/FPR_1.png" width="150px"> | <img src="./images/FPR_2.png" width="150px">
 
 Note. Raising classification threshold does not decrease recall in Visualization 1, but does not impact recall in Visualization 2 (where recall = 1).
-This illustrates why recall will <a href="https://developers.google.com/machine-learning/crash-course/classification/check-your-understanding-accuracy-precision-recall">**always decrease or stay the same**</a> when raising classification threshold.
+This illustrates why **recall** will <a href="https://developers.google.com/machine-learning/crash-course/classification/check-your-understanding-accuracy-precision-recall">**always decrease or stay the same**</a> when raising classification threshold.
+
+<p align="center"><img src="./images/decision_threshold_and_recall.png" width="500px"></p>
 
 <hr>
 

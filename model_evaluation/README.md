@@ -27,8 +27,8 @@ Multicollinearity test | Diagnostic	| ---
 
 axis | name | conditional probability | meaning | sensitive to base probabilities, prob(y<sub>actual</sub>=1)
 --- | --- | --- | --- | ---
-y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β | No
-x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean higher α | No
+y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower FNR | No
+x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean higher FPR | No
 
 <p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
 
