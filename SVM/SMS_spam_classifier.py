@@ -97,9 +97,7 @@ def train_multinomial_nb(messages):
     print(cf_matrix)
 
     # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-    categories = ['Ham (y=0)', 'Spam (y=1)']
-    me.plot_confusion_matrix(cm=cf_matrix,
-                             y_classes=categories)
+    me.plot_confusion_matrix(y_test, y_pred, y_classes=['Ham (y=0)', 'Spam (y=1)'])
 
     me.plot_ROC_and_PR_curves(fitted_model=nb_detector, X=msg_test,
                               y_true=y_test, y_pred_score=y_score[:, 1], y_pos_label='spam', model_name='Multinomial NB')
@@ -150,9 +148,7 @@ def train_svm(messages):
     print(cf_matrix)
 
     # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-    categories = ['Ham (y=0)', 'Spam (y=1)']
-    me.plot_confusion_matrix(cm=cf_matrix,
-                             y_classes=categories)
+    me.plot_confusion_matrix(y_test, y_pred, y_classes=['Ham (y=0)', 'Spam (y=1)'])
 
     me.plot_ROC_and_PR_curves(fitted_model=svm_detector, X=msg_test,
                               y_true=y_test, y_pred_score=y_score[:, 1], y_pos_label='spam', model_name='SVM')
