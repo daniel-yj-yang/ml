@@ -6,10 +6,12 @@ Created on Sat Aug 29 15:32:23 2020
 @author: daniel
 """
 
+from machlearn import model_evaluation as me
+
 from itertools import cycle
 from sklearn.naive_bayes import GaussianNB
 from sklearn.datasets import load_iris
-from sklearn.metrics import confusion_matrix
+#from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from sklearn import metrics
 from sklearn.naive_bayes import MultinomialNB
@@ -18,7 +20,6 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.stem import PorterStemmer
 import nltk
-from machlearn import model_evaluation as me
 import numpy as np
 import matplotlib.pyplot as plt
 
