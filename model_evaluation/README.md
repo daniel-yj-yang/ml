@@ -73,7 +73,7 @@ How well can this classifier be expected to perform in general, regardless of di
 axis | name | conditional probability | meaning | sensitive to base probabilities, prob(y<sub>actual</sub>=1)
 --- | --- | --- | --- | ---
 y-axis | Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | higher values mean lower FDR | Yes
-x-axis | Recall | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β | No
+x-axis | Recall | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower FNR | No
 
 <br>
 <p align="center"><img src="./images/precision_recall_curve.png" width="450px" /></p>
