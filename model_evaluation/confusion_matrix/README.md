@@ -74,6 +74,8 @@ Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | <img src="./image
 Note. Raising classification threshold does not impact precision in Visualization 1, but increases precision in Visualization 2.
 This illustrates why raising classification threshold will usually (<a href="https://developers.google.com/machine-learning/crash-course/classification/check-your-understanding-accuracy-precision-recall">**but not always**</a>) increase precision.
 
+<p align="center"><img src="./images/decision_threshold_and_precision.png" width="500px"></p>
+
 <hr>
 
 For other illustrations, please see the <a href="./images/visualization_of_confusion_matrix.pptx">PowerPoint deck</a> I made.
