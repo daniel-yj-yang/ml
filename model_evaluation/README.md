@@ -73,7 +73,7 @@ How well can this classifier be expected to perform in general, regardless of di
 axis | name | conditional probability | meaning | sensitive to base probabilities, prob(y<sub>actual</sub>=1)
 --- | --- | --- | --- | ---
 y-axis | Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | higher values mean lower FDR | Yes
-x-axis | Recall | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower β | No
+x-axis | Recall | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower FNR | No
 
 <br>
 <p align="center"><img src="./images/precision_recall_curve.png" width="450px" /></p>
@@ -133,11 +133,11 @@ Derived Index | Direction in the table| Definition | To minimize | Example | Als
 --- | --- | --- | --- | --- | ---
 <b>Accuracy</b> | both | (TP+TN)/Total | --- | --- | ---
 **<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision</a>** | vertical | <b>p(y_actual=1 \| y_pred=1)</b> = TP/(TP+FP) | FDR;<br>Precision = 1-FDR | --- | <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Positive Predictive Value</a>
-**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate (TPR) | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss;<br/>Recall = 1-β | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **Sensitivity**, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a>, Hit Rate, (1-β);<br/>correctly rejecting H<sub>0</sub>
+**<a href="https://en.wikipedia.org/wiki/Precision_and_recall">Recall</a>**<br>=True Positive Rate (TPR) | horizontal | <b>p(y_pred=1 \| y_actual=1)</b> = TP/(TP+FN) | Type II error, Miss;<br/>Recall = 1-β | High cost associated with missing gold when digging for gold | The y-axis in the ROC curve, **sensitivity**<br/><br/>In hypothesis testing:<br/><a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives">(1-β)</a>, correctly rejecting H<sub>0</sub>, <a href="https://en.wikipedia.org/wiki/Statistical_power">Power</a><br/><br/>Hit Rate
 F<sub>1</sub> score | both | TP/(TP+0.5*(FP+FN)) | FP and FN | --- | Another measure of accuracy<br>the harmonic mean of precision and recall
-False Negative Rate (FNR) | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Type II error rate, Miss Rate, β
-Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | α;<br/>Specificity = 1-α | --- | Correct rejection rate, (1-α);<br/>Rejection means saying No;<br/>it actually means correctly accepting H<sub>0</sub>
-False Positive Rate (FPR)<br>=(1-Specificity) | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>, Fall-out rate, **Signifiance level**, α
+False Negative Rate (FNR) | horizontal | <b>p(y_pred=0 \| y_actual=1)</b> = FN/P | --- | --- | Miss Rate<br/><br/>In hypothesis testing:<br/>β, Type II error rate 
+Specificity  | horizontal | <b>p(y_pred=0 \| y_actual=0)</b> = TN/N | α;<br/>Specificity = 1-α | --- | Correct rejection rate<br/><br/>In hypothesis testing:<br/>(1-α);<br/>Rejection means saying No;<br/>it actually means correctly accepting H<sub>0</sub>
+False Positive Rate (FPR)<br>=(1-Specificity) | horizontal | <b>p(y_pred=1 \| y_actual=0)</b> = FP/N | --- | --- | The x-axis in the ROC curve, False Alarm Rate, Fall-out rate;<br/><br/>In hypothesis testing:<br/><a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives#:~:text=The%20false%20positive%20rate%20is%20equal%20to%20the%20significance%20level,the%20specificity%20of%20the%20test.">**signifiance level**, α</a>, <a href="https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#Type_I_error">Type I error rate</a>
 False Discovery Rate (FDR) | vertical | <b>p(y_actual=0 \| y_pred=1)</b> = FP/(TP+FP) | --- | --- | ---
 False Omission Rate (FOR) | vertical | <b>p(y_actual=1 \| y_pred=0)</b> = FN/(TN+FN) | --- | --- | ---
 Misclassification Rate | both | (FP+FN)/Total | --- | --- | Error rate
