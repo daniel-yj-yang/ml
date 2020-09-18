@@ -10,6 +10,7 @@ Created on Thu Sep 10 23:20:59 2020
 # https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
 
 from machlearn import model_evaluation as me
+
 from textblob import TextBlob
 # StratifiedKFold, cross_val_score,
 from sklearn.model_selection import train_test_split, GridSearchCV
@@ -171,7 +172,7 @@ def main(argv):
         print("Creating Naive Bayes Model.....")
         train_multinomial_nb(MESSAGES)
 
-    if(not os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
+    if(os.path.isfile('/Users/daniel/Data-Science/Data/Spam/SMS-Spam-Collection/ml_models/sms_spam_svm_model.pkl') == False):
         print("")
         print("Creating SVM Model.....")
         train_svm(MESSAGES)
