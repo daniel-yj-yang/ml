@@ -5,7 +5,7 @@ To predict consumer's purchasing decision via asking a series of questions honin
 
 ## Online Demo
 
-<a href="https://github.com/daniel-yj-yang/ml/blob/master/decision_trees/DT_Purchasing.ipynb">Classification of user purchasing (yes/no) using age and estimated salary</a>
+<a href="https://github.com/daniel-yj-yang/ml/blob/master/decision_tree/DT_Purchasing.ipynb">Classification of user purchasing (yes/no) using age and estimated salary</a>
 
 <hr>
 
