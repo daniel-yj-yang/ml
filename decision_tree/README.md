@@ -5,7 +5,7 @@ To predict consumer's purchasing decision via asking a series of questions honin
 
 ## Online Demo
 
-<a href="https://github.com/daniel-yj-yang/ml/blob/master/decision_tree/DT_Purchasing.ipynb">Classification of user purchasing (yes/no) using age and estimated salary</a>
+<a href="./DT_Purchasing.ipynb">Classification of user purchasing (yes/no) using age and estimated salary</a>
 
 <hr>
 
@@ -15,13 +15,13 @@ An analogy of decision trees is the <a href="https://en.wikipedia.org/wiki/Twent
 
 In ML, the process of a decision tree is to <b><i>recursively</i></b> split down from the root node to one of the leaf/terminal nodes, with every node acting as a test case for making <b><i>increasingly more certain/accurate</i></b> decisions based on the values of predictors.
 
-<p align="center"><img src="https://github.com/daniel-yj-yang/ML-retail-analytics/blob/master/decision_trees/concept-1.jpg" width="600px"></p>
+<p align="center"><img src="./images/concept-1.jpg" width="600px"></p>
 
 Criterion | Equation | Descriptions | Comparison
 --- | --- | --- | ---
-Gini index of impurity | <p><img src="https://github.com/daniel-yj-yang/ML-retail-analytics/blob/master/decision_trees/Gini_index_formula.png" width="200px"></p><i>p</i><sub>i</sub> is the proportion of samples belonging to class <i>c</i> for a particular node | * Gini impurity, the amount of probability of a specific feature that would be classified incorrectly if randomly selected, and 1 ≥ Gini index ≥ 0;<br />* Used in <a href="https://en.wikipedia.org/wiki/Decision_tree_learning">CART (Classification and Regression Tree)</a> algorithm | * Favors larger partitions<br/>* Used in classification
-Entropy | <p><img src="https://github.com/daniel-yj-yang/ML-retail-analytics/blob/master/decision_trees/Entropy_formula.png" width="300px"></p> | * Entropy is how much randomness/guessing it'd require to determine the class, and 1 ≥ Entropy ≥ 0;<br />* Entropy decrease is information gain; how well the value of predictor can separate the training samples with respect to the target class | * Favors smaller partitions with distinct values<br/>* Used in classification
-Variance Reduction | <p><img src="https://github.com/daniel-yj-yang/ML-retail-analytics/blob/master/decision_trees/Variance_formula.png" width="300px"></p> | * Among all possible splits to split the population, the one with lower variance is selected | * Used in regression
+Gini index of impurity | <p><img src="./images/Gini_index_formula.png" width="200px"></p><i>p</i><sub>i</sub> is the proportion of samples belonging to class <i>c</i> for a particular node | * Gini impurity, the amount of probability of a specific feature that would be classified incorrectly if randomly selected, and 1 ≥ Gini index ≥ 0;<br />* Used in <a href="https://en.wikipedia.org/wiki/Decision_tree_learning">CART (Classification and Regression Tree)</a> algorithm | * Favors larger partitions<br/>* Used in classification
+Entropy | <p><img src="./images/Entropy_formula.png" width="300px"></p> | * Entropy is how much randomness/guessing it'd require to determine the class, and 1 ≥ Entropy ≥ 0;<br />* Entropy decrease is information gain; how well the value of predictor can separate the training samples with respect to the target class | * Favors smaller partitions with distinct values<br/>* Used in classification
+Variance Reduction | <p><img src="./images/Variance_formula.png" width="300px"></p> | * Among all possible splits to split the population, the one with lower variance is selected | * Used in regression
 
 <hr> 
 
@@ -30,7 +30,7 @@ Variance Reduction | <p><img src="https://github.com/daniel-yj-yang/ML-retail-an
 The root node is the entire training set. The values of the predictor is binarized. The node will keep splitting until its Gini index or Entropy ≈ 0, that is, requiring little or no uncertainty to determine the class.
 
 Here is a max_depth=2 decision tree example of predicting Purchased by Age and Estimated Salary using the Gini index:
-<p align="center"><img src="https://github.com/daniel-yj-yang/ML-retail-analytics/blob/master/decision_trees/DT_Purchase_maxdepth=2.png" width="600px"></p>
+<p align="center"><img src="./images/DT_Purchase_maxdepth=2.png" width="600px"></p>
 <p align="center">Note 1: A node of lighter color indicates higher impurity, which requires further splitting</p>
 <p align="center">Note 2: <i>Value</i> indicates how the sample would be split if the node were the last node</p>
 
