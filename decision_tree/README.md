@@ -1,11 +1,11 @@
-# Decision trees
+# Decision tree
 To predict consumer's purchasing decision via asking a series of questions honing in the final answer
 
 <hr>
 
 ## Online Demo
 
-<a href="https://github.com/daniel-yj-yang/ML-retail-analytics/blob/master/decision_trees/DT_Purchasing.ipynb">Classification of user purchasing (yes/no) using age and estimated salary</a>
+<a href="https://github.com/daniel-yj-yang/ml/blob/master/decision_trees/DT_Purchasing.ipynb">Classification of user purchasing (yes/no) using age and estimated salary</a>
 
 <hr>
 
