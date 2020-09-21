@@ -1,4 +1,5 @@
 # Naive Bayes 
+A baseline model with reasonable accuracy for classification
 
 <hr>
 
@@ -87,6 +88,33 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 <hr>
 
-### 2. Using Gaussian Naive Bayes to classify iris
+### 2. Using Multinomial Naive Bayes to classify 3 different newsgroup
+
+```python
+from machlearn import naive_bayes as nb
+nb.demo(dataset="20newsgroup")
+```
+
+<p align="center"><img src="./images/20newsgroup_cf_matrix_3x3.png" width="600px"></p>
+
+'comp.graphics' | 'sci.med' | 'soc.religion.christian'
+--- | --- | ---
+"graphics": 89.45%<br/>"files": 82.77%<br/>"3d": 82.66%<br/>"polygon": 80.55%<br/>"windows": 80.09% | "banks": 89.07%<br/>"geb": 88.95%<br/>"pitt": 88.81%<br/>"msg": 88.22%<br/>"gordon": 87.85% | "god": 93.11%<br/>"jesus": 89.45%<br/>"christians": 87.05%<br/>"church": 86.42%<br/>"bible": 86.21%
+
+```
+                        precision    recall  f1-score   support
+
+         comp.graphics       0.96      0.90      0.93       389
+               sci.med       0.98      0.83      0.90       396
+soc.religion.christian       0.81      0.99      0.89       398
+
+              accuracy                           0.91      1183
+             macro avg       0.92      0.91      0.91      1183
+          weighted avg       0.92      0.91      0.91      1183
+```
+
+<hr>
+
+### 3. Using Gaussian Naive Bayes to classify iris
 
 <p align="center"><img src="./images/iris_classifier_cf_matrix_3x3.png" width="600px"></p>
