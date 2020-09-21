@@ -14,6 +14,23 @@ torch.Size([3, 6])
 >>> c.dim() # matrix dimensions
 2
 
+################################################################
+
+>>> df = pd.DataFrame({'a':[1, 2, 3], 'b':[4, 5, 6]})
+
+>>> df
+   a  b
+0  1  4
+1  2  5
+2  3  6
+
+>>> torch.tensor(df.values)  # convert pandas DataFrame to tensor
+tensor([[1, 4],
+        [2, 5],
+        [3, 6]])
+
+################################################################
+
 >>> a = torch.tensor([[1,2],[3,4]])
 
 >>> b = torch.tensor([[5,6],[7,8]])
