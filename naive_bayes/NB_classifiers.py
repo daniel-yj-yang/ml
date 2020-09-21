@@ -12,7 +12,6 @@ from itertools import cycle
 from sklearn.naive_bayes import GaussianNB
 from sklearn.datasets import load_iris
 #from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
 from sklearn import metrics
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
@@ -102,18 +101,18 @@ y_pred = model.predict(X_test)
 print("Multinomial Naive Bayes model accuracy(in %): {:0.2%}".format(
     metrics.accuracy_score(y_test, y_pred)))
 
-print(classification_report(y_test, y_pred,
-                            target_names=('Ham (y=0)', 'Spam (y=1)')))
-
 # some references:
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
 # https://github.com/DTrimarchi10/confusion_matrix/blob/master/cf_matrix.py
-me.plot_confusion_matrix(y_test, y_pred, y_classes=('Ham (y=0)', 'Spam (y=1)'))
+me.plot_confusion_matrix(y_test, y_pred, y_classes=('ham (y=0)', 'spam (y=1)'))
 
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html
 # https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py
 me.plot_ROC_and_PR_curves(fitted_model=model, X=X_test,
                           y_true=y_test, y_pred_score=y_score[:, 1], y_pos_label=1, model_name='Multinomial NB')
+
+
+# more examples: https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html
 
 
 ######################################################################################################
@@ -149,7 +148,7 @@ print("Gaussian Naive Bayes model accuracy(in %): {:0.2%}".format(
     metrics.accuracy_score(y_test, y_pred)))
 
 # https://medium.com/@dtuk81/confusion-matrix-visualization-fc31e3f30fea
-me.plot_confusion_matrix(y_test, y_pred, y_classes=iris.target_names)
+me.plot_confusion_matrix(y_test, y_pred, y_classes=np.unique(iris.target_names))
 
 ######################################################################################################
 # Stop here
