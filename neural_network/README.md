@@ -5,7 +5,7 @@ Note. When the number of hidden layers ≥ 2, it is usually called <a href="http
 
 <hr>
 
-## <a href="./pytorch.md">PyTorch</a>
+## <a href="./pytorch/">PyTorch</a>
 
 <hr>
 
