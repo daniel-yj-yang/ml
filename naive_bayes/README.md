@@ -97,6 +97,8 @@ nb.demo(dataset="20newsgroup")
 
 <p align="center"><img src="./images/20newsgroup_cf_matrix_3x3.png" width="600px"></p>
 
+The top 5 terms with highest probability of a document kind:
+
 'comp.graphics' | 'sci.med' | 'soc.religion.christian'
 --- | --- | ---
 "graphics": 89.45%<br/>"files": 82.77%<br/>"3d": 82.66%<br/>"polygon": 80.55%<br/>"windows": 80.09% | "banks": 89.07%<br/>"geb": 88.95%<br/>"pitt": 88.81%<br/>"msg": 88.22%<br/>"gordon": 87.85% | "god": 93.11%<br/>"jesus": 89.45%<br/>"christians": 87.05%<br/>"church": 86.42%<br/>"bible": 86.21%
