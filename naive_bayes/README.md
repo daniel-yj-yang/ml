@@ -88,7 +88,7 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 <hr>
 
-### 2. Using Multinomial Naive Bayes to classify 3 different newsgroup
+### 2. Using Multinomial Naive Bayes to classify <a href="https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html">3 different newsgroup</a>
 
 ```python
 from machlearn import naive_bayes as nb
