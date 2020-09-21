@@ -1,6 +1,19 @@
 PyTorch Basics
 
 ``` python
+>>> c = torch.tensor([[1,2,3,4,5,6],[7,8,9,10,11,12],[13,14,15,16,17,18]])
+
+>>> c
+tensor([[ 1,  2,  3,  4,  5,  6],
+        [ 7,  8,  9, 10, 11, 12],
+        [13, 14, 15, 16, 17, 18]])
+
+>>> c.size() # matrix size
+torch.Size([3, 6])
+
+>>> c.dim() # matrix dimensions
+2
+
 >>> a = torch.tensor([[1,2],[3,4]])
 
 >>> b = torch.tensor([[5,6],[7,8]])
