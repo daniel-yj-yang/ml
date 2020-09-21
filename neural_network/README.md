@@ -5,6 +5,10 @@ Note. When the number of hidden layers ≥ 2, it is usually called <a href="http
 
 <hr>
 
+## <a href="./pytorch.md">PyTorch</a>
+
+<hr>
+
 ## Example code and output
 * Code: <a href="./neuralnet_example.R">R code example using the neuralnet package</a>
 * Description: Using "<b>TKS</b>" (Technical Knowledge Score)" and "<b>CSS</b>" (Communication Skills Score) to predict student <b>Placed</b> or not (1/0), using 3 nodes in the hidden layer and "logistic" activation function
