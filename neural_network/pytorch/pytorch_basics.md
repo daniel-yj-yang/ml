@@ -62,4 +62,24 @@ tensor([[ 5, 12],
 >>> torch.mm(a,b) # Matrix multiplication
 tensor([[19, 22],
         [43, 50]])
+
+################################################################
+
+# Derivative
+
+>>> x = torch.tensor(3., requires_grad = True) # x is now not just a float but also allowing derivative operation
+
+>>> x
+tensor(3., requires_grad=True)
+
+>>> y = x\*\*2
+
+>>> y
+tensor(9., grad_fn=<PowBackward0>)
+
+>>> y.backward() # calculate the derivate of y with respect to x, which is dy/dx = 2x
+
+>>> x.grad # plug in x to see the value of dy/dx
+tensor(6.)
 ```
+        
