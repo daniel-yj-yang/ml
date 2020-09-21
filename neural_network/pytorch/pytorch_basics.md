@@ -81,5 +81,20 @@ tensor(9., grad_fn=<PowBackward0>)
 
 >>> x.grad # plug in x to see the value of dy/dx
 tensor(6.)
+
+################################################################
+
+# Partial Derivative
+
+>>> x = torch.tensor(4., requires_grad = True)
+
+>>> y = torch.tensor(8., requires_grad = True)
+
+>>> z = x**y + torch.sin(x)*torch.cos(y)
+
+>>> z.backward() # calculate the partial derivatives here
+
+>>> x.grad # plug in x to see the value of ∂z/∂x
+tensor(131072.0938)
 ```
         
