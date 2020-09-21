@@ -88,7 +88,7 @@ Please see Python codes <a href="NB_classifiers.py">here</a>.
 
 <hr>
 
-### 2. Using Multinomial Naive Bayes to classify <a href="https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html">3 different newsgroup</a>
+### 2. Using Multinomial Naive Bayes to classify <a href="https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html">3 different newsgroups</a>
 
 ```python
 from machlearn import naive_bayes as nb
@@ -97,7 +97,7 @@ nb.demo(dataset="20newsgroup")
 
 <p align="center"><img src="./images/20newsgroup_cf_matrix_3x3.png" width="600px"></p>
 
-The top 5 terms with highest probability of a document kind:
+The top 5 terms with highest probability of a specific newsgroup:
 
 'comp.graphics' | 'sci.med' | 'soc.religion.christian'
 --- | --- | ---
