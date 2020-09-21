@@ -72,7 +72,7 @@ tensor([[19, 22],
 >>> x
 tensor(3., requires_grad=True)
 
->>> y = x\*\*2
+>>> y = x**2 # y = x^2
 
 >>> y
 tensor(9., grad_fn=<PowBackward0>)
