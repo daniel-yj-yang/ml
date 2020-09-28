@@ -1,5 +1,7 @@
 # Machine Learning
-<b>Learning the (hidden or obvious) <a href="./regularity/">regularity of the world</a> via computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>, and <a href="https://www.sas.com/en_us/insights/analytics/machine-learning.html">a method of data analysis that automates analytical model building</a>.
+<b>Learning the (hidden or obvious) <a href="./regularity/">regularity of the world</a> via computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>. In supervised ML, the goal is to predict, namely, identifying data signals relevant for the new, unseen.
+
+<a href="https://www.businessnewsdaily.com/10352-machine-learning-vs-automation.html#:~:text=The%20biggest%20difference%20is%20that,is%20frequently%20confused%20with%20AI.&text=But%20the%20difference%20is%20that,and%20then%20thinks%20no%20further.">It is different from automation.</a>
 
 <hr>
 
