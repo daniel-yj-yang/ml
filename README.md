@@ -1,5 +1,5 @@
 # Machine Learning
-<b>Learning the (hidden or obvious) <a href="./regularity/">regularity of the world</a> via computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>.
+<b>Learning the (hidden or obvious) <a href="./regularity/">regularity of the world</a> via computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>, and <a href="https://www.sas.com/en_us/insights/analytics/machine-learning.html">a method of data analysis that automates analytical model building</a>.
 
 <hr>
 
