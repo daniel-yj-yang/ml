@@ -1,5 +1,5 @@
 # Machine Learning
-<b>Learning the (hidden or obvious) <a href="./regularity/">regularity of the world</a> via computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>. 
+<b>Learning the (hidden or obvious) <a href="./regularity/">regularity of the world</a> via a sample of data and computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>. 
 
 In supervised ML, the goal is to predict, namely, identifying data signals relevant for the new, unseen.
 
