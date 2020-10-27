@@ -37,7 +37,7 @@ Here is a max_depth=2 decision tree example of predicting Purchased by Age and E
 <hr>
 
 Here is a max_depth=4 decision tree example of predicting iris class using the Entropy index:
-<p align="center"><img src="./images/DT_iris_maxdepth=4.png" width="600px"></p>
+<p align="center"><img src="./images/DT_iris_maxdepth=4.png" width="800px"></p>
 
 <hr>
 
