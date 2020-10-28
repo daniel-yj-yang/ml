@@ -30,13 +30,13 @@ Variance Reduction | <p><img src="./images/Variance_formula.png" width="300px"><
 The root node is the entire training set. The values of the predictor is binarized. The node will keep splitting until its Gini index or Entropy ≈ 0, that is, requiring little or no uncertainty to determine the class.
 
 Here is a max_depth=2 decision tree example of predicting Purchased by Age and Estimated Salary using the Gini index:
-<p align="center"><img src="./images/DT_Purchase_maxdepth=2.png" width="600px"></p>
+<p align="center"><img src="./images/DT_Purchase_depth=2.png" width="600px"></p>
 <p align="center">Note 1: A node of lighter color indicates higher impurity, which requires further splitting</p>
 <p align="center">Note 2: <i>Value</i> indicates how the sample would be split if the node were the last node</p>
 
 <hr>
 
-<p align="center"><img src="./images/DT2_Purchase.png" width="1400px"></p>
+<p align="center"><img src="./images/DT2_Purchase_depth=2.png" width="600px"></p>
 
 <hr>
 
