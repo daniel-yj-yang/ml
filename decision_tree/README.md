@@ -36,7 +36,7 @@ Here is a max_depth=2 decision tree example of predicting Purchased by Age and E
 
 <hr>
 
-<p align="center"><img src="./images/DT2_Purchase.png" width="800px"></p>
+<p align="center"><img src="./images/DT2_Purchase.png" width="1400px"></p>
 
 <hr>
 
