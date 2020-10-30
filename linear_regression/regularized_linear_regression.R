@@ -1,6 +1,7 @@
 rm(list = ls())
 cat("\014")
 
+# http://www.science.smith.edu/~jcrouser/SDS293/labs/lab10-r.html
 # https://www.datacamp.com/community/tutorials/tutorial-ridge-lasso-elastic-net
 # https://www.r-bloggers.com/ridge-regression-and-the-lasso/
 # https://www.pluralsight.com/guides/linear-lasso-and-ridge-regression-with-r
