@@ -25,7 +25,7 @@ Multicollinearity test | Diagnostic	| ---
 
 ### ROC (Receiver operating characteristic) curve
 
-axis | name | conditional probability | meaning | sensitive to base probabilities, prob(y<sub>actual</sub>=1)
+axis | name | conditional probability | meaning | sensitive to baseline probabilities, prob(y<sub>actual</sub>=1)
 --- | --- | --- | --- | ---
 y-axis | True Positive Rate = Recall = Sensitivity | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower FNR | No
 x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) | higher values mean higher FPR | No
@@ -33,7 +33,7 @@ x-axis | False Positive Rate | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0) 
 <p align="center"><img src="./images/roccomp.jpg" width="40%" /><br/>(<a href="http://gim.unmc.edu/dxtests/roc3.htm">image source</a>)</p>
 
 Note:
-- The y-axis and x-axis on the ROC curve are probabilities conditioned on the true class label and <a href="https://stats.stackexchange.com/questions/7207/roc-vs-precision-and-recall-curves">will be the same regardless of what P(Y<sub>actual</sub>=1) is</a> and insenitive to unbalanced sample class size.
+- The y-axis and x-axis on the ROC curve are probabilities conditioned on the true class label and <a href="https://stats.stackexchange.com/questions/7207/roc-vs-precision-and-recall-curves">will be the same regardless of what P(Y<sub>actual</sub>=1) is</a> and insenitive to imbalanced sample class size.
 -  Since ROC curve is insensitive to different baseline probabilities, ROC curve is suitable for answering the following question:
 
 ```
@@ -50,7 +50,7 @@ How well can this classifier be expected to perform in general, regardless of di
 - AUC can be interpreted as the **probability** that the model **ranks** a random positive example (a random sample of y<sub>actual</sub>=1) **more highly** than a random negative example (a random sample of y<sub>actual</sub>=0), where "ranks more highly" means prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) > prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), that is, y-axis > x-axis on the ROC curve.
 - If prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) = prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=0), then y-axis = x-axis, then AUC = 50% probability, which is the same as random guessing.
 
-- Accuracy is sensitive to **class unbalance** (that is, the ratio of Actual Positive cases [P] to Actual Negative cases [N]), but the ROC curve is **independent** of the P:N ratio and is therefore suitable for comparing classifiers when this ratio may vary.
+- Accuracy is sensitive to **class imbalance** (that is, the ratio of Actual Positive cases [P] to Actual Negative cases [N]), but the ROC curve is **independent** of the P:N ratio and is therefore suitable for comparing classifiers when this ratio may vary.
 
 - AUC is an aggregate measure of binary classifier's performance **across all possible decision thresholds (the threshold to make the decision that y<sub>pred</sub>=1)**
 - Increasing decision threshold (cut-off probability score for predicting y=1 vs. y=0) equals to moving a point on the ROC curve to the left, making it harder to classify y=1 or reducing the size of y<sub>pred</sub>=1.
@@ -150,7 +150,7 @@ Negative Likelihood Ratio (LR-) | --- | β/(1-α) | --- | β=.20,(1-α)=.95,β/(
 
 <hr>
 
-### Unbalanced sample classes, that is, prob(y<sub>actual</sub>=1) >> 50% (or << 50%)
+### Imbalanced sample classes, that is, prob(y<sub>actual</sub>=1) >> 50% (or << 50%)
 
 Accuracy is <a href="https://datascience.stackexchange.com/questions/806/advantages-of-auc-vs-standard-accuracy">sensitive</a> to class imbalance, but AUC is <a href="http://fastml.com/what-you-wanted-to-know-about-auc/">insensitive</a> to that.
 
@@ -158,9 +158,9 @@ For example, 99% of the cases are in the same class (e.g., non-ASD), and it's ea
 
 <hr>
 
-<a href="https://www.researchgate.net/post/In_classification_how_do_i_handle_an_unbalanced_training_set">Ways to deal with unbalanced data</a> | Details | For ...
+<a href="https://www.researchgate.net/post/In_classification_how_do_i_handle_an_unbalanced_training_set">Ways to deal with imbalanced data</a> | Details | For ...
 --- | --- | ---
-Use AUC rather than accuracy | AUC is insensitive to unbalanced sample classes | ---
+Use AUC rather than accuracy | AUC is insensitive to imbalanced sample classes | ---
 Sampling methods | e.g., post-hoc up-sampling or down-sampling | Confusion matrix
 Alternative cutoff | --- | Confusion matrix
 Unequal case weights | different weights on individual data points | Logistic regression
