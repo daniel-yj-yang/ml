@@ -70,7 +70,7 @@ How well can this classifier be expected to perform in general, regardless of di
 
 ### <a href="https://www.quora.com/What-is-Precision-Recall-PR-curve">Precision-recall curve</a>
   
-axis | name | conditional probability | meaning | sensitive to base probabilities, prob(y<sub>actual</sub>=1)
+axis | name | conditional probability | meaning | sensitive to baseline probabilities, prob(y<sub>actual</sub>=1)
 --- | --- | --- | --- | ---
 y-axis | Precision | prob(y<sub>actual</sub>=1 \| y<sub>pred</sub>=1) | higher values mean lower FDR | Yes
 x-axis | Recall | prob(y<sub>pred</sub>=1 \| y<sub>actual</sub>=1) | higher values mean lower FNR | No
