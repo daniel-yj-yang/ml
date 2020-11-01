@@ -146,6 +146,7 @@ Negative Predictive Value (NPV) | vertical | <b>p(y_actual=0 \| y_pred=0)</b> = 
 Positive Likelihood Ratio (LR+) | --- | (1-β)/α<br>cf. the ROC curve | --- | (1-β)=.80,α=.05,(1-β)/α=16 | ---
 Negative Likelihood Ratio (LR-) | --- | β/(1-α) | --- | β=.20,(1-α)=.95,β/(1-α)=.21 | ---
 <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">Diagnostic Odds Ratio (DOR)</a> | --- | (LR+)/(LR-)<br>=(1-β)(1-α)/(αβ) | --- | β=.20,α=.05,DOR=76 | ---
+Geometric Mean (G-Mean) | --- | sqrt(sensitivity * specificity) | --- |--- | ---
 
 
 <hr>
