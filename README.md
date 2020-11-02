@@ -1,5 +1,5 @@
 # Machine Learning
-<b>Learning the (hidden or obvious) <a href="./regularity/">regularity of the world</a> via a sample of data and computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>. 
+<b>Learning the (hidden or obvious) <a href="./regularity/">mapping of the world</a> via a sample of data and computer algorithms that <a href="./model_optimization/">optimize parameters through training</a></b>. 
 
 In supervised ML, the learned model can use information gained in features to <b>reduce uncertainty</b> when guessing/predicting the target label, namely, identifying data signals relevant for the new, unseen.
 
