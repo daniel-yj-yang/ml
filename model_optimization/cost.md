@@ -4,7 +4,7 @@ Importantly, a cost function **connects the algorithm's θ with its prediction l
 
 In other words, a cost function connects the algorithm's θ with the difference between y and h<sub>θ</sub>(x) (= y_hat = y_pred).
 
-Algorithm | y_pred | Implementation of the cost function, J(θ) = loss<br/>Generally, the idea is (h<sub>θ</sub>(x) - y)<sup>2</sup> | Implementation of the gradient<br/><img src="./images/partial_derivative.png" width="50px">
+Algorithm | y_pred | Implementation of the cost function, J(θ) = loss<br/>Generally, the idea is (h<sub>θ</sub>(x) - y)<sup>2</sup> | Implementation of the gradient:<br/><img src="./images/partial_derivative.png" width="50px">
 --- | --- | --- | ---
 Linear Regression | <img src="./images/y_hat_linear_regression.png" width="50px"> | <img src="./images/cost_function_linear_regression.png" width="180px"> | <img src="./images/gradient_of_cost_function_linear_or_logistic_regression.png" width="180px">
 Ridge Regression;<br>Regularized Linear Regression | --- | --- | ---
