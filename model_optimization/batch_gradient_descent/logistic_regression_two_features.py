@@ -107,17 +107,6 @@ class Logistic_regression_as_optimized_by_batch_gradient_descent:
     def predict(self, X, threshold=0.5):
         return self.predict_prob(X) >= threshold
 
-    # this result is different from statsmodels, but statsmodels is correct
-    def sklearn_Logistic_Regression(self, X, y):
-        LR_model = linear_model.LogisticRegression(
-            fit_intercept=True, C=1e9)
-        LR_model.fit(X, y)
-        print(LR_model.intercept_, LR_model.coef_)
-        #predicted_classes = LR_model.predict(X)
-        #accuracy = accuracy_score(y.flatten(), predicted_classes)
-        # print(accuracy)
-        return LR_model
-
     def statsmodels_Logit(self, X, y):
         model = Logit(endog=y, exog=add_constant(X))
         results = model.fit(maxiter=10000)
