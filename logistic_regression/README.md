@@ -6,7 +6,7 @@ To predict yes or no in the target variable
 ## <a href="https://en.wikipedia.org/wiki/Logistic_regression#Latent_variable_interpretation">Fundamental interpretation: the odds as an exponential function of the predictor</a>
 
 * DV = Odds of P(Outcome<sub>Positive</sub>) = P(Outcome<sub>Positive</sub>) / P(Outcome<sub>Negative</sub>)
-* IV = Predictor in terms of β<sub>0</sub> + β<sub>1</sub>\*x
+* IV = Log Odds = Predictor in terms of β<sub>0</sub> + β<sub>1</sub>\*x
 * Fundamental Relationship: <a href="https://danielyang.shinyapps.io/Logistic_Regression/">DV = <i>e</i><sup>IV</sup></a>
 
 Related considerations:
