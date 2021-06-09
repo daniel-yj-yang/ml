@@ -1,4 +1,10 @@
-# Network Analysis
+# Network Analysis (General)
+
+To see the relationship among entities
+
+<hr>
+
+# Network Analysis (Retail)
 
 To see the dyanmics of how item purchases affect one another
 
