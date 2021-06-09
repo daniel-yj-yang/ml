@@ -4,6 +4,12 @@ To see the relationship among entities
 
 <hr>
 
+## Package:
+
+<a href='https://networkx.org/'>NetworkX</a>
+
+<hr>
+
 # Network Analysis (Retail)
 
 To see the dyanmics of how item purchases affect one another
