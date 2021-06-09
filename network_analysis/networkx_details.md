@@ -4,7 +4,7 @@ G = nx.Graph()
 G.add_edge('y', 'x', function=math.cos)
 G.nodes
 G.edges
-G['x']['y']
+G['x']['y'] # returns the edge attribute dictionary.
 import matplotlib.pyplot as plt
 plt.subplot(121)
 nx.draw(G)
