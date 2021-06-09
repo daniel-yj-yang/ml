@@ -1,1 +1,12 @@
-test
+```python3
+import networkx as nx
+G = nx.Graph()
+G.add_edge('y', 'x', function=math.cos)
+G.nodes
+G.edges
+G['x']['y']
+import matplotlib.pyplot as plt
+plt.subplot(121)
+nx.draw(G)
+plt.show()
+```
