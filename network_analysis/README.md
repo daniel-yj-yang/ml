@@ -6,7 +6,7 @@ To see the relationship among entities
 
 ## Package:
 
-<a href='https://networkx.org/'>NetworkX</a>
+<a href='https://networkx.org/'>NetworkX</a> (<a href='https://networkx.org/documentation/stable/_downloads/networkx_reference.pdf'>pdf</a>)
 
 <hr>
 
