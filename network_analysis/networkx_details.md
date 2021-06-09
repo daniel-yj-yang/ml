@@ -13,4 +13,4 @@ G = nx.cubical_graph()
 nx.draw(G, pos=nx.spring_layout(G), node_color='r', edge_color='b')
 ```
 
-<img src="./images/cube.png" width="800px"><br/>
+<img src="./images/cube.png" width="400px"><br/>
