@@ -8,6 +8,8 @@ To see the relationship among entities
 
 <a href='https://networkx.org/'>NetworkX</a> (<a href='https://networkx.org/documentation/stable/_downloads/networkx_reference.pdf'>pdf</a>)
 
+<a href='networkx_details.md'>NetworkX Details</a>
+
 <hr>
 
 # Network Analysis (Retail)
