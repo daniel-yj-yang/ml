@@ -1,4 +1,18 @@
-# Network Analysis
+# Network Analysis (General)
+
+To see the relationship among entities
+
+<hr>
+
+## Package:
+
+<a href='https://networkx.org/'>NetworkX</a> (<a href='https://networkx.org/documentation/stable/_downloads/networkx_reference.pdf'>pdf</a>)
+
+<a href='networkx_details.md'>NetworkX Details</a>
+
+<hr>
+
+# Network Analysis (Retail)
 
 To see the dyanmics of how item purchases affect one another
 
