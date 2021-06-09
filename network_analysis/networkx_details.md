@@ -9,4 +9,6 @@ import matplotlib.pyplot as plt
 plt.subplot(121)
 nx.draw(G)
 plt.show()
+G = nx.cubical_graph()
+nx.draw(G, pos=nx.spring_layout(G), node_color='r', edge_color='b')
 ```
