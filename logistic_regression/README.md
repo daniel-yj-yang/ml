@@ -72,7 +72,7 @@ odds(y)=p/q=e<sup>z</sup>=e<sup>β<sub>0</sub>+β<sub>1</sub>\*x</sup>
 
 For example, given β<sub>1</sub> = 1.5046, e<sup>1.5046</sup>=4.50, it means that every 1 more hr of studying will increase the odds of passing versus failing by a **constant** multiplication factor of 4.50.
 
-Note that <a href="https://www.quora.com/Why-is-the-exponential-function-always-positive">the exponential function is always positive</a>, but if β<sub>1</sub><0, 0<e<sup>β<sub>1</sub></sup><1, it means every 1-unit increase in x, the odds of y will be multipled by a factor<1
+Note that <a href="https://www.quora.com/Why-is-the-exponential-function-always-positive">the exponential function is always positive</a>, but if β<sub>1</sub><0, 0<e<sup>β<sub>1</sub></sup><1, it means every 1-unit increase in x, the odds of y will be multiplied by a factor<1
 
 For example, if β<sub>1</sub>=-0.05, it means odds ratio = e<sup>-0.05</sup>=0.95, so for every 1-unit increase in x, the odds of P(Outcome<sub>positive</sub>) versus P(Outcome<sub>negative</sub>) will decrease by 5%. Another example, if β<sub>1</sub>=-0.17, it means odds ratio = e<sup>-0.17</sup>=0.84.
 
