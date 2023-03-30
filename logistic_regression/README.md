@@ -1,5 +1,5 @@
 # <a href="https://en.wikipedia.org/wiki/Logistic_regression">Logistic Regression</a>
-To predict yes or no in the target variable
+To predict the probability of positive in the target variable
 
 <hr>
 
