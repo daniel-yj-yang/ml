@@ -127,7 +127,7 @@ No. | Assumptions
 1 | Dependent Variable is binary or ordinal
 2 | Observations are independent of each other
 3 | Little or no multicollinearity among the independent variables
-4 | **Linearity of independent variables (the x) and log odds (the z)**
+4 | **Linearity of independent variables (the x) and log odds**
 5 | A large sample size. It needs at minimum of 10 cases with the least frequent outcome for each independent variable in your model.
 
 
