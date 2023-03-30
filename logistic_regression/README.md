@@ -6,9 +6,8 @@ To predict the probability of positive in the target variable
 ## <a href="https://en.wikipedia.org/wiki/Logistic_regression#Latent_variable_interpretation">Fundamental interpretation: the odds as an exponential function of the predictor</a>
 
 * DV = P(Outcome<sub>Positive</sub>)
-*  = P(Outcome<sub>Positive</sub>) / P(Outcome<sub>Negative</sub>)
-* IV = Predictor in terms of β<sub>0</sub> + β<sub>1</sub>\*x
-* Fundamental Relationship: <a href="https://danielyang.shinyapps.io/Logistic_Regression/">DV = <i>e</i><sup>IV</sup></a>
+* IV = Some Predictor X
+* Fundamental Relationship: <a href="https://danielyang.shinyapps.io/Logistic_Regression/">Log odds, log(p/q) = linear combinations of the IV's = β<sub>0</sub> + β<sub>1</sub>\*x</a>
 
 Related considerations:
 * Interesting property: the derivative of DV is also <i>e</i><sup>IV</sup></a>, that is, whether DV is already very high, slight increase in IV will exponentially make DV much higher. For example, if you've already studied for 5 hours, studying for another 30 minutes will <a href="https://danielyang.shinyapps.io/Logistic_Regression/">make the Odds of P(passing) much, much higher</a>.
